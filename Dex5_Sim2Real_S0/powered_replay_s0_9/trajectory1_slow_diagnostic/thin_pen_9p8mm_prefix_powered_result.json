@@ -1,0 +1,143 @@
+{
+  "schema": "dex5-s0.9-mapped-powered-replay-v2",
+  "timestamp_unix_s": 1785680240.4586291,
+  "status": "TASK_PASS",
+  "task_scope": "THIN_PEN_9P8MM_PREFIX_0_TO_2S_ONLY",
+  "full_trajectory_accepted": false,
+  "replay_sha256": "f46238c10e69b095244b3e1939ab8fdf1109856ff32f6b370740f90b255839e1",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "b7d6559718cd24a17b61d218d65480ffe21b43da8e46f1c149668dd180f105b7",
+  "requested_trajectory_count": 1,
+  "safety": {
+    "speed_limit_rad_s": 0.03,
+    "delta_limit_rad": 0.01,
+    "watchdog_s": 0.1,
+    "thermal_abort_c": 75.0,
+    "startup_mode": "low_gain_preload",
+    "replay_control_mode": "low_gain_hybrid",
+    "diagnostic_package": true,
+    "feedback_speed_abort_rad_s": 0.12,
+    "feedback_speed_abort_windows": 1,
+    "feedback_speed_monitored_joint_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "offline_preflight": {
+    "trajectory_count": 1,
+    "command_rows": 201,
+    "maximum_delta_rad": 0.0002620816230773926,
+    "maximum_speed_rad_s": 0.026208162307739258
+  },
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "status": "COMPLETED",
+      "start_unix_s": 1785680250.9748044,
+      "command_rows": 201,
+      "duration_s": 2.106867343012709,
+      "command_max_delta_rad": 0.0002620816230773926,
+      "command_max_speed_rad_s": 0.026208162307739258,
+      "raw_command_feedback_difference_mean_rad": 0.09122188939586318,
+      "raw_command_feedback_difference_p95_rad": 0.3225745305418862,
+      "raw_command_feedback_difference_max_rad": 0.3917877674102783,
+      "reported_velocity_max_rad_s": 2.4543750286102295,
+      "position_diff_velocity_max_rad_s": 0.0014227667752916334,
+      "applied_position_samples": 304,
+      "touch_sample_count": 201,
+      "touch_active_ratio": 0.4429415422885572,
+      "force_sample_count": 0,
+      "normal_force_max_n": null,
+      "temperature_events": [],
+      "temperature_max_c": null,
+      "dropped_object": false,
+      "pen_visibly_rotated": true
+    }
+  ],
+  "staging": {
+    "status": "MAPPED_LOW_GAIN_PRELOAD_ACCEPTED",
+    "maximum_feedback_error_rad": 0.028427064418792725,
+    "resume_command_max_offset_rad": 0.02568275435503309,
+    "resume_command": [
+      -0.2196357399225235,
+      1.1261646747589111,
+      0.4225669205188751,
+      0.4225669205188751,
+      -0.002713653026148677,
+      1.4829301834106445,
+      0.08370516449213028,
+      0.08370516449213028,
+      0.20911061763763428,
+      1.3788042068481445,
+      0.7702980637550354,
+      0.7702980637550354,
+      0.3528027683496475,
+      1.4999525547027588,
+      0.8617030382156372,
+      0.8617030382156372,
+      0.1971000949896429,
+      0.7713825632757347,
+      0.9898996093767234,
+      0.6662652643733263
+    ],
+    "thumb_resume_offsets": {
+      "16": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -0.0008691325783729553,
+        "resume_command_offset_rad": -0.0009348769627954556
+      },
+      "17": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -0.028427064418792725,
+        "resume_command_offset_rad": -0.02568275435503309
+      },
+      "18": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -1.3947486877441406e-05,
+        "resume_command_offset_rad": -1.570195979394562e-05
+      },
+      "19": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -6.616115570068359e-06,
+        "resume_command_offset_rad": -7.3162503003709745e-06
+      }
+    },
+    "preload": {
+      "observed_windows": 14,
+      "stable_windows": 14,
+      "peak_speed_rad_s": 0.00023727556585178322
+    },
+    "aligned": {
+      "observed_windows": 16,
+      "stable_windows": 16,
+      "peak_speed_rad_s": 0.0003305792183681571
+    },
+    "preload_alignment_speed_rad_s": 0.01,
+    "replay_control_mode": "low_gain_hybrid",
+    "low_gain_replay_validation": {
+      "observed_windows": 16,
+      "stable_windows": 16,
+      "peak_speed_rad_s": 0.00031806190096976073
+    }
+  },
+  "controller_hybrid_gains": {
+    "hybrid_kp_scale": 0.15,
+    "hybrid_kd_scale": 0.3,
+    "hybrid_thumb_kp_scale": 0.15,
+    "hybrid_thumb_kd_scale": 0.3
+  }
+}

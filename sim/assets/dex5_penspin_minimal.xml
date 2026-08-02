@@ -1,0 +1,147 @@
+<mujoco model="dex5_penspin_minimal">
+  <compiler angle="radian" coordinate="local" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"/>
+
+  <default>
+    <joint damping="0.04" armature="0.002" limited="true"/>
+    <geom friction="1.2 0.02 0.002" solref="0.006 1" solimp="0.9 0.95 0.001"/>
+    <position kp="8.0" kv="0.2" ctrlrange="-2.0 2.0"/>
+  </default>
+
+  <asset>
+    <material name="palm" rgba="0.18 0.20 0.24 1"/>
+    <material name="finger" rgba="0.65 0.70 0.82 1"/>
+    <material name="thumb" rgba="0.72 0.62 0.50 1"/>
+    <material name="pen" rgba="0.95 0.20 0.14 1"/>
+    <material name="marker_a" rgba="0.1 0.3 1.0 1"/>
+    <material name="marker_b" rgba="1.0 0.9 0.05 1"/>
+    <material name="floor" rgba="0.45 0.45 0.45 1"/>
+  </asset>
+
+  <worldbody>
+    <light name="key" pos="0 -0.6 0.8" dir="0 0.6 -0.8" directional="true"/>
+    <camera name="overview" pos="0.28 -0.42 0.34" xyaxes="0.84 0.54 0 -0.32 0.50 0.80"/>
+    <geom name="floor" type="plane" pos="0 0 0" size="0.5 0.5 0.02" material="floor"/>
+
+    <body name="palm" pos="0 0 0.075">
+      <geom name="palm_box" type="box" size="0.035 0.085 0.012" material="palm" contype="1" conaffinity="1"/>
+
+      <body name="index_base" pos="0.038 0.060 0.012">
+        <joint name="Roll_21R" type="hinge" axis="0 0 1" range="-0.38397 0.38397"/>
+        <geom name="index_1" type="capsule" fromto="0 0 0 -0.030 0 0.016" size="0.007" material="finger"/>
+        <body name="index_mid1" pos="-0.030 0 0.016">
+          <joint name="Pitch_22R" type="hinge" axis="0 1 0" range="0 1.5707963"/>
+          <geom name="index_2" type="capsule" fromto="0 0 0 -0.030 0 0.004" size="0.0065" material="finger"/>
+          <body name="index_mid2" pos="-0.030 0 0.004">
+            <joint name="Pitch_23R" type="hinge" axis="0 1 0" range="0 1.684242699"/>
+            <geom name="index_3" type="capsule" fromto="0 0 0 -0.024 0 -0.002" size="0.006" material="finger"/>
+            <body name="index_tip" pos="-0.024 0 -0.002">
+              <joint name="Pitch_24R" type="hinge" axis="0 1 0" range="0 1.396263378"/>
+              <geom name="index_4" type="capsule" fromto="0 0 0 -0.018 0 -0.003" size="0.0055" material="finger"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <body name="middle_base" pos="0.040 0.020 0.014">
+        <joint name="Roll_31R" type="hinge" axis="0 0 1" range="-0.38397 0.38397"/>
+        <geom name="middle_1" type="capsule" fromto="0 0 0 -0.034 0 0.014" size="0.007" material="finger"/>
+        <body name="middle_mid1" pos="-0.034 0 0.014">
+          <joint name="Pitch_32R" type="hinge" axis="0 1 0" range="0 1.5707963"/>
+          <geom name="middle_2" type="capsule" fromto="0 0 0 -0.032 0 0.003" size="0.0065" material="finger"/>
+          <body name="middle_mid2" pos="-0.032 0 0.003">
+            <joint name="Pitch_33R" type="hinge" axis="0 1 0" range="0 1.684242699"/>
+            <geom name="middle_3" type="capsule" fromto="0 0 0 -0.026 0 -0.002" size="0.006" material="finger"/>
+            <body name="middle_tip" pos="-0.026 0 -0.002">
+              <joint name="Pitch_34R" type="hinge" axis="0 1 0" range="0 1.396263378"/>
+              <geom name="middle_4" type="capsule" fromto="0 0 0 -0.020 0 -0.003" size="0.0055" material="finger"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <body name="ring_base" pos="0.038 -0.020 0.014">
+        <joint name="Roll_41R" type="hinge" axis="0 0 1" range="-0.38397 0.38397"/>
+        <geom name="ring_1" type="capsule" fromto="0 0 0 -0.032 0 0.012" size="0.007" material="finger"/>
+        <body name="ring_mid1" pos="-0.032 0 0.012">
+          <joint name="Pitch_42R" type="hinge" axis="0 1 0" range="0 1.5708"/>
+          <geom name="ring_2" type="capsule" fromto="0 0 0 -0.030 0 0.003" size="0.0065" material="finger"/>
+          <body name="ring_mid2" pos="-0.030 0 0.003">
+            <joint name="Pitch_43R" type="hinge" axis="0 1 0" range="0 1.6842"/>
+            <geom name="ring_3" type="capsule" fromto="0 0 0 -0.024 0 -0.002" size="0.006" material="finger"/>
+            <body name="ring_tip" pos="-0.024 0 -0.002">
+              <joint name="Pitch_44R" type="hinge" axis="0 1 0" range="0 1.3963"/>
+              <geom name="ring_4" type="capsule" fromto="0 0 0 -0.018 0 -0.003" size="0.0055" material="finger"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <body name="pinky_base" pos="0.034 -0.058 0.012">
+        <joint name="Roll_51R" type="hinge" axis="0 0 1" range="-0.38397 0.38397"/>
+        <geom name="pinky_1" type="capsule" fromto="0 0 0 -0.028 0 0.010" size="0.0065" material="finger"/>
+        <body name="pinky_mid1" pos="-0.028 0 0.010">
+          <joint name="Pitch_52R" type="hinge" axis="0 1 0" range="0 1.5708"/>
+          <geom name="pinky_2" type="capsule" fromto="0 0 0 -0.026 0 0.002" size="0.006" material="finger"/>
+          <body name="pinky_mid2" pos="-0.026 0 0.002">
+            <joint name="Pitch_53R" type="hinge" axis="0 1 0" range="0 1.6842"/>
+            <geom name="pinky_3" type="capsule" fromto="0 0 0 -0.021 0 -0.002" size="0.0055" material="finger"/>
+            <body name="pinky_tip" pos="-0.021 0 -0.002">
+              <joint name="Pitch_54R" type="hinge" axis="0 1 0" range="0 1.3963"/>
+              <geom name="pinky_4" type="capsule" fromto="0 0 0 -0.016 0 -0.003" size="0.005" material="finger"/>
+            </body>
+          </body>
+        </body>
+      </body>
+
+      <body name="thumb_base" pos="-0.040 -0.074 0.010" euler="0 0 0.80">
+        <joint name="Yaw_11R" type="hinge" axis="0 0 1" range="-0.5867 0.6803"/>
+        <geom name="thumb_1" type="capsule" fromto="0 0 0 0.026 0.010 0.012" size="0.008" material="thumb"/>
+        <body name="thumb_mid1" pos="0.026 0.010 0.012">
+          <joint name="Roll_12R" type="hinge" axis="0 1 0" range="0 1.8151"/>
+          <geom name="thumb_2" type="capsule" fromto="0 0 0 0.028 0.008 0.002" size="0.007" material="thumb"/>
+          <body name="thumb_mid2" pos="0.028 0.008 0.002">
+            <joint name="Pitch_13R" type="hinge" axis="0 1 0" range="0 1.765226"/>
+            <geom name="thumb_3" type="capsule" fromto="0 0 0 0.024 0.006 -0.001" size="0.0065" material="thumb"/>
+            <body name="thumb_tip" pos="0.024 0.006 -0.001">
+              <joint name="Pitch_14R" type="hinge" axis="0 1 0" range="0 1.6406"/>
+              <geom name="thumb_4" type="capsule" fromto="0 0 0 0.018 0.004 -0.002" size="0.006" material="thumb"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <body name="pen" pos="-0.005 0.000 0.145" quat="1 0 0 0">
+      <freejoint name="pen_free"/>
+      <geom name="pen_body" type="cylinder" size="0.006 0.085" euler="0 1.57079632679 0" density="450" material="pen"/>
+      <geom name="pen_marker_a" type="sphere" pos="-0.083 0 0.006" size="0.007" density="50" material="marker_a"/>
+      <geom name="pen_marker_b" type="sphere" pos="0.083 0 -0.006" size="0.007" density="50" material="marker_b"/>
+      <site name="pen_end_a" pos="-0.085 0 0" size="0.004" rgba="0.1 0.3 1.0 1"/>
+      <site name="pen_end_b" pos="0.085 0 0" size="0.004" rgba="1.0 0.9 0.05 1"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="act_Roll_21R" joint="Roll_21R" ctrlrange="-0.38397 0.38397"/>
+    <position name="act_Pitch_22R" joint="Pitch_22R" ctrlrange="0 1.5707963"/>
+    <position name="act_Pitch_23R" joint="Pitch_23R" ctrlrange="0 1.684242699"/>
+    <position name="act_Pitch_24R" joint="Pitch_24R" ctrlrange="0 1.396263378"/>
+    <position name="act_Roll_31R" joint="Roll_31R" ctrlrange="-0.38397 0.38397"/>
+    <position name="act_Pitch_32R" joint="Pitch_32R" ctrlrange="0 1.5707963"/>
+    <position name="act_Pitch_33R" joint="Pitch_33R" ctrlrange="0 1.684242699"/>
+    <position name="act_Pitch_34R" joint="Pitch_34R" ctrlrange="0 1.396263378"/>
+    <position name="act_Roll_41R" joint="Roll_41R" ctrlrange="-0.38397 0.38397"/>
+    <position name="act_Pitch_42R" joint="Pitch_42R" ctrlrange="0 1.5708"/>
+    <position name="act_Pitch_43R" joint="Pitch_43R" ctrlrange="0 1.6842"/>
+    <position name="act_Pitch_44R" joint="Pitch_44R" ctrlrange="0 1.3963"/>
+    <position name="act_Roll_51R" joint="Roll_51R" ctrlrange="-0.38397 0.38397"/>
+    <position name="act_Pitch_52R" joint="Pitch_52R" ctrlrange="0 1.5708"/>
+    <position name="act_Pitch_53R" joint="Pitch_53R" ctrlrange="0 1.6842"/>
+    <position name="act_Pitch_54R" joint="Pitch_54R" ctrlrange="0 1.3963"/>
+    <position name="act_Yaw_11R" joint="Yaw_11R" ctrlrange="-0.5867 0.6803"/>
+    <position name="act_Roll_12R" joint="Roll_12R" ctrlrange="0 1.8151"/>
+    <position name="act_Pitch_13R" joint="Pitch_13R" ctrlrange="0 1.765226"/>
+    <position name="act_Pitch_14R" joint="Pitch_14R" ctrlrange="0 1.6406"/>
+  </actuator>
+</mujoco>

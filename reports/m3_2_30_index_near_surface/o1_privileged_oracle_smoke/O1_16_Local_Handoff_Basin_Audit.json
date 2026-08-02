@@ -1,0 +1,2236 @@
+{
+  "status": "PASS_DIAGNOSTIC_ONE_NARROW_OPEN_LOOP_BASIN",
+  "phase": "O1.16 Local Handoff Basin Perturbation Audit",
+  "artifact_role": "local_open_loop_plan_basin_lower_bound_not_policy_attractor_or_reset_dataset",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "search": {
+    "population": 128,
+    "iterations": 20,
+    "waypoints": 3,
+    "max_offset_rad": 0.18,
+    "action_plan_serialized": false
+  },
+  "perturbation_design": {
+    "clone_count_per_scenario": 128,
+    "scales": {
+      "joint_position_rad": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "joint_velocity_rad_s": [
+        0.02,
+        0.05,
+        0.1
+      ],
+      "pen_position_m": [
+        0.00025,
+        0.0005,
+        0.001
+      ],
+      "pen_rotation_rad": [
+        0.008726646259971648,
+        0.017453292519943295,
+        0.03490658503988659
+      ],
+      "pen_linear_velocity_m_s": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "pen_angular_velocity_rad_s": [
+        0.1,
+        0.25,
+        0.5
+      ],
+      "target_context_rad": [
+        0.0025,
+        0.005,
+        0.01
+      ]
+    },
+    "joint_position_and_target_shifted_together": true,
+    "contact_force_directly_perturbed": false,
+    "contact_rebuild_steps": 2
+  },
+  "total_replay_episodes": 9600,
+  "classification_gate": {
+    "PLAN_RECOVERY_FAILED_BASIN_NOT_MEASURED": "nominal recovered-strict rate = 0%; no basin inference",
+    "EXPANDABLE_LOCAL_BASIN": "joint L1 recovered-strict rate >=30%",
+    "NARROW_LOCAL_BASIN": "joint L1 recovered-strict rate in [5%, 30%)",
+    "ISOLATED_TRAJECTORY_SOLUTION": "joint L1 recovered-strict rate <5%"
+  },
+  "classification_counts": {
+    "NARROW_LOCAL_BASIN": 1,
+    "ISOLATED_TRAJECTORY_SOLUTION": 1,
+    "PLAN_RECOVERY_FAILED_BASIN_NOT_MEASURED": 1
+  },
+  "state_ranking": [
+    {
+      "bank_id": 1155,
+      "horizon_ms": 300.0,
+      "nominal_recovered_strict_rate": 0.34375,
+      "joint_L1_rate": 0.1015625,
+      "joint_L2_rate": 0.0546875,
+      "joint_L3_rate": 0.03125,
+      "plan_recovered": true,
+      "classification": "NARROW_LOCAL_BASIN",
+      "factor_widths": {
+        "joint_position_rad": {
+          "rates": [
+            0.109375,
+            0.0234375,
+            0.046875
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": 0.005,
+          "largest_scale_at_half_nominal": null
+        },
+        "joint_velocity_rad_s": {
+          "rates": [
+            0.546875,
+            0.296875,
+            0.3984375
+          ],
+          "scales": [
+            0.02,
+            0.05,
+            0.1
+          ],
+          "largest_scale_at_absolute_10pct": 0.1,
+          "largest_scale_at_half_nominal": 0.1
+        },
+        "pen_angular_velocity_rad_s": {
+          "rates": [
+            0.390625,
+            0.328125,
+            0.328125
+          ],
+          "scales": [
+            0.1,
+            0.25,
+            0.5
+          ],
+          "largest_scale_at_absolute_10pct": 0.5,
+          "largest_scale_at_half_nominal": 0.5
+        },
+        "pen_linear_velocity_m_s": {
+          "rates": [
+            0.4921875,
+            0.53125,
+            0.4765625
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": 0.02,
+          "largest_scale_at_half_nominal": 0.02
+        },
+        "pen_position_m": {
+          "rates": [
+            0.2890625,
+            0.0703125,
+            0.0546875
+          ],
+          "scales": [
+            0.00025,
+            0.0005,
+            0.001
+          ],
+          "largest_scale_at_absolute_10pct": 0.00025,
+          "largest_scale_at_half_nominal": 0.00025
+        },
+        "pen_rotation_rad": {
+          "rates": [
+            0.34375,
+            0.265625,
+            0.1328125
+          ],
+          "scales": [
+            0.008726646259971648,
+            0.017453292519943295,
+            0.03490658503988659
+          ],
+          "largest_scale_at_absolute_10pct": 0.03490658503988659,
+          "largest_scale_at_half_nominal": 0.017453292519943295
+        },
+        "target_context_rad": {
+          "rates": [
+            0.2421875,
+            0.2109375,
+            0.1796875
+          ],
+          "scales": [
+            0.0025,
+            0.005,
+            0.01
+          ],
+          "largest_scale_at_absolute_10pct": 0.01,
+          "largest_scale_at_half_nominal": 0.01
+        }
+      },
+      "search_best_score": 30.332012176513672,
+      "scenario_results": [
+        {
+          "name": "nominal",
+          "factor": "nominal",
+          "level": 0,
+          "scales": {},
+          "episodes": 128,
+          "TIM_transition_rate": 0.7109375,
+          "strict_rate": 0.34375,
+          "recovered_strict_rate": 0.34375,
+          "unsafe_rate": 0.1484375,
+          "axis_alignment_median": 0.49163103103637695,
+          "min_height_delta_mm_p10": -0.11329092085361481,
+          "final_height_delta_mm_p10": 1.4376780986785889,
+          "handoff_margin_p90": 0.08079324662685394,
+          "failure_taxonomy": {
+            "no_TIM_transition": 33,
+            "axis_misaligned": 32,
+            "recovered_strict": 44,
+            "throw": 19
+          }
+        },
+        {
+          "name": "joint_position_rad_L1",
+          "factor": "joint_position_rad",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.40625,
+          "strict_rate": 0.109375,
+          "recovered_strict_rate": 0.109375,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.4607319235801697,
+          "min_height_delta_mm_p10": -0.14157593250274658,
+          "final_height_delta_mm_p10": 1.1808083057403564,
+          "handoff_margin_p90": 0.01639493741095066,
+          "failure_taxonomy": {
+            "no_TIM_transition": 68,
+            "throw": 15,
+            "axis_misaligned": 29,
+            "recovered_strict": 14,
+            "contact_force_overload": 2
+          }
+        },
+        {
+          "name": "joint_position_rad_L2",
+          "factor": "joint_position_rad",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.2734375,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.4123576879501343,
+          "min_height_delta_mm_p10": -0.1826796680688858,
+          "final_height_delta_mm_p10": 0.5669906735420227,
+          "handoff_margin_p90": -0.09770049154758453,
+          "failure_taxonomy": {
+            "no_TIM_transition": 92,
+            "axis_misaligned": 23,
+            "throw": 9,
+            "recovered_strict": 3,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "joint_position_rad_L3",
+          "factor": "joint_position_rad",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.2421875,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.40938007831573486,
+          "min_height_delta_mm_p10": -0.3013041019439697,
+          "final_height_delta_mm_p10": 0.22619886696338654,
+          "handoff_margin_p90": -0.14472536742687225,
+          "failure_taxonomy": {
+            "no_TIM_transition": 94,
+            "contact_force_overload": 4,
+            "axis_misaligned": 19,
+            "throw": 5,
+            "recovered_strict": 6
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L1",
+          "factor": "joint_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "joint_velocity_rad_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.828125,
+          "strict_rate": 0.546875,
+          "recovered_strict_rate": 0.546875,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.5133771896362305,
+          "min_height_delta_mm_p10": -0.1000039279460907,
+          "final_height_delta_mm_p10": 1.571159839630127,
+          "handoff_margin_p90": 0.08083890378475189,
+          "failure_taxonomy": {
+            "no_TIM_transition": 22,
+            "throw": 6,
+            "recovered_strict": 70,
+            "axis_misaligned": 30
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L2",
+          "factor": "joint_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "joint_velocity_rad_s": 0.05
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.7421875,
+          "strict_rate": 0.296875,
+          "recovered_strict_rate": 0.296875,
+          "unsafe_rate": 0.1640625,
+          "axis_alignment_median": 0.4939975142478943,
+          "min_height_delta_mm_p10": -0.10206103324890137,
+          "final_height_delta_mm_p10": 1.5687406063079834,
+          "handoff_margin_p90": 0.08097594976425171,
+          "failure_taxonomy": {
+            "no_TIM_transition": 32,
+            "axis_misaligned": 37,
+            "throw": 21,
+            "recovered_strict": 38
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L3",
+          "factor": "joint_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "joint_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.765625,
+          "strict_rate": 0.3984375,
+          "recovered_strict_rate": 0.3984375,
+          "unsafe_rate": 0.125,
+          "axis_alignment_median": 0.5041606426239014,
+          "min_height_delta_mm_p10": -0.10086223483085632,
+          "final_height_delta_mm_p10": 1.5444196462631226,
+          "handoff_margin_p90": 0.0813845619559288,
+          "failure_taxonomy": {
+            "recovered_strict": 51,
+            "no_TIM_transition": 28,
+            "throw": 16,
+            "axis_misaligned": 33
+          }
+        },
+        {
+          "name": "pen_position_m_L1",
+          "factor": "pen_position_m",
+          "level": 1,
+          "scales": {
+            "pen_position_m": 0.00025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.7421875,
+          "strict_rate": 0.2890625,
+          "recovered_strict_rate": 0.2890625,
+          "unsafe_rate": 0.1328125,
+          "axis_alignment_median": 0.4892059862613678,
+          "min_height_delta_mm_p10": -0.11309832334518433,
+          "final_height_delta_mm_p10": 1.5406138896942139,
+          "handoff_margin_p90": 0.06917185336351395,
+          "failure_taxonomy": {
+            "recovered_strict": 37,
+            "no_TIM_transition": 31,
+            "axis_misaligned": 43,
+            "throw": 17
+          }
+        },
+        {
+          "name": "pen_position_m_L2",
+          "factor": "pen_position_m",
+          "level": 2,
+          "scales": {
+            "pen_position_m": 0.0005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.53125,
+          "strict_rate": 0.0703125,
+          "recovered_strict_rate": 0.0703125,
+          "unsafe_rate": 0.109375,
+          "axis_alignment_median": 0.4707220494747162,
+          "min_height_delta_mm_p10": -0.11362992227077484,
+          "final_height_delta_mm_p10": 1.4610509872436523,
+          "handoff_margin_p90": 0.004215818364173174,
+          "failure_taxonomy": {
+            "no_TIM_transition": 57,
+            "axis_misaligned": 48,
+            "recovered_strict": 9,
+            "throw": 14
+          }
+        },
+        {
+          "name": "pen_position_m_L3",
+          "factor": "pen_position_m",
+          "level": 3,
+          "scales": {
+            "pen_position_m": 0.001
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.40625,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.2734375,
+          "axis_alignment_median": 0.43395841121673584,
+          "min_height_delta_mm_p10": -0.13894625008106232,
+          "final_height_delta_mm_p10": 1.122862458229065,
+          "handoff_margin_p90": -0.024295400828123093,
+          "failure_taxonomy": {
+            "axis_misaligned": 28,
+            "no_TIM_transition": 58,
+            "throw": 27,
+            "penetration": 8,
+            "recovered_strict": 7
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L1",
+          "factor": "pen_rotation_rad",
+          "level": 1,
+          "scales": {
+            "pen_rotation_rad": 0.008726646259971648
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.6171875,
+          "strict_rate": 0.34375,
+          "recovered_strict_rate": 0.34375,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.5071608424186707,
+          "min_height_delta_mm_p10": -0.10154098272323608,
+          "final_height_delta_mm_p10": 1.5454500913619995,
+          "handoff_margin_p90": 0.08253566920757294,
+          "failure_taxonomy": {
+            "recovered_strict": 44,
+            "axis_misaligned": 28,
+            "no_TIM_transition": 48,
+            "throw": 6,
+            "penetration": 1,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L2",
+          "factor": "pen_rotation_rad",
+          "level": 2,
+          "scales": {
+            "pen_rotation_rad": 0.017453292519943295
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.5546875,
+          "strict_rate": 0.265625,
+          "recovered_strict_rate": 0.265625,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.4927157163619995,
+          "min_height_delta_mm_p10": -0.10691583156585693,
+          "final_height_delta_mm_p10": 1.5238165855407715,
+          "handoff_margin_p90": 0.06599102914333344,
+          "failure_taxonomy": {
+            "recovered_strict": 34,
+            "no_TIM_transition": 56,
+            "axis_misaligned": 31,
+            "throw": 7
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L3",
+          "factor": "pen_rotation_rad",
+          "level": 3,
+          "scales": {
+            "pen_rotation_rad": 0.03490658503988659
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.515625,
+          "strict_rate": 0.1328125,
+          "recovered_strict_rate": 0.1328125,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.4615110158920288,
+          "min_height_delta_mm_p10": -0.11803433299064636,
+          "final_height_delta_mm_p10": 1.4285653829574585,
+          "handoff_margin_p90": 0.028078878298401833,
+          "failure_taxonomy": {
+            "no_TIM_transition": 58,
+            "recovered_strict": 17,
+            "axis_misaligned": 45,
+            "throw": 8
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L1",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 1,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.6953125,
+          "strict_rate": 0.4921875,
+          "recovered_strict_rate": 0.4921875,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.5192627310752869,
+          "min_height_delta_mm_p10": -0.09720921516418457,
+          "final_height_delta_mm_p10": 1.535293459892273,
+          "handoff_margin_p90": 0.08111578971147537,
+          "failure_taxonomy": {
+            "no_TIM_transition": 39,
+            "recovered_strict": 63,
+            "axis_misaligned": 19,
+            "throw": 7
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L2",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 2,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.7265625,
+          "strict_rate": 0.53125,
+          "recovered_strict_rate": 0.53125,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.5232541561126709,
+          "min_height_delta_mm_p10": -0.09695366024971008,
+          "final_height_delta_mm_p10": 1.570481777191162,
+          "handoff_margin_p90": 0.08143779635429382,
+          "failure_taxonomy": {
+            "recovered_strict": 68,
+            "no_TIM_transition": 35,
+            "axis_misaligned": 22,
+            "throw": 3
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L3",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 3,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.6953125,
+          "strict_rate": 0.4765625,
+          "recovered_strict_rate": 0.4765625,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.5142142176628113,
+          "min_height_delta_mm_p10": -0.09654387831687927,
+          "final_height_delta_mm_p10": 1.5477806329727173,
+          "handoff_margin_p90": 0.08117572963237762,
+          "failure_taxonomy": {
+            "recovered_strict": 61,
+            "axis_misaligned": 24,
+            "no_TIM_transition": 39,
+            "throw": 4
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L1",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.765625,
+          "strict_rate": 0.390625,
+          "recovered_strict_rate": 0.390625,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.49666351079940796,
+          "min_height_delta_mm_p10": -0.10027959942817688,
+          "final_height_delta_mm_p10": 1.5825494527816772,
+          "handoff_margin_p90": 0.08255873620510101,
+          "failure_taxonomy": {
+            "axis_misaligned": 42,
+            "no_TIM_transition": 30,
+            "recovered_strict": 50,
+            "throw": 6
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L2",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.25
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.7578125,
+          "strict_rate": 0.328125,
+          "recovered_strict_rate": 0.328125,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.4953964948654175,
+          "min_height_delta_mm_p10": -0.10033845901489258,
+          "final_height_delta_mm_p10": 1.574896216392517,
+          "handoff_margin_p90": 0.08238204568624496,
+          "failure_taxonomy": {
+            "recovered_strict": 42,
+            "throw": 15,
+            "axis_misaligned": 42,
+            "no_TIM_transition": 29
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L3",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.5
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.8125,
+          "strict_rate": 0.328125,
+          "recovered_strict_rate": 0.328125,
+          "unsafe_rate": 0.15625,
+          "axis_alignment_median": 0.502554178237915,
+          "min_height_delta_mm_p10": -0.09901151061058044,
+          "final_height_delta_mm_p10": 1.625165343284607,
+          "handoff_margin_p90": 0.08277295529842377,
+          "failure_taxonomy": {
+            "recovered_strict": 42,
+            "axis_misaligned": 45,
+            "no_TIM_transition": 21,
+            "throw": 20
+          }
+        },
+        {
+          "name": "target_context_rad_L1",
+          "factor": "target_context_rad",
+          "level": 1,
+          "scales": {
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.625,
+          "strict_rate": 0.2421875,
+          "recovered_strict_rate": 0.2421875,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.48102760314941406,
+          "min_height_delta_mm_p10": -0.1161724328994751,
+          "final_height_delta_mm_p10": 1.3697646856307983,
+          "handoff_margin_p90": 0.0717136412858963,
+          "failure_taxonomy": {
+            "axis_misaligned": 41,
+            "recovered_strict": 31,
+            "no_TIM_transition": 47,
+            "throw": 9
+          }
+        },
+        {
+          "name": "target_context_rad_L2",
+          "factor": "target_context_rad",
+          "level": 2,
+          "scales": {
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.671875,
+          "strict_rate": 0.2109375,
+          "recovered_strict_rate": 0.2109375,
+          "unsafe_rate": 0.0859375,
+          "axis_alignment_median": 0.4700061082839966,
+          "min_height_delta_mm_p10": -0.1658916473388672,
+          "final_height_delta_mm_p10": 1.4037609100341797,
+          "handoff_margin_p90": 0.055879127234220505,
+          "failure_taxonomy": {
+            "axis_misaligned": 47,
+            "throw": 11,
+            "recovered_strict": 27,
+            "no_TIM_transition": 40,
+            "contact_force_overload": 3
+          }
+        },
+        {
+          "name": "target_context_rad_L3",
+          "factor": "target_context_rad",
+          "level": 3,
+          "scales": {
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.625,
+          "strict_rate": 0.1796875,
+          "recovered_strict_rate": 0.1796875,
+          "unsafe_rate": 0.078125,
+          "axis_alignment_median": 0.4537557363510132,
+          "min_height_delta_mm_p10": -0.17641335725784302,
+          "final_height_delta_mm_p10": 1.3078465461730957,
+          "handoff_margin_p90": 0.057150837033987045,
+          "failure_taxonomy": {
+            "recovered_strict": 23,
+            "axis_misaligned": 48,
+            "no_TIM_transition": 46,
+            "throw": 10,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "factor": "joint",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005,
+            "joint_velocity_rad_s": 0.02,
+            "pen_position_m": 0.00025,
+            "pen_rotation_rad": 0.008726646259971648,
+            "pen_linear_velocity_m_s": 0.005,
+            "pen_angular_velocity_rad_s": 0.1,
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.4140625,
+          "strict_rate": 0.1015625,
+          "recovered_strict_rate": 0.1015625,
+          "unsafe_rate": 0.078125,
+          "axis_alignment_median": 0.4299933612346649,
+          "min_height_delta_mm_p10": -0.15326105058193207,
+          "final_height_delta_mm_p10": 0.8046947121620178,
+          "handoff_margin_p90": 0.015873383730649948,
+          "failure_taxonomy": {
+            "no_TIM_transition": 70,
+            "axis_misaligned": 35,
+            "recovered_strict": 13,
+            "throw": 10
+          }
+        },
+        {
+          "name": "joint_L2",
+          "factor": "joint",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01,
+            "joint_velocity_rad_s": 0.05,
+            "pen_position_m": 0.0005,
+            "pen_rotation_rad": 0.017453292519943295,
+            "pen_linear_velocity_m_s": 0.01,
+            "pen_angular_velocity_rad_s": 0.25,
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3125,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.43486475944519043,
+          "min_height_delta_mm_p10": -0.24665817618370056,
+          "final_height_delta_mm_p10": 0.39523130655288696,
+          "handoff_margin_p90": -0.0588018037378788,
+          "failure_taxonomy": {
+            "axis_misaligned": 31,
+            "throw": 5,
+            "recovered_strict": 7,
+            "no_TIM_transition": 85
+          }
+        },
+        {
+          "name": "joint_L3",
+          "factor": "joint",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02,
+            "joint_velocity_rad_s": 0.1,
+            "pen_position_m": 0.001,
+            "pen_rotation_rad": 0.03490658503988659,
+            "pen_linear_velocity_m_s": 0.02,
+            "pen_angular_velocity_rad_s": 0.5,
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1640625,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.203125,
+          "axis_alignment_median": 0.4049074947834015,
+          "min_height_delta_mm_p10": -0.3312736749649048,
+          "final_height_delta_mm_p10": 0.15497168898582458,
+          "handoff_margin_p90": -0.19592903554439545,
+          "failure_taxonomy": {
+            "no_TIM_transition": 86,
+            "axis_misaligned": 10,
+            "contact_force_overload": 2,
+            "recovered_strict": 4,
+            "penetration": 18,
+            "throw": 8
+          }
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "bank_id": 831,
+      "horizon_ms": 500.0,
+      "nominal_recovered_strict_rate": 0.0625,
+      "joint_L1_rate": 0.0078125,
+      "joint_L2_rate": 0.0,
+      "joint_L3_rate": 0.0,
+      "plan_recovered": true,
+      "classification": "ISOLATED_TRAJECTORY_SOLUTION",
+      "factor_widths": {
+        "joint_position_rad": {
+          "rates": [
+            0.0078125,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "joint_velocity_rad_s": {
+          "rates": [
+            0.03125,
+            0.0546875,
+            0.046875
+          ],
+          "scales": [
+            0.02,
+            0.05,
+            0.1
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": 0.1
+        },
+        "pen_angular_velocity_rad_s": {
+          "rates": [
+            0.03125,
+            0.03125,
+            0.03125
+          ],
+          "scales": [
+            0.1,
+            0.25,
+            0.5
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": 0.5
+        },
+        "pen_linear_velocity_m_s": {
+          "rates": [
+            0.0546875,
+            0.0546875,
+            0.0546875
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": 0.02
+        },
+        "pen_position_m": {
+          "rates": [
+            0.015625,
+            0.0078125,
+            0.0078125
+          ],
+          "scales": [
+            0.00025,
+            0.0005,
+            0.001
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "pen_rotation_rad": {
+          "rates": [
+            0.03125,
+            0.03125,
+            0.0234375
+          ],
+          "scales": [
+            0.008726646259971648,
+            0.017453292519943295,
+            0.03490658503988659
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": 0.017453292519943295
+        },
+        "target_context_rad": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.0025,
+            0.005,
+            0.01
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        }
+      },
+      "search_best_score": 30.14010238647461,
+      "scenario_results": [
+        {
+          "name": "nominal",
+          "factor": "nominal",
+          "level": 0,
+          "scales": {},
+          "episodes": 128,
+          "TIM_transition_rate": 0.9296875,
+          "strict_rate": 0.0625,
+          "recovered_strict_rate": 0.0625,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.3494149148464203,
+          "min_height_delta_mm_p10": -0.11865794658660889,
+          "final_height_delta_mm_p10": 2.63295841217041,
+          "handoff_margin_p90": -0.01225200854241848,
+          "failure_taxonomy": {
+            "axis_misaligned": 98,
+            "contact_force_overload": 10,
+            "recovered_strict": 8,
+            "penetration": 3,
+            "no_TIM_transition": 9
+          }
+        },
+        {
+          "name": "joint_position_rad_L1",
+          "factor": "joint_position_rad",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.2890625,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.368498831987381,
+          "min_height_delta_mm_p10": -0.16373991966247559,
+          "final_height_delta_mm_p10": 1.9264072179794312,
+          "handoff_margin_p90": -0.19712379574775696,
+          "failure_taxonomy": {
+            "axis_misaligned": 28,
+            "no_TIM_transition": 88,
+            "contact_force_overload": 5,
+            "throw": 3,
+            "penetration": 3,
+            "recovered_strict": 1
+          }
+        },
+        {
+          "name": "joint_position_rad_L2",
+          "factor": "joint_position_rad",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.203125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.3244507610797882,
+          "min_height_delta_mm_p10": -0.20338594913482666,
+          "final_height_delta_mm_p10": 1.4801703691482544,
+          "handoff_margin_p90": -0.3889249265193939,
+          "failure_taxonomy": {
+            "no_TIM_transition": 96,
+            "throw": 4,
+            "contact_force_overload": 5,
+            "axis_misaligned": 18,
+            "penetration": 5
+          }
+        },
+        {
+          "name": "joint_position_rad_L3",
+          "factor": "joint_position_rad",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1953125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3243289291858673,
+          "min_height_delta_mm_p10": -0.24084113538265228,
+          "final_height_delta_mm_p10": 0.5969099402427673,
+          "handoff_margin_p90": -0.3642575442790985,
+          "failure_taxonomy": {
+            "no_TIM_transition": 98,
+            "axis_misaligned": 18,
+            "contact_force_overload": 6,
+            "penetration": 4,
+            "throw": 2
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L1",
+          "factor": "joint_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "joint_velocity_rad_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.9453125,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.35582461953163147,
+          "min_height_delta_mm_p10": -0.11910498142242432,
+          "final_height_delta_mm_p10": 2.6688477993011475,
+          "handoff_margin_p90": -0.0866137444972992,
+          "failure_taxonomy": {
+            "axis_misaligned": 98,
+            "contact_force_overload": 14,
+            "throw": 2,
+            "no_TIM_transition": 6,
+            "recovered_strict": 4,
+            "penetration": 4
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L2",
+          "factor": "joint_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "joint_velocity_rad_s": 0.05
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.9453125,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.3602164387702942,
+          "min_height_delta_mm_p10": -0.11869370937347412,
+          "final_height_delta_mm_p10": 2.635540723800659,
+          "handoff_margin_p90": -0.07097600400447845,
+          "failure_taxonomy": {
+            "axis_misaligned": 96,
+            "contact_force_overload": 12,
+            "recovered_strict": 7,
+            "throw": 2,
+            "no_TIM_transition": 5,
+            "penetration": 6
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L3",
+          "factor": "joint_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "joint_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.8671875,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.3770674467086792,
+          "min_height_delta_mm_p10": -0.11090710759162903,
+          "final_height_delta_mm_p10": 2.609593391418457,
+          "handoff_margin_p90": -0.03294255957007408,
+          "failure_taxonomy": {
+            "axis_misaligned": 84,
+            "contact_force_overload": 14,
+            "throw": 5,
+            "penetration": 3,
+            "no_TIM_transition": 16,
+            "recovered_strict": 6
+          }
+        },
+        {
+          "name": "pen_position_m_L1",
+          "factor": "pen_position_m",
+          "level": 1,
+          "scales": {
+            "pen_position_m": 0.00025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.421875,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.372327983379364,
+          "min_height_delta_mm_p10": -0.16788244247436523,
+          "final_height_delta_mm_p10": 2.3562519550323486,
+          "handoff_margin_p90": -0.12893883883953094,
+          "failure_taxonomy": {
+            "no_TIM_transition": 72,
+            "axis_misaligned": 35,
+            "contact_force_overload": 11,
+            "throw": 3,
+            "penetration": 5,
+            "recovered_strict": 2
+          }
+        },
+        {
+          "name": "pen_position_m_L2",
+          "factor": "pen_position_m",
+          "level": 2,
+          "scales": {
+            "pen_position_m": 0.0005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.37751808762550354,
+          "min_height_delta_mm_p10": -0.15508495271205902,
+          "final_height_delta_mm_p10": 2.1809616088867188,
+          "handoff_margin_p90": -0.1850418597459793,
+          "failure_taxonomy": {
+            "no_TIM_transition": 84,
+            "axis_misaligned": 31,
+            "throw": 3,
+            "contact_force_overload": 6,
+            "penetration": 3,
+            "recovered_strict": 1
+          }
+        },
+        {
+          "name": "pen_position_m_L3",
+          "factor": "pen_position_m",
+          "level": 3,
+          "scales": {
+            "pen_position_m": 0.001
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.25,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.3529985845088959,
+          "min_height_delta_mm_p10": -0.19616447389125824,
+          "final_height_delta_mm_p10": 1.5657200813293457,
+          "handoff_margin_p90": -0.2852311432361603,
+          "failure_taxonomy": {
+            "no_TIM_transition": 94,
+            "axis_misaligned": 24,
+            "contact_force_overload": 4,
+            "recovered_strict": 1,
+            "penetration": 2,
+            "throw": 3
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L1",
+          "factor": "pen_rotation_rad",
+          "level": 1,
+          "scales": {
+            "pen_rotation_rad": 0.008726646259971648
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.65625,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.39082959294319153,
+          "min_height_delta_mm_p10": -0.10487176477909088,
+          "final_height_delta_mm_p10": 2.686037063598633,
+          "handoff_margin_p90": -0.05256654694676399,
+          "failure_taxonomy": {
+            "axis_misaligned": 68,
+            "no_TIM_transition": 41,
+            "recovered_strict": 4,
+            "contact_force_overload": 9,
+            "penetration": 5,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L2",
+          "factor": "pen_rotation_rad",
+          "level": 2,
+          "scales": {
+            "pen_rotation_rad": 0.017453292519943295
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.5703125,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.3704988658428192,
+          "min_height_delta_mm_p10": -0.12051723897457123,
+          "final_height_delta_mm_p10": 2.601970672607422,
+          "handoff_margin_p90": -0.08263704180717468,
+          "failure_taxonomy": {
+            "axis_misaligned": 50,
+            "no_TIM_transition": 54,
+            "contact_force_overload": 12,
+            "penetration": 5,
+            "throw": 3,
+            "recovered_strict": 4
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L3",
+          "factor": "pen_rotation_rad",
+          "level": 3,
+          "scales": {
+            "pen_rotation_rad": 0.03490658503988659
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.46875,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.38264700770378113,
+          "min_height_delta_mm_p10": -0.16527250409126282,
+          "final_height_delta_mm_p10": 2.375803232192993,
+          "handoff_margin_p90": -0.10767211765050888,
+          "failure_taxonomy": {
+            "recovered_strict": 3,
+            "no_TIM_transition": 68,
+            "contact_force_overload": 9,
+            "axis_misaligned": 44,
+            "penetration": 3,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L1",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 1,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.96875,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.369325190782547,
+          "min_height_delta_mm_p10": -0.11713020503520966,
+          "final_height_delta_mm_p10": 2.6156604290008545,
+          "handoff_margin_p90": -0.040576010942459106,
+          "failure_taxonomy": {
+            "axis_misaligned": 99,
+            "recovered_strict": 7,
+            "contact_force_overload": 13,
+            "penetration": 5,
+            "no_TIM_transition": 4
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L2",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 2,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.890625,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.364831805229187,
+          "min_height_delta_mm_p10": -0.0935431569814682,
+          "final_height_delta_mm_p10": 2.600201368331909,
+          "handoff_margin_p90": -0.031842976808547974,
+          "failure_taxonomy": {
+            "axis_misaligned": 87,
+            "recovered_strict": 7,
+            "contact_force_overload": 16,
+            "no_TIM_transition": 14,
+            "penetration": 3,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L3",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 3,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.875,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.3738262951374054,
+          "min_height_delta_mm_p10": -0.08327551186084747,
+          "final_height_delta_mm_p10": 2.6830196380615234,
+          "handoff_margin_p90": -0.02951354905962944,
+          "failure_taxonomy": {
+            "axis_misaligned": 89,
+            "contact_force_overload": 11,
+            "no_TIM_transition": 13,
+            "penetration": 6,
+            "throw": 2,
+            "recovered_strict": 7
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L1",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.9453125,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3552972972393036,
+          "min_height_delta_mm_p10": -0.1415461301803589,
+          "final_height_delta_mm_p10": 2.6549770832061768,
+          "handoff_margin_p90": -0.08036179095506668,
+          "failure_taxonomy": {
+            "axis_misaligned": 99,
+            "contact_force_overload": 13,
+            "recovered_strict": 4,
+            "no_TIM_transition": 6,
+            "penetration": 5,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L2",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.25
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.9140625,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3640221953392029,
+          "min_height_delta_mm_p10": -0.10738745331764221,
+          "final_height_delta_mm_p10": 2.6455469131469727,
+          "handoff_margin_p90": -0.06014031171798706,
+          "failure_taxonomy": {
+            "axis_misaligned": 89,
+            "contact_force_overload": 19,
+            "recovered_strict": 4,
+            "no_TIM_transition": 10,
+            "throw": 2,
+            "penetration": 4
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L3",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.5
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.90625,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.3795481324195862,
+          "min_height_delta_mm_p10": -0.0866081565618515,
+          "final_height_delta_mm_p10": 2.625141143798828,
+          "handoff_margin_p90": -0.023074259981513023,
+          "failure_taxonomy": {
+            "axis_misaligned": 98,
+            "contact_force_overload": 10,
+            "no_TIM_transition": 12,
+            "recovered_strict": 4,
+            "penetration": 3,
+            "throw": 1
+          }
+        },
+        {
+          "name": "target_context_rad_L1",
+          "factor": "target_context_rad",
+          "level": 1,
+          "scales": {
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.609375,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.3794277608394623,
+          "min_height_delta_mm_p10": -0.1012314110994339,
+          "final_height_delta_mm_p10": 2.7213549613952637,
+          "handoff_margin_p90": -0.11739114671945572,
+          "failure_taxonomy": {
+            "axis_misaligned": 66,
+            "no_TIM_transition": 48,
+            "contact_force_overload": 9,
+            "throw": 1,
+            "penetration": 4
+          }
+        },
+        {
+          "name": "target_context_rad_L2",
+          "factor": "target_context_rad",
+          "level": 2,
+          "scales": {
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.53125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.37976130843162537,
+          "min_height_delta_mm_p10": -0.09874477982521057,
+          "final_height_delta_mm_p10": 2.4716391563415527,
+          "handoff_margin_p90": -0.13688088953495026,
+          "failure_taxonomy": {
+            "no_TIM_transition": 58,
+            "axis_misaligned": 46,
+            "contact_force_overload": 17,
+            "throw": 4,
+            "penetration": 3
+          }
+        },
+        {
+          "name": "target_context_rad_L3",
+          "factor": "target_context_rad",
+          "level": 3,
+          "scales": {
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3515625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.35360538959503174,
+          "min_height_delta_mm_p10": -0.10624304413795471,
+          "final_height_delta_mm_p10": 1.889052152633667,
+          "handoff_margin_p90": -0.18651141226291656,
+          "failure_taxonomy": {
+            "no_TIM_transition": 82,
+            "axis_misaligned": 34,
+            "contact_force_overload": 8,
+            "penetration": 4
+          }
+        },
+        {
+          "name": "joint_L1",
+          "factor": "joint",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005,
+            "joint_velocity_rad_s": 0.02,
+            "pen_position_m": 0.00025,
+            "pen_rotation_rad": 0.008726646259971648,
+            "pen_linear_velocity_m_s": 0.005,
+            "pen_angular_velocity_rad_s": 0.1,
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3359375,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.35609742999076843,
+          "min_height_delta_mm_p10": -0.16257725656032562,
+          "final_height_delta_mm_p10": 1.8774011135101318,
+          "handoff_margin_p90": -0.1927107274532318,
+          "failure_taxonomy": {
+            "no_TIM_transition": 83,
+            "axis_misaligned": 27,
+            "contact_force_overload": 12,
+            "penetration": 4,
+            "throw": 1,
+            "recovered_strict": 1
+          }
+        },
+        {
+          "name": "joint_L2",
+          "factor": "joint",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01,
+            "joint_velocity_rad_s": 0.05,
+            "pen_position_m": 0.0005,
+            "pen_rotation_rad": 0.017453292519943295,
+            "pen_linear_velocity_m_s": 0.01,
+            "pen_angular_velocity_rad_s": 0.25,
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.31903448700904846,
+          "min_height_delta_mm_p10": -0.17783194780349731,
+          "final_height_delta_mm_p10": 1.574710726737976,
+          "handoff_margin_p90": -0.35799333453178406,
+          "failure_taxonomy": {
+            "no_TIM_transition": 97,
+            "contact_force_overload": 4,
+            "axis_misaligned": 18,
+            "penetration": 3,
+            "throw": 6
+          }
+        },
+        {
+          "name": "joint_L3",
+          "factor": "joint",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02,
+            "joint_velocity_rad_s": 0.1,
+            "pen_position_m": 0.001,
+            "pen_rotation_rad": 0.03490658503988659,
+            "pen_linear_velocity_m_s": 0.02,
+            "pen_angular_velocity_rad_s": 0.5,
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1171875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.109375,
+          "axis_alignment_median": 0.31870412826538086,
+          "min_height_delta_mm_p10": -0.2718232572078705,
+          "final_height_delta_mm_p10": 0.5093775391578674,
+          "handoff_margin_p90": -0.5470456480979919,
+          "failure_taxonomy": {
+            "no_TIM_transition": 99,
+            "contact_force_overload": 1,
+            "axis_misaligned": 14,
+            "penetration": 10,
+            "throw": 4
+          }
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "bank_id": 894,
+      "horizon_ms": 400.0,
+      "nominal_recovered_strict_rate": 0.0,
+      "joint_L1_rate": 0.0,
+      "joint_L2_rate": 0.0,
+      "joint_L3_rate": 0.0,
+      "plan_recovered": false,
+      "classification": "PLAN_RECOVERY_FAILED_BASIN_NOT_MEASURED",
+      "factor_widths": {
+        "joint_position_rad": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "joint_velocity_rad_s": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.02,
+            0.05,
+            0.1
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "pen_angular_velocity_rad_s": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.1,
+            0.25,
+            0.5
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "pen_linear_velocity_m_s": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.005,
+            0.01,
+            0.02
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "pen_position_m": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.00025,
+            0.0005,
+            0.001
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "pen_rotation_rad": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.008726646259971648,
+            0.017453292519943295,
+            0.03490658503988659
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        },
+        "target_context_rad": {
+          "rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scales": [
+            0.0025,
+            0.005,
+            0.01
+          ],
+          "largest_scale_at_absolute_10pct": null,
+          "largest_scale_at_half_nominal": null
+        }
+      },
+      "search_best_score": 14.965414047241211,
+      "scenario_results": [
+        {
+          "name": "nominal",
+          "factor": "nominal",
+          "level": 0,
+          "scales": {},
+          "episodes": 128,
+          "TIM_transition_rate": 0.4296875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3697808086872101,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.2969970703125,
+          "handoff_margin_p90": -0.22529810667037964,
+          "failure_taxonomy": {
+            "no_TIM_transition": 68,
+            "throw": 6,
+            "axis_misaligned": 54
+          }
+        },
+        {
+          "name": "joint_position_rad_L1",
+          "factor": "joint_position_rad",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.34528371691703796,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.9550628662109375,
+          "handoff_margin_p90": -0.36812078952789307,
+          "failure_taxonomy": {
+            "no_TIM_transition": 100,
+            "axis_misaligned": 23,
+            "contact_force_overload": 1,
+            "throw": 4
+          }
+        },
+        {
+          "name": "joint_position_rad_L2",
+          "factor": "joint_position_rad",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.0625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3166331350803375,
+          "min_height_delta_mm_p10": -0.012946873903274536,
+          "final_height_delta_mm_p10": 3.2262983322143555,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 115,
+            "axis_misaligned": 7,
+            "throw": 6
+          }
+        },
+        {
+          "name": "joint_position_rad_L3",
+          "factor": "joint_position_rad",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.0625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.09375,
+          "axis_alignment_median": 0.30455729365348816,
+          "min_height_delta_mm_p10": -0.4274163544178009,
+          "final_height_delta_mm_p10": 0.7129117250442505,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 111,
+            "throw": 9,
+            "ballistic": 1,
+            "axis_misaligned": 5,
+            "contact_loss": 1,
+            "penetration": 1
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L1",
+          "factor": "joint_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "joint_velocity_rad_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.4375,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.38352903723716736,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.399499893188477,
+          "handoff_margin_p90": -0.19153088331222534,
+          "failure_taxonomy": {
+            "axis_misaligned": 56,
+            "no_TIM_transition": 72
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L2",
+          "factor": "joint_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "joint_velocity_rad_s": 0.05
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3515625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3727125823497772,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.232787132263184,
+          "handoff_margin_p90": -0.24214714765548706,
+          "failure_taxonomy": {
+            "axis_misaligned": 45,
+            "no_TIM_transition": 82,
+            "throw": 1
+          }
+        },
+        {
+          "name": "joint_velocity_rad_s_L3",
+          "factor": "joint_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "joint_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.390625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.3694930970668793,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.233817100524902,
+          "handoff_margin_p90": -0.21126578748226166,
+          "failure_taxonomy": {
+            "axis_misaligned": 48,
+            "no_TIM_transition": 76,
+            "throw": 4
+          }
+        },
+        {
+          "name": "pen_position_m_L1",
+          "factor": "pen_position_m",
+          "level": 1,
+          "scales": {
+            "pen_position_m": 0.00025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.3634791374206543,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.2078680992126465,
+          "handoff_margin_p90": -0.2374214082956314,
+          "failure_taxonomy": {
+            "axis_misaligned": 37,
+            "no_TIM_transition": 84,
+            "throw": 7
+          }
+        },
+        {
+          "name": "pen_position_m_L2",
+          "factor": "pen_position_m",
+          "level": 2,
+          "scales": {
+            "pen_position_m": 0.0005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1640625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.35488638281822205,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.946631669998169,
+          "handoff_margin_p90": -0.33080393075942993,
+          "failure_taxonomy": {
+            "axis_misaligned": 21,
+            "no_TIM_transition": 104,
+            "throw": 3
+          }
+        },
+        {
+          "name": "pen_position_m_L3",
+          "factor": "pen_position_m",
+          "level": 3,
+          "scales": {
+            "pen_position_m": 0.001
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.0546875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.35037174820899963,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.714892864227295,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 115,
+            "axis_misaligned": 7,
+            "throw": 4,
+            "penetration": 2
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L1",
+          "factor": "pen_rotation_rad",
+          "level": 1,
+          "scales": {
+            "pen_rotation_rad": 0.008726646259971648
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.4140625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.3641970157623291,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.152474403381348,
+          "handoff_margin_p90": -0.2175176441669464,
+          "failure_taxonomy": {
+            "axis_misaligned": 51,
+            "no_TIM_transition": 73,
+            "throw": 4
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L2",
+          "factor": "pen_rotation_rad",
+          "level": 2,
+          "scales": {
+            "pen_rotation_rad": 0.017453292519943295
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3203125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.37059104442596436,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.178470611572266,
+          "handoff_margin_p90": -0.23135140538215637,
+          "failure_taxonomy": {
+            "axis_misaligned": 38,
+            "no_TIM_transition": 86,
+            "throw": 4
+          }
+        },
+        {
+          "name": "pen_rotation_rad_L3",
+          "factor": "pen_rotation_rad",
+          "level": 3,
+          "scales": {
+            "pen_rotation_rad": 0.03490658503988659
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.2421875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.3567519187927246,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.055479526519775,
+          "handoff_margin_p90": -0.27600133419036865,
+          "failure_taxonomy": {
+            "no_TIM_transition": 95,
+            "axis_misaligned": 31,
+            "throw": 2
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L1",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 1,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.4375,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3846168518066406,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.309290409088135,
+          "handoff_margin_p90": -0.18512500822544098,
+          "failure_taxonomy": {
+            "no_TIM_transition": 72,
+            "axis_misaligned": 55,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L2",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 2,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.34375,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.38008323311805725,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.1906046867370605,
+          "handoff_margin_p90": -0.21373005211353302,
+          "failure_taxonomy": {
+            "no_TIM_transition": 83,
+            "axis_misaligned": 41,
+            "throw": 3,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_L3",
+          "factor": "pen_linear_velocity_m_s",
+          "level": 3,
+          "scales": {
+            "pen_linear_velocity_m_s": 0.02
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3775995075702667,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.340216636657715,
+          "handoff_margin_p90": -0.22502154111862183,
+          "failure_taxonomy": {
+            "no_TIM_transition": 88,
+            "axis_misaligned": 39,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L1",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 1,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.1
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3671875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.3788364827632904,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.23272705078125,
+          "handoff_margin_p90": -0.19071264564990997,
+          "failure_taxonomy": {
+            "no_TIM_transition": 81,
+            "axis_misaligned": 46,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L2",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 2,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.25
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.453125,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3593449592590332,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.235330581665039,
+          "handoff_margin_p90": -0.25264835357666016,
+          "failure_taxonomy": {
+            "axis_misaligned": 58,
+            "no_TIM_transition": 69,
+            "throw": 1
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_L3",
+          "factor": "pen_angular_velocity_rad_s",
+          "level": 3,
+          "scales": {
+            "pen_angular_velocity_rad_s": 0.5
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.4140625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.3466843366622925,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.131767749786377,
+          "handoff_margin_p90": -0.29053622484207153,
+          "failure_taxonomy": {
+            "axis_misaligned": 51,
+            "no_TIM_transition": 73,
+            "throw": 4
+          }
+        },
+        {
+          "name": "target_context_rad_L1",
+          "factor": "target_context_rad",
+          "level": 1,
+          "scales": {
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.3638141453266144,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 4.206979751586914,
+          "handoff_margin_p90": -0.30770623683929443,
+          "failure_taxonomy": {
+            "no_TIM_transition": 87,
+            "axis_misaligned": 37,
+            "throw": 3,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "target_context_rad_L2",
+          "factor": "target_context_rad",
+          "level": 2,
+          "scales": {
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.15625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.3569614589214325,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.9064865112304688,
+          "handoff_margin_p90": -0.3611975312232971,
+          "failure_taxonomy": {
+            "no_TIM_transition": 104,
+            "axis_misaligned": 19,
+            "throw": 5
+          }
+        },
+        {
+          "name": "target_context_rad_L3",
+          "factor": "target_context_rad",
+          "level": 3,
+          "scales": {
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1640625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0234375,
+          "axis_alignment_median": 0.3418194353580475,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.966813564300537,
+          "handoff_margin_p90": -0.35833996534347534,
+          "failure_taxonomy": {
+            "no_TIM_transition": 104,
+            "axis_misaligned": 21,
+            "throw": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "factor": "joint",
+          "level": 1,
+          "scales": {
+            "joint_position_rad": 0.005,
+            "joint_velocity_rad_s": 0.02,
+            "pen_position_m": 0.00025,
+            "pen_rotation_rad": 0.008726646259971648,
+            "pen_linear_velocity_m_s": 0.005,
+            "pen_angular_velocity_rad_s": 0.1,
+            "target_context_rad": 0.0025
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.1015625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0546875,
+          "axis_alignment_median": 0.3419545888900757,
+          "min_height_delta_mm_p10": 0.0,
+          "final_height_delta_mm_p10": 3.9448812007904053,
+          "handoff_margin_p90": -0.8916460275650024,
+          "failure_taxonomy": {
+            "no_TIM_transition": 108,
+            "axis_misaligned": 13,
+            "throw": 7
+          }
+        },
+        {
+          "name": "joint_L2",
+          "factor": "joint",
+          "level": 2,
+          "scales": {
+            "joint_position_rad": 0.01,
+            "joint_velocity_rad_s": 0.05,
+            "pen_position_m": 0.0005,
+            "pen_rotation_rad": 0.017453292519943295,
+            "pen_linear_velocity_m_s": 0.01,
+            "pen_angular_velocity_rad_s": 0.25,
+            "target_context_rad": 0.005
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.015625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.32900938391685486,
+          "min_height_delta_mm_p10": -0.0032402577344328165,
+          "final_height_delta_mm_p10": 3.232131242752075,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 122,
+            "throw": 5,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L3",
+          "factor": "joint",
+          "level": 3,
+          "scales": {
+            "joint_position_rad": 0.02,
+            "joint_velocity_rad_s": 0.1,
+            "pen_position_m": 0.001,
+            "pen_rotation_rad": 0.03490658503988659,
+            "pen_linear_velocity_m_s": 0.02,
+            "pen_angular_velocity_rad_s": 0.5,
+            "target_context_rad": 0.01
+          },
+          "episodes": 128,
+          "TIM_transition_rate": 0.09375,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.3073973059654236,
+          "min_height_delta_mm_p10": -0.4257276654243469,
+          "final_height_delta_mm_p10": 0.22863708436489105,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "axis_misaligned": 9,
+            "no_TIM_transition": 102,
+            "throw": 4,
+            "contact_force_overload": 2,
+            "contact_loss": 5,
+            "penetration": 6
+          }
+        }
+      ],
+      "rank": 3
+    }
+  ],
+  "joint_L2_failure_taxonomy_plan_recovered_only": {
+    "axis_misaligned": 49,
+    "throw": 11,
+    "recovered_strict": 7,
+    "no_TIM_transition": 182,
+    "contact_force_overload": 4,
+    "penetration": 3
+  },
+  "interpretation": "The audit re-finds each CEM plan in memory and measures fixed-plan replay under reset-state perturbations. It is a lower bound on local open-loop robustness, not a closed-loop policy attractor estimate. A zero nominal rate means plan recovery failed in this independent search and leaves the basin unmeasured; it is not evidence of dynamics unreachability. Contact force is recomputed after contact rebuild rather than directly perturbed.",
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "action_plan_serialized": false,
+    "reset_dataset_generated": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "dex5-s0.10-bc-interface-smoke-v1",
+  "status": "PASS",
+  "dataset": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/student_bc_dataset.npz",
+  "seed": 20260802,
+  "model": {
+    "input_dimension": 340,
+    "hidden_dimensions": [
+      256,
+      256
+    ],
+    "output_dimension": 20,
+    "output_activation": "tanh",
+    "parameter_count": 158228
+  },
+  "batch_size": 256,
+  "train_mse_smoke": 0.06534991413354874,
+  "validation_mse_smoke": 0.07101523876190186,
+  "checks": {
+    "train_input_shape": [
+      256,
+      340
+    ],
+    "train_output_shape": [
+      256,
+      20
+    ],
+    "validation_output_shape": [
+      256,
+      20
+    ],
+    "train_output_finite": true,
+    "validation_output_finite": true,
+    "train_loss_finite": true,
+    "validation_loss_finite": true,
+    "output_bounded": true
+  },
+  "backward_called": false,
+  "optimizer_created": false,
+  "optimizer_step_performed": false,
+  "checkpoint_written": false,
+  "training_status": "INTERFACE_SMOKE_ONLY"
+}

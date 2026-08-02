@@ -1,0 +1,60 @@
+{
+  "asset_path": "isaac/assets/dex5_hand.usd",
+  "environment_version": "dex5-index-near-surface-physics-v9@2026-07-29",
+  "physics_version": "Isaac-Sim-5.1.0/PhysX",
+  "physics": {
+    "mass": 0.0094,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.45,
+    "com_offset": [0.00935, 0.0, 0.0],
+    "physics_dt": 0.008333333333333333,
+    "control_dt": 0.016666666666666666,
+    "solver_position_iterations": 12,
+    "solver_velocity_iterations": 2,
+    "contact_offset": 0.001,
+    "rest_offset": 0.0
+  },
+  "sources": [
+    {
+      "canonical_id": "C1",
+      "state_type": "static",
+      "source_label": "validated P1 stable initial grasp",
+      "path": "reports/m3_2_30_index_near_surface/p1_p2_reset_bank/P1_P2_reset_bank_phase1最终validated自复验_validated.npz",
+      "phase_id": 1
+    },
+    {
+      "canonical_id": "C2",
+      "state_type": "dynamic",
+      "source_label": "P1-P2 robust-core rotation pre-transition frontier",
+      "path": "reports/m3_2_30_index_near_surface/p1_p2_reset_bank/reverse_curriculum/P2鲁棒核心61_H6冠军首次退出前沿_1024.npz"
+    },
+    {
+      "canonical_id": "C3",
+      "state_type": "dynamic",
+      "source_label": "P3 contact exchange with saved continuation",
+      "path": "reports/m3_2_30_index_near_surface/v9_approach20_hist8640_continuous_formal4096.npz",
+      "format": "trajectory",
+      "stage_id": 2,
+      "selection": "first",
+      "continuation_control_steps": 8
+    },
+    {
+      "canonical_id": "C4",
+      "state_type": "dynamic",
+      "source_label": "low-speed braked-capture 42-to-45 degree entry",
+      "path": "reports/m3_2_30_index_near_surface/v9_continuous_p3_braked_p4_teacher200_diverse_report_42_to_45_teacher_entry_bundle.npz"
+    },
+    {
+      "canonical_id": "C5",
+      "state_type": "dynamic",
+      "source_label": "rear-half thumb-index capture exchange",
+      "path": "reports/m3_2_30_index_near_surface/p4_p5_curriculum/upstream_capture_learned_success_cache_1200.npz"
+    },
+    {
+      "canonical_id": "C6",
+      "state_type": "dynamic",
+      "source_label": "thumb-index pinch cycle-reset entry",
+      "path": "reports/m3_2_30_index_near_surface/p4_p5_curriculum/full_capture_teacher_success_cache_gain001.npz"
+    }
+  ]
+}

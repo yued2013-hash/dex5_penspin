@@ -1,0 +1,17 @@
+{
+  "bank_id": 996,
+  "steps": 120,
+  "max_height_loss_mm": 65.34939142875373,
+  "final_angle_deg": 222.460268848284,
+  "max_no_contact_steps": 22,
+  "final_contact": {
+    "thumb": false,
+    "index": false,
+    "middle": false,
+    "ring": false,
+    "pinky": false
+  },
+  "artifact_role": "visualization_only_not_teacher_not_reset",
+  "render_backend": "software",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-08-01_21-23-42_ppo_torch_o1_22_A_uniform_P3_budget60/checkpoints/agent_1440.pt"
+}

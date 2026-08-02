@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "num_envs": 96,
+  "steps": 240,
+  "finite": true,
+  "termination_mode": "fixed_horizon",
+  "terminal_failure_penalty_scale": 0.0,
+  "failure_grace_steps": 12,
+  "return_order_pass": true,
+  "controllers": {
+    "zero": {
+      "completed_episodes": 64,
+      "mean_return": -18.198693031212315,
+      "min_return": -133.3819580078125,
+      "max_return": 10.985573768615723,
+      "mean_episode_steps": 119.0,
+      "terminated": 0,
+      "truncated": 64
+    },
+    "random": {
+      "completed_episodes": 64,
+      "mean_return": -152.2126176506281,
+      "min_return": -580.476318359375,
+      "max_return": -11.564043998718262,
+      "mean_episode_steps": 119.0,
+      "terminated": 0,
+      "truncated": 64
+    },
+    "intentional_release": {
+      "completed_episodes": 64,
+      "mean_return": -664.4836597442627,
+      "min_return": -759.074462890625,
+      "max_return": -624.4767456054688,
+      "mean_episode_steps": 119.0,
+      "terminated": 0,
+      "truncated": 64
+    }
+  },
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+}

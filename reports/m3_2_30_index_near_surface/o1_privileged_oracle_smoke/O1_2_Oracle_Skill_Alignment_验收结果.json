@@ -1,0 +1,41 @@
+{
+  "phase": "O1.2 Oracle Skill Alignment",
+  "implementation_status": "PASS",
+  "reliable_finger_gait_status": "FAIL",
+  "acceptance_qualified_gait_gt_zero": false,
+  "best_diagnostic_candidate": {
+    "name": "P3-only penalty60",
+    "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-07-30_21-39-20_ppo_torch_o1_2_P3Only_penalty60/checkpoints/agent_1440.pt",
+    "completed_episodes": 512,
+    "raw_gait_rate": 0.3515625,
+    "qualified_gait_rate": 0.0,
+    "raw_over_180deg_rate": 0.998046875,
+    "qualified_over_180deg_rate": 0.0,
+    "failure_rate": 0.548828125,
+    "ballistic_rate": 0.001953125,
+    "contact_loss_rate": 0.005859375,
+    "drop_rate": 0.54296875,
+    "middle_gait_rate": 0.34765625,
+    "thumb_break_rate": 1.0,
+    "thumb_recontact_rate": 0.0,
+    "mean_directional_axis_alignment": 0.5526498556137085,
+    "max_penetration_mm": 0.23212376981973648
+  },
+  "negative_ablation": {
+    "name": "P3Axis60",
+    "qualified_gait_rate": 0.0,
+    "failure_rate": 1.0,
+    "ballistic_rate": 0.9694989106753813,
+    "contact_loss_rate": 0.966884531590414,
+    "interpretation": "Increasing axis-quality and height reward restored high-speed contact-loss exploitation."
+  },
+  "constraints": {
+    "o0_modified": false,
+    "teacher_generated": false,
+    "large_scale_training": false,
+    "max_num_envs": 256,
+    "max_iterations_per_run": 60,
+    "seed_count": 1,
+    "o0_bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "classification": "TRANSITION_ACTIVITY_UP_HANDOFF_NOT_LEARNED",
+  "matched_contract": {
+    "p3_only": true,
+    "seed": 20260730,
+    "num_envs": 256,
+    "iterations": 60,
+    "rollout_steps": 1440,
+    "transitions": 368640,
+    "reward_equal": true,
+    "bank_hash_equal": true
+  },
+  "baseline": {
+    "raw_gait_rate": 0.13454545454545455,
+    "qualified_gait_rate": 0.0,
+    "support_handoff_rate": 0.0,
+    "thumb_gait_rate": 0.0036363636363636364,
+    "index_gait_rate": 0.0,
+    "middle_gait_rate": 0.13090909090909092,
+    "height_recovery_rate": 0.0,
+    "height_drop_rate": 0.9945454545454545,
+    "tim_overlap_ratio": 0.975603360262784,
+    "failure_rate": 0.8527272727272728,
+    "ballistic_rate": 0.0
+  },
+  "temporal": {
+    "raw_gait_rate": 0.9371196754563894,
+    "qualified_gait_rate": 0.0,
+    "support_handoff_rate": 0.0,
+    "thumb_gait_rate": 0.20182555780933062,
+    "index_gait_rate": 0.7565922920892495,
+    "middle_gait_rate": 0.6348884381338742,
+    "height_recovery_rate": 0.0,
+    "height_drop_rate": 1.0,
+    "tim_overlap_ratio": 0.5007937355892653,
+    "failure_rate": 1.0,
+    "ballistic_rate": 0.037525354969574036
+  },
+  "temporal_minus_baseline": {
+    "raw_gait_rate": 0.8025742209109349,
+    "qualified_gait_rate": 0.0,
+    "support_handoff_rate": 0.0,
+    "thumb_gait_rate": 0.198189194172967,
+    "index_gait_rate": 0.7565922920892495,
+    "middle_gait_rate": 0.5039793472247833,
+    "height_recovery_rate": 0.0,
+    "height_drop_rate": 0.00545454545454549,
+    "tim_overlap_ratio": -0.4748096246735187,
+    "failure_rate": 0.14727272727272722,
+    "ballistic_rate": 0.037525354969574036
+  },
+  "interpretation": "Temporal privileged observations greatly increase debounced contact transitions, but do not produce qualified gait, valid support handoff, or height recovery under the frozen objective.",
+  "source": {
+    "baseline": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_5_baseline_P3Only_budget60_eval256.json",
+    "temporal": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_5_temporal_P3Only_budget60_eval256.json"
+  }
+}

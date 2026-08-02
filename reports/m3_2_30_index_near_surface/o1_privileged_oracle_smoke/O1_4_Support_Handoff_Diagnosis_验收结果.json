@@ -1,0 +1,110 @@
+{
+  "status": "DIAGNOSIS_PASS_ORACLE_NOT_PASS",
+  "phase": "O1.4 Support Handoff Diagnosis",
+  "constraints": {
+    "o0_modified": false,
+    "teacher_created": false,
+    "training_run": false,
+    "large_scale_run": false
+  },
+  "protocol": {
+    "episodes_per_condition": 256,
+    "fixed_horizon_steps": 120,
+    "control_dt_s": 0.016666666666666666,
+    "contact_debounce_steps": 3,
+    "matched_unique_bank_rows": 196,
+    "height_loss_threshold_mm": 5.0,
+    "height_recovery_threshold_mm": 2.0,
+    "o0_bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+  },
+  "conditions": {
+    "zero_action_control": {
+      "stable_support_rate": 1.0,
+      "height_loss_rate": 0.0,
+      "minimum_height_delta_mean_mm": -0.37010280357208103,
+      "tim_overlap_rate": 1.0,
+      "max_zero_tim_run_median_steps": 0.0
+    },
+    "o1_2_penalty60": {
+      "height_loss_rate": 1.0,
+      "ballistic_rate": 0.0625,
+      "thumb_break_rate": 1.0,
+      "thumb_recontact_rate": 0.0,
+      "middle_break_rate": 0.70703125,
+      "middle_recontact_rate": 0.515625,
+      "first_5mm_drop_median_step": 56.0,
+      "minimum_height_delta_mean_mm": -48.52034110808745,
+      "tim_overlap_rate_mean": 0.8249348958333333,
+      "max_zero_tim_run_median_steps": 0.0,
+      "pre_drop_tim_force_median_n": 0.16109995543956757,
+      "post_drop_tim_force_median_n": 0.17085744440555573,
+      "pre_drop_vertical_force_median_n": 0.04451129399240017,
+      "post_drop_vertical_force_median_n": 0.04877790808677673,
+      "mechanism": "premature thumb unloading followed by directionally ineffective index-middle support"
+    },
+    "o1_3_p3state60": {
+      "height_loss_rate": 1.0,
+      "ballistic_rate": 0.65234375,
+      "thumb_break_rate": 1.0,
+      "thumb_recontact_rate": 0.79296875,
+      "index_break_rate": 1.0,
+      "index_recontact_rate": 0.9609375,
+      "middle_break_rate": 1.0,
+      "middle_recontact_rate": 0.10546875,
+      "first_5mm_drop_median_step": 10.0,
+      "minimum_height_delta_mean_mm": -26.839409532840364,
+      "tim_overlap_rate_mean": 0.11809895833333334,
+      "max_zero_tim_run_median_steps": 77.0,
+      "pre_drop_tim_force_median_n": 2.292489171028137,
+      "post_drop_tim_force_median_n": 0.045879065990448,
+      "pre_drop_wrong_axis_speed_median_rad_s": 5.213565111160278,
+      "post_drop_wrong_axis_speed_median_rad_s": 6.196450710296631,
+      "mechanism": "synchronized TIM support collapse followed by late non-recovering recontacts"
+    }
+  },
+  "failure_taxonomy": [
+    {
+      "id": "H1",
+      "name": "premature_thumb_unloading",
+      "evidence": "supported",
+      "affected": ["O1.2", "O1.3"]
+    },
+    {
+      "id": "H2",
+      "name": "two_finger_contact_without_effective_support_wrench",
+      "evidence": "supported",
+      "affected": ["O1.2"]
+    },
+    {
+      "id": "H3",
+      "name": "synchronized_TIM_force_collapse",
+      "evidence": "supported",
+      "affected": ["O1.3"]
+    },
+    {
+      "id": "H4",
+      "name": "late_recontact_without_height_recovery",
+      "evidence": "supported",
+      "affected": ["O1.2", "O1.3"]
+    },
+    {
+      "id": "H5",
+      "name": "ballistic_wrong_axis_motion",
+      "evidence": "supported",
+      "affected": ["O1.3"]
+    }
+  ],
+  "causal_assessment": {
+    "handoff_dynamics_unreachable": "NOT_SUPPORTED_BY_CURRENT_EVIDENCE",
+    "reward_or_temporal_credit_insufficient": "SUPPORTED_AS_LEADING_EXPLANATION",
+    "reset_distribution_insufficient": "NOT_SUPPORTED_AS_PRIMARY_CAUSE",
+    "qualification": "The diagnostic does not prove global reachability or isolate reward from optimization and representation limits."
+  },
+  "force_note": "Reported wrench values are fingertip sensor force/lever-arm proxies, not an exact reconstructed object contact wrench.",
+  "artifacts": {
+    "zero_action_json": "o1_4_handoff_zero_P3_256x120.json",
+    "o1_2_json": "o1_4_handoff_O1_2_penalty60_256x120.json",
+    "o1_3_json": "o1_4_handoff_O1_3_P3State60_256x120.json",
+    "comparison_plot": "O1_4_Support_Handoff_中位时间序列.png"
+  }
+}

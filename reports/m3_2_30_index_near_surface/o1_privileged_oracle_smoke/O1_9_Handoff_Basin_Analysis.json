@@ -1,0 +1,99 @@
+{
+  "status": "PARTIAL_PREREQUISITE_FAILED",
+  "artifact_role": "diagnostic_basin_analysis_not_training_data",
+  "conclusion": "INCONCLUSIVE_NO_STRICT_FEASIBLE_LABELS",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "o1_8_feasible_rate": 0.0,
+  "labeled_bank_ids": [
+    771,
+    817,
+    857,
+    900,
+    948,
+    996,
+    1040,
+    1083,
+    1130,
+    1175,
+    1216,
+    1252
+  ],
+  "labels_feasible": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "near_feasible_bank_ids": [
+    996
+  ],
+  "feature_schema": {
+    "total_features": 66,
+    "active_features": 56,
+    "groups": {
+      "geometry": "oracle observes fingertip position relative to the pen",
+      "wrench": "oracle observes per-finger 3-D contact force and force norm",
+      "pen_pose": "oracle observes pen pose/axis",
+      "velocity": "oracle observes pen linear and angular velocity",
+      "support_margin": "derived from observed contact force, geometry, and known gravity"
+    }
+  },
+  "classifier": {
+    "status": "NOT_IDENTIFIABLE_ONE_CLASS",
+    "reason": "Corrected O1.8 has 0 strict feasible and 12 infeasible labels; ROC AUC, balanced feasibility classification, and basin probability extrapolation are undefined.",
+    "model_generated": false
+  },
+  "canonical_coverage_gap": {
+    "P3_train_rows": 396,
+    "P3_train_unique_parents": 352,
+    "P3_train_unique_sources": 219,
+    "CEM_labeled_rows": 12,
+    "CEM_labeled_row_fraction": 0.030303030303030304,
+    "CEM_labeled_unique_parents": 12,
+    "CEM_labeled_unique_sources": 12,
+    "strict_feasible_rows": 0,
+    "near_feasible_axis_only_rows": 1,
+    "distance_to_nearest_audited_reset_rms_z": {
+      "p50": 0.6448874978738812,
+      "p95": 1.1044712084420132,
+      "max": 2.21434662761953
+    },
+    "audit_feature_span_ratio": {
+      "p50": 0.652257042985162,
+      "p95": 0.8311461923775263,
+      "max": 0.9876072580642159
+    },
+    "canonical_coverage_gap": "Only 12/396 P3-train rows have corrected CEM outcomes, and none is strictly feasible. Coverage of feasibility labels, not O0 state count, is the current gap."
+  },
+  "diagnosis": {
+    "primary": "INCONCLUSIVE_NO_STRICT_FEASIBLE_LABELS",
+    "A_reset_distribution_coverage_insufficient": {
+      "status": "UNRESOLVED",
+      "evidence": "The corrected audit has no positive state, while only 3.03% of P3-train rows were searched. This cannot distinguish an absent basin from an unaudited narrow basin."
+    },
+    "B_exploration_difficult": {
+      "status": "UNRESOLVED_BUT_PLAUSIBLE",
+      "evidence": "The 4x expanded CEM budget also found zero strict candidates, but one safe TIM transition missed only axis alignment in the formal run. Search difficulty remains plausible, not proven."
+    },
+    "C_representation_problem": {
+      "status": "NOT_TESTABLE_WITH_ONE_CLASS",
+      "evidence": "All requested raw feature families are observable by the oracle, but no positive label exists for a feasibility classifier.",
+      "remaining_uncertainty": "Network capacity, temporal encoding, and optimization limitations remain outside this initial-state coverage audit."
+    }
+  },
+  "constraints": {
+    "ppo_trained": false,
+    "reward_modified": false,
+    "teacher_generated": false,
+    "o0_modified": false,
+    "trajectory_exported": false
+  }
+}

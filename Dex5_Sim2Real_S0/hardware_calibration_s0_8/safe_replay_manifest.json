@@ -1,0 +1,13 @@
+{
+  "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/real_replay_package/open_loop_commands_100hz.npz",
+  "source_sha256": "958805cf90f2e45b6359798b57d6dc22ad8cb8c864e42b68d5d609334910e363",
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_calibration_s0_8/open_loop_commands_100hz_speed_safe.npz",
+  "output_sha256": "60a97c8d7a1aa017ecf80230991b954d251c8d80c524ede6c76917a7bd26dbc8",
+  "trajectory_count": 20,
+  "command_rows": 7891,
+  "command_hz": 100.0,
+  "maximum_delta_rad": 0.0007997751235961914,
+  "maximum_velocity_rad_s": 0.07997751235961914,
+  "speed_gate_rad_s": 0.08,
+  "powered_replay_executed": false
+}

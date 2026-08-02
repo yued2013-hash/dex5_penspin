@@ -1,0 +1,31 @@
+{
+  "schema": "dex5-s0.11-output-validation-v1",
+  "status": "PASS",
+  "checks": {
+    "checkpoint_schema": true,
+    "checkpoint_hash_matches_training_report": true,
+    "checkpoint_dataset_hash_matches_training_report": true,
+    "non_privileged_checkpoint": true,
+    "observation_dimension_340": true,
+    "action_dimension_20": true,
+    "overfit_gate_pass": true,
+    "frozen_episode_counts": true,
+    "evaluation_complete": true,
+    "evaluation_197_episodes": true,
+    "taxonomy_covers_all_episodes": true,
+    "success_count_recomputed": true,
+    "rotation_rate_recomputed": true,
+    "hold_rate_recomputed": true,
+    "policy_did_not_read_oracle": true,
+    "no_hardware_commands": true,
+    "penetration_below_0_5mm": true
+  },
+  "metrics": {
+    "successes": 152,
+    "episodes": 197,
+    "rotation_30deg_count": 184,
+    "hold_150ms_count": 152,
+    "taxonomy_total": 197,
+    "maximum_penetration_mm": 0.22426526993513107
+  }
+}

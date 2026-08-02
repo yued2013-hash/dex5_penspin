@@ -1,0 +1,120 @@
+{
+  "schema": "dex5-s0.9.4-quaternion-rollout-audit-v1",
+  "success_contract": {
+    "actual_target_rotation_deg": [
+      30.0,
+      40.0
+    ],
+    "minimum_axis_alignment": 0.7,
+    "maximum_target_speed_rad_s": 2.5,
+    "maximum_wrong_axis_speed_rad_s": 2.0,
+    "maximum_height_loss_m": 0.005,
+    "required_contacts": [
+      "thumb",
+      "index",
+      "middle"
+    ],
+    "forbidden_contacts": [
+      "ring",
+      "pinky"
+    ],
+    "hold_steps": 9,
+    "hold_duration_ms_at_60hz": 150.0
+  },
+  "evaluations": [
+    {
+      "input": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/quaternion_objective_s0_9_4/quaternion_success_rollouts_1200.npz",
+      "episodes": 1200,
+      "corrected_successes": 1200,
+      "max_target_rotation_deg": 41.813028814573606,
+      "p95_target_rotation_deg": 38.38390257735145,
+      "median_target_rotation_deg": 35.18066355346338,
+      "episodes_at_least_30_deg": 1200,
+      "episodes_with_150ms_gate_hold": 1200,
+      "maximum_gate_hold_steps": 10,
+      "p95_gate_hold_steps": 10.0,
+      "episodes_with_any_gate_hold": 1200,
+      "gate_seen_episode_counts": {
+        "angle_and_axis": 1200,
+        "target_speed": 1200,
+        "wrong_axis_speed": 1200,
+        "height": 1200,
+        "tim_contact": 1200,
+        "no_ring_or_pinky": 1200
+      },
+      "episodes_with_prior_forbidden_transition": 825,
+      "top_progress_episodes": [
+        {
+          "episode_id": 22,
+          "max_target_rotation_deg": 41.813028814573606,
+          "axis_alignment_at_max": 0.8481019454108986,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 855,
+          "max_target_rotation_deg": 40.83221509692303,
+          "axis_alignment_at_max": 0.8532924842760186,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 406,
+          "max_target_rotation_deg": 40.78657507821531,
+          "axis_alignment_at_max": 0.8338300248369717,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 35,
+          "max_target_rotation_deg": 40.35709445187967,
+          "axis_alignment_at_max": 0.8363686009035817,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 77,
+          "max_target_rotation_deg": 40.204785391043714,
+          "axis_alignment_at_max": 0.8486859495714206,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 961,
+          "max_target_rotation_deg": 40.14137136976073,
+          "axis_alignment_at_max": 0.8488520597566761,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 757,
+          "max_target_rotation_deg": 40.021387520901726,
+          "axis_alignment_at_max": 0.8309453398276031,
+          "longest_gate_hold_steps": 9,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 405,
+          "max_target_rotation_deg": 39.960890059074856,
+          "axis_alignment_at_max": 0.8640699910414563,
+          "longest_gate_hold_steps": 10,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 911,
+          "max_target_rotation_deg": 39.91898708953097,
+          "axis_alignment_at_max": 0.7904852084269072,
+          "longest_gate_hold_steps": 10,
+          "corrected_success": true
+        },
+        {
+          "episode_id": 915,
+          "max_target_rotation_deg": 39.85072091641606,
+          "axis_alignment_at_max": 0.837333797544137,
+          "longest_gate_hold_steps": 10,
+          "corrected_success": true
+        }
+      ]
+    }
+  ]
+}

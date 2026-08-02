@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "artifact_role": "reachability_summary_only_not_teacher_or_training_data",
+  "conclusion": "A_UNREACHABLE_WITHIN_AUDITED_BOUNDS",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "seed": 20260730,
+  "states": 2,
+  "population": 8,
+  "iterations": 2,
+  "elite_fraction": 0.2,
+  "waypoints": 3,
+  "horizons_steps": [
+    6
+  ],
+  "control_dt_s": 0.016666666666666666,
+  "num_envs": 16,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "source_bank_ids": [
+    771,
+    1252
+  ],
+  "feasible_states": 0,
+  "feasible_rate": 0.0,
+  "failure_taxonomy": {
+    "no_TIM_transition": 2
+  },
+  "handoff_margin": {
+    "best": 0.09183001518249512,
+    "median": -0.1283852458000183,
+    "minimum": -0.1283852458000183
+  },
+  "feasibility_gate": {
+    "TIM_release_recontact_debounce_steps": 3,
+    "new_support_gain_n": 0.03,
+    "old_support_unload_n": 0.03,
+    "minimum_total_contact_force_n": 0.06,
+    "maximum_height_loss_mm": 5.0,
+    "minimum_axis_alignment": 0.5,
+    "minimum_axis_moving_steps": 2,
+    "minimum_TIM_overlap": 0.8,
+    "no_ballistic_contact_loss_penetration_drop_or_invalid": true
+  },
+  "selected_state_results": [
+    {
+      "score": 10.814238548278809,
+      "feasible": false,
+      "handoff_margin": -0.1283852458000183,
+      "tim_gait": false,
+      "tim_overlap": 1.0,
+      "new_support_gain_n": 2.5423595905303955,
+      "old_support_unload_n": 0.8168199062347412,
+      "min_total_force_n": 1.202303171157837,
+      "min_height_delta_mm": -0.28688088059425354,
+      "axis_alignment": 0.43580737709999084,
+      "axis_steps": 6,
+      "ballistic": false,
+      "contact_loss": false,
+      "penetration": false,
+      "drop": false,
+      "invalid": false,
+      "primary_failure": "no_TIM_transition",
+      "state_index": 0,
+      "bank_id": 771,
+      "selected_horizon_steps": 6
+    },
+    {
+      "score": 11.061576843261719,
+      "feasible": false,
+      "handoff_margin": 0.09183001518249512,
+      "tim_gait": false,
+      "tim_overlap": 1.0,
+      "new_support_gain_n": 1.832207202911377,
+      "old_support_unload_n": 0.3586035966873169,
+      "min_total_force_n": 3.759571075439453,
+      "min_height_delta_mm": -0.15126913785934448,
+      "axis_alignment": 0.5459150075912476,
+      "axis_steps": 6,
+      "ballistic": false,
+      "contact_loss": false,
+      "penetration": false,
+      "drop": false,
+      "invalid": false,
+      "primary_failure": "no_TIM_transition",
+      "state_index": 1,
+      "bank_id": 1252,
+      "selected_horizon_steps": 6
+    }
+  ],
+  "horizons": [
+    {
+      "horizon_steps": 6,
+      "horizon_ms": 100.0,
+      "feasible_states": 0,
+      "feasible_rate": 0.0,
+      "best_handoff_margin": 0.09183001518249512,
+      "median_handoff_margin": -0.1283852458000183,
+      "history": [
+        {
+          "iteration": 1,
+          "best_score": 9.727764129638672,
+          "population_feasible_rate": 0.0
+        },
+        {
+          "iteration": 2,
+          "best_score": 11.057565689086914,
+          "population_feasible_rate": 0.0
+        }
+      ],
+      "states": [
+        {
+          "score": 10.814238548278809,
+          "feasible": false,
+          "handoff_margin": -0.1283852458000183,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.5423595905303955,
+          "old_support_unload_n": 0.8168199062347412,
+          "min_total_force_n": 1.202303171157837,
+          "min_height_delta_mm": -0.28688088059425354,
+          "axis_alignment": 0.43580737709999084,
+          "axis_steps": 6,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 771
+        },
+        {
+          "score": 11.061576843261719,
+          "feasible": false,
+          "handoff_margin": 0.09183001518249512,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.832207202911377,
+          "old_support_unload_n": 0.3586035966873169,
+          "min_total_force_n": 3.759571075439453,
+          "min_height_delta_mm": -0.15126913785934448,
+          "axis_alignment": 0.5459150075912476,
+          "axis_steps": 6,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 1,
+          "bank_id": 1252
+        }
+      ]
+    }
+  ],
+  "limitations": "A zero feasible rate establishes practical non-reachability only within the audited reset sample, residual target bounds, waypoint parameterization, CEM budget, and 100-300 ms horizons; it is not a mathematical impossibility proof.",
+  "trajectory_exported": false,
+  "teacher_generated": false
+}

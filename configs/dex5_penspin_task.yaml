@@ -1,0 +1,273 @@
+# Dex5-PenSpin task configuration draft.
+# Status after M0/M1 interface audit on 2026-07-08.
+# Hardware facts come from:
+# - /home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control
+# - unitree_dex5_1_control HEAD 831f0a262a68b12bac47d8d410b018e8a95c4ae3
+
+task:
+  name: Dex5PenSpin
+  objective: continuous_multi_round_pen_spinning
+  target_success_rounds_initial: 2
+  target_success_rounds_final: 5
+  episode_seconds: 10.0
+  control_hz: 100.0
+  sim_hz_reference: 500.0
+  notes:
+    - "Dex5 controller default publish_rate is 100 Hz."
+    - "Dex5 MuJoCo bridge defaults to sim_rate 500 Hz and publish_rate 100 Hz."
+    - "Episode length is an initial replay/data-collection setting; extend after stable safety checks."
+
+ros2_interface:
+  workspace: "/home/linkerhand/ofdemo_ros2_ws"
+  package_repo: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control"
+  package_remote: "https://github.com/lvlvturancao/unitree_dex5_1_control.git"
+  package_commit: "831f0a262a68b12bac47d8d410b018e8a95c4ae3"
+  node: "/dex5_1_controller"
+  launch:
+    - "ros2 launch unitree_dex5_1_control dex5_1_control.launch.py"
+    - "./start_dex5_control.sh"
+  publish_topics:
+    joint_state:
+      topic: "/dex5_1/joint_state"
+      type: "unitree_dex5_1_control/msg/Dex51JointState"
+      fields: ["finger_positions", "finger_velocities", "finger_torques", "finger_forces", "timestamp", "frame_id"]
+    touch_data:
+      topic: "/dex5_1/touch_data"
+      type: "unitree_dex5_1_control/msg/Dex51TouchData"
+      fields: ["touch_pressures", "touch_states", "touch_positions", "timestamp", "frame_id"]
+    fingertip_forces:
+      topic: "/dex5_1/fingertip_forces"
+      type: "unitree_dex5_1_control/msg/Dex51FingertipForces"
+      units: "N"
+      fields: ["finger_names", "normal_forces_n", "tangential_forces_n", "tangential_x_forces_n", "tangential_y_forces_n"]
+    paxini_fingertip_forces:
+      topic: "/paxini/fingertip_forces"
+      type: "unitree_dex5_1_control/msg/Dex51FingertipForces"
+      units: "N"
+      role: "optional higher-quality fingertip force input if Paxini node is running"
+    applied_position:
+      topic: "/dex5_1/applied_position"
+      type: "std_msgs/msg/Float64MultiArray"
+      role: "latest 20D target position published by controller"
+  command_topics:
+    position:
+      topic: "/dex5_1/set_position"
+      type: "std_msgs/msg/Float64MultiArray"
+      dim: 20
+      units: "rad"
+    force:
+      topic: "/dex5_1/set_force"
+      type: "std_msgs/msg/Float64MultiArray"
+      dim: 20
+      units: "controller force/torque command"
+    hybrid:
+      topic: "/dex5_1/set_hybrid"
+      type: "std_msgs/msg/Float64MultiArray"
+      dim: 40
+      layout: "first 20 position targets, last 20 force targets"
+    manus_position:
+      topic: "/dex5_1/set_manus_position"
+      type: "std_msgs/msg/Float64MultiArray"
+      dim: 20
+      units: "rad"
+  joint_order:
+    - "Roll_21R"
+    - "Pitch_22R"
+    - "Pitch_23R"
+    - "Pitch_24R"
+    - "Roll_31R"
+    - "Pitch_32R"
+    - "Pitch_33R"
+    - "Pitch_34R"
+    - "Roll_41R"
+    - "Pitch_42R"
+    - "Pitch_43R"
+    - "Pitch_44R"
+    - "Roll_51R"
+    - "Pitch_52R"
+    - "Pitch_53R"
+    - "Pitch_54R"
+    - "Yaw_11R"
+    - "Roll_12R"
+    - "Pitch_13R"
+    - "Pitch_14R"
+  joint_to_motor_index:
+    - 0
+    - 1
+    - 2
+    - 2
+    - 3
+    - 4
+    - 5
+    - 5
+    - 6
+    - 7
+    - 8
+    - 8
+    - 9
+    - 10
+    - 11
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+  joint_limits_source: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/config/manus_to_dex5.yaml"
+
+observation:
+  proprioception:
+    joint_position:
+      enabled: true
+      source: "/dex5_1/joint_state.finger_positions"
+      dim: 20
+    joint_velocity:
+      enabled: true
+      source: "/dex5_1/joint_state.finger_velocities"
+      dim: 20
+    last_action:
+      enabled: true
+      source: "policy_executor internal state"
+      dim: 20
+    target_qpos:
+      enabled: true
+      source: "/dex5_1/applied_position or policy_executor current_target_qpos"
+      dim: 20
+  object_state:
+    pen_pose:
+      enabled: false
+      source: "simulation ground truth for oracle; Orbbec 355 + marker tracking for real replay/evaluation"
+      status: "not provided by Dex5 controller; real-world use requires camera-to-hand calibration"
+    pen_axis:
+      enabled: false
+      source: "simulation ground truth for oracle; marker-based endpoints for real replay/evaluation"
+      status: "needed for reward and success metric"
+    pen_angular_velocity:
+      enabled: false
+      source: "simulation ground truth for oracle; estimated from tracked pose/phase in real evaluation"
+      status: "needed for rotation reward; do not require for first proprioceptive student policy"
+    pen_rotation_phase:
+      enabled: false
+      source: "asymmetric marker/texture tracking on pen body"
+      status: "needed to count multi-round spin; can start with manual video labels during early replay"
+    pen_endpoints:
+      enabled: false
+      source: "Orbbec 355 RGB-D camera + endpoint markers"
+      status: "official penspin real data uses obj_ends"
+  contact:
+    fingertip_contact:
+      enabled: true
+      source: "/dex5_1/touch_data.touch_states"
+    tactile:
+      enabled: true
+      source: "/dex5_1/touch_data.touch_pressures"
+    force:
+      enabled: true
+      source: "/dex5_1/fingertip_forces or /paxini/fingertip_forces"
+      units: "N"
+  vision:
+    rgb:
+      enabled: true
+      source: "Orbbec 355"
+      stage: "real replay/evaluation; not required for M2/M3 simulation"
+    depth:
+      enabled: true
+      source: "Orbbec 355"
+      stage: "real replay/evaluation; not required for M2/M3 simulation"
+    point_cloud:
+      enabled: true
+      source: "Orbbec 355 depth + camera intrinsics"
+      stage: "real replay/evaluation; optional for first student policy"
+    marker_tracking:
+      enabled: true
+      marker_allowed: true
+      recommended_markers: ["colored endpoint markers", "ArUco", "AprilTag", "asymmetric body marker"]
+      camera_to_hand_calibration: false
+      calibration_status: "not available yet; required before using 3D object state in Dex5 hand frame"
+
+action:
+  type: delta_target_qpos
+  dim: 20
+  command_topic: "/dex5_1/set_position"
+  command_units: "rad"
+  delta_limit_rad_initial: 0.03
+  delta_limit_status: "conservative initial value; must be validated on hardware before autonomous rollout"
+  absolute_target_limits_source: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/config/manus_to_dex5.yaml"
+  smoothing: true
+  safety_filter: true
+  replay_reference:
+    recorder: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/scripts/dex5_episode_recorder.py"
+    recorder_keys: ["obs_joint_pos", "obs_joint_vel", "action_position", "timestamp"]
+    player: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/scripts/npz_dex5_player.py"
+
+reward:
+  status: "initial draft; object tracking must be available before this reward can run on real hardware"
+  rotation_progress_weight: 1.0
+  alive_weight: 0.05
+  contact_stability_weight: 0.10
+  object_center_weight: 0.10
+  excessive_tilt_penalty: 1.0
+  drop_penalty: 10.0
+  action_norm_penalty: 0.001
+  action_smoothness_penalty: 0.01
+  joint_limit_penalty: 1.0
+  reference_from_official_penspin:
+    rotate_reward_scale: 1.0
+    obj_linvel_penalty_scale: -0.3
+    pose_diff_penalty_scale: -0.1
+    torque_penalty_scale: -0.1
+    work_penalty_scale: -1.0
+    rotate_penalty_scale: -0.3
+    pencil_z_dist_penalty_scale: -1.0
+
+termination:
+  pen_dropped: true
+  object_out_of_workspace: true
+  excessive_tilt: true
+  joint_limit_violation: true
+  velocity_limit_violation: true
+  force_limit_violation: true
+  manual_stop: true
+
+data:
+  format: hdf5
+  required_keys:
+    - timestamps
+    - qpos
+    - dq
+    - action
+    - target_qpos
+    - object_pose
+    - object_axis
+    - object_angvel
+    - contact
+    - reward
+    - done
+    - success
+    - failure_reason
+    - video_path
+  official_penspin_real_data_keys:
+    - qpos
+    - action
+    - current_target_qpos
+    - rgb_ori
+    - rgb_c2d
+    - depth
+    - pc
+    - obj_ends
+  dex5_minimal_recorder_keys:
+    - obs_joint_pos
+    - obs_joint_vel
+    - action_position
+    - timestamp
+
+safety:
+  emergency_stop_required: true
+  human_monitor_required: true
+  max_action_delta_rad_per_step_initial: 0.03
+  max_joint_velocity_rad_s_initial: 2.0
+  max_force_tau_initial: 0.2
+  max_force_tau_source: "dex5_force_compensation_node.py default max_abs_tau"
+  force_command_example_tau: 5.0
+  force_command_example_status: "ROS2 API demo value only; not a safe autonomous RL limit"
+  rollback_to_best_checkpoint: true
+  first_real_rollout_mode: "open_loop_replay_with_manual_stop"

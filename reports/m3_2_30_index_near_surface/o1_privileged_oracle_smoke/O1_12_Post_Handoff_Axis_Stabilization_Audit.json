@@ -1,0 +1,435 @@
+{
+  "status": "PASS_DIAGNOSTIC_POST_HANDOFF_FOUND",
+  "phase": "O1.12 Post-Handoff Axis Stabilization Audit",
+  "artifact_role": "summary_only_no_state_or_action_plan_serialization",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "seed": 20260731,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "bank_ids": [
+    996,
+    1245,
+    1203,
+    1171
+  ],
+  "bank_selection": {
+    "anchor": 996,
+    "nearby": [
+      1245,
+      1203,
+      1171
+    ],
+    "method": "nearest independent-parent/source P3 states to bank 996 by RMS standardized O1.9 variable initial features",
+    "RMS_z_distance": {
+      "1245": 0.2768,
+      "1203": 0.2845,
+      "1171": 0.3031
+    }
+  },
+  "control_dt_s": 0.016666666666666666,
+  "handoff_search": {
+    "horizon_steps": 24,
+    "horizon_ms": 400.0,
+    "population": 128,
+    "iterations": 20,
+    "waypoints": 3,
+    "max_offset_rad": 0.18,
+    "transition_success_count": 3,
+    "states": [
+      {
+        "bank_id": 996,
+        "transition_success": true,
+        "TIM_transition": true,
+        "transition_step": 19,
+        "axis_alignment": 0.2926458418369293,
+        "axis_steps": 24,
+        "min_height_delta_mm": 0.0,
+        "min_total_force_n": 0.8085975646972656,
+        "max_total_force_n": 5.403936862945557,
+        "TIM_overlap": 1.0,
+        "unsafe": false,
+        "selected_plan_transition_replay_rate": 0.8984375
+      },
+      {
+        "bank_id": 1245,
+        "transition_success": true,
+        "TIM_transition": true,
+        "transition_step": 22,
+        "axis_alignment": 0.09535112977027893,
+        "axis_steps": 24,
+        "min_height_delta_mm": -0.40293484926223755,
+        "min_total_force_n": 1.7951157093048096,
+        "max_total_force_n": 5.135916709899902,
+        "TIM_overlap": 1.0,
+        "unsafe": false,
+        "selected_plan_transition_replay_rate": 0.0078125
+      },
+      {
+        "bank_id": 1203,
+        "transition_success": true,
+        "TIM_transition": true,
+        "transition_step": 20,
+        "axis_alignment": 0.28558090329170227,
+        "axis_steps": 24,
+        "min_height_delta_mm": 0.0,
+        "min_total_force_n": 0.4715867340564728,
+        "max_total_force_n": 4.983320713043213,
+        "TIM_overlap": 1.0,
+        "unsafe": false,
+        "selected_plan_transition_replay_rate": 0.515625
+      },
+      {
+        "bank_id": 1171,
+        "transition_success": false,
+        "TIM_transition": false,
+        "transition_step": -1,
+        "axis_alignment": 0.16764633357524872,
+        "axis_steps": 24,
+        "min_height_delta_mm": 0.0,
+        "min_total_force_n": 0.3184746503829956,
+        "max_total_force_n": 4.83935546875,
+        "TIM_overlap": 1.0,
+        "unsafe": false,
+        "selected_plan_transition_replay_rate": 0.0
+      }
+    ],
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": 13.491776466369629,
+        "wall_time_s": 0.8511830309998913
+      },
+      {
+        "iteration": 2,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.5839807779993862
+      },
+      {
+        "iteration": 3,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6003991979996499
+      },
+      {
+        "iteration": 4,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6097970160008117
+      },
+      {
+        "iteration": 5,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6173336950014345
+      },
+      {
+        "iteration": 6,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6037045539997052
+      },
+      {
+        "iteration": 7,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6063291409991507
+      },
+      {
+        "iteration": 8,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.6083652649995202
+      },
+      {
+        "iteration": 9,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.5979020510003465
+      },
+      {
+        "iteration": 10,
+        "best_score": 26.53329086303711,
+        "wall_time_s": 0.590756040000997
+      },
+      {
+        "iteration": 11,
+        "best_score": 26.595205307006836,
+        "wall_time_s": 0.6145094410003367
+      },
+      {
+        "iteration": 12,
+        "best_score": 26.595205307006836,
+        "wall_time_s": 0.6112731940011145
+      },
+      {
+        "iteration": 13,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.6144203750009183
+      },
+      {
+        "iteration": 14,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.5990522970005259
+      },
+      {
+        "iteration": 15,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.5868499640000664
+      },
+      {
+        "iteration": 16,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.6012638009997318
+      },
+      {
+        "iteration": 17,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.5941988559989113
+      },
+      {
+        "iteration": 18,
+        "best_score": 26.607572555541992,
+        "wall_time_s": 0.6189307169988751
+      },
+      {
+        "iteration": 19,
+        "best_score": 26.625492095947266,
+        "wall_time_s": 0.5927264720012317
+      },
+      {
+        "iteration": 20,
+        "best_score": 26.73163604736328,
+        "wall_time_s": 0.577754593001373
+      }
+    ]
+  },
+  "post_handoff_search": {
+    "continuation": "same PhysX episode; post action starts one control step after dominant TIM release/recontact detection",
+    "horizon_steps": 12,
+    "horizon_ms": 200.0,
+    "population": 128,
+    "iterations": 20,
+    "waypoints": 3,
+    "max_offset_rad": 0.12,
+    "transition_success_count": 3,
+    "post_handoff_success_count": 1,
+    "conditional_success_rate": 0.3333333333333333,
+    "states": [
+      {
+        "bank_id": 996,
+        "transition_success": true,
+        "transition_step": 20,
+        "transition_height_delta_mm": 1.945696771144867,
+        "transition_axis_alignment": 0.6041596531867981,
+        "transition_total_force_n": 3.921145439147949,
+        "transition_TIM_overlap": true,
+        "post_handoff_success": true,
+        "post_axis_alignment": 0.8524649739265442,
+        "post_axis_steps": 12,
+        "post_min_height_delta_mm": 0.0,
+        "post_min_total_force_n": 0.30466774106025696,
+        "post_max_total_force_n": 3.4791419506073,
+        "post_TIM_overlap": 1.0,
+        "unsafe": false,
+        "ballistic": false,
+        "contact_loss": false,
+        "penetration": false,
+        "throw": false,
+        "drop": false,
+        "primary_failure": "success",
+        "selected_plan_transition_replay_rate": 0.734375,
+        "selected_plan_post_success_replay_rate": 0.71875
+      },
+      {
+        "bank_id": 1245,
+        "transition_success": true,
+        "transition_step": 22,
+        "transition_height_delta_mm": -0.019125640392303467,
+        "transition_axis_alignment": 0.03734298050403595,
+        "transition_total_force_n": 3.9853334426879883,
+        "transition_TIM_overlap": true,
+        "post_handoff_success": false,
+        "post_axis_alignment": 0.35564324259757996,
+        "post_axis_steps": 12,
+        "post_min_height_delta_mm": -0.4782453179359436,
+        "post_min_total_force_n": 3.518033027648926,
+        "post_max_total_force_n": 5.288324356079102,
+        "post_TIM_overlap": 1.0,
+        "unsafe": false,
+        "ballistic": false,
+        "contact_loss": false,
+        "penetration": false,
+        "throw": false,
+        "drop": false,
+        "primary_failure": "axis_misaligned",
+        "selected_plan_transition_replay_rate": 0.0234375,
+        "selected_plan_post_success_replay_rate": 0.0
+      },
+      {
+        "bank_id": 1203,
+        "transition_success": false,
+        "transition_step": -1,
+        "transition_height_delta_mm": 0.0,
+        "transition_axis_alignment": 0.0,
+        "transition_total_force_n": 0.0,
+        "transition_TIM_overlap": false,
+        "post_handoff_success": false,
+        "post_axis_alignment": 0.0,
+        "post_axis_steps": 0,
+        "post_min_height_delta_mm": 0.0,
+        "post_min_total_force_n": 0.0,
+        "post_max_total_force_n": 0.0,
+        "post_TIM_overlap": 0.0,
+        "unsafe": false,
+        "ballistic": false,
+        "contact_loss": false,
+        "penetration": false,
+        "throw": false,
+        "drop": false,
+        "primary_failure": "handoff_transition_not_reproduced",
+        "selected_plan_transition_replay_rate": 0.0,
+        "selected_plan_post_success_replay_rate": 0.0
+      },
+      {
+        "bank_id": 1171,
+        "transition_success": true,
+        "transition_step": 16,
+        "transition_height_delta_mm": 1.3685747981071472,
+        "transition_axis_alignment": -0.09315526485443115,
+        "transition_total_force_n": 4.771468162536621,
+        "transition_TIM_overlap": true,
+        "post_handoff_success": false,
+        "post_axis_alignment": 0.3468513786792755,
+        "post_axis_steps": 12,
+        "post_min_height_delta_mm": 0.0,
+        "post_min_total_force_n": 2.690859317779541,
+        "post_max_total_force_n": 5.210644721984863,
+        "post_TIM_overlap": 1.0,
+        "unsafe": false,
+        "ballistic": false,
+        "contact_loss": false,
+        "penetration": false,
+        "throw": false,
+        "drop": false,
+        "primary_failure": "axis_misaligned",
+        "selected_plan_transition_replay_rate": 0.015625,
+        "selected_plan_post_success_replay_rate": 0.0
+      }
+    ],
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": 13.573836326599121,
+        "wall_time_s": 0.8697010449996014
+      },
+      {
+        "iteration": 2,
+        "best_score": 13.573836326599121,
+        "wall_time_s": 0.828537203000451
+      },
+      {
+        "iteration": 3,
+        "best_score": 13.964492797851562,
+        "wall_time_s": 0.8440893400002096
+      },
+      {
+        "iteration": 4,
+        "best_score": 24.231813430786133,
+        "wall_time_s": 0.8719488330007152
+      },
+      {
+        "iteration": 5,
+        "best_score": 24.231813430786133,
+        "wall_time_s": 0.879432697998709
+      },
+      {
+        "iteration": 6,
+        "best_score": 27.204689025878906,
+        "wall_time_s": 0.8598842199990031
+      },
+      {
+        "iteration": 7,
+        "best_score": 27.204689025878906,
+        "wall_time_s": 0.8856438279999566
+      },
+      {
+        "iteration": 8,
+        "best_score": 27.204689025878906,
+        "wall_time_s": 0.886495589000333
+      },
+      {
+        "iteration": 9,
+        "best_score": 27.204689025878906,
+        "wall_time_s": 0.8925918210006785
+      },
+      {
+        "iteration": 10,
+        "best_score": 27.351604461669922,
+        "wall_time_s": 0.8620138520000182
+      },
+      {
+        "iteration": 11,
+        "best_score": 27.351604461669922,
+        "wall_time_s": 0.8573476189994835
+      },
+      {
+        "iteration": 12,
+        "best_score": 27.83795928955078,
+        "wall_time_s": 0.8971660860006523
+      },
+      {
+        "iteration": 13,
+        "best_score": 27.83795928955078,
+        "wall_time_s": 0.876433517998521
+      },
+      {
+        "iteration": 14,
+        "best_score": 27.83795928955078,
+        "wall_time_s": 0.8194447189998755
+      },
+      {
+        "iteration": 15,
+        "best_score": 28.417871475219727,
+        "wall_time_s": 0.840514333000101
+      },
+      {
+        "iteration": 16,
+        "best_score": 28.417871475219727,
+        "wall_time_s": 0.8778205870003148
+      },
+      {
+        "iteration": 17,
+        "best_score": 28.417871475219727,
+        "wall_time_s": 0.8811500209994847
+      },
+      {
+        "iteration": 18,
+        "best_score": 28.417871475219727,
+        "wall_time_s": 0.8771533409999392
+      },
+      {
+        "iteration": 19,
+        "best_score": 28.53493309020996,
+        "wall_time_s": 0.8725391299994953
+      },
+      {
+        "iteration": 20,
+        "best_score": 28.53493309020996,
+        "wall_time_s": 0.8711053240003821
+      }
+    ]
+  },
+  "strict_post_gate": {
+    "minimum_axis_alignment": 0.5,
+    "minimum_axis_moving_steps": 2,
+    "maximum_height_loss_mm_from_P3": 5.0,
+    "minimum_total_contact_force_n": 0.06,
+    "maximum_total_contact_force_n": 6.0,
+    "minimum_TIM_overlap": 0.8,
+    "no_ballistic_contact_loss_penetration_drop_throw_drift_or_invalid": true
+  },
+  "failure_taxonomy": {
+    "success": 1,
+    "axis_misaligned": 2,
+    "handoff_transition_not_reproduced": 1
+  },
+  "wall_time_s": 33.39197241200054,
+  "PPO_trained": false,
+  "reward_modified": false,
+  "teacher_generated": false,
+  "O0_modified": false,
+  "state_or_action_plan_exported": false,
+  "limitations": "A zero success count is bounded by four P3 entries, the stated CEM budgets, residual target limits, and 200 ms post window; it is not an absolute impossibility proof. Post states and plans exist only in memory."
+}

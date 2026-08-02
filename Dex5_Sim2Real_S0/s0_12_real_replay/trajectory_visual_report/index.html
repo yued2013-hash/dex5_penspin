@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dex5 S0.12 Oracle Replay 候选轨迹</title>
+<style>
+:root{--ink:#17202a;--muted:#59656f;--line:#d7dde2;--paper:#f4f6f7;--white:#fff;--blue:#1769aa;--green:#2f855a;--red:#c9413a;--amber:#d28b16;--violet:#7651a8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0}
+header{background:var(--white);border-bottom:1px solid var(--line);padding:34px max(24px,calc((100vw - 1180px)/2)) 28px}header h1{margin:0 0 8px;font-size:30px;letter-spacing:0}header p{max-width:900px;margin:5px 0;color:var(--muted)}.status{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:700;font-size:13px}.status::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green)}
+main{max-width:1180px;margin:0 auto;padding:26px 24px 64px}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:28px}.kpi{background:var(--white);padding:18px}.kpi strong{display:block;font-size:24px}.kpi span{color:var(--muted);font-size:13px}
+.band{padding:25px 0;border-top:1px solid var(--line)}h2{letter-spacing:0}.band h2{margin:0 0 13px;font-size:21px}.overview{display:block;width:100%;background:var(--white);border:1px solid var(--line)}
+.table-wrap{overflow:auto;background:var(--white);border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:11px 13px;text-align:left;border-bottom:1px solid #e5e9ec;white-space:nowrap}th{font-size:12px;color:var(--muted);background:#f9fafb}td a{color:var(--blue);font-weight:700;text-decoration:none}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}
+.trajectory{padding:30px 0 36px;border-top:1px solid var(--line);scroll-margin-top:12px}.trajectory-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:14px}.trajectory-head>div{display:flex;align-items:center;gap:10px}.trajectory h2{font-size:20px;margin:0}.rank{display:inline-grid;place-items:center;width:42px;height:30px;background:var(--blue);color:#fff;font-weight:800;border-radius:4px}dl{display:grid;grid-template-columns:repeat(4,minmax(105px,1fr));gap:16px;margin:0}dl div{border-left:3px solid var(--line);padding-left:10px}dt{font-size:11px;color:var(--muted)}dd{margin:1px 0 0;font-weight:750}.trajectory img{display:block;width:100%;aspect-ratio:12/11;object-fit:contain;background:var(--white);border:1px solid var(--line)}.provenance{margin:8px 0 0;color:var(--muted)}
+.note{border-left:4px solid var(--amber);padding:13px 16px;background:#fff9e9;margin-top:20px}footer{color:var(--muted);font-size:12px;padding-top:22px;border-top:1px solid var(--line)}
+@media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}.trajectory-head{align-items:flex-start;flex-direction:column}dl{width:100%;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){header h1{font-size:25px}main{padding-left:14px;padding-right:14px}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:13px}.kpi strong{font-size:20px}dl{grid-template-columns:1fr 1fr;gap:10px}.trajectory img{aspect-ratio:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="status">OFFLINE SELECTION PASS</div>
+  <h1>Dex5 S0.12 Oracle Replay 候选轨迹</h1>
+  <p>首批 20 条轨迹来自 20 个不同 train source。旋转进度完全由同步记录的笔四元数计算，不使用瞬时 PhysX 角速度积分替代姿态变化。</p>
+  <p>任务范围：P3 起始抓持 → 约 35° 目标轴旋转 → 制动并严格保持至少 150 ms。不是完整 PenSpin，也不代表真机已经成功。</p>
+</header>
+<main>
+  <section class="kpis">
+    <div class="kpi"><strong>20 / 20</strong><span>不同 source</span></div>
+    <div class="kpi"><strong>34.46–35.33°</strong><span>实际四元数峰值旋转</span></div>
+    <div class="kpi"><strong>81.5–100.0%</strong><span>TIM 接触时间占比</span></div>
+    <div class="kpi"><strong>0.00527–0.00864</strong><span>最大映射单步目标 rad</span></div>
+  </section>
+  <section class="band"><h2>候选集合总览</h2><img class="overview" src="assets/overview.png" alt="selected trajectory overview"></section>
+  <section class="band"><h2>20 条候选索引</h2><div class="table-wrap"><table><thead><tr><th>排名</th><th>Episode</th><th>Source</th><th>旋转</th><th>保持</th><th>TIM</th><th>最大单步目标</th></tr></thead><tbody><tr><td>01</td><td><a href="#trajectory-01">898</a></td><td><code>7821213779321911387</code></td><td>34.63°</td><td>166.7 ms</td><td>100.0%</td><td>0.00527</td></tr><tr><td>02</td><td><a href="#trajectory-02">485</a></td><td><code>4250108542531982190</code></td><td>35.17°</td><td>166.7 ms</td><td>98.6%</td><td>0.00655</td></tr><tr><td>03</td><td><a href="#trajectory-03">176</a></td><td><code>6489221358059552009</code></td><td>35.22°</td><td>166.7 ms</td><td>100.0%</td><td>0.00642</td></tr><tr><td>04</td><td><a href="#trajectory-04">1099</a></td><td><code>8591286282804671875</code></td><td>35.06°</td><td>166.7 ms</td><td>93.8%</td><td>0.00718</td></tr><tr><td>05</td><td><a href="#trajectory-05">442</a></td><td><code>110719134938419254</code></td><td>34.65°</td><td>166.7 ms</td><td>100.0%</td><td>0.00618</td></tr><tr><td>06</td><td><a href="#trajectory-06">177</a></td><td><code>7446743939122046693</code></td><td>35.02°</td><td>166.7 ms</td><td>85.9%</td><td>0.00628</td></tr><tr><td>07</td><td><a href="#trajectory-07">179</a></td><td><code>3399063384661712330</code></td><td>34.78°</td><td>166.7 ms</td><td>98.6%</td><td>0.00743</td></tr><tr><td>08</td><td><a href="#trajectory-08">439</a></td><td><code>3559906410148840735</code></td><td>34.88°</td><td>166.7 ms</td><td>90.5%</td><td>0.00723</td></tr><tr><td>09</td><td><a href="#trajectory-09">589</a></td><td><code>1738202755634275785</code></td><td>35.22°</td><td>166.7 ms</td><td>91.7%</td><td>0.00669</td></tr><tr><td>10</td><td><a href="#trajectory-10">963</a></td><td><code>8619886127187599324</code></td><td>35.23°</td><td>166.7 ms</td><td>86.4%</td><td>0.00616</td></tr><tr><td>11</td><td><a href="#trajectory-11">804</a></td><td><code>1860438914497390764</code></td><td>35.13°</td><td>166.7 ms</td><td>94.0%</td><td>0.00828</td></tr><tr><td>12</td><td><a href="#trajectory-12">580</a></td><td><code>6469206706229691726</code></td><td>34.76°</td><td>166.7 ms</td><td>100.0%</td><td>0.00689</td></tr><tr><td>13</td><td><a href="#trajectory-13">338</a></td><td><code>1654534876007220443</code></td><td>35.32°</td><td>166.7 ms</td><td>100.0%</td><td>0.00810</td></tr><tr><td>14</td><td><a href="#trajectory-14">1172</a></td><td><code>4292131781892671324</code></td><td>35.33°</td><td>166.7 ms</td><td>100.0%</td><td>0.00709</td></tr><tr><td>15</td><td><a href="#trajectory-15">704</a></td><td><code>4113026588775162891</code></td><td>35.17°</td><td>166.7 ms</td><td>83.1%</td><td>0.00714</td></tr><tr><td>16</td><td><a href="#trajectory-16">140</a></td><td><code>3420203077254528404</code></td><td>35.21°</td><td>166.7 ms</td><td>81.5%</td><td>0.00706</td></tr><tr><td>17</td><td><a href="#trajectory-17">924</a></td><td><code>1584840090605173246</code></td><td>34.46°</td><td>166.7 ms</td><td>97.1%</td><td>0.00696</td></tr><tr><td>18</td><td><a href="#trajectory-18">501</a></td><td><code>8698147322152835164</code></td><td>35.11°</td><td>150.0 ms</td><td>94.4%</td><td>0.00830</td></tr><tr><td>19</td><td><a href="#trajectory-19">988</a></td><td><code>4471492550669896409</code></td><td>34.91°</td><td>150.0 ms</td><td>100.0%</td><td>0.00814</td></tr><tr><td>20</td><td><a href="#trajectory-20">2</a></td><td><code>6875022928759290830</code></td><td>35.07°</td><td>166.7 ms</td><td>100.0%</td><td>0.00864</td></tr></tbody></table></div></section>
+  <div class="note">明日真机测试应从排名前 3 条、0.12 rad/s 档开始。页面中的成功是仿真成功；真实成功仍需外部视频或姿态追踪确认笔实际旋转 ≥30°。</div>
+  
+<article class="trajectory" id="trajectory-01">
+  <div class="trajectory-head">
+    <div><span class="rank">#01</span><h2>Episode 898</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.63°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00527 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_01_episode_0898.png" loading="lazy" alt="episode 898 trajectory chart">
+  <p class="provenance">source <code>7821213779321911387</code> · bank <code>510</code> · state <code>2930657276989926425</code></p>
+</article>
+<article class="trajectory" id="trajectory-02">
+  <div class="trajectory-head">
+    <div><span class="rank">#02</span><h2>Episode 485</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.17°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>98.6%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00655 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_02_episode_0485.png" loading="lazy" alt="episode 485 trajectory chart">
+  <p class="provenance">source <code>4250108542531982190</code> · bank <code>72</code> · state <code>7873038631293610087</code></p>
+</article>
+<article class="trajectory" id="trajectory-03">
+  <div class="trajectory-head">
+    <div><span class="rank">#03</span><h2>Episode 176</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.22°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00642 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_03_episode_0176.png" loading="lazy" alt="episode 176 trajectory chart">
+  <p class="provenance">source <code>6489221358059552009</code> · bank <code>58</code> · state <code>6644080453753219260</code></p>
+</article>
+<article class="trajectory" id="trajectory-04">
+  <div class="trajectory-head">
+    <div><span class="rank">#04</span><h2>Episode 1099</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.06°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>93.8%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00718 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_04_episode_1099.png" loading="lazy" alt="episode 1099 trajectory chart">
+  <p class="provenance">source <code>8591286282804671875</code> · bank <code>364</code> · state <code>3307563848517264965</code></p>
+</article>
+<article class="trajectory" id="trajectory-05">
+  <div class="trajectory-head">
+    <div><span class="rank">#05</span><h2>Episode 442</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.65°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00618 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_05_episode_0442.png" loading="lazy" alt="episode 442 trajectory chart">
+  <p class="provenance">source <code>110719134938419254</code> · bank <code>356</code> · state <code>2812467773215703861</code></p>
+</article>
+<article class="trajectory" id="trajectory-06">
+  <div class="trajectory-head">
+    <div><span class="rank">#06</span><h2>Episode 177</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.02°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>85.9%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00628 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_06_episode_0177.png" loading="lazy" alt="episode 177 trajectory chart">
+  <p class="provenance">source <code>7446743939122046693</code> · bank <code>241</code> · state <code>6710800245485935962</code></p>
+</article>
+<article class="trajectory" id="trajectory-07">
+  <div class="trajectory-head">
+    <div><span class="rank">#07</span><h2>Episode 179</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.78°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>98.6%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00743 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_07_episode_0179.png" loading="lazy" alt="episode 179 trajectory chart">
+  <p class="provenance">source <code>3399063384661712330</code> · bank <code>297</code> · state <code>7862041302565888405</code></p>
+</article>
+<article class="trajectory" id="trajectory-08">
+  <div class="trajectory-head">
+    <div><span class="rank">#08</span><h2>Episode 439</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.88°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>90.5%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00723 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_08_episode_0439.png" loading="lazy" alt="episode 439 trajectory chart">
+  <p class="provenance">source <code>3559906410148840735</code> · bank <code>318</code> · state <code>6591441350765973029</code></p>
+</article>
+<article class="trajectory" id="trajectory-09">
+  <div class="trajectory-head">
+    <div><span class="rank">#09</span><h2>Episode 589</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.22°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>91.7%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00669 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_09_episode_0589.png" loading="lazy" alt="episode 589 trajectory chart">
+  <p class="provenance">source <code>1738202755634275785</code> · bank <code>395</code> · state <code>5174698961251377549</code></p>
+</article>
+<article class="trajectory" id="trajectory-10">
+  <div class="trajectory-head">
+    <div><span class="rank">#10</span><h2>Episode 963</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.23°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>86.4%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00616 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_10_episode_0963.png" loading="lazy" alt="episode 963 trajectory chart">
+  <p class="provenance">source <code>8619886127187599324</code> · bank <code>500</code> · state <code>8654587063778989591</code></p>
+</article>
+<article class="trajectory" id="trajectory-11">
+  <div class="trajectory-head">
+    <div><span class="rank">#11</span><h2>Episode 804</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.13°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>94.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00828 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_11_episode_0804.png" loading="lazy" alt="episode 804 trajectory chart">
+  <p class="provenance">source <code>1860438914497390764</code> · bank <code>367</code> · state <code>7368766673628171218</code></p>
+</article>
+<article class="trajectory" id="trajectory-12">
+  <div class="trajectory-head">
+    <div><span class="rank">#12</span><h2>Episode 580</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.76°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00689 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_12_episode_0580.png" loading="lazy" alt="episode 580 trajectory chart">
+  <p class="provenance">source <code>6469206706229691726</code> · bank <code>230</code> · state <code>4008944212357966754</code></p>
+</article>
+<article class="trajectory" id="trajectory-13">
+  <div class="trajectory-head">
+    <div><span class="rank">#13</span><h2>Episode 338</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.22°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00810 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_13_episode_0338.png" loading="lazy" alt="episode 338 trajectory chart">
+  <p class="provenance">source <code>1654534876007220443</code> · bank <code>547</code> · state <code>6953442295390384852</code></p>
+</article>
+<article class="trajectory" id="trajectory-14">
+  <div class="trajectory-head">
+    <div><span class="rank">#14</span><h2>Episode 1172</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.33°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00709 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_14_episode_1172.png" loading="lazy" alt="episode 1172 trajectory chart">
+  <p class="provenance">source <code>4292131781892671324</code> · bank <code>188</code> · state <code>2665499053083114759</code></p>
+</article>
+<article class="trajectory" id="trajectory-15">
+  <div class="trajectory-head">
+    <div><span class="rank">#15</span><h2>Episode 704</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.17°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>83.1%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00714 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_15_episode_0704.png" loading="lazy" alt="episode 704 trajectory chart">
+  <p class="provenance">source <code>4113026588775162891</code> · bank <code>332</code> · state <code>3894536464961316913</code></p>
+</article>
+<article class="trajectory" id="trajectory-16">
+  <div class="trajectory-head">
+    <div><span class="rank">#16</span><h2>Episode 140</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.21°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>81.5%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00706 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_16_episode_0140.png" loading="lazy" alt="episode 140 trajectory chart">
+  <p class="provenance">source <code>3420203077254528404</code> · bank <code>481</code> · state <code>6833230699224894879</code></p>
+</article>
+<article class="trajectory" id="trajectory-17">
+  <div class="trajectory-head">
+    <div><span class="rank">#17</span><h2>Episode 924</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.46°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>97.1%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00696 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_17_episode_0924.png" loading="lazy" alt="episode 924 trajectory chart">
+  <p class="provenance">source <code>1584840090605173246</code> · bank <code>448</code> · state <code>2689555045706721756</code></p>
+</article>
+<article class="trajectory" id="trajectory-18">
+  <div class="trajectory-head">
+    <div><span class="rank">#18</span><h2>Episode 501</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.11°</dd></div>
+      <div><dt>严格保持</dt><dd>150.0 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>94.4%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00830 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_18_episode_0501.png" loading="lazy" alt="episode 501 trajectory chart">
+  <p class="provenance">source <code>8698147322152835164</code> · bank <code>454</code> · state <code>3820726206794188366</code></p>
+</article>
+<article class="trajectory" id="trajectory-19">
+  <div class="trajectory-head">
+    <div><span class="rank">#19</span><h2>Episode 988</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>34.91°</dd></div>
+      <div><dt>严格保持</dt><dd>150.0 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00814 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_19_episode_0988.png" loading="lazy" alt="episode 988 trajectory chart">
+  <p class="provenance">source <code>4471492550669896409</code> · bank <code>563</code> · state <code>187631640219537262</code></p>
+</article>
+<article class="trajectory" id="trajectory-20">
+  <div class="trajectory-head">
+    <div><span class="rank">#20</span><h2>Episode 2</h2></div>
+    <dl>
+      <div><dt>四元数旋转</dt><dd>35.07°</dd></div>
+      <div><dt>严格保持</dt><dd>166.7 ms</dd></div>
+      <div><dt>TIM 接触</dt><dd>100.0%</dd></div>
+      <div><dt>最大单步目标</dt><dd>0.00864 rad</dd></div>
+    </dl>
+  </div>
+  <img src="assets/trajectory_20_episode_0002.png" loading="lazy" alt="episode 2 trajectory chart">
+  <p class="provenance">source <code>6875022928759290830</code> · bank <code>152</code> · state <code>2912508597137370314</code></p>
+</article>
+  <footer>rollout SHA256: <code>50621081e145675912de565d2097bdc8b9a439cebb4e2868ee5fb84d5fdc61cd</code><br>selection manifest SHA256: <code>0af5d62440ce4c6427d264b316f4597e75ef600f8e8c16e3c038d91b3d8a4f1b</code></footer>
+</main>
+</body>
+</html>

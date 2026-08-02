@@ -1,0 +1,336 @@
+{
+  "status": "PASS_DIAGNOSTIC_TESTED_FEEDBACK_FAILED_TO_WIDEN",
+  "phase": "O1.17 Closed-Loop Basin Widening Audit",
+  "artifact_role": "matched_feedback_ablation_not_policy_teacher_or_reset_dataset",
+  "bank_id": 1155,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "selected_controller": "support_adaptive",
+  "selected_controller_config": {
+    "q_gain": 0.5,
+    "dq_gain": 0.015,
+    "adaptive_gain": 0.8,
+    "max_correction_rad": 0.04
+  },
+  "calibration": [
+    {
+      "mode": "open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.28125,
+          "strict_rate": 0.265625,
+          "recovered_strict_rate": 0.265625,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.571374773979187,
+          "min_height_delta_mm_p10": -0.08614212274551392,
+          "final_height_delta_mm_p10": 7.186276435852051,
+          "handoff_margin_p90": 0.16616305708885193,
+          "failure_taxonomy": {
+            "recovered_strict": 34,
+            "no_TIM_transition": 92,
+            "throw": 1,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.375,
+          "strict_rate": 0.171875,
+          "recovered_strict_rate": 0.171875,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5264729857444763,
+          "min_height_delta_mm_p10": -0.10931603610515594,
+          "final_height_delta_mm_p10": 6.886899471282959,
+          "handoff_margin_p90": 0.04428992420434952,
+          "failure_taxonomy": {
+            "no_TIM_transition": 78,
+            "throw": 2,
+            "recovered_strict": 22,
+            "axis_misaligned": 26
+          }
+        }
+      ],
+      "selection_score": 0.190625
+    },
+    {
+      "mode": "q_track_weak",
+      "controller": {
+        "q_gain": 0.4,
+        "dq_gain": 0.01,
+        "adaptive_gain": 0.0,
+        "max_correction_rad": 0.02
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2421875,
+          "strict_rate": 0.21875,
+          "recovered_strict_rate": 0.21875,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.520051121711731,
+          "min_height_delta_mm_p10": -0.1050703227519989,
+          "final_height_delta_mm_p10": 6.859493255615234,
+          "handoff_margin_p90": 0.1683543622493744,
+          "failure_taxonomy": {
+            "no_TIM_transition": 91,
+            "recovered_strict": 28,
+            "throw": 6,
+            "contact_force_overload": 1,
+            "axis_misaligned": 2
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4765625,
+          "strict_rate": 0.0859375,
+          "recovered_strict_rate": 0.0859375,
+          "unsafe_rate": 0.125,
+          "axis_alignment_median": 0.4491507112979889,
+          "min_height_delta_mm_p10": -0.11927895247936249,
+          "final_height_delta_mm_p10": 6.5208916664123535,
+          "handoff_margin_p90": -0.014675280079245567,
+          "failure_taxonomy": {
+            "no_TIM_transition": 60,
+            "axis_misaligned": 25,
+            "contact_force_overload": 15,
+            "recovered_strict": 11,
+            "throw": 16,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.045312500000000006
+    },
+    {
+      "mode": "q_track_medium",
+      "controller": {
+        "q_gain": 0.8,
+        "dq_gain": 0.02,
+        "adaptive_gain": 0.0,
+        "max_correction_rad": 0.03
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.390625,
+          "strict_rate": 0.203125,
+          "recovered_strict_rate": 0.203125,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.40656420588493347,
+          "min_height_delta_mm_p10": -0.11264309287071228,
+          "final_height_delta_mm_p10": 6.490334987640381,
+          "handoff_margin_p90": 0.1474299430847168,
+          "failure_taxonomy": {
+            "throw": 4,
+            "no_TIM_transition": 77,
+            "recovered_strict": 26,
+            "axis_misaligned": 18,
+            "joint_gate_miss": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.453125,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3687109053134918,
+          "min_height_delta_mm_p10": -0.12498609721660614,
+          "final_height_delta_mm_p10": 6.017429351806641,
+          "handoff_margin_p90": -0.11324481666088104,
+          "failure_taxonomy": {
+            "throw": 6,
+            "axis_misaligned": 43,
+            "no_TIM_transition": 68,
+            "recovered_strict": 6,
+            "contact_force_overload": 5
+          }
+        }
+      ],
+      "selection_score": 0.04375
+    },
+    {
+      "mode": "support_adaptive",
+      "controller": {
+        "q_gain": 0.5,
+        "dq_gain": 0.015,
+        "adaptive_gain": 0.8,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.375,
+          "strict_rate": 0.21875,
+          "recovered_strict_rate": 0.21875,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3864007294178009,
+          "min_height_delta_mm_p10": -0.10941177606582642,
+          "final_height_delta_mm_p10": 6.355024814605713,
+          "handoff_margin_p90": 0.13911613821983337,
+          "failure_taxonomy": {
+            "no_TIM_transition": 79,
+            "contact_force_overload": 10,
+            "axis_misaligned": 8,
+            "recovered_strict": 28,
+            "throw": 1,
+            "joint_gate_miss": 2
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.5078125,
+          "strict_rate": 0.0625,
+          "recovered_strict_rate": 0.0625,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.3830527067184448,
+          "min_height_delta_mm_p10": -0.12206844985485077,
+          "final_height_delta_mm_p10": 6.194486141204834,
+          "handoff_margin_p90": -0.05241568759083748,
+          "failure_taxonomy": {
+            "no_TIM_transition": 55,
+            "axis_misaligned": 43,
+            "throw": 15,
+            "recovered_strict": 8,
+            "contact_force_overload": 6,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.025781250000000002
+    }
+  ],
+  "perturbation_protocol": {
+    "calibration_seed_base": 20460731,
+    "held_out_seed_base": 20560731,
+    "same_perturbations_matched_across_modes": true,
+    "calibration_and_held_out_seeds_disjoint": true,
+    "controller_selection_nominal_unsafe_tolerance_pp": 2.0
+  },
+  "held_out_comparison": [
+    {
+      "scenario": "nominal",
+      "open_loop_rate": 0.265625,
+      "closed_loop_rate": 0.296875,
+      "absolute_gain": 0.03125,
+      "rate_ratio": 1.1176470588235294,
+      "open_loop_unsafe_rate": 0.0,
+      "closed_loop_unsafe_rate": 0.0390625,
+      "open_loop_taxonomy": {
+        "no_TIM_transition": 93,
+        "recovered_strict": 34,
+        "axis_misaligned": 1
+      },
+      "closed_loop_taxonomy": {
+        "throw": 5,
+        "axis_misaligned": 10,
+        "contact_force_overload": 10,
+        "recovered_strict": 38,
+        "no_TIM_transition": 64,
+        "joint_gate_miss": 1
+      }
+    },
+    {
+      "scenario": "joint_L1",
+      "open_loop_rate": 0.1953125,
+      "closed_loop_rate": 0.0390625,
+      "absolute_gain": -0.15625,
+      "rate_ratio": 0.2,
+      "open_loop_unsafe_rate": 0.015625,
+      "closed_loop_unsafe_rate": 0.109375,
+      "open_loop_taxonomy": {
+        "recovered_strict": 25,
+        "axis_misaligned": 23,
+        "throw": 2,
+        "no_TIM_transition": 78
+      },
+      "closed_loop_taxonomy": {
+        "recovered_strict": 5,
+        "contact_force_overload": 6,
+        "no_TIM_transition": 68,
+        "axis_misaligned": 34,
+        "throw": 14,
+        "joint_gate_miss": 1
+      }
+    },
+    {
+      "scenario": "joint_L2",
+      "open_loop_rate": 0.078125,
+      "closed_loop_rate": 0.0078125,
+      "absolute_gain": -0.0703125,
+      "rate_ratio": 0.1,
+      "open_loop_unsafe_rate": 0.09375,
+      "closed_loop_unsafe_rate": 0.09375,
+      "open_loop_taxonomy": {
+        "recovered_strict": 10,
+        "no_TIM_transition": 80,
+        "axis_misaligned": 20,
+        "throw": 11,
+        "contact_force_overload": 6,
+        "penetration": 1
+      },
+      "closed_loop_taxonomy": {
+        "axis_misaligned": 29,
+        "no_TIM_transition": 80,
+        "contact_force_overload": 5,
+        "throw": 11,
+        "joint_gate_miss": 1,
+        "recovered_strict": 1,
+        "penetration": 1
+      }
+    },
+    {
+      "scenario": "joint_L3",
+      "open_loop_rate": 0.0078125,
+      "closed_loop_rate": 0.015625,
+      "absolute_gain": 0.0078125,
+      "rate_ratio": 2.0,
+      "open_loop_unsafe_rate": 0.140625,
+      "closed_loop_unsafe_rate": 0.15625,
+      "open_loop_taxonomy": {
+        "axis_misaligned": 14,
+        "no_TIM_transition": 85,
+        "contact_force_overload": 10,
+        "penetration": 12,
+        "throw": 6,
+        "recovered_strict": 1
+      },
+      "closed_loop_taxonomy": {
+        "axis_misaligned": 19,
+        "no_TIM_transition": 84,
+        "penetration": 12,
+        "recovered_strict": 2,
+        "contact_force_overload": 3,
+        "throw": 8
+      }
+    }
+  ],
+  "widening_gate": {
+    "joint_L1_at_least_30pct": false,
+    "joint_L1_at_least_2x_matched_baseline": false,
+    "joint_L2_at_least_10pct": false,
+    "joint_L1_unsafe_not_worse_by_more_than_2pp": false
+  },
+  "widening_gate_pass": false,
+  "historical_o1_16_joint_L1_rate": 0.1015625,
+  "interpretation": "The selected deterministic high-level feedback controller was chosen on a calibration perturbation seed and evaluated on a disjoint held-out seed. It tracks an in-memory nominal q/dq trajectory and adapts gain from total support force and pen height, without prescribing a finger contact pattern. Passing all gates is evidence of widening under the tested perturbations, not proof of a global policy attractor or sim-to-real robustness.",
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "action_plan_serialized": false,
+    "reference_trajectory_serialized": false,
+    "reset_dataset_generated": false,
+    "contact_pattern_controller_used": false
+  }
+}

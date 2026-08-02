@@ -1,0 +1,16 @@
+{
+  "schema": "dex5-s0-student-observation-v1",
+  "total_dimension": 340,
+  "history_frames": 4,
+  "frame_order": "newest_to_oldest",
+  "frame_dimension": 85,
+  "frame_fields": [
+    {"name": "joint_q", "offset": 0, "dimension": 20, "real_available": true},
+    {"name": "joint_dq", "offset": 20, "dimension": 20, "real_available": true},
+    {"name": "previous_virtual_action", "offset": 40, "dimension": 20, "real_available": true},
+    {"name": "previous_absolute_target", "offset": 60, "dimension": 20, "real_available": true},
+    {"name": "dex5_fingertip_force", "offset": 80, "dimension": 5, "real_available": true}
+  ],
+  "forbidden_fields": ["pen_pose", "pen_velocity", "mass", "friction", "center_of_mass"],
+  "note": "Force channel calibration remains pending controlled hardware acceptance."
+}

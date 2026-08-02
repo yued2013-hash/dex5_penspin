@@ -1,0 +1,187 @@
+{
+  "status": "PASS_ABLATION_CURRICULUM_REJECTED",
+  "phase": "O1.22 Handoff Basin Curriculum Audit",
+  "classification": "ENTRY_OVERSAMPLING_HURTS_DISCOVERY_AND_INCREASES_EXPLOIT",
+  "matched_contract": {
+    "P3_only": true,
+    "temporal_observation": true,
+    "seed": 20260730,
+    "num_envs": 256,
+    "iterations": 60,
+    "rollout_steps": 1440,
+    "transitions": 368640,
+    "reward_equal": true,
+    "observation_equal": true,
+    "PPO_config_equal": true,
+    "bank_hash_equal": true,
+    "final_checkpoint_selected_a_priori": true,
+    "uniform_P3_evaluation_for_both": true
+  },
+  "curriculum_contract": {
+    "candidate_bank_ids": [
+      1034,
+      1176,
+      1146,
+      1045,
+      1227,
+      852,
+      1149
+    ],
+    "candidate_probability_first_20_iterations": 0.75,
+    "linear_decay_iterations": [
+      20,
+      40
+    ],
+    "final_20_iterations": "exact uniform P3",
+    "sampler_smoke_candidate_count": 25,
+    "sampler_smoke_total": 32,
+    "sampler_smoke_candidate_rate": 0.78125,
+    "candidate_labels_used": false,
+    "candidate_states_modified": false
+  },
+  "A_uniform": {
+    "completed_episodes": 634,
+    "qualified_gait": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.006022811933244867
+      ]
+    },
+    "handoff_discovery": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.006022811933244867
+      ]
+    },
+    "TIM_transition": {
+      "episodes": 358,
+      "rate": 0.5646687697160884,
+      "Wilson95": [
+        0.5257998460092541,
+        0.602758717747014
+      ]
+    },
+    "height_recovery": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.006022811933244867
+      ]
+    },
+    "exploit": {
+      "episodes": 4,
+      "rate": 0.006309148264984227,
+      "Wilson95": [
+        0.0024561197882280988,
+        0.016108991048067303
+      ],
+      "definition": "primary contact_loss + ballistic + throw"
+    },
+    "raw_gait_rate": 0.5646687697160884,
+    "failure_rate": 1.0,
+    "contact_loss_rate": 0.0,
+    "ballistic_rate": 0.00473186119873817,
+    "height_drop_rate": 0.998422712933754,
+    "mean_axis_alignment": 0.5936341391000838,
+    "mean_TIM_overlap_ratio": 0.8946286752020899,
+    "finger_gait_rate": {
+      "thumb": 0.138801261829653,
+      "index": 0.27129337539432175,
+      "middle": 0.5,
+      "ring": 0.0,
+      "pinky": 0.0
+    }
+  },
+  "B_early_curriculum": {
+    "completed_episodes": 996,
+    "qualified_gait": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.003842208605843166
+      ]
+    },
+    "handoff_discovery": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.003842208605843166
+      ]
+    },
+    "TIM_transition": {
+      "episodes": 125,
+      "rate": 0.12550200803212852,
+      "Wilson95": [
+        0.10635553291867793,
+        0.14752628196079903
+      ]
+    },
+    "height_recovery": {
+      "episodes": 0,
+      "rate": 0.0,
+      "Wilson95": [
+        0.0,
+        0.003842208605843166
+      ]
+    },
+    "exploit": {
+      "episodes": 993,
+      "rate": 0.9969879518072289,
+      "Wilson95": [
+        0.9911817077798062,
+        0.9989751330637835
+      ],
+      "definition": "primary contact_loss + ballistic + throw"
+    },
+    "raw_gait_rate": 0.12550200803212852,
+    "failure_rate": 0.9969879518072289,
+    "contact_loss_rate": 0.9879518072289156,
+    "ballistic_rate": 0.08132530120481928,
+    "height_drop_rate": 0.9909638554216867,
+    "mean_axis_alignment": 0.5665090170251318,
+    "mean_TIM_overlap_ratio": 0.8702296368089546,
+    "finger_gait_rate": {
+      "thumb": 0.08734939759036145,
+      "index": 0.07530120481927711,
+      "middle": 0.03714859437751004,
+      "ring": 0.0,
+      "pinky": 0.0
+    }
+  },
+  "B_minus_A_rate": {
+    "qualified_gait": 0.0,
+    "handoff_discovery": 0.0,
+    "TIM_transition": -0.43916676168395985,
+    "height_recovery": 0.0,
+    "exploit": 0.9906788035422447
+  },
+  "acceptance_gate": {
+    "strict_discovery_improved_and_nonzero": false,
+    "exploit_increase_at_most_2pp": false,
+    "curriculum_improves_skill_discovery": false
+  },
+  "interpretation": "The tested static-entry oversampling does not reveal qualified gait or strict support handoff. It reduces TIM transition activity and shifts failure from height-loss/drop behavior to immediate contact-loss/ballistic exploitation. Static O1.21 entry-likeness is therefore not a sufficient PPO curriculum variable under the frozen O1.5 objective. This rejects this schedule and candidate set, not every state-distribution curriculum.",
+  "sources": {
+    "A_evaluation": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_22_A_uniform_eval256.json",
+    "B_evaluation": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_22_B_curriculum_uniform_eval256.json",
+    "sampler_smoke": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_22_B_sampler_smoke16.json",
+    "A_checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-08-01_21-23-42_ppo_torch_o1_22_A_uniform_P3_budget60/checkpoints/agent_1440.pt",
+    "B_checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-08-01_21-24-53_ppo_torch_o1_22_B_entry_curriculum_budget60/checkpoints/agent_1440.pt"
+  },
+  "constraints": {
+    "O0_modified": false,
+    "P3H_created": false,
+    "teacher_generated": false,
+    "reward_modified": false,
+    "new_reset_dataset_created": false,
+    "large_scale_training": false,
+    "seed_count": 1
+  }
+}

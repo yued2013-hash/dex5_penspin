@@ -1,0 +1,110 @@
+{
+  "schema": "dex5-s0.10-student-dataset-v1",
+  "status": "PASS_BC_SMOKE_READY",
+  "source_rollout": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/quaternion_validated_rollouts_1200_v2.npz",
+  "source_rollout_sha256": "50621081e145675912de565d2097bdc8b9a439cebb4e2868ee5fb84d5fdc61cd",
+  "student_dataset": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/student_bc_dataset.npz",
+  "student_dataset_sha256": "04fdd611ba255715d5d4159a1e7d933ee1c77d58871d00bcdc9e26d61db7e746",
+  "observation_schema": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/contracts/student_observation_schema.json",
+  "observation_schema_sha256": "789e21fa14ff3710f1335eb9accbdfa55fc8e8932dd13c8121b70ae8cd5ef318",
+  "independent_validation": {
+    "status": "PASS",
+    "report": "student_dataset_validation.json",
+    "sha256": "7db4d8e6ba3576ec1ab69886d07bbd8139c4651d2781753e9592eb94bef2d23f"
+  },
+  "bc_interface_smoke": {
+    "status": "PASS",
+    "report": "bc_smoke_report.json",
+    "sha256": "4df8eb222269254156a4a4dccaff37cf9032248534f0a85fa662e84b8bf7d4cc",
+    "optimizer_step_performed": false,
+    "checkpoint_written": false
+  },
+  "rows": 69600,
+  "episodes": 1200,
+  "episode_split_counts": {
+    "train": 891,
+    "validation": 112,
+    "test": 197
+  },
+  "row_split_counts": {
+    "train": 51621,
+    "validation": 6519,
+    "test": 11460
+  },
+  "unique_sources_by_split": {
+    "train": 125,
+    "validation": 16,
+    "test": 20
+  },
+  "source_split_leakage": 0,
+  "fields": {
+    "student_obs": [
+      69600,
+      340
+    ],
+    "action": [
+      69600,
+      20
+    ],
+    "next_obs": [
+      69600,
+      340
+    ],
+    "success": [
+      69600,
+      1
+    ]
+  },
+  "action_contract": {
+    "semantics": "bounded 20D virtual normalized delta action",
+    "range": [
+      -1.0,
+      1.0
+    ],
+    "hardware_path": "20D virtual -> coupling projector -> 16D logical actuator -> 20D SDK absolute target"
+  },
+  "success_contract": "true only on the final transition of a quaternion-validated successful episode",
+  "normalization": {
+    "source": "train split rows only",
+    "minimum_std": 1e-06
+  },
+  "privileged_fields_excluded": [
+    "center_of_mass",
+    "contact_force_w",
+    "contact_force_w_next",
+    "friction",
+    "mass",
+    "oracle_observation",
+    "pen_angular_velocity",
+    "pen_angular_velocity_physx_instantaneous",
+    "pen_linear_velocity",
+    "pen_pose",
+    "pen_pose_next"
+  ],
+  "checks": {
+    "source_dataset_authorized": true,
+    "student_obs_shape": true,
+    "next_obs_shape": true,
+    "action_shape": true,
+    "all_finite": true,
+    "all_episode_success": true,
+    "terminal_count_matches_episodes": true,
+    "success_count_matches_episodes": true,
+    "next_obs_continuity_exact": true,
+    "next_obs_action_history_exact": true,
+    "action_bounded": true,
+    "adapter_coupling_exact": true,
+    "adapter_reconstruction_exact": true,
+    "source_split_leakage_zero": true,
+    "all_splits_present": true,
+    "observation_schema_real_only": true,
+    "output_allowlist_excludes_privileged": true
+  },
+  "metrics": {
+    "next_obs_continuity_max_error": 0.0,
+    "adapter_coupling_max_error_rad": 0.0,
+    "adapter_reconstruction_max_error_rad": 0.0,
+    "maximum_abs_action": 1.0
+  },
+  "training_status": "SMOKE_ONLY_NO_OPTIMIZER_STEP"
+}

@@ -1,0 +1,22 @@
+{
+  "task": "Dex5-S0-ShortRotation-16-MediumDR-Direct-v0",
+  "selection_metric": "strict nominal test-split success rate",
+  "checkpoints": [
+    {
+      "seed": 20260801,
+      "file": "seed20260801_agent_4032.pt",
+      "sha256": "153a2fbc7f2be5a1cb967d3f1f924185e0a94a5987cd4b3708423b91a62f4252"
+    },
+    {
+      "seed": 20260802,
+      "file": "seed20260802_agent_2304.pt",
+      "sha256": "ddf9accbd572bed9cb4bc4c1f9969d26f455c8292f32462d2a380cdb310a03fb"
+    },
+    {
+      "seed": 20260803,
+      "file": "seed20260803_agent_1728.pt",
+      "sha256": "35fdabb7bbb2c55049ea08f4de00679cdff4ad371f084836a7a90caeab0e03b5"
+    }
+  ],
+  "deployment": "PRIVILEGED_ORACLE_SIMULATION_ONLY"
+}

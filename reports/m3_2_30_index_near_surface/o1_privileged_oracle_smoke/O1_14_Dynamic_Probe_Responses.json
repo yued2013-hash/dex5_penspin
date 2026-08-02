@@ -1,0 +1,37 @@
+{
+  "status": "PASS_RAW_DYNAMIC_PROBE_AUDIT",
+  "phase": "O1.14 Dynamic Handoff Readiness Audit",
+  "artifact_role": "analysis_only_action_response_not_teacher_or_reset_dataset",
+  "output_npz": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/O1_14_Dynamic_Probe_Responses.npz",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "bank_path": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/P1_P5_v9_physx_projected_R3_validated.npz",
+  "bank_sha256_before": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "bank_sha256_after": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "P3_rows": 396,
+  "probe_count": 31,
+  "probe_design": "zero plus deterministic antithetic random TIM target offsets",
+  "max_offset_rad": 0.06,
+  "horizons_steps": [
+    3,
+    6
+  ],
+  "horizons_ms": [
+    50.0,
+    100.0
+  ],
+  "anchor_ids": [
+    996,
+    1245,
+    1171,
+    1203
+  ],
+  "contact_rebuild_steps": 2,
+  "elapsed_seconds": 8.305188547001308,
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "teacher_generated": false,
+    "O0_modified": false,
+    "reset_bank_modified": false
+  }
+}

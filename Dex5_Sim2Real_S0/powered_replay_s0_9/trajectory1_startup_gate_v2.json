@@ -1,0 +1,110 @@
+{
+  "schema": "dex5-s0.9-mapped-powered-replay-v2",
+  "timestamp_unix_s": 1785677077.874441,
+  "status": "STARTUP_GATE_PASS",
+  "replay_sha256": "dfcc88f356fe63815b527bde4b38db0a948e3a7a8444fbcc2942989565725108",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "d889ad149e1b279bc2c7cf7fb85016e64009c35b93aeb8cbb239ad8ac1cc9bdf",
+  "requested_trajectory_count": 1,
+  "safety": {
+    "speed_limit_rad_s": 0.08,
+    "delta_limit_rad": 0.01,
+    "watchdog_s": 0.1,
+    "thermal_abort_c": 75.0,
+    "startup_mode": "low_gain_preload",
+    "feedback_speed_abort_rad_s": 0.12,
+    "feedback_speed_abort_windows": 3,
+    "feedback_speed_monitored_joint_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "offline_preflight": {
+    "trajectory_count": 20,
+    "command_rows": 8958,
+    "maximum_delta_rad": 0.0007999539375305176,
+    "maximum_speed_rad_s": 0.07999539375305176
+  },
+  "trajectories": [],
+  "staging": {
+    "status": "MAPPED_LOW_GAIN_PRELOAD_ACCEPTED",
+    "maximum_feedback_error_rad": 0.002005547285079956,
+    "resume_command_max_offset_rad": 0.0018987103746340717,
+    "resume_command": [
+      -0.21958504617214203,
+      1.1261399984359741,
+      0.42326104640960693,
+      0.42326104640960693,
+      -0.0029835316236130893,
+      1.4819486141204834,
+      0.08183237537741661,
+      0.08183237537741661,
+      0.20866145938634872,
+      1.3792698383331299,
+      0.7712693810462952,
+      0.7712693810462952,
+      0.3526047542691231,
+      1.4999821782112122,
+      0.8618028461933136,
+      0.8618028461933136,
+      0.19803340918930543,
+      0.7951666072561338,
+      0.9898981331240932,
+      0.6662497091024174
+    ],
+    "thumb_resume_offsets": {
+      "16": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -1.4528632164001465e-06,
+        "resume_command_offset_rad": -1.5627631329284686e-06
+      },
+      "17": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -0.002005547285079956,
+        "resume_command_offset_rad": -0.0018987103746340717
+      },
+      "18": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -1.52587890625e-05,
+        "resume_command_offset_rad": -1.7178212424084904e-05
+      },
+      "19": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -2.0682811737060547e-05,
+        "resume_command_offset_rad": -2.2871521209277823e-05
+      }
+    },
+    "preload": {
+      "observed_windows": 7,
+      "stable_windows": 7,
+      "peak_speed_rad_s": 0.00019958827597337715
+    },
+    "aligned": {
+      "observed_windows": 7,
+      "stable_windows": 7,
+      "peak_speed_rad_s": 0.00016856315282596636
+    },
+    "preload_alignment_speed_rad_s": 0.01,
+    "full_gain_validation_s": 0.3
+  },
+  "controller_hybrid_gains": {
+    "hybrid_kp_scale": 0.15,
+    "hybrid_kd_scale": 0.3,
+    "hybrid_thumb_kp_scale": 0.15,
+    "hybrid_thumb_kd_scale": 0.3
+  }
+}

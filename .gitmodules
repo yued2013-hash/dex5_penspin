@@ -1,0 +1,3 @@
+[submodule "external/penspin"]
+	path = external/penspin
+	url = https://github.com/HaozhiQi/penspin.git

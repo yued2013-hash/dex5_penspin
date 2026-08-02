@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source_simulator": "Isaac Lab PhysX policy rollout",
+  "visualization_backend": "MuJoCo Dex5 mesh kinematic state playback",
+  "dynamics_re_evaluated_in_mujoco": false,
+  "max_height_loss_mm": 65.16007995605469,
+  "final_angle_deg": 222.46026611328125,
+  "trajectory": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/O1_23_典型P3到P4失败轨迹/failure_trajectory_states.npz",
+  "artifact_role": "visualization_only_not_teacher_not_reset"
+}

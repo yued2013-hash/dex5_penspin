@@ -1,0 +1,71 @@
+{
+  "schema": "dex5-s0.8-real-calibration-closure-v1",
+  "status": "PASS_LOCAL_MODEL_CLOSURE",
+  "joint_direction": {
+    "confirmed": 16,
+    "total": 16
+  },
+  "actuator_mapping": {
+    "confirmed": 16,
+    "total": 16
+  },
+  "pip_dip_ratio": {
+    "2": 0.2946137814250358,
+    "5": 0.30636870566856206,
+    "8": 0.28751266957044214,
+    "11": 0.2908030644620477
+  },
+  "latency": {
+    "controller_accept_s": {
+      "count": 16,
+      "p05": 0.00022843849728815258,
+      "p50": 0.000311862000671681,
+      "p95": 0.0006005582399666309,
+      "max": 0.000777477995143272
+    },
+    "physical_onset_s": {
+      "count": 6,
+      "p05": 0.014439824994042283,
+      "p50": 0.019896864003385417,
+      "p95": 0.0291918012444512,
+      "max": 0.031138673992245458
+    },
+    "time_to_63_s": {
+      "count": 16,
+      "p05": 0.007357930498983478,
+      "p50": 0.03861350299848709,
+      "p95": 0.2390447857469553,
+      "max": 0.32129513699328527
+    }
+  },
+  "adapter_validation": {
+    "schema": "dex5-s0.8-adapter-validation-v1",
+    "status": "PASS_OFFLINE",
+    "random_samples": 100000,
+    "command_manifold_roundtrip_max_error_rad": 0.0,
+    "measured_coupling_ratio_reproduction_max_error": 0.0,
+    "finite": true,
+    "held_out_hardware_error": null,
+    "note": "The local response model is fit from the same acceptance scans; held-out hardware validation remains a later controlled test."
+  },
+  "safe_replay": {
+    "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/real_replay_package/open_loop_commands_100hz.npz",
+    "source_sha256": "958805cf90f2e45b6359798b57d6dc22ad8cb8c864e42b68d5d609334910e363",
+    "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_calibration_s0_8/open_loop_commands_100hz_speed_safe.npz",
+    "output_sha256": "60a97c8d7a1aa017ecf80230991b954d251c8d80c524ede6c76917a7bd26dbc8",
+    "trajectory_count": 20,
+    "command_rows": 7891,
+    "command_hz": 100.0,
+    "maximum_delta_rad": 0.0007997751235961914,
+    "maximum_velocity_rad_s": 0.07997751235961914,
+    "speed_gate_rad_s": 0.08,
+    "powered_replay_executed": false
+  },
+  "physx_audits": {
+    "zero": "physx_zero_audit.json",
+    "small": "physx_small_audit.json"
+  },
+  "powered_replay_executed": false,
+  "autonomous_policy_executed": false,
+  "o0_modified": false
+}

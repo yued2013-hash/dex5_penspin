@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "classification": "TERMINATION_CREDIT_NOT_SUFFICIENT",
+  "skill_pass": false,
+  "return_order_pass": true,
+  "termination_collapse_detected": false,
+  "matched_contract": {
+    "p3_only": true,
+    "temporal_observation_dim": 172,
+    "baseline_reward_frozen_except_B_terminal_penalty": true,
+    "seed": 20260730,
+    "num_envs": 256,
+    "iterations": 60,
+    "training_transitions_per_condition": 368640,
+    "evaluation_transitions_per_condition": 61440,
+    "bank_hash_equal": true
+  },
+  "conditions": {
+    "A_fixed_horizon": {
+      "completed_episodes": 512,
+      "mean_episode_steps": 119.0,
+      "raw_gait_rate": 0.005859375,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_drop_rate": 0.0,
+      "height_recovery_rate": 0.0,
+      "height_recovery_given_drop_rate": 0.0,
+      "thumb_recontact_rate": 0.0,
+      "tim_overlap_ratio": 1.0,
+      "axis_alignment": 0.14859285950660706,
+      "failure_rate": 0.001953125,
+      "contact_loss_rate": 0.0,
+      "ballistic_rate": 0.0,
+      "max_penetration_mm": 0.1871855929493904
+    },
+    "B_fixed_terminal": {
+      "completed_episodes": 512,
+      "mean_episode_steps": 119.0,
+      "raw_gait_rate": 0.0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_drop_rate": 0.0,
+      "height_recovery_rate": 0.0,
+      "height_recovery_given_drop_rate": 0.0,
+      "thumb_recontact_rate": 0.0,
+      "tim_overlap_ratio": 1.0,
+      "axis_alignment": 0.35122278332710266,
+      "failure_rate": 0.0,
+      "contact_loss_rate": 0.0,
+      "ballistic_rate": 0.0,
+      "max_penetration_mm": 0.1871855929493904
+    },
+    "C_recovery_grace": {
+      "completed_episodes": 512,
+      "mean_episode_steps": 119.0,
+      "raw_gait_rate": 0.015625,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_drop_rate": 1.0,
+      "height_recovery_rate": 0.0,
+      "height_recovery_given_drop_rate": 0.0,
+      "thumb_recontact_rate": 0.015625,
+      "tim_overlap_ratio": 0.9999507665634155,
+      "axis_alignment": 0.415396124124527,
+      "failure_rate": 0.001953125,
+      "contact_loss_rate": 0.0,
+      "ballistic_rate": 0.005859375,
+      "max_penetration_mm": 0.5970271304249763
+    }
+  },
+  "interpretation": "Termination-invariant learning removes the O1.6 short-episode exploit, but qualified gait, support handoff, and height recovery remain zero. Termination credit assignment contributed to exploitation but is not a sufficient explanation for the P3 handoff failure.",
+  "sources": {
+    "A_fixed_horizon": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_A_fixed_horizon_eval256.json",
+    "B_fixed_terminal": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_B_fixed_horizon_terminal_eval256.json",
+    "C_recovery_grace": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_C_recovery_grace_eval256.json"
+  },
+  "return_audit_sources": [
+    "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_A_return_order.json",
+    "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_B_return_order.json",
+    "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_7_C_return_order.json"
+  ]
+}

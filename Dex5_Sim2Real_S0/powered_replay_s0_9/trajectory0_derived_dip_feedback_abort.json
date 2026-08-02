@@ -1,0 +1,13 @@
+{
+  "schema": "dex5-s0.9-feedback-gate-diagnostic-v1",
+  "timestamp_unix_s": 1785592854.3293772,
+  "source": "operator_terminal_transcript",
+  "status": "ABORTED_BEFORE_TRAJECTORY_RECORDING",
+  "mapped_start_status": "MAPPED_SOFT_RESUME_ACCEPTED",
+  "abort_position_difference_velocity_rad_s": 0.2146,
+  "abort_joint": 15,
+  "abort_joint_role": "derived coupled pinky DIP",
+  "diagnosis": "single-window derived-joint feedback gate was too sensitive",
+  "trajectory_rows_recorded": 0,
+  "software_estop_sent": true
+}

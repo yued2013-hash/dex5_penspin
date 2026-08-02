@@ -1,0 +1,119 @@
+{
+  "schema": "dex5-s0-hardware-simulation-v2",
+  "hardware_identified": true,
+  "virtual_joint_dimension": 20,
+  "logical_actuator_dimension": 16,
+  "sdk_command_dimension": 20,
+  "policy_hz": 60.0,
+  "sdk_command_hz": 100.0,
+  "physics_hz": 120.0,
+  "joint_to_actuator": [
+    0,
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    5,
+    6,
+    7,
+    8,
+    8,
+    9,
+    10,
+    11,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "joint_direction_sign": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "coupled_pairs": [
+    [
+      2,
+      3
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      14,
+      15
+    ]
+  ],
+  "pip_dip_response_ratio": {
+    "2": 0.2946137814250358,
+    "5": 0.30636870566856206,
+    "8": 0.28751266957044214,
+    "11": 0.2908030644620477
+  },
+  "joint_response_scale_nominal": [
+    0.6811178289353848,
+    0.8464635815471411,
+    0.15872474759817123,
+    0.0467624980956316,
+    0.7198648760095239,
+    0.918339192867279,
+    0.1525193452835083,
+    0.04672715440392494,
+    0.837019772734493,
+    0.9023897349834442,
+    0.1430661417543888,
+    0.04113332834094763,
+    0.6449837936088443,
+    0.8150059264153242,
+    0.18498431891202927,
+    0.053794006817042835,
+    0.1779666543006897,
+    0.17017416656017303,
+    0.09572342038154602,
+    0.044127851724624634
+  ],
+  "joint_response_scale_randomization_fraction": [
+    0.8,
+    1.2
+  ],
+  "delay_command_ticks": [
+    1,
+    4
+  ],
+  "safe_velocity_limit_rad_s": [
+    0.04,
+    0.08
+  ],
+  "max_policy_delta_rad": 0.025,
+  "calibration_sources": {
+    "primary": "raw_calibration.json",
+    "thumb_deadband_supplement": "thumb_supplement.json"
+  },
+  "powered_autonomous_policy": false,
+  "warning": "Safe velocity range is an acceptance/replay envelope, not a measured motor maximum."
+}

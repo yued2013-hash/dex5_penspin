@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "task": "Dex5-PenSpin-Oracle-P3RecoveryGrace-Direct-v0",
+  "num_envs": 96,
+  "steps": 240,
+  "finite": true,
+  "termination_mode": "recovery_grace",
+  "terminal_failure_penalty_scale": 0.0,
+  "failure_grace_steps": 12,
+  "return_order_pass": true,
+  "controllers": {
+    "zero": {
+      "completed_episodes": 64,
+      "mean_return": -18.911717912880704,
+      "min_return": -148.36001586914062,
+      "max_return": 10.985573768615723,
+      "mean_episode_steps": 119.0,
+      "terminated": 0,
+      "truncated": 64
+    },
+    "random": {
+      "completed_episodes": 67,
+      "mean_return": -84.40022501304968,
+      "min_return": -201.15306091308594,
+      "max_return": -11.564043998718262,
+      "mean_episode_steps": 103.8955223880597,
+      "terminated": 21,
+      "truncated": 46
+    },
+    "intentional_release": {
+      "completed_episodes": 437,
+      "mean_return": -84.18679916067582,
+      "min_return": -128.2499542236328,
+      "max_return": -68.87930297851562,
+      "mean_episode_steps": 17.237986270022883,
+      "terminated": 437,
+      "truncated": 0
+    }
+  },
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+}

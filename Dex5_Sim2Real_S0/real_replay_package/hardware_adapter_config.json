@@ -1,0 +1,19 @@
+{
+  "schema": "dex5-s0-hardware-adapter-v1",
+  "virtual_joint_dimension": 20,
+  "logical_actuator_dimension": 16,
+  "sdk_command_dimension": 20,
+  "coupled_pairs": [[2, 3], [6, 7], [10, 11], [14, 15]],
+  "projection_rule": "distal_wins_then_equal_targets",
+  "policy_hz": 60.0,
+  "sdk_command_hz": 100.0,
+  "physics_hz": 120.0,
+  "max_policy_delta_rad": 0.025,
+  "provisional_nominal_randomization": {
+    "delay_command_ticks": [0, 2],
+    "tracking_gain": [0.85, 1.0],
+    "velocity_limit_rad_s": [0.35, 0.65]
+  },
+  "hardware_identified": false,
+  "warning": "The 16D values are logical actuator-manifold coordinates, not vendor motor-shaft commands."
+}

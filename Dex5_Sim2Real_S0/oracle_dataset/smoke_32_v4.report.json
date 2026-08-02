@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "task": "Dex5-S0-ShortRotation-16-MediumDR-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_s0_short_rotation_oracle/2026-07-31_23-37-54_ppo_torch/checkpoints/agent_4032.pt",
+  "checkpoint_sha256": "153a2fbc7f2be5a1cb967d3f1f924185e0a94a5987cd4b3708423b91a62f4252",
+  "reset_bank": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_compatible_p3_reset_bank/Dex5_S0_HW_P3_Reset_Bank.npz",
+  "reset_bank_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1",
+  "reset_source_split": "train",
+  "successful_trajectories": 32,
+  "completed_episodes_seen": 137,
+  "success_flag_count": 32,
+  "control_steps": 429,
+  "total_transition_rows": 2268,
+  "split_counts": {
+    "train": 24,
+    "validation": 3,
+    "test": 5
+  },
+  "unique_sources_by_split": {
+    "train": 22,
+    "validation": 2,
+    "test": 5
+  },
+  "split_leakage": 0,
+  "logical_actuator_semantics": "16D diagnostic coupled coordinates; not motor-shaft commands",
+  "sdk_command_semantics": "20D absolute URDF-joint target at the 100 Hz command chain",
+  "array_shapes": {
+    "oracle_observation": [
+      2268,
+      152
+    ],
+    "student_observation": [
+      2268,
+      340
+    ],
+    "virtual_action": [
+      2268,
+      20
+    ],
+    "adapter_projected_target": [
+      2268,
+      20
+    ],
+    "logical_actuator_target": [
+      2268,
+      16
+    ],
+    "sdk_absolute_target": [
+      2268,
+      20
+    ],
+    "joint_position": [
+      2268,
+      20
+    ],
+    "joint_velocity": [
+      2268,
+      20
+    ],
+    "pen_pose": [
+      2268,
+      7
+    ],
+    "pen_linear_velocity": [
+      2268,
+      3
+    ],
+    "pen_angular_velocity": [
+      2268,
+      3
+    ],
+    "contact_state": [
+      2268,
+      5
+    ],
+    "contact_force_w": [
+      2268,
+      15
+    ],
+    "contact_force_norm": [
+      2268,
+      5
+    ],
+    "episode_offsets": [
+      33
+    ],
+    "episode_length": [
+      32
+    ],
+    "episode_bank_id": [
+      32
+    ],
+    "episode_state_id": [
+      32
+    ],
+    "episode_source_trajectory_id": [
+      32
+    ],
+    "episode_split": [
+      32
+    ],
+    "episode_delay_ticks": [
+      32
+    ],
+    "episode_tracking_gain": [
+      32
+    ],
+    "episode_velocity_limit_rad_s": [
+      32
+    ]
+  }
+}

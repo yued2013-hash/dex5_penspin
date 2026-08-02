@@ -1,0 +1,183 @@
+{
+  "status": "BLOCKED_STATE_INCONSISTENT",
+  "task": "Dex5-S0-ShortRotation-35Deg-Long-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_s0_short_rotation_oracle/2026-08-01_23-31-43_ppo_torch/checkpoints/best_agent.pt",
+  "checkpoint_sha256": "10860cb66f5c7efbfeea79fb6f0a29b24214d249fea8b52a90b3fd74363a38d5",
+  "reset_bank": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_compatible_p3_reset_bank/Dex5_S0_HW_P3_Reset_Bank.npz",
+  "reset_bank_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1",
+  "reset_source_split": "train",
+  "successful_trajectories": 256,
+  "selection": "all_completed",
+  "corrected_successes_in_selected": 0,
+  "completed_episodes_seen": 256,
+  "success_flag_count": 0,
+  "control_steps": 71,
+  "total_transition_rows": 18176,
+  "split_counts": {
+    "train": 189,
+    "validation": 26,
+    "test": 41
+  },
+  "unique_sources_by_split": {
+    "train": 96,
+    "validation": 15,
+    "test": 16
+  },
+  "split_leakage": 0,
+  "kinematic_consistency": {
+    "valid_transition_count": 17920,
+    "control_rate_hz": 60.0,
+    "control_rate": {
+      "sample_count": 17920,
+      "omega_xyz_rmse_rad_s": 2.568700614248696,
+      "omega_z_correlation": 0.5192552465187641,
+      "quaternion_to_reported_path_ratio": 0.16786159397512687
+    },
+    "physics_rate_hz": 120.0,
+    "physics_substep": {
+      "sample_count": 35840,
+      "omega_xyz_rmse_rad_s": 2.563925916009614,
+      "omega_z_correlation": 0.7639100160199197,
+      "quaternion_to_reported_path_ratio": 0.20434973372121773
+    }
+  },
+  "motion_evidence_contract": {
+    "task_rotation_source": "root_quat_w relative rotation",
+    "finite_step_velocity_field": "pen_angular_velocity_pose_delta",
+    "instantaneous_velocity_field": "pen_angular_velocity",
+    "instantaneous_velocity_role": "contact/impact diagnostic only",
+    "reset_boundaries_excluded_by": "transition_same_episode"
+  },
+  "kinematic_consistency_thresholds": {
+    "minimum_omega_z_correlation": 0.7,
+    "maximum_omega_xyz_rmse_rad_s": 0.5,
+    "quaternion_to_reported_path_ratio": [
+      0.5,
+      1.5
+    ]
+  },
+  "dataset_authorized": false,
+  "logical_actuator_semantics": "16D diagnostic coupled coordinates; not motor-shaft commands",
+  "sdk_command_semantics": "20D absolute URDF-joint target at the 100 Hz command chain",
+  "array_shapes": {
+    "oracle_observation": [
+      18176,
+      152
+    ],
+    "student_observation": [
+      18176,
+      340
+    ],
+    "virtual_action": [
+      18176,
+      20
+    ],
+    "policy_action_raw": [
+      18176,
+      20
+    ],
+    "adapter_projected_target": [
+      18176,
+      20
+    ],
+    "logical_actuator_target": [
+      18176,
+      16
+    ],
+    "sdk_absolute_target": [
+      18176,
+      20
+    ],
+    "joint_position": [
+      18176,
+      20
+    ],
+    "joint_velocity": [
+      18176,
+      20
+    ],
+    "pen_pose": [
+      18176,
+      7
+    ],
+    "pen_linear_velocity": [
+      18176,
+      3
+    ],
+    "pen_angular_velocity": [
+      18176,
+      3
+    ],
+    "pen_pose_next": [
+      18176,
+      7
+    ],
+    "pen_linear_velocity_next": [
+      18176,
+      3
+    ],
+    "pen_angular_velocity_next": [
+      18176,
+      3
+    ],
+    "transition_same_episode": [
+      18176,
+      1
+    ],
+    "pen_physics_quat_samples": [
+      18176,
+      12
+    ],
+    "pen_physics_angvel_samples": [
+      18176,
+      9
+    ],
+    "contact_state": [
+      18176,
+      5
+    ],
+    "contact_force_w": [
+      18176,
+      15
+    ],
+    "contact_force_norm": [
+      18176,
+      5
+    ],
+    "episode_offsets": [
+      257
+    ],
+    "episode_length": [
+      256
+    ],
+    "episode_bank_id": [
+      256
+    ],
+    "episode_state_id": [
+      256
+    ],
+    "episode_source_trajectory_id": [
+      256
+    ],
+    "episode_split": [
+      256
+    ],
+    "episode_delay_ticks": [
+      256
+    ],
+    "episode_tracking_gain": [
+      256
+    ],
+    "episode_velocity_limit_rad_s": [
+      256
+    ],
+    "episode_corrected_success": [
+      256
+    ],
+    "pen_angular_velocity_pose_delta": [
+      18176,
+      3
+    ],
+    "dataset_authorized": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "settled_candidate_not_r0_r3_validated",
+  "input": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/candidate/Dex5_S0_HW_P3_projected_candidates.npz",
+  "input_sha256": "3d14fbfffd557f860174159b162ce073f6900c581d467c8cad3b35284995bb95",
+  "rows": 964,
+  "settle_steps": 12,
+  "settle_duration_ms": 100.0,
+  "finite_rate": 1.0,
+  "tim_final_contact_rate": 0.9304979253112033,
+  "tim_each_contact_rate": [
+    0.9989626556016598,
+    0.9315352697095436,
+    1.0
+  ],
+  "at_least_two_tim_rate": 1.0,
+  "max_penetration_mm": 0.2537677064538002,
+  "precheck_pass": 897,
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/settled_candidate/Dex5_S0_HW_P3_settled_candidates.npz",
+  "output_sha256": "7f00736da2cbd7ed9e7f3d223ae92b632c09e597be97dd43360117c35582a706"
+}

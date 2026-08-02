@@ -1,0 +1,51 @@
+{
+  "asset_path": "isaac/assets/dex5_hand.usd",
+  "environment_version": "dex5-canonical-grasp-v9-o0@2026-07-30",
+  "physics_version": "Isaac-Sim-5.1.0/PhysX",
+  "physics": {
+    "mass": 0.0094,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.45,
+    "com_offset": [0.00935, 0.0, 0.0],
+    "physics_dt": 0.008333333333333333,
+    "control_dt": 0.016666666666666666,
+    "solver_position_iterations": 12,
+    "solver_velocity_iterations": 2,
+    "contact_offset": 0.001,
+    "rest_offset": 0.0
+  },
+  "sources": [
+    {
+      "canonical_id": "P1",
+      "state_type": "static",
+      "source_label": "V9 P1 thumb-index-middle control",
+      "path": "reports/m3_2_30_index_near_surface/p1_p2_reset_bank/P1_P2_reset_bank_phase1最终validated自复验_validated.npz",
+      "phase_id": 1
+    },
+    {
+      "canonical_id": "P2",
+      "state_type": "static",
+      "source_label": "V9 P2 TIM hold with ring-under pose",
+      "path": "reports/m3_2_30_index_near_surface/p1_p2_reset_bank/P1_P2_reset_bank_phase1最终validated自复验_validated.npz",
+      "phase_id": 2
+    },
+    {
+      "canonical_id": "P3",
+      "state_type": "static",
+      "source_label": "V9 P3 index-forward TIM entry",
+      "path": "reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/sources/P3_v9_pose_source.npz"
+    },
+    {
+      "canonical_id": "P4",
+      "state_type": "static",
+      "source_label": "V9 P4 index-middle drive thumb-under-end",
+      "path": "reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/sources/P4_v9_pose_source.npz"
+    },
+    {
+      "canonical_id": "P5",
+      "state_type": "static",
+      "source_label": "V9 P5 thumb-index pinch fingers withdrawn",
+      "path": "reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/sources/P5_v9_pose_source.npz"
+    }
+  ]
+}

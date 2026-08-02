@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "source_dataset": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/oracle_dataset/Dex5_S0_Oracle_Success_Rollouts_1200.npz",
+  "source_simulator": "Isaac Lab PhysX rollout",
+  "visualization_backend": "MuJoCo Dex5 mesh state playback (RTX unavailable)",
+  "scope": "P3 constrained short rotation; no handoff; no powered real replay",
+  "episodes": [
+    {
+      "episode": 60,
+      "label": "典型成功轨迹",
+      "video": "episode_0060.mp4",
+      "poster": "episode_0060.png",
+      "chart": "episode_0060_metrics.png",
+      "metrics": {
+        "duration_s": 1.0833333333333333,
+        "final_accumulated_angle_deg": 39.35513687133789,
+        "peak_accumulated_angle_deg": 39.35513687133789,
+        "max_height_loss_mm": 0.0,
+        "contact_transition_count": 3
+      }
+    },
+    {
+      "episode": 126,
+      "label": "接触变化最多",
+      "video": "episode_0126.mp4",
+      "poster": "episode_0126.png",
+      "chart": "episode_0126_metrics.png",
+      "metrics": {
+        "duration_s": 1.1833333333333333,
+        "final_accumulated_angle_deg": 36.709434509277344,
+        "peak_accumulated_angle_deg": 36.709434509277344,
+        "max_height_loss_mm": 0.0,
+        "contact_transition_count": 9
+      }
+    },
+    {
+      "episode": 1188,
+      "label": "姿态变化最大",
+      "video": "episode_1188.mp4",
+      "poster": "episode_1188.png",
+      "chart": "episode_1188_metrics.png",
+      "metrics": {
+        "duration_s": 1.4,
+        "final_accumulated_angle_deg": 39.51573944091797,
+        "peak_accumulated_angle_deg": 39.51573944091797,
+        "max_height_loss_mm": 0.0,
+        "contact_transition_count": 0
+      }
+    }
+  ]
+}

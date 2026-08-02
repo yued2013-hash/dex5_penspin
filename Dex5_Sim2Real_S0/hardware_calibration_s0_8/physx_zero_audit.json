@@ -1,0 +1,45 @@
+{
+  "task": "Dex5-S0.8-P3MeasuredHardwareCompat-Audit-Direct-v0",
+  "mode": "zero",
+  "audit_only": true,
+  "training": false,
+  "num_envs": 16,
+  "control_steps": 30,
+  "forced_p3_bank_ids": [
+    771,
+    790
+  ],
+  "physics_hz": 120.0,
+  "policy_hz": 60.0,
+  "finite": true,
+  "done_count": 0,
+  "tim_all_contact_ratio": 0.93125,
+  "tim_at_least_two_contact_ratio": 1.0,
+  "any_contact_ratio": 1.0,
+  "drop_ever_rate": 0.0,
+  "contact_loss_ever_rate": 0.0,
+  "ballistic_ever_rate": 0.0,
+  "max_pen_drift_mm": 4.705107770860195,
+  "max_height_loss_mm": 0.5381479859352112,
+  "max_penetration_mm": 0.34981872886419296,
+  "max_target_step_rad": 0.0,
+  "max_target_coupling_error_rad": 0.0,
+  "max_target_limit_violation_rad": 0.0,
+  "provisional_randomization": {
+    "delay_ticks_min": 1,
+    "delay_ticks_max": 4,
+    "tracking_gain_min": 0.8046662211418152,
+    "tracking_gain_max": 0.9879860281944275,
+    "velocity_limit_rad_s_min": 0.040095314383506775,
+    "velocity_limit_rad_s_max": 0.07824172079563141
+  },
+  "command_updates_per_env": {
+    "min": 50,
+    "max": 50
+  },
+  "initial_coupling_projection_delta": {
+    "mean_rad": 0.16948631405830383,
+    "max_rad": 0.2566715478897095
+  },
+  "o0_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+}

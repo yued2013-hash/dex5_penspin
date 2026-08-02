@@ -1,0 +1,542 @@
+{
+  "status": "PASS_DIAGNOSTIC_TESTED_FEEDBACK_FAILED_TO_WIDEN",
+  "phase": "O1.17 Closed-Loop Basin Widening Audit",
+  "artifact_role": "matched_feedback_ablation_not_policy_teacher_or_reset_dataset",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "bank_id": 1155,
+  "horizon_steps": 18,
+  "horizon_ms": 300.0,
+  "bank_sha256_before": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "bank_sha256_after": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "search": {
+    "best_score": 30.314517974853516,
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": 12.639744758605957,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 2,
+        "best_score": 14.11510181427002,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 3,
+        "best_score": 14.29865837097168,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 4,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 5,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 6,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 7,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 8,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0078125
+      },
+      {
+        "iteration": 9,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 10,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 11,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0078125
+      },
+      {
+        "iteration": 12,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 13,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 14,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.03125
+      },
+      {
+        "iteration": 15,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0234375
+      },
+      {
+        "iteration": 16,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0703125
+      },
+      {
+        "iteration": 17,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.03125
+      },
+      {
+        "iteration": 18,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0234375
+      },
+      {
+        "iteration": 19,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0390625
+      },
+      {
+        "iteration": 20,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.078125
+      }
+    ],
+    "action_plan_serialized": false
+  },
+  "reference": {
+    "selected_clone": 3,
+    "selected_clone_recovered_strict": true,
+    "serialized": false
+  },
+  "controller_candidates_preregistered": {
+    "q_track_weak": {
+      "q_gain": 0.4,
+      "dq_gain": 0.01,
+      "adaptive_gain": 0.0,
+      "max_correction_rad": 0.02
+    },
+    "q_track_medium": {
+      "q_gain": 0.8,
+      "dq_gain": 0.02,
+      "adaptive_gain": 0.0,
+      "max_correction_rad": 0.03
+    },
+    "support_adaptive": {
+      "q_gain": 0.5,
+      "dq_gain": 0.015,
+      "adaptive_gain": 0.8,
+      "max_correction_rad": 0.04
+    }
+  },
+  "perturbation_protocol": {
+    "calibration_seed_base": 20460731,
+    "held_out_seed_base": 20560731,
+    "same_perturbations_matched_across_modes": true,
+    "calibration_and_held_out_seeds_disjoint": true,
+    "controller_selection_nominal_unsafe_tolerance_pp": 2.0
+  },
+  "calibration": [
+    {
+      "mode": "open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.28125,
+          "strict_rate": 0.265625,
+          "recovered_strict_rate": 0.265625,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.571374773979187,
+          "min_height_delta_mm_p10": -0.08614212274551392,
+          "final_height_delta_mm_p10": 7.186276435852051,
+          "handoff_margin_p90": 0.16616305708885193,
+          "failure_taxonomy": {
+            "recovered_strict": 34,
+            "no_TIM_transition": 92,
+            "throw": 1,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.375,
+          "strict_rate": 0.171875,
+          "recovered_strict_rate": 0.171875,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5264729857444763,
+          "min_height_delta_mm_p10": -0.10931603610515594,
+          "final_height_delta_mm_p10": 6.886899471282959,
+          "handoff_margin_p90": 0.04428992420434952,
+          "failure_taxonomy": {
+            "no_TIM_transition": 78,
+            "throw": 2,
+            "recovered_strict": 22,
+            "axis_misaligned": 26
+          }
+        }
+      ],
+      "selection_score": 0.190625
+    },
+    {
+      "mode": "q_track_weak",
+      "controller": {
+        "q_gain": 0.4,
+        "dq_gain": 0.01,
+        "adaptive_gain": 0.0,
+        "max_correction_rad": 0.02
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2421875,
+          "strict_rate": 0.21875,
+          "recovered_strict_rate": 0.21875,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.520051121711731,
+          "min_height_delta_mm_p10": -0.1050703227519989,
+          "final_height_delta_mm_p10": 6.859493255615234,
+          "handoff_margin_p90": 0.1683543622493744,
+          "failure_taxonomy": {
+            "no_TIM_transition": 91,
+            "recovered_strict": 28,
+            "throw": 6,
+            "contact_force_overload": 1,
+            "axis_misaligned": 2
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4765625,
+          "strict_rate": 0.0859375,
+          "recovered_strict_rate": 0.0859375,
+          "unsafe_rate": 0.125,
+          "axis_alignment_median": 0.4491507112979889,
+          "min_height_delta_mm_p10": -0.11927895247936249,
+          "final_height_delta_mm_p10": 6.5208916664123535,
+          "handoff_margin_p90": -0.014675280079245567,
+          "failure_taxonomy": {
+            "no_TIM_transition": 60,
+            "axis_misaligned": 25,
+            "contact_force_overload": 15,
+            "recovered_strict": 11,
+            "throw": 16,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.045312500000000006
+    },
+    {
+      "mode": "q_track_medium",
+      "controller": {
+        "q_gain": 0.8,
+        "dq_gain": 0.02,
+        "adaptive_gain": 0.0,
+        "max_correction_rad": 0.03
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.390625,
+          "strict_rate": 0.203125,
+          "recovered_strict_rate": 0.203125,
+          "unsafe_rate": 0.03125,
+          "axis_alignment_median": 0.40656420588493347,
+          "min_height_delta_mm_p10": -0.11264309287071228,
+          "final_height_delta_mm_p10": 6.490334987640381,
+          "handoff_margin_p90": 0.1474299430847168,
+          "failure_taxonomy": {
+            "throw": 4,
+            "no_TIM_transition": 77,
+            "recovered_strict": 26,
+            "axis_misaligned": 18,
+            "joint_gate_miss": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.453125,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.3687109053134918,
+          "min_height_delta_mm_p10": -0.12498609721660614,
+          "final_height_delta_mm_p10": 6.017429351806641,
+          "handoff_margin_p90": -0.11324481666088104,
+          "failure_taxonomy": {
+            "throw": 6,
+            "axis_misaligned": 43,
+            "no_TIM_transition": 68,
+            "recovered_strict": 6,
+            "contact_force_overload": 5
+          }
+        }
+      ],
+      "selection_score": 0.04375
+    },
+    {
+      "mode": "support_adaptive",
+      "controller": {
+        "q_gain": 0.5,
+        "dq_gain": 0.015,
+        "adaptive_gain": 0.8,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.375,
+          "strict_rate": 0.21875,
+          "recovered_strict_rate": 0.21875,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.3864007294178009,
+          "min_height_delta_mm_p10": -0.10941177606582642,
+          "final_height_delta_mm_p10": 6.355024814605713,
+          "handoff_margin_p90": 0.13911613821983337,
+          "failure_taxonomy": {
+            "no_TIM_transition": 79,
+            "contact_force_overload": 10,
+            "axis_misaligned": 8,
+            "recovered_strict": 28,
+            "throw": 1,
+            "joint_gate_miss": 2
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.5078125,
+          "strict_rate": 0.0625,
+          "recovered_strict_rate": 0.0625,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.3830527067184448,
+          "min_height_delta_mm_p10": -0.12206844985485077,
+          "final_height_delta_mm_p10": 6.194486141204834,
+          "handoff_margin_p90": -0.05241568759083748,
+          "failure_taxonomy": {
+            "no_TIM_transition": 55,
+            "axis_misaligned": 43,
+            "throw": 15,
+            "recovered_strict": 8,
+            "contact_force_overload": 6,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.025781250000000002
+    }
+  ],
+  "selected_controller": "support_adaptive",
+  "held_out_evaluation": [
+    {
+      "mode": "open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2734375,
+          "strict_rate": 0.265625,
+          "recovered_strict_rate": 0.265625,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.5758406519889832,
+          "min_height_delta_mm_p10": -0.084705650806427,
+          "final_height_delta_mm_p10": 7.173346996307373,
+          "handoff_margin_p90": 0.16840696334838867,
+          "failure_taxonomy": {
+            "no_TIM_transition": 93,
+            "recovered_strict": 34,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3828125,
+          "strict_rate": 0.1953125,
+          "recovered_strict_rate": 0.1953125,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5286145806312561,
+          "min_height_delta_mm_p10": -0.1128852367401123,
+          "final_height_delta_mm_p10": 6.798860549926758,
+          "handoff_margin_p90": 0.06870420277118683,
+          "failure_taxonomy": {
+            "recovered_strict": 25,
+            "axis_misaligned": 23,
+            "throw": 2,
+            "no_TIM_transition": 78
+          }
+        },
+        {
+          "name": "joint_L2",
+          "episodes": 128,
+          "TIM_transition_rate": 0.328125,
+          "strict_rate": 0.078125,
+          "recovered_strict_rate": 0.078125,
+          "unsafe_rate": 0.09375,
+          "axis_alignment_median": 0.4451066553592682,
+          "min_height_delta_mm_p10": -0.16318857669830322,
+          "final_height_delta_mm_p10": 6.031630039215088,
+          "handoff_margin_p90": -0.015100285410881042,
+          "failure_taxonomy": {
+            "recovered_strict": 10,
+            "no_TIM_transition": 80,
+            "axis_misaligned": 20,
+            "throw": 11,
+            "contact_force_overload": 6,
+            "penetration": 1
+          }
+        },
+        {
+          "name": "joint_L3",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2734375,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.140625,
+          "axis_alignment_median": 0.4011000692844391,
+          "min_height_delta_mm_p10": -0.2975117564201355,
+          "final_height_delta_mm_p10": 4.758172512054443,
+          "handoff_margin_p90": -0.1564217209815979,
+          "failure_taxonomy": {
+            "axis_misaligned": 14,
+            "no_TIM_transition": 85,
+            "contact_force_overload": 10,
+            "penetration": 12,
+            "throw": 6,
+            "recovered_strict": 1
+          }
+        }
+      ]
+    },
+    {
+      "mode": "support_adaptive",
+      "controller": {
+        "q_gain": 0.5,
+        "dq_gain": 0.015,
+        "adaptive_gain": 0.8,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.46875,
+          "strict_rate": 0.296875,
+          "recovered_strict_rate": 0.296875,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.44412314891815186,
+          "min_height_delta_mm_p10": -0.10941922664642334,
+          "final_height_delta_mm_p10": 6.456261157989502,
+          "handoff_margin_p90": 0.16839052736759186,
+          "failure_taxonomy": {
+            "throw": 5,
+            "axis_misaligned": 10,
+            "contact_force_overload": 10,
+            "recovered_strict": 38,
+            "no_TIM_transition": 64,
+            "joint_gate_miss": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.40625,
+          "strict_rate": 0.0390625,
+          "recovered_strict_rate": 0.0390625,
+          "unsafe_rate": 0.109375,
+          "axis_alignment_median": 0.39263391494750977,
+          "min_height_delta_mm_p10": -0.13135671615600586,
+          "final_height_delta_mm_p10": 6.355766773223877,
+          "handoff_margin_p90": -0.08862420916557312,
+          "failure_taxonomy": {
+            "recovered_strict": 5,
+            "contact_force_overload": 6,
+            "no_TIM_transition": 68,
+            "axis_misaligned": 34,
+            "throw": 14,
+            "joint_gate_miss": 1
+          }
+        },
+        {
+          "name": "joint_L2",
+          "episodes": 128,
+          "TIM_transition_rate": 0.296875,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "unsafe_rate": 0.09375,
+          "axis_alignment_median": 0.348833829164505,
+          "min_height_delta_mm_p10": -0.20315535366535187,
+          "final_height_delta_mm_p10": 5.859499454498291,
+          "handoff_margin_p90": -0.22674104571342468,
+          "failure_taxonomy": {
+            "axis_misaligned": 29,
+            "no_TIM_transition": 80,
+            "contact_force_overload": 5,
+            "throw": 11,
+            "joint_gate_miss": 1,
+            "recovered_strict": 1,
+            "penetration": 1
+          }
+        },
+        {
+          "name": "joint_L3",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2734375,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "unsafe_rate": 0.15625,
+          "axis_alignment_median": 0.3533407747745514,
+          "min_height_delta_mm_p10": -0.355258584022522,
+          "final_height_delta_mm_p10": 5.104020595550537,
+          "handoff_margin_p90": -0.202037051320076,
+          "failure_taxonomy": {
+            "axis_misaligned": 19,
+            "no_TIM_transition": 84,
+            "penetration": 12,
+            "recovered_strict": 2,
+            "contact_force_overload": 3,
+            "throw": 8
+          }
+        }
+      ]
+    }
+  ],
+  "widening_gate": {
+    "joint_L1_at_least_30pct": false,
+    "joint_L1_at_least_2x_matched_baseline": false,
+    "joint_L2_at_least_10pct": false,
+    "joint_L1_unsafe_not_worse_by_more_than_2pp": false
+  },
+  "widening_gate_pass": false,
+  "historical_o1_16_joint_L1_rate": 0.1015625,
+  "elapsed_seconds": 17.321899514994584,
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "action_plan_serialized": false,
+    "reference_trajectory_serialized": false,
+    "reset_dataset_generated": false,
+    "contact_pattern_controller_used": false
+  }
+}

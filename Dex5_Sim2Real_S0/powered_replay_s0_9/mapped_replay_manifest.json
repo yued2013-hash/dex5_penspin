@@ -1,0 +1,34 @@
+{
+  "schema": "dex5-s0.9-mapped-replay-v1",
+  "status": "OFFLINE_PREFLIGHT_PASS_NOT_EXECUTED",
+  "output": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/powered_replay_s0_9/mapped_replay_100hz.npz",
+  "output_sha256": "dfcc88f356fe63815b527bde4b38db0a948e3a7a8444fbcc2942989565725108",
+  "source_sha256": "60a97c8d7a1aa017ecf80230991b954d251c8d80c524ede6c76917a7bd26dbc8",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "46882c610578a3c40918af2a65404d026031f960af59ead0b9f3728f74adf95b",
+  "trajectory_count": 20,
+  "command_rows": 8958,
+  "command_hz": 100.0,
+  "maximum_delta_rad": 0.0007999503753914339,
+  "maximum_speed_rad_s": 0.07999503753914339,
+  "within_limits": true,
+  "thumb_branch_usage": {
+    "16": "up",
+    "17": "up",
+    "18": "up",
+    "19": "up"
+  },
+  "thumb_local_command_correction_rad": [
+    -0.16983478126802848,
+    2.9935276479875483e-11,
+    -3.240796520032063e-11,
+    -4.7381765178045043e-11
+  ],
+  "mapped_p3_thumb_command_rad": [
+    0.198034971,
+    0.7970652983,
+    0.9899153359,
+    0.6662725608
+  ],
+  "boundary": "The first powered replay uses the validated P3 approach branch. This package does not validate reverse-branch tracking under load."
+}

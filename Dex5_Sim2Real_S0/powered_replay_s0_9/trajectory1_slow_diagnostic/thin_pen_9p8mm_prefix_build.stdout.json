@@ -1,0 +1,20 @@
+{
+  "schema": "dex5-s0.9-slow-diagnostic-v1",
+  "status": "OFFLINE_PREFIX_NOT_EXECUTED",
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/powered_replay_s0_9/trajectory1_slow_diagnostic/thin_pen_9p8mm_prefix_2s_100hz.npz",
+  "output_sha256": "f46238c10e69b095244b3e1939ab8fdf1109856ff32f6b370740f90b255839e1",
+  "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/powered_replay_s0_9/trajectory1_slow_diagnostic/trajectory1_slow_100hz.npz",
+  "source_sha256": "44e54a4915cc43faaace932c3c301e6e57e2c8028ec45885a8448e5a72305230",
+  "source_trajectory_id": 1,
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "trajectory_count": 1,
+  "command_rows": 201,
+  "command_hz": 100.0,
+  "duration_s": 2.0,
+  "maximum_delta_rad": 0.0002620816230773926,
+  "maximum_speed_rad_s": 0.026208162307739258,
+  "physical_condition": {
+    "pen_middle_diameter_mm": 9.8
+  },
+  "boundary": "Stops at 2.0 s, before both prior Roll_31R failures. Completion does not authorize the remaining trajectory."
+}

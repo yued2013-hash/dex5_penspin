@@ -1,0 +1,63 @@
+# Python and editor state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local environments and caches
+.venv/
+venv/
+env/
+*.egg-info/
+.cache/
+tmp/
+
+# Training products
+/logs/
+/outputs/
+/checkpoints/
+**/logs/
+**/checkpoints/
+events.out.tfevents.*
+*.log
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Rollouts and generated numerical datasets
+*.npz
+*.npy
+*.pkl
+*.pickle
+
+# Reproducible tabular exports derived from ignored rollout datasets
+/Dex5_Sim2Real_S0/oracle_validity_audit_s0_9_2/trajectory_validity_metrics_1200.csv
+/Dex5_Sim2Real_S0/quaternion_replay_audit/all_1200_quaternion_metrics.csv
+
+# Large generated media
+*.mp4
+*.webm
+*.avi
+*.mov
+*.gif
+
+# Keep the repository focused on source and reviewed reports.
+/reports/*
+!/reports/README_当前成果.md
+!/reports/m3_2_30_index_near_surface/
+/reports/m3_2_30_index_near_surface/*
+!/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/
+!/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/
+/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/*
+!/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/
+/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/*
+
+# The frozen O0 bank is small and required by the privileged-oracle environment.
+!/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/P1_P5_v9_physx_projected_R3_validated.npz

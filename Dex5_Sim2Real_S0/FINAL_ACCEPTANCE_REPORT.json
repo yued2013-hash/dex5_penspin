@@ -1,0 +1,43 @@
+{
+  "status": "PASS_OFFLINE_NOT_READY_FOR_POWERED_HARDWARE",
+  "frozen_o0_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "hardware_compatible_reset_bank": {
+    "states": 582,
+    "sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1"
+  },
+  "oracle_gate": {
+    "task_horizon_s": 1.6,
+    "target_rotation_deg": 45.0,
+    "target_tolerance_deg": 10.0,
+    "hold_ms": 150,
+    "seeds": [
+      {"seed": 20260801, "nominal": 0.955078125, "medium_dr": 0.8488542174549001},
+      {"seed": 20260802, "nominal": 0.94921875, "medium_dr": 0.88},
+      {"seed": 20260803, "nominal": 0.960058451047248, "medium_dr": 0.9337554797856795}
+    ],
+    "nominal_gate": 0.9,
+    "medium_dr_gate": 0.7,
+    "minimum_seed_gate": 0.6,
+    "pass": true
+  },
+  "successful_rollout_dataset": {
+    "trajectories": 1200,
+    "transition_rows": 83218,
+    "unique_sources": 160,
+    "source_split_leakage": 0,
+    "sha256": "1451594f8d4e8519459eb93538945209e5d8fbde80641fd26aa8fb1fb3e54b71",
+    "validation": "PASS"
+  },
+  "real_replay_package": {
+    "status": "OFFLINE_ONLY_NOT_HARDWARE_APPROVED",
+    "trajectories": 20,
+    "command_hz": 100.0,
+    "command_rows": 3486,
+    "replay_speed_scale": 0.5,
+    "maximum_step_delta_rad": 0.004086017608642578,
+    "coupling_error_rad": 0.0,
+    "dry_run": "PASS",
+    "privileged_oracle_included": false
+  },
+  "next_gate": "controlled powered Dex5 interface acceptance"
+}

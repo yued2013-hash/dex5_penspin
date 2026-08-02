@@ -1,0 +1,46 @@
+{
+  "schema": "dex5-s0.9-mapped-powered-replay-v2",
+  "timestamp_unix_s": 1785680108.0989501,
+  "status": "OFFLINE_PREFLIGHT_PASS",
+  "replay_sha256": "f46238c10e69b095244b3e1939ab8fdf1109856ff32f6b370740f90b255839e1",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "b7d6559718cd24a17b61d218d65480ffe21b43da8e46f1c149668dd180f105b7",
+  "requested_trajectory_count": 1,
+  "safety": {
+    "speed_limit_rad_s": 0.03,
+    "delta_limit_rad": 0.01,
+    "watchdog_s": 0.1,
+    "thermal_abort_c": 75.0,
+    "startup_mode": "low_gain_preload",
+    "replay_control_mode": "low_gain_hybrid",
+    "diagnostic_package": true,
+    "feedback_speed_abort_rad_s": 0.12,
+    "feedback_speed_abort_windows": 1,
+    "feedback_speed_monitored_joint_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "offline_preflight": {
+    "trajectory_count": 1,
+    "command_rows": 201,
+    "maximum_delta_rad": 0.0002620816230773926,
+    "maximum_speed_rad_s": 0.026208162307739258
+  },
+  "trajectories": [],
+  "staging": null
+}

@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>O1.23 MuJoCo 失败轨迹回放</title>
+<style>body{margin:0;background:#eef1f4;color:#17202a;font:15px/1.6 system-ui,sans-serif}header,main{max-width:1080px;margin:auto;padding:24px}header{max-width:none;background:#fff;padding-left:max(24px,calc((100vw - 1032px)/2))}h1{margin:0 0 8px;font-size:28px;letter-spacing:0}video,img{display:block;width:100%;margin:18px 0;background:#111}.warn{background:#fff;border-left:4px solid #d99018;padding:10px 14px}code{font-family:ui-monospace,monospace}</style>
+</head><body><header><h1>O1.23 P4 绕行→P5 捕获失败：MuJoCo 网格回放</h1>
+<p>用 Dex5+pen MuJoCo 网格显示冻结的 Isaac/PhysX policy rollout。</p></header><main>
+<div class="warn"><strong>口径：</strong>这是逐帧运动学回放，用于看清手指和笔；不是在 MuJoCo 中重新执行 policy，也不能证明两引擎动力学一致。</div>
+<video controls muted loop playsinline preload="metadata" poster="failure_mujoco_poster.png"><source src="failure_mujoco.mp4" type="video/mp4"></video>
+<p>最大高度下降 <strong>65.16 mm</strong>，最终累计目标轴转角 <strong>222.5°</strong>。</p>
+<img src="../O1_23_典型P3到P4失败轨迹/failure_metrics.png" alt="PhysX trajectory metrics">
+<p>source: <code>/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/O1_23_典型P3到P4失败轨迹/failure_trajectory_states.npz</code></p></main></body></html>

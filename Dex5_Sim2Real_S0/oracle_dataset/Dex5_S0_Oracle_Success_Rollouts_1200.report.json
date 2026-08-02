@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "task": "Dex5-S0-ShortRotation-16-MediumDR-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_s0_short_rotation_oracle/2026-07-31_23-37-54_ppo_torch/checkpoints/agent_4032.pt",
+  "checkpoint_sha256": "153a2fbc7f2be5a1cb967d3f1f924185e0a94a5987cd4b3708423b91a62f4252",
+  "reset_bank": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_compatible_p3_reset_bank/Dex5_S0_HW_P3_Reset_Bank.npz",
+  "reset_bank_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1",
+  "reset_source_split": "train",
+  "successful_trajectories": 1200,
+  "completed_episodes_seen": 1442,
+  "success_flag_count": 1201,
+  "control_steps": 454,
+  "total_transition_rows": 83218,
+  "split_counts": {
+    "train": 872,
+    "validation": 136,
+    "test": 192
+  },
+  "unique_sources_by_split": {
+    "train": 123,
+    "validation": 17,
+    "test": 20
+  },
+  "split_leakage": 0,
+  "logical_actuator_semantics": "16D diagnostic coupled coordinates; not motor-shaft commands",
+  "sdk_command_semantics": "20D absolute URDF-joint target at the 100 Hz command chain",
+  "array_shapes": {
+    "oracle_observation": [
+      83218,
+      152
+    ],
+    "student_observation": [
+      83218,
+      340
+    ],
+    "virtual_action": [
+      83218,
+      20
+    ],
+    "policy_action_raw": [
+      83218,
+      20
+    ],
+    "adapter_projected_target": [
+      83218,
+      20
+    ],
+    "logical_actuator_target": [
+      83218,
+      16
+    ],
+    "sdk_absolute_target": [
+      83218,
+      20
+    ],
+    "joint_position": [
+      83218,
+      20
+    ],
+    "joint_velocity": [
+      83218,
+      20
+    ],
+    "pen_pose": [
+      83218,
+      7
+    ],
+    "pen_linear_velocity": [
+      83218,
+      3
+    ],
+    "pen_angular_velocity": [
+      83218,
+      3
+    ],
+    "contact_state": [
+      83218,
+      5
+    ],
+    "contact_force_w": [
+      83218,
+      15
+    ],
+    "contact_force_norm": [
+      83218,
+      5
+    ],
+    "episode_offsets": [
+      1201
+    ],
+    "episode_length": [
+      1200
+    ],
+    "episode_bank_id": [
+      1200
+    ],
+    "episode_state_id": [
+      1200
+    ],
+    "episode_source_trajectory_id": [
+      1200
+    ],
+    "episode_split": [
+      1200
+    ],
+    "episode_delay_ticks": [
+      1200
+    ],
+    "episode_tracking_gain": [
+      1200
+    ],
+    "episode_velocity_limit_rad_s": [
+      1200
+    ]
+  }
+}

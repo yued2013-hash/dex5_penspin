@@ -1,0 +1,34 @@
+{
+  "schema": "dex5-s0.8-command-latency-v1",
+  "status": "MEASURED",
+  "distribution": {
+    "controller_accept_s": {
+      "count": 16,
+      "p05": 0.00022843849728815258,
+      "p50": 0.000311862000671681,
+      "p95": 0.0006005582399666309,
+      "max": 0.000777477995143272
+    },
+    "physical_onset_s": {
+      "count": 6,
+      "p05": 0.014439824994042283,
+      "p50": 0.019896864003385417,
+      "p95": 0.0291918012444512,
+      "max": 0.031138673992245458
+    },
+    "time_to_63_s": {
+      "count": 16,
+      "p05": 0.007357930498983478,
+      "p50": 0.03861350299848709,
+      "p95": 0.2390447857469553,
+      "max": 0.32129513699328527
+    }
+  },
+  "physical_onset_detected_channels": 6,
+  "physical_onset_total_channels": 16,
+  "simulation_delay_ticks_100hz": [
+    1,
+    4
+  ],
+  "note": "Controller acceptance is ROS callback latency. Physical onset was observable above 0.5 mrad on 6/16 small-step trials; [1,4] ticks conservatively covers the measured 14-31 ms onset range."
+}

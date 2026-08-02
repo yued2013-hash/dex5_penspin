@@ -1,0 +1,18 @@
+{
+  "schema": "dex5-s0.9-enable-transient-diagnostic-v1",
+  "timestamp_unix_s": 1785592519.3039963,
+  "source": "operator_terminal_transcript",
+  "status": "ABORTED_BEFORE_TRAJECTORY_RECORDING",
+  "replay_sha256": "dfcc88f356fe63815b527bde4b38db0a948e3a7a8444fbcc2942989565725108",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "runtime_static_gate_sha256": "210804f0b442c05a65caa6e99c80dc5eabae2a85bb72cfeee47c3277a6e5c12a",
+  "mapped_start_feedback_error_rad": 0.02558290958404541,
+  "mapped_start_feedback_error_joint": 17,
+  "abort_position_difference_velocity_rad_s": 1.4029,
+  "abort_joint": 17,
+  "post_abort_static_feedback_shift_rad": 0.03539472818374634,
+  "post_abort_static_feedback_shift_joint": 17,
+  "diagnosis": "vendor PD enable transient after loaded P3 shifted while motors were disabled",
+  "trajectory_rows_recorded": 0,
+  "software_estop_sent": true
+}

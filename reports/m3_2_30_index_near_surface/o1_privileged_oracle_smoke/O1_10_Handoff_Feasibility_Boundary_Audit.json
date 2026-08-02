@@ -1,0 +1,109 @@
+{
+  "status": "PARTIAL_BLOCKED_BY_SIMULATOR_THROUGHPUT",
+  "artifact_role": "feasibility_boundary_summary_not_teacher_or_training_data",
+  "conclusion": "BOUNDARY_NOT_CLOSED",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "strict_gate": {
+    "contact_rebuild_steps_before_handoff": 2,
+    "TIM_release_recontact_debounce_steps": 3,
+    "new_support_gain_n": 0.03,
+    "old_support_unload_n": 0.03,
+    "minimum_total_contact_force_n": 0.06,
+    "maximum_total_contact_force_n": 6.0,
+    "simultaneous_load_transfer_required": true,
+    "releasing_finger": "initial strongest TIM finger, selected per reset",
+    "maximum_height_loss_mm": 5.0,
+    "minimum_axis_alignment": 0.5,
+    "minimum_axis_moving_steps": 2,
+    "minimum_TIM_overlap": 0.8,
+    "no_ballistic_contact_loss_penetration_drop_or_invalid": true
+  },
+  "current_CEM_baseline": {
+    "states": 12,
+    "population": 64,
+    "iterations": 10,
+    "horizons_steps": [
+      6,
+      12,
+      18
+    ],
+    "strict_feasible_count": 0,
+    "strict_feasible_rate": 0.0,
+    "failure_taxonomy": {
+      "no_TIM_transition": 11,
+      "axis_misaligned": 1
+    },
+    "handoff_margin": {
+      "best": -0.22938495874404907,
+      "median": -1.0,
+      "minimum": -1.0
+    }
+  },
+  "search_budget_sensitivity": {
+    "population": 128,
+    "iterations": 30,
+    "strict_feasible_count": 0,
+    "strict_feasible_rate": 0.0,
+    "failure_taxonomy": {
+      "no_TIM_transition": 10,
+      "throw": 1,
+      "axis_misaligned": 1
+    },
+    "handoff_margin": {
+      "best": -0.056643009185791016,
+      "median": -1.0,
+      "minimum": -1.0
+    }
+  },
+  "feasibility_boundary": {
+    "temporal_horizon": {
+      "measured": "100, 200, 300 ms",
+      "strict_feasible_count": 0,
+      "boundary": "no strict feasible state at or below 300 ms",
+      "400_600_ms": "NOT_MEASURED_SIMULATOR_THROUGHPUT"
+    },
+    "action_space": {
+      "measured": "20 joint residual targets, three waypoints",
+      "strict_feasible_count": 0,
+      "TIM_only_small_cooperation": "NOT_MEASURED_SIMULATOR_THROUGHPUT"
+    },
+    "action_limit": {
+      "measured": "+/-0.18 rad",
+      "strict_feasible_count": 0,
+      "plus_minus_0_30_rad": "NOT_MEASURED_SIMULATOR_THROUGHPUT"
+    },
+    "canonical_entry": {
+      "measured_entries": [
+        771,
+        817,
+        857,
+        900,
+        948,
+        996,
+        1040,
+        1083,
+        1130,
+        1175,
+        1216,
+        1252
+      ],
+      "strict_feasible_count": 0,
+      "near_feasible_entries": [
+        996
+      ],
+      "boundary": "bank 996 completes a safe TIM transition but misses the axis gate; the other 11 best candidates do not pass strict handoff"
+    }
+  },
+  "runtime_blocker": {
+    "symptom": "New O1.10 Isaac runs entered an abnormally slow PhysX path; even three targeted entries at 600 ms did not complete after more than one hour and were terminated without an artifact.",
+    "interpretation": "An aborted or timed-out condition is NOT a zero-feasibility result.",
+    "partial_files_promoted": false
+  },
+  "constraints": {
+    "ppo_trained": false,
+    "reward_modified": false,
+    "teacher_generated": false,
+    "o0_modified": false,
+    "trajectory_exported": false
+  }
+}

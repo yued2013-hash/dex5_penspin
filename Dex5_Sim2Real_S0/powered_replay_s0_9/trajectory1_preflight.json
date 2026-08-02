@@ -1,0 +1,43 @@
+{
+  "schema": "dex5-s0.9-mapped-powered-replay-v2",
+  "timestamp_unix_s": 1785673363.212359,
+  "status": "OFFLINE_PREFLIGHT_PASS",
+  "replay_sha256": "dfcc88f356fe63815b527bde4b38db0a948e3a7a8444fbcc2942989565725108",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "15101b347137fccee11610ec99fbd12360dc36f0c995e23e6b790a45041aec6b",
+  "requested_trajectory_count": 1,
+  "safety": {
+    "speed_limit_rad_s": 0.08,
+    "delta_limit_rad": 0.01,
+    "watchdog_s": 0.1,
+    "thermal_abort_c": 75.0,
+    "feedback_speed_abort_rad_s": 0.12,
+    "feedback_speed_abort_windows": 3,
+    "feedback_speed_monitored_joint_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "offline_preflight": {
+    "trajectory_count": 20,
+    "command_rows": 8958,
+    "maximum_delta_rad": 0.0007999539375305176,
+    "maximum_speed_rad_s": 0.07999539375305176
+  },
+  "trajectories": [],
+  "staging": null
+}

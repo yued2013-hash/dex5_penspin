@@ -1,0 +1,13 @@
+{
+  "schema": "dex5-s0.9-operator-outcome-correction-v1",
+  "original_result": "trajectory1_retry_result.json",
+  "original_result_sha256": "9cf2a2f33fafb6c58616241b0a93d3c238a40d08941afa1dfc78d727f7aaca01",
+  "trajectory_id": 1,
+  "trajectory_rows_recorded": 0,
+  "original_status": "ABORTED",
+  "corrected_status": "INVALID_EXTERNAL_OBSTRUCTION",
+  "external_obstruction": "pen_jammed_before_trajectory_start",
+  "operator_removed_pen": true,
+  "eligible_for_policy_or_trajectory_evaluation": false,
+  "reason": "Operator reported that the pen was mechanically jammed. The feedback-speed gate aborted during mapped-P3 arming before any trajectory row was recorded."
+}

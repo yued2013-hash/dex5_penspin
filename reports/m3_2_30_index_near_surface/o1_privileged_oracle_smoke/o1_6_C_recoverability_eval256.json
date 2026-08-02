@@ -1,0 +1,880 @@
+{
+  "status": "PASS",
+  "classification": "REACHABILITY_ONLY",
+  "task": "Dex5-PenSpin-Oracle-P3Recoverability-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-07-31_14-56-21_ppo_torch_o1_6_C_recoverability_budget60/checkpoints/agent_1440.pt",
+  "num_envs": 256,
+  "steps": 240,
+  "terminate_on_ballistic": false,
+  "finite": true,
+  "completed_episodes": 6224,
+  "gait_event_episodes": 0,
+  "gait_event_rate": 0.0,
+  "qualified_gait_episodes": 0,
+  "qualified_gait_rate": 0.0,
+  "support_handoff_episodes": 0,
+  "support_handoff_rate": 0.0,
+  "over_180deg_episodes": 0,
+  "over_180deg_rate": 0.0,
+  "qualified_over_180deg_episodes": 0,
+  "qualified_over_180deg_rate": 0.0,
+  "failure_episodes": 6224,
+  "throw_episodes": 118,
+  "contact_loss_episodes": 6105,
+  "penetration_failure_episodes": 3,
+  "ballistic_episodes": 6185,
+  "ballistic_rate": 0.9937339331619537,
+  "mean_ballistic_steps": 2.9469794344473006,
+  "failure_rate": 1.0,
+  "contact_loss_rate": 0.9808804627249358,
+  "mean_metrics": {
+    "target_angular_velocity_rad_s": 3.9836235438783962,
+    "wrong_axis_angular_speed_rad_s": 4.483461661140124,
+    "linear_speed_m_s": 0.10704709640704095,
+    "contact_count": 1.2015299479166666,
+    "mean_abs_action": 0.17142871525138617,
+    "support_force_z_n": -0.07117456846948092,
+    "total_contact_force_n": 2.5049250591934347,
+    "mechanical_power_w": 0.07069892762228847
+  },
+  "recovery_totals": {
+    "thumb_release_episodes": 6185,
+    "thumb_attempt_episodes": 0,
+    "thumb_recontact_episodes": 0,
+    "height_drop_episodes": 6185,
+    "height_recovery_episodes": 0
+  },
+  "by_canonical": {
+    "P1": {
+      "episodes": 0,
+      "gait_episodes": 0,
+      "gait_rate": 0.0,
+      "qualified_gait_episodes": 0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_episodes": 0,
+      "support_handoff_rate": 0.0,
+      "mean_TIM_overlap_ratio": 0.0,
+      "mean_max_zero_TIM_run_steps": 0.0,
+      "over_180deg_episodes": 0,
+      "over_180deg_rate": 0.0,
+      "qualified_over_180deg_episodes": 0,
+      "qualified_over_180deg_rate": 0.0,
+      "axis_aligned_episodes": 0,
+      "axis_aligned_rate": 0.0,
+      "mean_directional_axis_alignment": 0.0,
+      "mean_absolute_axis_alignment": 0.0,
+      "mean_max_no_contact_steps": 0.0,
+      "mean_ballistic_steps": 0.0,
+      "failures": 0,
+      "failure_rate": 0.0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "primary_failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "finger_gait": {
+        "thumb": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "index": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "middle": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "ring": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "pinky": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        }
+      },
+      "recovery": {
+        "thumb_release_episodes": 0,
+        "thumb_release_rate": 0.0,
+        "thumb_attempt_episodes": 0,
+        "thumb_attempt_rate": 0.0,
+        "thumb_recontact_episodes": 0,
+        "thumb_recontact_rate": 0.0,
+        "mean_first_thumb_break_step": 0.0,
+        "mean_first_thumb_attempt_step": 0.0,
+        "mean_first_thumb_recontact_step": 0.0,
+        "height_drop_episodes": 0,
+        "height_drop_rate": 0.0,
+        "height_recovery_episodes": 0,
+        "height_recovery_rate": 0.0,
+        "height_recovery_given_drop_rate": 0.0,
+        "mean_min_height_delta_mm": 0.0
+      }
+    },
+    "P2": {
+      "episodes": 0,
+      "gait_episodes": 0,
+      "gait_rate": 0.0,
+      "qualified_gait_episodes": 0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_episodes": 0,
+      "support_handoff_rate": 0.0,
+      "mean_TIM_overlap_ratio": 0.0,
+      "mean_max_zero_TIM_run_steps": 0.0,
+      "over_180deg_episodes": 0,
+      "over_180deg_rate": 0.0,
+      "qualified_over_180deg_episodes": 0,
+      "qualified_over_180deg_rate": 0.0,
+      "axis_aligned_episodes": 0,
+      "axis_aligned_rate": 0.0,
+      "mean_directional_axis_alignment": 0.0,
+      "mean_absolute_axis_alignment": 0.0,
+      "mean_max_no_contact_steps": 0.0,
+      "mean_ballistic_steps": 0.0,
+      "failures": 0,
+      "failure_rate": 0.0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "primary_failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "finger_gait": {
+        "thumb": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "index": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "middle": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "ring": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "pinky": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        }
+      },
+      "recovery": {
+        "thumb_release_episodes": 0,
+        "thumb_release_rate": 0.0,
+        "thumb_attempt_episodes": 0,
+        "thumb_attempt_rate": 0.0,
+        "thumb_recontact_episodes": 0,
+        "thumb_recontact_rate": 0.0,
+        "mean_first_thumb_break_step": 0.0,
+        "mean_first_thumb_attempt_step": 0.0,
+        "mean_first_thumb_recontact_step": 0.0,
+        "height_drop_episodes": 0,
+        "height_drop_rate": 0.0,
+        "height_recovery_episodes": 0,
+        "height_recovery_rate": 0.0,
+        "height_recovery_given_drop_rate": 0.0,
+        "mean_min_height_delta_mm": 0.0
+      }
+    },
+    "P3": {
+      "episodes": 6224,
+      "gait_episodes": 0,
+      "gait_rate": 0.0,
+      "qualified_gait_episodes": 0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_episodes": 0,
+      "support_handoff_rate": 0.0,
+      "mean_TIM_overlap_ratio": 0.7961553656962966,
+      "mean_max_zero_TIM_run_steps": 1.9624035989717223,
+      "over_180deg_episodes": 0,
+      "over_180deg_rate": 0.0,
+      "qualified_over_180deg_episodes": 0,
+      "qualified_over_180deg_rate": 0.0,
+      "axis_aligned_episodes": 296,
+      "axis_aligned_rate": 0.04755784061696658,
+      "mean_directional_axis_alignment": 0.5371115324123353,
+      "mean_absolute_axis_alignment": 0.5539806140419143,
+      "mean_max_no_contact_steps": 3.94987146529563,
+      "mean_ballistic_steps": 2.9469794344473006,
+      "failures": 6224,
+      "failure_rate": 1.0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "failure_types": {
+        "contact_loss": {
+          "count": 6105,
+          "rate": 0.9808804627249358
+        },
+        "ballistic": {
+          "count": 6185,
+          "rate": 0.9937339331619537
+        },
+        "penetration": {
+          "count": 3,
+          "rate": 0.0004820051413881748
+        },
+        "throw": {
+          "count": 118,
+          "rate": 0.018958868894601542
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "primary_failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 6103,
+          "rate": 0.9805591259640103
+        },
+        "penetration": {
+          "count": 3,
+          "rate": 0.0004820051413881748
+        },
+        "throw": {
+          "count": 118,
+          "rate": 0.018958868894601542
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "finger_gait": {
+        "thumb": {
+          "break_episodes": 6185,
+          "break_episode_rate": 0.9937339331619537,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 6185,
+          "recontact_events": 0
+        },
+        "index": {
+          "break_episodes": 6109,
+          "break_episode_rate": 0.9815231362467867,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 6109,
+          "recontact_events": 0
+        },
+        "middle": {
+          "break_episodes": 6109,
+          "break_episode_rate": 0.9815231362467867,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 6109,
+          "recontact_events": 0
+        },
+        "ring": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "pinky": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        }
+      },
+      "recovery": {
+        "thumb_release_episodes": 6185,
+        "thumb_release_rate": 0.9937339331619537,
+        "thumb_attempt_episodes": 0,
+        "thumb_attempt_rate": 0.0,
+        "thumb_recontact_episodes": 0,
+        "thumb_recontact_rate": 0.0,
+        "mean_first_thumb_break_step": 3.0708164915117218,
+        "mean_first_thumb_attempt_step": 0.0,
+        "mean_first_thumb_recontact_step": 0.0,
+        "height_drop_episodes": 6185,
+        "height_drop_rate": 0.9937339331619537,
+        "height_recovery_episodes": 0,
+        "height_recovery_rate": 0.0,
+        "height_recovery_given_drop_rate": 0.0,
+        "mean_min_height_delta_mm": -18.0717360391102
+      }
+    },
+    "P4": {
+      "episodes": 0,
+      "gait_episodes": 0,
+      "gait_rate": 0.0,
+      "qualified_gait_episodes": 0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_episodes": 0,
+      "support_handoff_rate": 0.0,
+      "mean_TIM_overlap_ratio": 0.0,
+      "mean_max_zero_TIM_run_steps": 0.0,
+      "over_180deg_episodes": 0,
+      "over_180deg_rate": 0.0,
+      "qualified_over_180deg_episodes": 0,
+      "qualified_over_180deg_rate": 0.0,
+      "axis_aligned_episodes": 0,
+      "axis_aligned_rate": 0.0,
+      "mean_directional_axis_alignment": 0.0,
+      "mean_absolute_axis_alignment": 0.0,
+      "mean_max_no_contact_steps": 0.0,
+      "mean_ballistic_steps": 0.0,
+      "failures": 0,
+      "failure_rate": 0.0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "primary_failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "finger_gait": {
+        "thumb": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "index": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "middle": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "ring": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "pinky": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        }
+      },
+      "recovery": {
+        "thumb_release_episodes": 0,
+        "thumb_release_rate": 0.0,
+        "thumb_attempt_episodes": 0,
+        "thumb_attempt_rate": 0.0,
+        "thumb_recontact_episodes": 0,
+        "thumb_recontact_rate": 0.0,
+        "mean_first_thumb_break_step": 0.0,
+        "mean_first_thumb_attempt_step": 0.0,
+        "mean_first_thumb_recontact_step": 0.0,
+        "height_drop_episodes": 0,
+        "height_drop_rate": 0.0,
+        "height_recovery_episodes": 0,
+        "height_recovery_rate": 0.0,
+        "height_recovery_given_drop_rate": 0.0,
+        "mean_min_height_delta_mm": 0.0
+      }
+    },
+    "P5": {
+      "episodes": 0,
+      "gait_episodes": 0,
+      "gait_rate": 0.0,
+      "qualified_gait_episodes": 0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_episodes": 0,
+      "support_handoff_rate": 0.0,
+      "mean_TIM_overlap_ratio": 0.0,
+      "mean_max_zero_TIM_run_steps": 0.0,
+      "over_180deg_episodes": 0,
+      "over_180deg_rate": 0.0,
+      "qualified_over_180deg_episodes": 0,
+      "qualified_over_180deg_rate": 0.0,
+      "axis_aligned_episodes": 0,
+      "axis_aligned_rate": 0.0,
+      "mean_directional_axis_alignment": 0.0,
+      "mean_absolute_axis_alignment": 0.0,
+      "mean_max_no_contact_steps": 0.0,
+      "mean_ballistic_steps": 0.0,
+      "failures": 0,
+      "failure_rate": 0.0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "primary_failure_types": {
+        "contact_loss": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "ballistic": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "penetration": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "throw": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drop": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "drift": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "finger_gait": {
+        "thumb": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "index": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "middle": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "ring": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        },
+        "pinky": {
+          "break_episodes": 0,
+          "break_episode_rate": 0.0,
+          "recontact_episodes": 0,
+          "recontact_episode_rate": 0.0,
+          "gait_episodes": 0,
+          "gait_episode_rate": 0.0,
+          "break_events": 0,
+          "recontact_events": 0
+        }
+      },
+      "recovery": {
+        "thumb_release_episodes": 0,
+        "thumb_release_rate": 0.0,
+        "thumb_attempt_episodes": 0,
+        "thumb_attempt_rate": 0.0,
+        "thumb_recontact_episodes": 0,
+        "thumb_recontact_rate": 0.0,
+        "mean_first_thumb_break_step": 0.0,
+        "mean_first_thumb_attempt_step": 0.0,
+        "mean_first_thumb_recontact_step": 0.0,
+        "height_drop_episodes": 0,
+        "height_drop_rate": 0.0,
+        "height_recovery_episodes": 0,
+        "height_recovery_rate": 0.0,
+        "height_recovery_given_drop_rate": 0.0,
+        "mean_min_height_delta_mm": 0.0
+      }
+    }
+  },
+  "failure_type_totals": {
+    "contact_loss": 6105,
+    "ballistic": 6185,
+    "penetration": 3,
+    "throw": 118,
+    "drop": 0,
+    "drift": 0,
+    "invalid": 0
+  },
+  "primary_failure_type_totals": {
+    "contact_loss": 0,
+    "ballistic": 6103,
+    "penetration": 3,
+    "throw": 118,
+    "drop": 0,
+    "drift": 0,
+    "invalid": 0
+  },
+  "max_penetration_mm": 0.8875979110598564,
+  "max_total_contact_force_n": 8.765968322753906,
+  "sampled_reset_counts": {
+    "P1": 0,
+    "P2": 0,
+    "P3": 6480,
+    "P4": 0,
+    "P5": 0
+  },
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "reset_mixture": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0
+  ],
+  "objective_config": {
+    "rotation_reward_scale": 0.12,
+    "axis_aligned_rotation_reward_scale": 0.1,
+    "axis_alignment_quality_reward_scale": 0.0,
+    "horizontal_reward_scale": 0.15,
+    "linear_speed_penalty_scale": 0.75,
+    "wrong_axis_penalty_scale": 0.12,
+    "ballistic_penalty_scale": 2.0,
+    "high_angular_speed_penalty_scale": 0.05,
+    "height_drop_penalty_scale": 0.0,
+    "contact_gate_positive_rotation": true,
+    "include_temporal_support_observation": true,
+    "observation_space": 172,
+    "support_target_force_n": 0.08,
+    "support_margin_penalty_scale": 2.0,
+    "support_drop_penalty_scale": 0.5,
+    "support_force_excess_penalty_scale": 0.01,
+    "recovery_height_deficit_penalty_scale": 20.0,
+    "recovery_downward_speed_penalty_scale": 0.5,
+    "recovery_progress_reward_scale": 10.0
+  },
+  "gait_rule": "per-finger release and later re-contact, each stable for >=3 control steps",
+  "support_handoff_rule": "debounced gait; TIM >=2 overlap for >=80% of episode; no more than 2 consecutive zero-TIM steps; no ballistic/failure; and no >=5 mm height loss unless height later recovers to within 2 mm",
+  "ballistic_rule": "no contact for >=2 control steps and linear speed >0.20 m/s or angular speed >12 rad/s",
+  "axis_alignment_rule": "mean directional cosine between angular velocity and target +Z axis while angular speed >=0.50 rad/s",
+  "qualified_rule": "axis alignment >=0.70 with no ballistic, contact loss, or failure"
+}

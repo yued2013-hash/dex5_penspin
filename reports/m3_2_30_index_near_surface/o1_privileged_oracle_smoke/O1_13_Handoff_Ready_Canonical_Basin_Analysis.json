@@ -1,0 +1,1160 @@
+{
+  "status": "PASS_DIAGNOSTIC_REFINEMENT_REJECTED",
+  "phase": "O1.13 Handoff-Ready Canonical Basin Analysis",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "readiness_score": {
+    "name": "prototype_margin_readiness",
+    "formula": "sigmoid((distance_to_nearest_failure_prototype - distance_to_bank996) / population_margin_std)",
+    "calibration": "not a probability; one feasible prototype is insufficient for a classifier",
+    "feasible_prototype": 996,
+    "failure_prototypes": {
+      "axis_misaligned": [
+        1245,
+        1171
+      ],
+      "transition_not_reproduced": [
+        1203
+      ]
+    }
+  },
+  "prototype_comparison": {
+    "996": {
+      "readiness_score": 0.986621866306703,
+      "distance_to_996": 0.0,
+      "distance_to_nearest_failure": 0.2579836661287534,
+      "O1_12_outcome": "success"
+    },
+    "1245": {
+      "readiness_score": 0.0011367701445388816,
+      "distance_to_996": 0.40661694992232383,
+      "distance_to_nearest_failure": 0.0,
+      "O1_12_outcome": "axis_misaligned"
+    },
+    "1171": {
+      "readiness_score": 0.0002780654800775375,
+      "distance_to_996": 0.4911354613365229,
+      "distance_to_nearest_failure": 0.0,
+      "O1_12_outcome": "axis_misaligned"
+    },
+    "1203": {
+      "readiness_score": 0.0133781336932969,
+      "distance_to_996": 0.2579836661287534,
+      "distance_to_nearest_failure": 0.0,
+      "O1_12_outcome": "handoff_transition_not_reproduced"
+    }
+  },
+  "extracted_feature_groups": {
+    "groups": [
+      "geometry",
+      "joint_configuration",
+      "pen_pose",
+      "support_margin",
+      "velocity",
+      "wrench"
+    ],
+    "group_contrast_RMS_z": {
+      "geometry": 0.17601618539099192,
+      "joint_configuration": 0.8050551129835114,
+      "pen_pose": 0.2931414053568742,
+      "support_margin": 0.10746704192331699,
+      "velocity": 0.18015838353615637,
+      "wrench": 0.12392639281634447
+    },
+    "prototype_group_distance_to_996": {
+      "geometry": {
+        "996": 0.0,
+        "1245": 0.43104044954080256,
+        "1171": 0.28566578484146465,
+        "1203": 0.33575091729264656
+      },
+      "joint_configuration": {
+        "996": 0.0,
+        "1245": 1.1552991416857072,
+        "1171": 1.3194820614000207,
+        "1203": 0.1889730649049343
+      },
+      "pen_pose": {
+        "996": 0.0,
+        "1245": 0.3961781250678192,
+        "1171": 0.44966581968795194,
+        "1203": 0.32912513764235257
+      },
+      "support_margin": {
+        "996": 0.0,
+        "1245": 0.07979026211667883,
+        "1171": 0.30068533522621915,
+        "1203": 0.2185019330398486
+      },
+      "velocity": {
+        "996": 0.0,
+        "1245": 0.20636438326038892,
+        "1171": 0.3486860892470001,
+        "1203": 0.18874960253477605
+      },
+      "wrench": {
+        "996": 0.0,
+        "1245": 0.17102933786254612,
+        "1171": 0.24262767761648088,
+        "1203": 0.2868013413579624
+      }
+    },
+    "top_features_by_group": {
+      "geometry": [
+        {
+          "name": "geometry_index_axial_mm",
+          "absolute_contrast_z": 0.2879927187465046,
+          "prototype_values": {
+            "996": 6.657258987426758,
+            "1245": 6.82818603515625,
+            "1171": 7.379627704620361,
+            "1203": 7.201179027557373
+          }
+        },
+        {
+          "name": "geometry_ring_axial_mm",
+          "absolute_contrast_z": 0.25572615635784945,
+          "prototype_values": {
+            "996": -29.428787231445312,
+            "1245": -30.45496940612793,
+            "1171": -29.92728042602539,
+            "1203": -29.002592086791992
+          }
+        },
+        {
+          "name": "geometry_thumb_axial_mm",
+          "absolute_contrast_z": 0.2283099202631374,
+          "prototype_values": {
+            "996": -8.028077125549316,
+            "1245": -7.396787643432617,
+            "1171": -7.846116065979004,
+            "1203": -8.37027645111084
+          }
+        },
+        {
+          "name": "geometry_middle_gap_mm",
+          "absolute_contrast_z": 0.22635860363938498,
+          "prototype_values": {
+            "996": 3.748164415359497,
+            "1245": 3.834406852722168,
+            "1171": 3.876044511795044,
+            "1203": 3.7394306659698486
+          }
+        },
+        {
+          "name": "geometry_pinky_axial_mm",
+          "absolute_contrast_z": 0.2091703963798227,
+          "prototype_values": {
+            "996": -43.10817337036133,
+            "1245": -43.32822799682617,
+            "1171": -42.46187973022461,
+            "1203": -42.363433837890625
+          }
+        }
+      ],
+      "joint_configuration": [
+        {
+          "name": "joint_Roll_31R_rad",
+          "absolute_contrast_z": 1.8879070481902065,
+          "prototype_values": {
+            "996": -0.006595047656446695,
+            "1245": -0.021235574036836624,
+            "1171": -0.021235574036836624,
+            "1203": -0.006595047656446695
+          }
+        },
+        {
+          "name": "joint_Roll_41R_rad",
+          "absolute_contrast_z": 1.389843356865176,
+          "prototype_values": {
+            "996": 0.23250199854373932,
+            "1245": 0.21821407973766327,
+            "1171": 0.21821407973766327,
+            "1203": 0.23250199854373932
+          }
+        },
+        {
+          "name": "joint_Pitch_14R_rad",
+          "absolute_contrast_z": 1.1974432471873566,
+          "prototype_values": {
+            "996": 0.4610697627067566,
+            "1245": 0.45024174451828003,
+            "1171": 0.45024174451828003,
+            "1203": 0.4610697627067566
+          }
+        },
+        {
+          "name": "joint_Pitch_42R_rad",
+          "absolute_contrast_z": 1.1471462619694686,
+          "prototype_values": {
+            "996": 1.3790054321289062,
+            "1245": 1.3951152563095093,
+            "1171": 1.3951152563095093,
+            "1203": 1.3790054321289062
+          }
+        },
+        {
+          "name": "joint_Pitch_44R_rad",
+          "absolute_contrast_z": 0.883197235077174,
+          "prototype_values": {
+            "996": 0.7720553874969482,
+            "1245": 0.7612996101379395,
+            "1171": 0.7612996101379395,
+            "1203": 0.7720553874969482
+          }
+        }
+      ],
+      "pen_pose": [
+        {
+          "name": "pen_position_mm_y",
+          "absolute_contrast_z": 0.453936765129733,
+          "prototype_values": {
+            "996": 82.63345336914062,
+            "1245": 82.28588104248047,
+            "1171": 82.36109924316406,
+            "1203": 82.70030975341797
+          }
+        },
+        {
+          "name": "pen_axis_y",
+          "absolute_contrast_z": 0.33772748966068,
+          "prototype_values": {
+            "996": 0.9860389828681946,
+            "1245": 0.985900342464447,
+            "1171": 0.9878501296043396,
+            "1203": 0.9881798028945923
+          }
+        },
+        {
+          "name": "pen_position_mm_z",
+          "absolute_contrast_z": 0.29721364042909815,
+          "prototype_values": {
+            "996": 62.87712478637695,
+            "1245": 62.75678253173828,
+            "1171": 62.67375564575195,
+            "1203": 62.85905838012695
+          }
+        },
+        {
+          "name": "pen_axis_x",
+          "absolute_contrast_z": 0.21301700900949389,
+          "prototype_values": {
+            "996": 0.09469807147979736,
+            "1245": 0.10304468870162964,
+            "1171": 0.08176624774932861,
+            "1203": 0.07673263549804688
+          }
+        },
+        {
+          "name": "pen_axis_z",
+          "absolute_contrast_z": 0.18806920965738605,
+          "prototype_values": {
+            "996": 0.1369638890028,
+            "1245": 0.13184115290641785,
+            "1171": 0.1321602463722229,
+            "1203": 0.13271212577819824
+          }
+        }
+      ],
+      "support_margin": [
+        {
+          "name": "support_strongest_finger_share",
+          "absolute_contrast_z": 0.16803667466446948,
+          "prototype_values": {
+            "996": 0.4625709652900696,
+            "1245": 0.4681393802165985,
+            "1171": 0.4708631932735443,
+            "1203": 0.4635688364505768
+          }
+        },
+        {
+          "name": "support_TIM_gravity_residual_norm_n",
+          "absolute_contrast_z": 0.12669988442660746,
+          "prototype_values": {
+            "996": 0.7097666263580322,
+            "1245": 0.735359787940979,
+            "1171": 0.8647201657295227,
+            "1203": 0.6331390142440796
+          }
+        },
+        {
+          "name": "support_total_gravity_residual_norm_n",
+          "absolute_contrast_z": 0.12669988442660746,
+          "prototype_values": {
+            "996": 0.7097666263580322,
+            "1245": 0.735359787940979,
+            "1171": 0.8647201657295227,
+            "1203": 0.6331390142440796
+          }
+        },
+        {
+          "name": "support_force_ceiling_margin_n",
+          "absolute_contrast_z": 0.12416082554607405,
+          "prototype_values": {
+            "996": 0.6143465042114258,
+            "1245": 0.5990056991577148,
+            "1171": 0.6852107048034668,
+            "1203": 0.8561983108520508
+          }
+        },
+        {
+          "name": "support_total_contact_force_sum_n",
+          "absolute_contrast_z": 0.12416082554607402,
+          "prototype_values": {
+            "996": 5.385653495788574,
+            "1245": 5.400994300842285,
+            "1171": 5.314789295196533,
+            "1203": 5.143801689147949
+          }
+        }
+      ],
+      "velocity": [
+        {
+          "name": "pen_angular_velocity_rad_s_z",
+          "absolute_contrast_z": 0.3795887408209129,
+          "prototype_values": {
+            "996": 5.062778472900391,
+            "1245": 5.546402931213379,
+            "1171": 6.50952672958374,
+            "1203": 5.747091293334961
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_x",
+          "absolute_contrast_z": 0.14004185937764566,
+          "prototype_values": {
+            "996": -0.0383317694067955,
+            "1245": -0.03216579556465149,
+            "1171": -0.04839964956045151,
+            "1203": -0.042625945061445236
+          }
+        },
+        {
+          "name": "pen_linear_velocity_m_s_z",
+          "absolute_contrast_z": 0.1360764357199301,
+          "prototype_values": {
+            "996": 0.03936915099620819,
+            "1245": 0.027817538008093834,
+            "1171": 0.042860835790634155,
+            "1203": 0.030010825023055077
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_x",
+          "absolute_contrast_z": 0.10175453333832674,
+          "prototype_values": {
+            "996": -0.3607275187969208,
+            "1245": -0.8151960372924805,
+            "1171": -1.089770793914795,
+            "1203": -0.29482680559158325
+          }
+        },
+        {
+          "name": "pen_angular_velocity_rad_s_y",
+          "absolute_contrast_z": 0.04307006128153679,
+          "prototype_values": {
+            "996": -3.6714327335357666,
+            "1245": -4.0562663078308105,
+            "1171": -5.229173183441162,
+            "1203": -3.3975670337677
+          }
+        }
+      ],
+      "wrench": [
+        {
+          "name": "wrench_middle_force_on_pen_n_z",
+          "absolute_contrast_z": 0.346033553345904,
+          "prototype_values": {
+            "996": 0.05322755500674248,
+            "1245": 0.05314486473798752,
+            "1171": 0.04902879521250725,
+            "1203": 0.049107275903224945
+          }
+        },
+        {
+          "name": "wrench_total_torque_about_com_nmm_z",
+          "absolute_contrast_z": 0.26843811495540193,
+          "prototype_values": {
+            "996": -3.787875175476074,
+            "1245": -2.7180533409118652,
+            "1171": -1.8701353073120117,
+            "1203": -2.7312655448913574
+          }
+        },
+        {
+          "name": "wrench_middle_force_norm_n",
+          "absolute_contrast_z": 0.14148778546203616,
+          "prototype_values": {
+            "996": 2.43631911277771,
+            "1245": 2.4783222675323486,
+            "1171": 2.378429651260376,
+            "1203": 2.3198068141937256
+          }
+        },
+        {
+          "name": "wrench_middle_force_on_pen_n_x",
+          "absolute_contrast_z": 0.1414047290073288,
+          "prototype_values": {
+            "996": 2.4121477603912354,
+            "1245": 2.449977159500122,
+            "1171": 2.3561248779296875,
+            "1203": 2.301257610321045
+          }
+        },
+        {
+          "name": "wrench_middle_force_on_pen_n_y",
+          "absolute_contrast_z": 0.11427121777197008,
+          "prototype_values": {
+            "996": -0.33817189931869507,
+            "1245": -0.3699588179588318,
+            "1171": -0.3212469518184662,
+            "1203": -0.28862813115119934
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "matched_budget": {
+      "entries": 12,
+      "horizon_ms": 400.0,
+      "population": 64,
+      "iterations": 10,
+      "waypoints": 3,
+      "action_dimensions": 20,
+      "max_offset_rad": 0.18
+    },
+    "readiness_selected": {
+      "count": 12,
+      "raw_TIM_transition": 0,
+      "raw_TIM_transition_rate": 0.0,
+      "raw_TIM_transition_Wilson95": [
+        0.0,
+        0.2425007574992425
+      ],
+      "admissible_transition": 0,
+      "admissible_transition_rate": 0.0,
+      "strict_handoff": 0,
+      "strict_handoff_rate": 0.0,
+      "failure_taxonomy": {
+        "no_TIM_transition": 12
+      },
+      "states": [
+        {
+          "score": 13.441911697387695,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.980538010597229,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.7422183752059937,
+          "old_support_unload_n": 1.2726439237594604,
+          "min_total_force_n": 1.4203064441680908,
+          "max_total_force_n": 5.222198486328125,
+          "transfer_pair_margin": 28.83535385131836,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.15613915026187897,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 1061,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.066315650939941,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.1870274543762207,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.1994502544403076,
+          "old_support_unload_n": 0.6437830924987793,
+          "min_total_force_n": 3.1523828506469727,
+          "max_total_force_n": 5.407286643981934,
+          "transfer_pair_margin": 20.45943832397461,
+          "min_height_delta_mm": -0.4110261797904968,
+          "axis_alignment": 0.024867819622159004,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 1,
+          "bank_id": 1173,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.569952011108398,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.156494379043579,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.9202871322631836,
+          "old_support_unload_n": 1.2031843662261963,
+          "min_total_force_n": 2.100529909133911,
+          "max_total_force_n": 5.654271125793457,
+          "transfer_pair_margin": 33.1751823425293,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.25616583228111267,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 2,
+          "bank_id": 854,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 12.017435073852539,
+          "feasible": false,
+          "handoff_margin": -1.222131609916687,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9122576713562012,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.8172948360443115,
+          "old_support_unload_n": 1.8505730628967285,
+          "min_total_force_n": 0.206032857298851,
+          "max_total_force_n": 7.165889739990234,
+          "transfer_pair_margin": 27.460548400878906,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": -0.1110658273100853,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 3,
+          "bank_id": 802,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.308059692382812,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9955416917800903,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.8728291988372803,
+          "old_support_unload_n": 0.9094759225845337,
+          "min_total_force_n": 2.087038516998291,
+          "max_total_force_n": 5.677094459533691,
+          "transfer_pair_margin": 17.946569442749023,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.1271212100982666,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 4,
+          "bank_id": 1250,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 12.546411514282227,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.599294424057007,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.3145194053649902,
+          "old_support_unload_n": 0.807170033454895,
+          "min_total_force_n": 3.7667064666748047,
+          "max_total_force_n": 10.216300010681152,
+          "transfer_pair_margin": 25.905670166015625,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.12456425279378891,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 5,
+          "bank_id": 1131,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 11.433637619018555,
+          "feasible": false,
+          "handoff_margin": -1.127941370010376,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.910690188407898,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.0624988079071045,
+          "old_support_unload_n": 1.857641577720642,
+          "min_total_force_n": 0.15348556637763977,
+          "max_total_force_n": 5.55699348449707,
+          "transfer_pair_margin": 10.631625175476074,
+          "min_height_delta_mm": -0.3517419099807739,
+          "axis_alignment": -0.06397070735692978,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 6,
+          "bank_id": 922,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 10.851533889770508,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.0265512466430664,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.0884382724761963,
+          "old_support_unload_n": 1.9965206384658813,
+          "min_total_force_n": 0.07494187355041504,
+          "max_total_force_n": 5.6034088134765625,
+          "transfer_pair_margin": 16.080698013305664,
+          "min_height_delta_mm": -0.005289912223815918,
+          "axis_alignment": 0.26873138546943665,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 7,
+          "bank_id": 959,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.4210844039917,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.1413493156433105,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 0.9305576682090759,
+          "old_support_unload_n": 1.6269391775131226,
+          "min_total_force_n": 1.0283241271972656,
+          "max_total_force_n": 4.514357566833496,
+          "transfer_pair_margin": 26.67843246459961,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.08673848956823349,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 8,
+          "bank_id": 1041,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.222501754760742,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.009460210800171,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.419310450553894,
+          "old_support_unload_n": 1.280787467956543,
+          "min_total_force_n": 1.4395127296447754,
+          "max_total_force_n": 6.74384880065918,
+          "transfer_pair_margin": 4.124422073364258,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.17323820292949677,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 9,
+          "bank_id": 1170,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 9.270609855651855,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 3.6257028579711914,
+          "tim_gait": false,
+          "tim_overlap": 0.875,
+          "new_support_gain_n": 2.82397723197937,
+          "old_support_unload_n": 3.6098814010620117,
+          "min_total_force_n": 0.05499430000782013,
+          "max_total_force_n": 8.451543807983398,
+          "transfer_pair_margin": 40.589542388916016,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.1938144415616989,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 10,
+          "bank_id": 859,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 10.288567543029785,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.6307766437530518,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.046351671218872,
+          "old_support_unload_n": 2.6307766437530518,
+          "min_total_force_n": 0.0864134281873703,
+          "max_total_force_n": 7.406754493713379,
+          "transfer_pair_margin": 20.015209197998047,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.041401397436857224,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 11,
+          "bank_id": 1229,
+          "selected_horizon_steps": 24
+        }
+      ]
+    },
+    "original_P3_spread": {
+      "count": 12,
+      "raw_TIM_transition": 1,
+      "raw_TIM_transition_rate": 0.08333333333333333,
+      "raw_TIM_transition_Wilson95": [
+        0.014864709450773478,
+        0.35388592179859524
+      ],
+      "admissible_transition": 0,
+      "admissible_transition_rate": 0.0,
+      "strict_handoff": 0,
+      "strict_handoff_rate": 0.0,
+      "failure_taxonomy": {
+        "no_TIM_transition": 8,
+        "throw": 2,
+        "contact_force_overload": 1,
+        "penetration": 1
+      },
+      "states": [
+        {
+          "score": 12.495133399963379,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9307032823562622,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 0.8299664258956909,
+          "old_support_unload_n": 0.1067502498626709,
+          "min_total_force_n": 3.6304593086242676,
+          "max_total_force_n": 5.405866622924805,
+          "transfer_pair_margin": 2.5583419799804688,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.13971395790576935,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 771,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 12.901077270507812,
+          "feasible": false,
+          "handoff_margin": -1.0995705127716064,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.1429669857025146,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.2571043968200684,
+          "old_support_unload_n": 1.4552900791168213,
+          "min_total_force_n": 1.425184965133667,
+          "max_total_force_n": 5.996116638183594,
+          "transfer_pair_margin": 25.07774543762207,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": -0.04978526011109352,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 1,
+          "bank_id": 817,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.382098197937012,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.8855940103530884,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.6629316806793213,
+          "old_support_unload_n": 1.7792856693267822,
+          "min_total_force_n": 0.3226235508918762,
+          "max_total_force_n": 5.107356071472168,
+          "transfer_pair_margin": 18.51389503479004,
+          "min_height_delta_mm": -0.09498000144958496,
+          "axis_alignment": 0.12615995109081268,
+          "axis_steps": 23,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 2,
+          "bank_id": 857,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": -3.228046417236328,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.8905671834945679,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.4226346015930176,
+          "old_support_unload_n": 0.727798342704773,
+          "min_total_force_n": 2.3209433555603027,
+          "max_total_force_n": 5.27690315246582,
+          "transfer_pair_margin": 1.4285318851470947,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.11145282536745071,
+          "axis_steps": 23,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": true,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "throw",
+          "state_index": 3,
+          "bank_id": 900,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.197962760925293,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.0149192810058594,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.1511685848236084,
+          "old_support_unload_n": 1.1011419296264648,
+          "min_total_force_n": 1.7274478673934937,
+          "max_total_force_n": 5.139535903930664,
+          "transfer_pair_margin": 26.27930450439453,
+          "min_height_delta_mm": -0.16600638628005981,
+          "axis_alignment": 0.043876733630895615,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 4,
+          "bank_id": 948,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 16.069669723510742,
+          "feasible": false,
+          "handoff_margin": -0.5598942041397095,
+          "initial_dominant_TIM_index": 1,
+          "initial_dominant_TIM_force_n": 2.486083984375,
+          "tim_gait": true,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 3.416396379470825,
+          "old_support_unload_n": 2.486083984375,
+          "min_total_force_n": 1.7816659212112427,
+          "max_total_force_n": 8.222618103027344,
+          "transfer_pair_margin": 81.86946868896484,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.22005288302898407,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "contact_force_overload",
+          "state_index": 5,
+          "bank_id": 996,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": -11.8646240234375,
+          "feasible": false,
+          "handoff_margin": -6.803525924682617,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9369341135025024,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 3.8822383880615234,
+          "old_support_unload_n": 0.0,
+          "min_total_force_n": 4.496029853820801,
+          "max_total_force_n": 10.63912582397461,
+          "transfer_pair_margin": -6.803525924682617,
+          "min_height_delta_mm": -0.059038400650024414,
+          "axis_alignment": -0.039814043790102005,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": true,
+          "drop": false,
+          "throw": true,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "penetration",
+          "state_index": 6,
+          "bank_id": 1040,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 10.845670700073242,
+          "feasible": false,
+          "handoff_margin": -1.1856220960617065,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.8084357976913452,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.1524770259857178,
+          "old_support_unload_n": 1.3829691410064697,
+          "min_total_force_n": 0.8402214050292969,
+          "max_total_force_n": 5.065253257751465,
+          "transfer_pair_margin": 0.8882474899291992,
+          "min_height_delta_mm": -0.06373226642608643,
+          "axis_alignment": -0.09281102567911148,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 7,
+          "bank_id": 1083,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.408929824829102,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.044367551803589,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.7167630195617676,
+          "old_support_unload_n": 1.3482651710510254,
+          "min_total_force_n": 1.4134833812713623,
+          "max_total_force_n": 5.071575164794922,
+          "transfer_pair_margin": 22.377824783325195,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.1270962804555893,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 8,
+          "bank_id": 1130,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 13.676058769226074,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.30605149269104,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.328190565109253,
+          "old_support_unload_n": 0.24262332916259766,
+          "min_total_force_n": 4.0398712158203125,
+          "max_total_force_n": 5.594564437866211,
+          "transfer_pair_margin": 7.087445259094238,
+          "min_height_delta_mm": -0.33044442534446716,
+          "axis_alignment": 0.33728769421577454,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 9,
+          "bank_id": 1175,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": -1.6606292724609375,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9918268918991089,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.34040904045105,
+          "old_support_unload_n": 1.7767127752304077,
+          "min_total_force_n": 0.48524728417396545,
+          "max_total_force_n": 5.51502799987793,
+          "transfer_pair_margin": 11.163922309875488,
+          "min_height_delta_mm": -0.6128177046775818,
+          "axis_alignment": 0.1905529648065567,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": true,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "throw",
+          "state_index": 10,
+          "bank_id": 1216,
+          "selected_horizon_steps": 24
+        },
+        {
+          "score": 10.319586753845215,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 2.1148312091827393,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.638356924057007,
+          "old_support_unload_n": 1.3785227537155151,
+          "min_total_force_n": 1.4944477081298828,
+          "max_total_force_n": 6.102473258972168,
+          "transfer_pair_margin": -0.6136983036994934,
+          "min_height_delta_mm": 0.0,
+          "axis_alignment": 0.4751819372177124,
+          "axis_steps": 24,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 11,
+          "bank_id": 1252,
+          "selected_horizon_steps": 24
+        }
+      ]
+    },
+    "readiness_improves_CEM_feasibility": false,
+    "decision": "REJECT_STATIC_READINESS_REFINEMENT",
+    "interpretation": "The static prototype score does not improve admissible or strict CEM feasibility. Its high-score subset has zero raw TIM transitions, while the original spread has one raw transition that still violates force and axis gates."
+  },
+  "canonical_refinement_proposal": {
+    "decision": "DO_NOT_FILTER_OR_REPLACE_FROZEN_P3",
+    "immediate_use": "Keep the score as an analysis-only hypothesis generator; do not use it as a reset sampler, canonical label, or training curriculum.",
+    "required_next_evidence": [
+      "Collect provenance-isolated dynamic CEM labels over a materially larger P3 sample.",
+      "Add action-conditioned 50-100 ms response features: axis response, support-force slope, and height acceleration under bounded TIM probes.",
+      "Separate transition reachability from post-axis stabilization labels.",
+      "Validate any revised score on held-out parent/source trajectories with clone replay rates.",
+      "Promote an overlay only after admissible and strict CEM rates exceed the spread baseline with uncertainty reported."
+    ],
+    "data_boundary": "Any future handoff-ready overlay must remain separate from O0 and cannot alter P3 R3 validity or V9 semantics."
+  },
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "teacher_generated": false,
+    "O0_modified": false,
+    "new_reset_dataset_created": false
+  }
+}

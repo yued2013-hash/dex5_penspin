@@ -1,0 +1,743 @@
+{
+  "status": "PASS_DIAGNOSTIC_TASK_CONTROLLER_FAILED_CALIBRATION_SAFETY",
+  "phase": "O1.18 Task-Space Closed-Loop Basin Audit",
+  "artifact_role": "matched_task_feedback_ablation_not_policy_teacher_or_reset_dataset",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "bank_id": 1155,
+  "horizon_steps": 18,
+  "horizon_ms": 300.0,
+  "bank_sha256_before": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "bank_sha256_after": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "search": {
+    "best_score": 30.314517974853516,
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": 12.639744758605957,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 2,
+        "best_score": 14.11510181427002,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 3,
+        "best_score": 14.29865837097168,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 4,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 5,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 6,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 7,
+        "best_score": 14.954915046691895,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 8,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0078125
+      },
+      {
+        "iteration": 9,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 10,
+        "best_score": 30.03610610961914,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 11,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0078125
+      },
+      {
+        "iteration": 12,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 13,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0
+      },
+      {
+        "iteration": 14,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.03125
+      },
+      {
+        "iteration": 15,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0234375
+      },
+      {
+        "iteration": 16,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0703125
+      },
+      {
+        "iteration": 17,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.03125
+      },
+      {
+        "iteration": 18,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0234375
+      },
+      {
+        "iteration": 19,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.0390625
+      },
+      {
+        "iteration": 20,
+        "best_score": 30.314517974853516,
+        "population_recovered_strict_rate": 0.078125
+      }
+    ],
+    "action_plan_serialized": false
+  },
+  "reference": {
+    "selected_clone": 3,
+    "selected_clone_recovered_strict": true,
+    "serialized": false
+  },
+  "task_feature_contract": {
+    "dimension": 11,
+    "features": [
+      "pen_height/0.001m",
+      "pen_angular_velocity_xyz/2rad_s",
+      "total_support_force_xyz/0.10N",
+      "total_support_torque_xyz/0.001Nm",
+      "aggregate_contact_count/3"
+    ],
+    "per_finger_contact_identity_targeted": false
+  },
+  "jacobian_identification": {
+    "method": "three_stage_antithetic_one_step_joint_target_probes",
+    "serialized": false,
+    "diagnostics": [
+      {
+        "waypoint": 0,
+        "start_step": 0,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 356.2805480957031,
+        "smallest_nonzero_singular_value": 0.025168482214212418,
+        "effective_condition_number": 14155.821756089634
+      },
+      {
+        "waypoint": 1,
+        "start_step": 6,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 351.4427795410156,
+        "smallest_nonzero_singular_value": 0.10067670047283173,
+        "effective_condition_number": 3490.805498098885
+      },
+      {
+        "waypoint": 2,
+        "start_step": 12,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 1527.997802734375,
+        "smallest_nonzero_singular_value": 2.4705801010131836,
+        "effective_condition_number": 618.4773374106526
+      }
+    ]
+  },
+  "controller_candidates_preregistered": {
+    "task_dls_soft": {
+      "type": "task_space",
+      "task_gain": 0.25,
+      "damping": 0.2,
+      "max_correction_rad": 0.02
+    },
+    "task_dls_medium": {
+      "type": "task_space",
+      "task_gain": 0.5,
+      "damping": 0.15,
+      "max_correction_rad": 0.03
+    },
+    "task_dls_strong": {
+      "type": "task_space",
+      "task_gain": 0.75,
+      "damping": 0.1,
+      "max_correction_rad": 0.04
+    }
+  },
+  "perturbation_protocol": {
+    "calibration_seed_base": 20660731,
+    "held_out_seed_base": 20760731,
+    "same_perturbations_matched_across_modes": true,
+    "calibration_and_held_out_seeds_disjoint": true,
+    "controller_selection_nominal_unsafe_tolerance_pp": 2.0
+  },
+  "calibration": [
+    {
+      "mode": "A_open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.078125,
+          "strict_rate": 0.0703125,
+          "recovered_strict_rate": 0.0703125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.568662703037262,
+          "min_height_delta_mm_p10": -0.07316209375858307,
+          "final_height_delta_mm_p10": 7.155455589294434,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 118,
+            "recovered_strict": 9,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.390625,
+          "strict_rate": 0.1484375,
+          "recovered_strict_rate": 0.1484375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5235902667045593,
+          "min_height_delta_mm_p10": -0.11930689215660095,
+          "final_height_delta_mm_p10": 6.849223613739014,
+          "handoff_margin_p90": 0.05769132450222969,
+          "failure_taxonomy": {
+            "no_TIM_transition": 77,
+            "recovered_strict": 19,
+            "axis_misaligned": 30,
+            "throw": 2
+          }
+        }
+      ],
+      "selection_score": 0.14765625
+    },
+    {
+      "mode": "B_o1_17_joint_tracking",
+      "controller": {
+        "q_gain": 0.5,
+        "dq_gain": 0.015,
+        "adaptive_gain": 0.8,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.5078125,
+          "strict_rate": 0.3125,
+          "recovered_strict_rate": 0.3125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0078125,
+          "axis_alignment_median": 0.44412314891815186,
+          "min_height_delta_mm_p10": -0.10939687490463257,
+          "final_height_delta_mm_p10": 6.4290995597839355,
+          "handoff_margin_p90": 0.16837991774082184,
+          "failure_taxonomy": {
+            "no_TIM_transition": 62,
+            "axis_misaligned": 12,
+            "contact_force_overload": 9,
+            "recovered_strict": 40,
+            "throw": 1,
+            "joint_gate_miss": 4
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3984375,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.046875,
+          "axis_alignment_median": 0.36887115240097046,
+          "min_height_delta_mm_p10": -0.12550204992294312,
+          "final_height_delta_mm_p10": 6.259821891784668,
+          "handoff_margin_p90": -0.07356458902359009,
+          "failure_taxonomy": {
+            "no_TIM_transition": 74,
+            "axis_misaligned": 36,
+            "recovered_strict": 6,
+            "contact_force_overload": 5,
+            "throw": 6,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.0546875
+    },
+    {
+      "mode": "C_task_dls_soft",
+      "controller": {
+        "type": "task_space",
+        "task_gain": 0.25,
+        "damping": 0.2,
+        "max_correction_rad": 0.02
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.375,
+          "strict_rate": 0.0390625,
+          "recovered_strict_rate": 0.0390625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.3239630460739136,
+          "min_height_delta_mm_p10": -0.10768473148345947,
+          "final_height_delta_mm_p10": 6.257862091064453,
+          "handoff_margin_p90": -0.241302490234375,
+          "failure_taxonomy": {
+            "no_TIM_transition": 79,
+            "axis_misaligned": 32,
+            "recovered_strict": 5,
+            "throw": 9,
+            "contact_force_overload": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4453125,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.35468539595603943,
+          "min_height_delta_mm_p10": -0.112856924533844,
+          "final_height_delta_mm_p10": 5.91478967666626,
+          "handoff_margin_p90": -0.09531612694263458,
+          "failure_taxonomy": {
+            "no_TIM_transition": 67,
+            "axis_misaligned": 38,
+            "contact_force_overload": 9,
+            "recovered_strict": 4,
+            "throw": 9,
+            "joint_gate_miss": 1
+          }
+        }
+      ],
+      "selection_score": 0.0
+    },
+    {
+      "mode": "C_task_dls_medium",
+      "controller": {
+        "type": "task_space",
+        "task_gain": 0.5,
+        "damping": 0.15,
+        "max_correction_rad": 0.03
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4375,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0625,
+          "axis_alignment_median": 0.31167468428611755,
+          "min_height_delta_mm_p10": -0.14248117804527283,
+          "final_height_delta_mm_p10": 5.246581077575684,
+          "handoff_margin_p90": -0.18418169021606445,
+          "failure_taxonomy": {
+            "axis_misaligned": 41,
+            "recovered_strict": 2,
+            "no_TIM_transition": 64,
+            "throw": 8,
+            "contact_force_overload": 13
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.46875,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.109375,
+          "axis_alignment_median": 0.3558517098426819,
+          "min_height_delta_mm_p10": -0.15899986028671265,
+          "final_height_delta_mm_p10": 5.469436168670654,
+          "handoff_margin_p90": -0.2159782499074936,
+          "failure_taxonomy": {
+            "no_TIM_transition": 60,
+            "contact_force_overload": 14,
+            "axis_misaligned": 37,
+            "throw": 14,
+            "recovered_strict": 3
+          }
+        }
+      ],
+      "selection_score": -0.0296875
+    },
+    {
+      "mode": "C_task_dls_strong",
+      "controller": {
+        "type": "task_space",
+        "task_gain": 0.75,
+        "damping": 0.1,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2890625,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.171875,
+          "axis_alignment_median": 0.34135702252388,
+          "min_height_delta_mm_p10": -0.26004910469055176,
+          "final_height_delta_mm_p10": 4.771514892578125,
+          "handoff_margin_p90": -0.3290804326534271,
+          "failure_taxonomy": {
+            "throw": 22,
+            "axis_misaligned": 25,
+            "no_TIM_transition": 77,
+            "recovered_strict": 1,
+            "contact_force_overload": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.5078125,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1015625,
+          "axis_alignment_median": 0.3637617528438568,
+          "min_height_delta_mm_p10": -0.42176657915115356,
+          "final_height_delta_mm_p10": 4.602491855621338,
+          "handoff_margin_p90": -0.19004346430301666,
+          "failure_taxonomy": {
+            "axis_misaligned": 36,
+            "no_TIM_transition": 56,
+            "recovered_strict": 1,
+            "contact_force_overload": 22,
+            "throw": 13
+          }
+        }
+      ],
+      "selection_score": -0.0421875
+    }
+  ],
+  "selected_task_controller": "C_task_dls_soft",
+  "selected_task_controller_passed_calibration_safety": false,
+  "selection_fallback_used_for_diagnostic_comparison": true,
+  "held_out_evaluation": [
+    {
+      "mode": "A_open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4296875,
+          "strict_rate": 0.40625,
+          "recovered_strict_rate": 0.40625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.5825392603874207,
+          "min_height_delta_mm_p10": -0.086144357919693,
+          "final_height_delta_mm_p10": 7.221610069274902,
+          "handoff_margin_p90": 0.16840620338916779,
+          "failure_taxonomy": {
+            "no_TIM_transition": 73,
+            "recovered_strict": 52,
+            "axis_misaligned": 3
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.15625,
+          "recovered_strict_rate": 0.15625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5370935797691345,
+          "min_height_delta_mm_p10": -0.10650753974914551,
+          "final_height_delta_mm_p10": 6.7171759605407715,
+          "handoff_margin_p90": 0.043710146099328995,
+          "failure_taxonomy": {
+            "recovered_strict": 20,
+            "no_TIM_transition": 88,
+            "axis_misaligned": 18,
+            "throw": 2
+          }
+        },
+        {
+          "name": "joint_L2",
+          "episodes": 128,
+          "TIM_transition_rate": 0.296875,
+          "strict_rate": 0.0625,
+          "recovered_strict_rate": 0.0625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.09375,
+          "axis_alignment_median": 0.4656105637550354,
+          "min_height_delta_mm_p10": -0.1554250717163086,
+          "final_height_delta_mm_p10": 6.212643623352051,
+          "handoff_margin_p90": -0.05410607159137726,
+          "failure_taxonomy": {
+            "no_TIM_transition": 82,
+            "axis_misaligned": 24,
+            "recovered_strict": 8,
+            "throw": 12,
+            "contact_force_overload": 2
+          }
+        },
+        {
+          "name": "joint_L3",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2421875,
+          "strict_rate": 0.0078125,
+          "recovered_strict_rate": 0.0078125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.2578125,
+          "axis_alignment_median": 0.4100634753704071,
+          "min_height_delta_mm_p10": -0.21997317671775818,
+          "final_height_delta_mm_p10": 4.990868091583252,
+          "handoff_margin_p90": -0.20967510342597961,
+          "failure_taxonomy": {
+            "no_TIM_transition": 74,
+            "axis_misaligned": 14,
+            "penetration": 18,
+            "throw": 15,
+            "recovered_strict": 1,
+            "contact_force_overload": 6
+          }
+        }
+      ]
+    },
+    {
+      "mode": "B_o1_17_joint_tracking",
+      "controller": {
+        "q_gain": 0.5,
+        "dq_gain": 0.015,
+        "adaptive_gain": 0.8,
+        "max_correction_rad": 0.04
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.40625,
+          "strict_rate": 0.3046875,
+          "recovered_strict_rate": 0.3046875,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0390625,
+          "axis_alignment_median": 0.4328792095184326,
+          "min_height_delta_mm_p10": -0.1085285097360611,
+          "final_height_delta_mm_p10": 6.429977893829346,
+          "handoff_margin_p90": 0.16838602721691132,
+          "failure_taxonomy": {
+            "no_TIM_transition": 71,
+            "throw": 5,
+            "recovered_strict": 39,
+            "axis_misaligned": 7,
+            "contact_force_overload": 5,
+            "joint_gate_miss": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.46875,
+          "strict_rate": 0.0546875,
+          "recovered_strict_rate": 0.0546875,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.3808632791042328,
+          "min_height_delta_mm_p10": -0.12948326766490936,
+          "final_height_delta_mm_p10": 6.396260738372803,
+          "handoff_margin_p90": -0.06650672852993011,
+          "failure_taxonomy": {
+            "axis_misaligned": 43,
+            "no_TIM_transition": 64,
+            "throw": 9,
+            "contact_force_overload": 5,
+            "recovered_strict": 7
+          }
+        },
+        {
+          "name": "joint_L2",
+          "episodes": 128,
+          "TIM_transition_rate": 0.328125,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1015625,
+          "axis_alignment_median": 0.367596298456192,
+          "min_height_delta_mm_p10": -0.164727121591568,
+          "final_height_delta_mm_p10": 6.183210849761963,
+          "handoff_margin_p90": -0.10601050406694412,
+          "failure_taxonomy": {
+            "no_TIM_transition": 75,
+            "axis_misaligned": 34,
+            "throw": 13,
+            "recovered_strict": 2,
+            "joint_gate_miss": 3,
+            "contact_force_overload": 1
+          }
+        },
+        {
+          "name": "joint_L3",
+          "episodes": 128,
+          "TIM_transition_rate": 0.234375,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.265625,
+          "axis_alignment_median": 0.3207271099090576,
+          "min_height_delta_mm_p10": -0.3423769176006317,
+          "final_height_delta_mm_p10": 5.2588210105896,
+          "handoff_margin_p90": -0.30729830265045166,
+          "failure_taxonomy": {
+            "no_TIM_transition": 74,
+            "throw": 16,
+            "penetration": 18,
+            "axis_misaligned": 15,
+            "recovered_strict": 2,
+            "contact_force_overload": 3
+          }
+        }
+      ]
+    },
+    {
+      "mode": "C_task_dls_soft",
+      "controller": {
+        "type": "task_space",
+        "task_gain": 0.25,
+        "damping": 0.2,
+        "max_correction_rad": 0.02
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.015625,
+          "recovered_strict_rate": 0.015625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.3014051020145416,
+          "min_height_delta_mm_p10": -0.10755807161331177,
+          "final_height_delta_mm_p10": 6.257862091064453,
+          "handoff_margin_p90": -0.24700307846069336,
+          "failure_taxonomy": {
+            "axis_misaligned": 23,
+            "no_TIM_transition": 89,
+            "contact_force_overload": 5,
+            "throw": 9,
+            "recovered_strict": 2
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.4453125,
+          "strict_rate": 0.0859375,
+          "recovered_strict_rate": 0.0859375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1015625,
+          "axis_alignment_median": 0.36636027693748474,
+          "min_height_delta_mm_p10": -0.09962543845176697,
+          "final_height_delta_mm_p10": 6.0808892250061035,
+          "handoff_margin_p90": -0.03023824281990528,
+          "failure_taxonomy": {
+            "axis_misaligned": 30,
+            "no_TIM_transition": 67,
+            "contact_force_overload": 7,
+            "recovered_strict": 11,
+            "throw": 13
+          }
+        },
+        {
+          "name": "joint_L2",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3828125,
+          "strict_rate": 0.046875,
+          "recovered_strict_rate": 0.046875,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.3251575529575348,
+          "min_height_delta_mm_p10": -0.130564346909523,
+          "final_height_delta_mm_p10": 5.946075916290283,
+          "handoff_margin_p90": -0.10095898807048798,
+          "failure_taxonomy": {
+            "no_TIM_transition": 74,
+            "contact_force_overload": 6,
+            "recovered_strict": 6,
+            "axis_misaligned": 33,
+            "throw": 9
+          }
+        },
+        {
+          "name": "joint_L3",
+          "episodes": 128,
+          "TIM_transition_rate": 0.265625,
+          "strict_rate": 0.0,
+          "recovered_strict_rate": 0.0,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1953125,
+          "axis_alignment_median": 0.31999093294143677,
+          "min_height_delta_mm_p10": -0.23226888477802277,
+          "final_height_delta_mm_p10": 5.00892972946167,
+          "handoff_margin_p90": -0.3028627336025238,
+          "failure_taxonomy": {
+            "axis_misaligned": 25,
+            "no_TIM_transition": 74,
+            "throw": 7,
+            "penetration": 18,
+            "contact_force_overload": 4
+          }
+        }
+      ]
+    }
+  ],
+  "widening_gate": {
+    "task_joint_L1_at_least_30pct": false,
+    "task_joint_L1_at_least_2x_open_loop": false,
+    "task_joint_L1_better_than_o1_17_tracking": true,
+    "task_joint_L2_at_least_10pct": false,
+    "task_joint_L1_unsafe_not_worse_than_open_by_more_than_2pp": false
+  },
+  "widening_gate_pass": false,
+  "elapsed_seconds": 19.278858641002444,
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "CEM_trajectory_serialized": false,
+    "reference_trajectory_serialized": false,
+    "jacobian_serialized": false,
+    "reset_dataset_generated": false
+  }
+}

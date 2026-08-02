@@ -1,0 +1,10 @@
+{
+  "schema": "dex5-s0.8-adapter-validation-v1",
+  "status": "PASS_OFFLINE",
+  "random_samples": 100000,
+  "command_manifold_roundtrip_max_error_rad": 0.0,
+  "measured_coupling_ratio_reproduction_max_error": 0.0,
+  "finite": true,
+  "held_out_hardware_error": null,
+  "note": "The local response model is fit from the same acceptance scans; held-out hardware validation remains a later controlled test."
+}

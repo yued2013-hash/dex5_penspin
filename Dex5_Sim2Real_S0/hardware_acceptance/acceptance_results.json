@@ -1,0 +1,409 @@
+{
+  "schema": "dex5-s0.7-hardware-acceptance-v1",
+  "timestamp_unix_s": 1785580377.8263257,
+  "replay_dry_run": {
+    "status": "PASS",
+    "trajectory_count": 10,
+    "command_rows": 1604,
+    "command_hz": 100.0,
+    "sdk_shape": [
+      1604,
+      20
+    ],
+    "logical_shape": [
+      1604,
+      16
+    ],
+    "finite": true,
+    "within_limits": true,
+    "max_per_trajectory_delta_rad": 0.004086017608642578,
+    "max_per_trajectory_velocity_rad_s": 0.4086017608642578,
+    "max_coupling_error_rad": 0.0,
+    "commands_published": 0
+  },
+  "hardware": {
+    "status": "FAIL",
+    "initial_joint_position_rad": [
+      0.005668180529028177,
+      0.010413545183837414,
+      0.06320781260728836,
+      0.01758464239537716,
+      0.0017981280107051134,
+      0.008808737620711327,
+      0.0677291676402092,
+      0.018972225487232208,
+      -0.005586610641330481,
+      0.012958950363099575,
+      0.0459100678563118,
+      0.012432985007762909,
+      -0.0027014969382435083,
+      0.0014889065641909838,
+      0.0390763133764267,
+      0.010467024520039558,
+      -0.5266184210777283,
+      0.0681268647313118,
+      0.08024074882268906,
+      0.03292299807071686
+    ],
+    "motor_results": [
+      {
+        "motor_index": 0,
+        "joint_indices": [
+          0
+        ],
+        "joint_names": [
+          "index_aa"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.0010143490508198738
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 0,
+        "crosstalk_rad": 0.00030238181352615356,
+        "mapping_pass": true,
+        "latency_s": 0.1562522050080588,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.008985650949180126
+      },
+      {
+        "motor_index": 1,
+        "joint_indices": [
+          1
+        ],
+        "joint_names": [
+          "index_mcp"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.009398081339895725
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 2,
+        "crosstalk_rad": 0.020125918090343475,
+        "mapping_pass": false,
+        "latency_s": 0.10496192099526525,
+        "rise_time_90_s": 0.21505873200658243,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.000601918660104275
+      },
+      {
+        "motor_index": 2,
+        "joint_indices": [
+          2,
+          3
+        ],
+        "joint_names": [
+          "index_pip",
+          "index_dip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.00032726675271987915,
+          0.00010095164179801941
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 2,
+        "crosstalk_rad": 2.4438602849841118e-05,
+        "mapping_pass": true,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.009672733247280121,
+        "pip_dip_coupling_ratio": 0.3084689812179852
+      },
+      {
+        "motor_index": 3,
+        "joint_indices": [
+          4
+        ],
+        "joint_names": [
+          "middle_aa"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.0008165121544152498
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 4,
+        "crosstalk_rad": 3.341585397720337e-05,
+        "mapping_pass": true,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.00918348784558475
+      },
+      {
+        "motor_index": 4,
+        "joint_indices": [
+          5
+        ],
+        "joint_names": [
+          "middle_mcp"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.008147616870701313
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 5,
+        "crosstalk_rad": 0.002460641087964177,
+        "mapping_pass": true,
+        "latency_s": 0.13732530899869744,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.0018523831292986872
+      },
+      {
+        "motor_index": 5,
+        "joint_indices": [
+          6,
+          7
+        ],
+        "joint_names": [
+          "middle_pip",
+          "middle_dip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.00037199631333351135,
+          0.00011161342263221741
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 6,
+        "crosstalk_rad": 0.0003562411293387413,
+        "mapping_pass": true,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.009628003686666489,
+        "pip_dip_coupling_ratio": 0.3000390558498653
+      },
+      {
+        "motor_index": 6,
+        "joint_indices": [
+          8
+        ],
+        "joint_names": [
+          "ring_aa"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.0033380724489688873
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 8,
+        "crosstalk_rad": 0.0023640096187591553,
+        "mapping_pass": true,
+        "latency_s": 0.12143438799830619,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.006661927551031113
+      },
+      {
+        "motor_index": 7,
+        "joint_indices": [
+          9
+        ],
+        "joint_names": [
+          "ring_mcp"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.007333504036068916
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 9,
+        "crosstalk_rad": 0.002561967819929123,
+        "mapping_pass": true,
+        "latency_s": 0.1010193769907346,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.002666495963931084
+      },
+      {
+        "motor_index": 8,
+        "joint_indices": [
+          10,
+          11
+        ],
+        "joint_names": [
+          "ring_pip",
+          "ring_dip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.0010307319462299347,
+          0.00030170194804668427
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 10,
+        "crosstalk_rad": 0.0004003942012786865,
+        "mapping_pass": true,
+        "latency_s": 0.025286407995736226,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.008969268053770066,
+        "pip_dip_coupling_ratio": 0.29270650740011206
+      },
+      {
+        "motor_index": 9,
+        "joint_indices": [
+          12
+        ],
+        "joint_names": [
+          "pinky_aa"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.004034280427731574
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 12,
+        "crosstalk_rad": 0.002957332879304886,
+        "mapping_pass": true,
+        "latency_s": 0.129398154997034,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.005965719572268427
+      },
+      {
+        "motor_index": 10,
+        "joint_indices": [
+          13
+        ],
+        "joint_names": [
+          "pinky_mcp"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.008025214076042175
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 14,
+        "crosstalk_rad": 0.013007763773202896,
+        "mapping_pass": false,
+        "latency_s": 0.09312176299863495,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.001974785923957825
+      },
+      {
+        "motor_index": 11,
+        "joint_indices": [
+          14,
+          15
+        ],
+        "joint_names": [
+          "pinky_pip",
+          "pinky_dip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          0.0020084604620933533,
+          0.0005874363705515862
+        ],
+        "direction_pass": true,
+        "dominant_feedback_joint": 14,
+        "crosstalk_rad": 0.000170891173183918,
+        "mapping_pass": true,
+        "latency_s": 0.12309932299831416,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.007991539537906647,
+        "pip_dip_coupling_ratio": 0.29248092339309495
+      },
+      {
+        "motor_index": 12,
+        "joint_indices": [
+          16
+        ],
+        "joint_names": [
+          "thumb_aa"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          5.364418029785156e-06
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 14,
+        "crosstalk_rad": 2.2504478693008423e-05,
+        "mapping_pass": false,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.009994635581970215
+      },
+      {
+        "motor_index": 13,
+        "joint_indices": [
+          17
+        ],
+        "joint_names": [
+          "thumb_mcp"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          -7.316470146179199e-06
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 12,
+        "crosstalk_rad": 1.069705467671156e-05,
+        "mapping_pass": false,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.01000731647014618
+      },
+      {
+        "motor_index": 14,
+        "joint_indices": [
+          18
+        ],
+        "joint_names": [
+          "thumb_pip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          -5.982816219329834e-06
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 14,
+        "crosstalk_rad": 6.970018148422241e-06,
+        "mapping_pass": false,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.01000598281621933
+      },
+      {
+        "motor_index": 15,
+        "joint_indices": [
+          19
+        ],
+        "joint_names": [
+          "thumb_dip"
+        ],
+        "command_delta_rad": 0.01,
+        "measured_delta_rad": [
+          3.993511199951172e-06
+        ],
+        "direction_pass": false,
+        "dominant_feedback_joint": 18,
+        "crosstalk_rad": 5.982816219329834e-06,
+        "mapping_pass": false,
+        "latency_s": null,
+        "rise_time_90_s": null,
+        "overshoot_rad": 0.0,
+        "steady_error_rad": 0.009996006488800049
+      }
+    ],
+    "direction_pass_count": 7,
+    "mapping_pass_count": 10,
+    "latency_median_s": 0.12143438799830619,
+    "latency_max_s": 0.1562522050080588,
+    "rise_time_90_median_s": 0.21505873200658243,
+    "software_estop_sent": true
+  }
+}

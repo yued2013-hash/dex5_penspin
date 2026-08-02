@@ -1,0 +1,50 @@
+{
+  "phase": "O1.3 Privileged Oracle State Augmentation",
+  "diagnostic_status": "PASS",
+  "oracle_skill_status": "NOT_PASS",
+  "qualified_gait_gt_zero": false,
+  "baseline": {
+    "name": "O1.2 P3-only penalty60",
+    "observation_dim": 152,
+    "raw_gait_rate": 0.3515625,
+    "qualified_gait_rate": 0.0,
+    "failure_rate": 0.548828125,
+    "ballistic_rate": 0.001953125,
+    "contact_loss_rate": 0.005859375,
+    "thumb_attempt_rate": 0.00390625,
+    "thumb_recontact_rate": 0.0,
+    "height_recovery_rate": 0.0,
+    "mean_min_height_delta_mm": -35.11248156428337
+  },
+  "state_augmented": {
+    "name": "O1.3 P3State60",
+    "observation_dim": 158,
+    "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-07-30_22-08-37_ppo_torch_o1_3_P3State60/checkpoints/agent_1440.pt",
+    "completed_episodes": 1311,
+    "raw_gait_rate": 0.9717772692601068,
+    "qualified_gait_rate": 0.0,
+    "raw_over_180deg_rate": 0.8604118993135011,
+    "failure_rate": 1.0,
+    "ballistic_rate": 0.17391304347826086,
+    "contact_loss_rate": 0.9870327993897788,
+    "axis_aligned_rate": 0.0030511060259344014,
+    "mean_axis_alignment": 0.5792813159235555,
+    "thumb_attempt_rate": 0.9870327993897788,
+    "thumb_recontact_rate": 0.6422578184591915,
+    "index_recontact_rate": 0.9344012204424104,
+    "middle_recontact_rate": 0.13043478260869565,
+    "height_drop_rate": 0.9870327993897788,
+    "height_recovery_rate": 0.0,
+    "mean_min_height_delta_mm": -17.09460993926094
+  },
+  "interpretation": "Thumb recovery is attempted and often physically completed, but simultaneous TIM release destroys support overlap and prevents height recovery. Zero drop terminations are censored by earlier contact-loss termination.",
+  "constraints": {
+    "reward_changed_from_o1_2_penalty60": false,
+    "o0_modified": false,
+    "teacher_generated": false,
+    "num_envs": 256,
+    "iterations": 60,
+    "seed_count": 1,
+    "o0_bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+  }
+}

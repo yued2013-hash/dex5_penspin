@@ -1,0 +1,439 @@
+{
+  "status": "PASS",
+  "artifact_role": "reachability_summary_only_not_teacher_or_training_data",
+  "conclusion": "A_UNREACHABLE_WITHIN_AUDITED_BOUNDS",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "seed": 20260730,
+  "states": 1,
+  "population": 64,
+  "iterations": 10,
+  "elite_fraction": 0.2,
+  "waypoints": 3,
+  "action_mode": "all",
+  "active_action_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "active_action_dimensions": 20,
+  "initial_std_rad": 0.06,
+  "max_offset_rad": 0.18,
+  "horizons_steps": [
+    18,
+    24,
+    30
+  ],
+  "control_dt_s": 0.016666666666666666,
+  "num_envs": 64,
+  "wall_time_s": 15.360995860999992,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "source_bank_ids": [
+    1250
+  ],
+  "feasible_states": 0,
+  "feasible_rate": 0.0,
+  "failure_taxonomy": {
+    "no_TIM_transition": 1
+  },
+  "handoff_margin": {
+    "best": -1.0,
+    "median": -1.0,
+    "minimum": -1.0
+  },
+  "feasibility_gate": {
+    "contact_rebuild_steps_before_handoff": 2,
+    "TIM_release_recontact_debounce_steps": 3,
+    "new_support_gain_n": 0.03,
+    "old_support_unload_n": 0.03,
+    "minimum_total_contact_force_n": 0.06,
+    "maximum_total_contact_force_n": 6.0,
+    "simultaneous_load_transfer_required": true,
+    "releasing_finger": "initial strongest TIM finger, selected per reset",
+    "maximum_height_loss_mm": 5.0,
+    "height_recovery_diagnostic_final_loss_mm": 2.0,
+    "minimum_axis_alignment": 0.5,
+    "minimum_axis_moving_steps": 2,
+    "minimum_TIM_overlap": 0.8,
+    "no_ballistic_contact_loss_penetration_drop_or_invalid": true
+  },
+  "selected_state_results": [
+    {
+      "score": 13.553970336914062,
+      "feasible": false,
+      "handoff_margin": -1.0,
+      "initial_dominant_TIM_index": 2,
+      "initial_dominant_TIM_force_n": 1.9958751201629639,
+      "tim_gait": false,
+      "tim_overlap": 1.0,
+      "new_support_gain_n": 1.3851332664489746,
+      "old_support_unload_n": 1.4472441673278809,
+      "min_total_force_n": 1.4021635055541992,
+      "max_total_force_n": 5.222912788391113,
+      "transfer_pair_margin": 23.364818572998047,
+      "min_height_delta_mm": -0.022158026695251465,
+      "final_height_delta_mm": 2.2363513708114624,
+      "height_recovered": true,
+      "axis_alignment": 0.21444404125213623,
+      "axis_steps": 18,
+      "ballistic": false,
+      "contact_loss": false,
+      "penetration": false,
+      "drop": false,
+      "throw": false,
+      "drift": false,
+      "invalid": false,
+      "primary_failure": "no_TIM_transition",
+      "state_index": 0,
+      "bank_id": 1250,
+      "representative_clone_index": 52,
+      "representative_selection": "highest_score_clone",
+      "clone_replay_feasible_rate": 0.0,
+      "clone_replay_height_recovery_rate": 1.0,
+      "clone_replay_recovered_strict_rate": 0.0,
+      "selected_horizon_steps": 18
+    }
+  ],
+  "horizons": [
+    {
+      "horizon_steps": 18,
+      "horizon_ms": 300.0,
+      "feasible_states": 0,
+      "feasible_rate": 0.0,
+      "best_handoff_margin": -1.0,
+      "median_handoff_margin": -1.0,
+      "wall_time_s": 4.817434539000033,
+      "history": [
+        {
+          "iteration": 1,
+          "best_score": 13.375492095947266,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.7376339180000286
+        },
+        {
+          "iteration": 2,
+          "best_score": 13.375492095947266,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.45251866200010227
+        },
+        {
+          "iteration": 3,
+          "best_score": 13.401922225952148,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.49494305400003213
+        },
+        {
+          "iteration": 4,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4621642160000192
+        },
+        {
+          "iteration": 5,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4500828079999337
+        },
+        {
+          "iteration": 6,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.5164699090000795
+        },
+        {
+          "iteration": 7,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4142852979998679
+        },
+        {
+          "iteration": 8,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3766791299999568
+        },
+        {
+          "iteration": 9,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3313371660001394
+        },
+        {
+          "iteration": 10,
+          "best_score": 13.511394500732422,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.30744138099998963
+        }
+      ],
+      "states": [
+        {
+          "score": 13.553970336914062,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.9958751201629639,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.3851332664489746,
+          "old_support_unload_n": 1.4472441673278809,
+          "min_total_force_n": 1.4021635055541992,
+          "max_total_force_n": 5.222912788391113,
+          "transfer_pair_margin": 23.364818572998047,
+          "min_height_delta_mm": -0.022158026695251465,
+          "final_height_delta_mm": 2.2363513708114624,
+          "height_recovered": true,
+          "axis_alignment": 0.21444404125213623,
+          "axis_steps": 18,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 1250,
+          "representative_clone_index": 52,
+          "representative_selection": "highest_score_clone",
+          "clone_replay_feasible_rate": 0.0,
+          "clone_replay_height_recovery_rate": 1.0,
+          "clone_replay_recovered_strict_rate": 0.0
+        }
+      ]
+    },
+    {
+      "horizon_steps": 24,
+      "horizon_ms": 400.0,
+      "feasible_states": 0,
+      "feasible_rate": 0.0,
+      "best_handoff_margin": -1.0,
+      "median_handoff_margin": -1.0,
+      "wall_time_s": 4.1807405459999245,
+      "history": [
+        {
+          "iteration": 1,
+          "best_score": 12.969411849975586,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.36768026899994766
+        },
+        {
+          "iteration": 2,
+          "best_score": 13.428654670715332,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.37361732999988817
+        },
+        {
+          "iteration": 3,
+          "best_score": 13.428654670715332,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3815591930001574
+        },
+        {
+          "iteration": 4,
+          "best_score": 13.428654670715332,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4142831900001056
+        },
+        {
+          "iteration": 5,
+          "best_score": 13.428654670715332,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4153165729999273
+        },
+        {
+          "iteration": 6,
+          "best_score": 13.428654670715332,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.37982284400004573
+        },
+        {
+          "iteration": 7,
+          "best_score": 13.468141555786133,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3693216950000533
+        },
+        {
+          "iteration": 8,
+          "best_score": 13.468141555786133,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3670586809998895
+        },
+        {
+          "iteration": 9,
+          "best_score": 13.607253074645996,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.36485850899998695
+        },
+        {
+          "iteration": 10,
+          "best_score": 13.607253074645996,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.3725976929999888
+        }
+      ],
+      "states": [
+        {
+          "score": 13.626615524291992,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.995875597000122,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 1.7961052656173706,
+          "old_support_unload_n": 1.789015769958496,
+          "min_total_force_n": 0.40528348088264465,
+          "max_total_force_n": 4.39204216003418,
+          "transfer_pair_margin": 20.462963104248047,
+          "min_height_delta_mm": -0.23879855871200562,
+          "final_height_delta_mm": 2.728484570980072,
+          "height_recovered": true,
+          "axis_alignment": 0.20319148898124695,
+          "axis_steps": 23,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 1250,
+          "representative_clone_index": 20,
+          "representative_selection": "highest_score_clone",
+          "clone_replay_feasible_rate": 0.0,
+          "clone_replay_height_recovery_rate": 1.0,
+          "clone_replay_recovered_strict_rate": 0.0
+        }
+      ]
+    },
+    {
+      "horizon_steps": 30,
+      "horizon_ms": 500.0,
+      "feasible_states": 0,
+      "feasible_rate": 0.0,
+      "best_handoff_margin": -1.0,
+      "median_handoff_margin": -1.0,
+      "wall_time_s": 5.1364148590000696,
+      "history": [
+        {
+          "iteration": 1,
+          "best_score": 13.309610366821289,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.46217598199996246
+        },
+        {
+          "iteration": 2,
+          "best_score": 13.312631607055664,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4674546219998774
+        },
+        {
+          "iteration": 3,
+          "best_score": 13.312631607055664,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.5086456630001521
+        },
+        {
+          "iteration": 4,
+          "best_score": 13.415121078491211,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4929546240000491
+        },
+        {
+          "iteration": 5,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.46638798599997244
+        },
+        {
+          "iteration": 6,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4695820360000198
+        },
+        {
+          "iteration": 7,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.455676707000066
+        },
+        {
+          "iteration": 8,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.45831695599986233
+        },
+        {
+          "iteration": 9,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.4468863849999707
+        },
+        {
+          "iteration": 10,
+          "best_score": 13.474397659301758,
+          "population_feasible_rate": 0.0,
+          "wall_time_s": 0.46184739799991803
+        }
+      ],
+      "states": [
+        {
+          "score": 13.474397659301758,
+          "feasible": false,
+          "handoff_margin": -1.0,
+          "initial_dominant_TIM_index": 2,
+          "initial_dominant_TIM_force_n": 1.995586633682251,
+          "tim_gait": false,
+          "tim_overlap": 1.0,
+          "new_support_gain_n": 2.600078582763672,
+          "old_support_unload_n": 0.7815423011779785,
+          "min_total_force_n": 2.5843052864074707,
+          "max_total_force_n": 5.56292200088501,
+          "transfer_pair_margin": 25.05141258239746,
+          "min_height_delta_mm": 0.0,
+          "final_height_delta_mm": 3.789342939853668,
+          "height_recovered": true,
+          "axis_alignment": 0.20077568292617798,
+          "axis_steps": 30,
+          "ballistic": false,
+          "contact_loss": false,
+          "penetration": false,
+          "drop": false,
+          "throw": false,
+          "drift": false,
+          "invalid": false,
+          "primary_failure": "no_TIM_transition",
+          "state_index": 0,
+          "bank_id": 1250,
+          "representative_clone_index": 39,
+          "representative_selection": "highest_score_clone",
+          "clone_replay_feasible_rate": 0.0,
+          "clone_replay_height_recovery_rate": 1.0,
+          "clone_replay_recovered_strict_rate": 0.0
+        }
+      ]
+    }
+  ],
+  "limitations": "A zero feasible rate establishes practical non-reachability only within the audited reset sample, residual target bounds, waypoint parameterization, CEM budget, and 100-300 ms horizons; it is not a mathematical impossibility proof.",
+  "trajectory_exported": false,
+  "teacher_generated": false
+}

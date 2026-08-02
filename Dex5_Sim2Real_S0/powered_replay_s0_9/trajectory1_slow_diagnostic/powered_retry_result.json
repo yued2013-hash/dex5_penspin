@@ -1,0 +1,171 @@
+{
+  "schema": "dex5-s0.9-mapped-powered-replay-v2",
+  "timestamp_unix_s": 1785678547.4377944,
+  "status": "ABORTED",
+  "replay_sha256": "44e54a4915cc43faaace932c3c301e6e57e2c8028ec45885a8448e5a72305230",
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "static_gate_sha256": "5b4e8660e65c3af80262ebc6700bb09bbb421c983c1285ef4b487854816947c7",
+  "requested_trajectory_count": 1,
+  "safety": {
+    "speed_limit_rad_s": 0.03,
+    "delta_limit_rad": 0.01,
+    "watchdog_s": 0.1,
+    "thermal_abort_c": 75.0,
+    "startup_mode": "low_gain_preload",
+    "replay_control_mode": "low_gain_hybrid",
+    "diagnostic_package": true,
+    "feedback_speed_abort_rad_s": 0.12,
+    "feedback_speed_abort_windows": 1,
+    "feedback_speed_monitored_joint_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "offline_preflight": {
+    "trajectory_count": 1,
+    "command_rows": 1007,
+    "maximum_delta_rad": 0.00029602646827697754,
+    "maximum_speed_rad_s": 0.029602646827697754
+  },
+  "trajectories": [],
+  "staging": {
+    "status": "MAPPED_LOW_GAIN_PRELOAD_ACCEPTED",
+    "maximum_feedback_error_rad": 0.04600042104721069,
+    "resume_command_max_offset_rad": 0.040757928781273156,
+    "resume_command": [
+      -0.21958737075328827,
+      1.1261404752731323,
+      0.4249989688396454,
+      0.4249989688396454,
+      -0.0020785929809790105,
+      1.4815764427185059,
+      0.08121449127793312,
+      0.08121449127793312,
+      0.20771043002605438,
+      1.3782998323440552,
+      0.7699378430843353,
+      0.7699378430843353,
+      0.3540576696395874,
+      1.4999865293502808,
+      0.8614615499973297,
+      0.8614615499973297,
+      0.19762989573421424,
+      0.7563073888494947,
+      0.989903300008299,
+      0.6662449963826292
+    ],
+    "thumb_resume_offsets": {
+      "16": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -0.0003765895962715149,
+        "resume_command_offset_rad": -0.00040507621822410966
+      },
+      "17": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -0.04600042104721069,
+        "resume_command_offset_rad": -0.040757928781273156
+      },
+      "18": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -1.0669231414794922e-05,
+        "resume_command_offset_rad": -1.2011328218375361e-05
+      },
+      "19": {
+        "branch": "up",
+        "raw_feedback_delta_rad": -2.4944543838500977e-05,
+        "resume_command_offset_rad": -2.7584240997469145e-05
+      }
+    },
+    "preload": {
+      "observed_windows": 15,
+      "stable_windows": 15,
+      "peak_speed_rad_s": 0.00019735848442062166
+    },
+    "aligned": {
+      "observed_windows": 15,
+      "stable_windows": 15,
+      "peak_speed_rad_s": 0.0001720139269679645
+    },
+    "preload_alignment_speed_rad_s": 0.01,
+    "replay_control_mode": "low_gain_hybrid",
+    "low_gain_replay_validation": {
+      "observed_windows": 14,
+      "stable_windows": 14,
+      "peak_speed_rad_s": 0.00019738793061393857
+    }
+  },
+  "controller_hybrid_gains": {
+    "hybrid_kp_scale": 0.15,
+    "hybrid_kd_scale": 0.3,
+    "hybrid_thumb_kp_scale": 0.15,
+    "hybrid_thumb_kd_scale": 0.3
+  },
+  "abort_reason": "independent-joint 50ms velocity 0.4897 rad/s on joint 4 exceeded 0.1200 rad/s for 1 consecutive windows",
+  "partial_replay": {
+    "trajectory_id": 0,
+    "status": "ABORTED_PARTIAL",
+    "command_rows_recorded": 237,
+    "duration_s": 2.3605057380045764,
+    "position_diff_velocity_max_rad_s": 0.024415624616500427,
+    "position_diff_velocity_peak_row": 231,
+    "position_diff_velocity_peak_joint": 6,
+    "last_target": [
+      -0.24628354609012604,
+      1.1209747791290283,
+      0.40740954875946045,
+      0.40740954875946045,
+      -0.0004314679536037147,
+      1.514017939567566,
+      0.05155419558286667,
+      0.05155419558286667,
+      0.2115982621908188,
+      1.4063746929168701,
+      0.7543238401412964,
+      0.7543238401412964,
+      0.383367121219635,
+      1.5003101825714111,
+      0.899185299873352,
+      0.899185299873352,
+      0.19909386336803436,
+      0.8148462772369385,
+      0.9733133316040039,
+      0.6581575274467468
+    ],
+    "last_feedback": [
+      -0.21143954992294312,
+      1.108737826347351,
+      0.42786136269569397,
+      0.1821018010377884,
+      -0.023633187636733055,
+      1.4754773378372192,
+      0.13257813453674316,
+      0.04070047289133072,
+      0.21932744979858398,
+      1.3836864233016968,
+      0.778836190700531,
+      0.45079758763313293,
+      0.24585115909576416,
+      1.4536665678024292,
+      0.8318140506744385,
+      0.5020046830177307,
+      0.10764602571725845,
+      0.5891613960266113,
+      0.9098663926124573,
+      0.526388943195343
+    ]
+  }
+}

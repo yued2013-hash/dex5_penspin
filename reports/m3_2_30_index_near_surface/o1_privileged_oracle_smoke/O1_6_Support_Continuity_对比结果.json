@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "classification": "DENSE_PENALTY_TERMINATION_EXPLOIT",
+  "skill_pass": false,
+  "termination_exploit_detected": true,
+  "matched_contract": {
+    "p3_only": true,
+    "temporal_observation_dim": 172,
+    "seed": 20260730,
+    "num_envs": 256,
+    "iterations": 60,
+    "training_transitions_per_condition": 368640,
+    "evaluation_transitions_per_condition": 61440,
+    "bank_hash_equal": true
+  },
+  "conditions": {
+    "A_temporal_baseline": {
+      "completed_episodes": 986,
+      "approx_mean_episode_steps": 62.31237322515213,
+      "raw_gait_rate": 0.9371196754563894,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_recovery_rate": 0.0,
+      "tim_overlap_ratio": 0.5007937355892653,
+      "failure_rate": 1.0,
+      "contact_loss_rate": 0.0,
+      "ballistic_rate": 0.037525354969574036,
+      "mean_support_force_z_n": 0.014200780122579696,
+      "mean_total_contact_force_n": 1.4521765418350696,
+      "max_total_contact_force_n": 8.014564514160156,
+      "mechanical_power_w": 0.09971137065440416,
+      "max_penetration_mm": 0.3390824422240257
+    },
+    "B_support_margin": {
+      "completed_episodes": 6039,
+      "approx_mean_episode_steps": 10.173869846000994,
+      "raw_gait_rate": 0.0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_recovery_rate": 0.0,
+      "tim_overlap_ratio": 0.8005336730522438,
+      "failure_rate": 1.0,
+      "contact_loss_rate": 0.9894022189104156,
+      "ballistic_rate": 0.9937075674780593,
+      "mean_support_force_z_n": -0.07452846415290323,
+      "mean_total_contact_force_n": 2.589315153338695,
+      "max_total_contact_force_n": 8.744396209716797,
+      "mechanical_power_w": 0.07447273364911476,
+      "max_penetration_mm": 0.9771184995770454
+    },
+    "C_recoverability": {
+      "completed_episodes": 6224,
+      "approx_mean_episode_steps": 9.87146529562982,
+      "raw_gait_rate": 0.0,
+      "qualified_gait_rate": 0.0,
+      "support_handoff_rate": 0.0,
+      "height_recovery_rate": 0.0,
+      "tim_overlap_ratio": 0.7961553656962966,
+      "failure_rate": 1.0,
+      "contact_loss_rate": 0.9808804627249358,
+      "ballistic_rate": 0.9937339331619537,
+      "mean_support_force_z_n": -0.07117456846948092,
+      "mean_total_contact_force_n": 2.5049250591934347,
+      "max_total_contact_force_n": 8.765968322753906,
+      "mechanical_power_w": 0.07069892762228847,
+      "max_penetration_mm": 0.8875979110598564
+    }
+  },
+  "interpretation": "Per-step support-deficit penalties create an incentive to terminate episodes early. B and C do not test successful load transfer; they expose a termination-return loophole that must be closed before further scaling.",
+  "sources": {
+    "A_temporal_baseline": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_6_A_temporal_baseline_eval256.json",
+    "B_support_margin": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_6_B_support_margin_eval256.json",
+    "C_recoverability": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/o1_6_C_recoverability_eval256.json"
+  }
+}

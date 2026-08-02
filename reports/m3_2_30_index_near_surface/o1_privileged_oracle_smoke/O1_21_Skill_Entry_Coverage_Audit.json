@@ -1,0 +1,395 @@
+{
+  "status": "PASS_DIAGNOSTIC_SPARSE_NONZERO_ENTRY_COVERAGE",
+  "phase": "O1.21 Skill Entry Coverage Audit",
+  "artifact_role": "read_only_static_coverage_audit_not_classifier_reset_filter_or_dataset",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "population": {
+    "P3_states": 396,
+    "independent_parent_count": 352,
+    "independent_source_count": 219,
+    "long_horizon_measured_states": 37,
+    "long_horizon_unmeasured_states": 359,
+    "known_strict_feasible": 3,
+    "known_strict_density_of_all_P3": 0.007575757575757576,
+    "conditional_feasible_rate_in_O1_14_candidate_layer": 0.08108108108108109,
+    "scope_warning": "The other 359 P3 rows are unknown, not non-feasible."
+  },
+  "feature_importance": {
+    "definition": "univariate absolute Cliff's delta on 3 strict positives versus 34 measured failures; descriptive, not causal",
+    "group_RMS_abs_cliffs_delta": {
+      "geometry": 0.7189999528413377,
+      "joint_configuration": 0.5258595424276034,
+      "pen_pose": 0.7762659002670849,
+      "support_margin": 0.5445546734603819,
+      "velocity": 0.4151741820433267,
+      "wrench": 0.6958515430912824
+    },
+    "top_features": [
+      {
+        "feature": "wrench_middle_tangential_force_n",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 1.0,
+        "cliffs_delta": -1.0,
+        "positive_median": 1.260995864868164,
+        "failure_median": 1.8038926124572754,
+        "positive_median_percentile_in_all_P3": 0.020202020202020204,
+        "all_P3_inside_positive_min_max_fraction": 0.030303030303030304
+      },
+      {
+        "feature": "geometry_index_axial_mm",
+        "group": "geometry",
+        "importance_proxy_abs_cliffs_delta": 0.9803921568627451,
+        "cliffs_delta": 0.9803921568627451,
+        "positive_median": 10.964912414550781,
+        "failure_median": 6.683655023574829,
+        "positive_median_percentile_in_all_P3": 0.9823232323232324,
+        "all_P3_inside_positive_min_max_fraction": 0.05555555555555555
+      },
+      {
+        "feature": "wrench_total_torque_about_com_nmm_z",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9803921568627451,
+        "cliffs_delta": 0.9803921568627451,
+        "positive_median": 4.346555709838867,
+        "failure_median": -4.0516037940979,
+        "positive_median_percentile_in_all_P3": 0.9797979797979798,
+        "all_P3_inside_positive_min_max_fraction": 0.030303030303030304
+      },
+      {
+        "feature": "wrench_middle_force_on_pen_n_x",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9803921568627451,
+        "cliffs_delta": -0.9803921568627451,
+        "positive_median": 1.6410143375396729,
+        "failure_median": 2.348784565925598,
+        "positive_median_percentile_in_all_P3": 0.020202020202020204,
+        "all_P3_inside_positive_min_max_fraction": 0.050505050505050504
+      },
+      {
+        "feature": "geometry_thumb_index_distance_mm",
+        "group": "geometry",
+        "importance_proxy_abs_cliffs_delta": 0.9803921568627451,
+        "cliffs_delta": 0.9803921568627451,
+        "positive_median": 26.296545028686523,
+        "failure_median": 23.737645149230957,
+        "positive_median_percentile_in_all_P3": 0.9823232323232324,
+        "all_P3_inside_positive_min_max_fraction": 0.05808080808080808
+      },
+      {
+        "feature": "joint_q_Pitch_54R_rad",
+        "group": "joint_configuration",
+        "importance_proxy_abs_cliffs_delta": 0.9607843137254902,
+        "cliffs_delta": 0.9607843137254902,
+        "positive_median": 0.8686081171035767,
+        "failure_median": 0.8591342568397522,
+        "positive_median_percentile_in_all_P3": 0.7727272727272727,
+        "all_P3_inside_positive_min_max_fraction": 0.23484848484848486
+      },
+      {
+        "feature": "wrench_middle_force_on_pen_n_z",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9607843137254902,
+        "cliffs_delta": -0.9607843137254902,
+        "positive_median": 0.028383774682879448,
+        "failure_median": 0.045831965282559395,
+        "positive_median_percentile_in_all_P3": 0.030303030303030304,
+        "all_P3_inside_positive_min_max_fraction": 0.07828282828282829
+      },
+      {
+        "feature": "wrench_middle_force_norm_n",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9607843137254902,
+        "cliffs_delta": -0.9607843137254902,
+        "positive_median": 1.6456048488616943,
+        "failure_median": 2.3835315704345703,
+        "positive_median_percentile_in_all_P3": 0.020202020202020204,
+        "all_P3_inside_positive_min_max_fraction": 0.05303030303030303
+      },
+      {
+        "feature": "wrench_middle_force_on_pen_n_y",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9411764705882353,
+        "cliffs_delta": 0.9411764705882353,
+        "positive_median": -0.11950669437646866,
+        "failure_median": -0.3474682718515396,
+        "positive_median_percentile_in_all_P3": 0.9848484848484849,
+        "all_P3_inside_positive_min_max_fraction": 0.10858585858585859
+      },
+      {
+        "feature": "support_TIM_contact_force_sum_n",
+        "group": "support_margin",
+        "importance_proxy_abs_cliffs_delta": 0.9215686274509803,
+        "cliffs_delta": -0.9215686274509803,
+        "positive_median": 4.033802032470703,
+        "failure_median": 5.285850763320923,
+        "positive_median_percentile_in_all_P3": 0.06818181818181818,
+        "all_P3_inside_positive_min_max_fraction": 0.0707070707070707
+      },
+      {
+        "feature": "joint_q_Roll_21R_rad",
+        "group": "joint_configuration",
+        "importance_proxy_abs_cliffs_delta": 0.9215686274509803,
+        "cliffs_delta": 0.9215686274509803,
+        "positive_median": -0.20392920076847076,
+        "failure_median": -0.24541641026735306,
+        "positive_median_percentile_in_all_P3": 0.8661616161616161,
+        "all_P3_inside_positive_min_max_fraction": 0.2398989898989899
+      },
+      {
+        "feature": "pen_axis_y",
+        "group": "pen_pose",
+        "importance_proxy_abs_cliffs_delta": 0.9215686274509803,
+        "cliffs_delta": 0.9215686274509803,
+        "positive_median": 0.9930266737937927,
+        "failure_median": 0.9857448041439056,
+        "positive_median_percentile_in_all_P3": 0.9671717171717171,
+        "all_P3_inside_positive_min_max_fraction": 0.03787878787878788
+      },
+      {
+        "feature": "support_force_ceiling_margin_n",
+        "group": "support_margin",
+        "importance_proxy_abs_cliffs_delta": 0.9215686274509803,
+        "cliffs_delta": 0.9215686274509803,
+        "positive_median": 1.9661979675292969,
+        "failure_median": 0.7141494750976562,
+        "positive_median_percentile_in_all_P3": 0.9343434343434344,
+        "all_P3_inside_positive_min_max_fraction": 0.0707070707070707
+      },
+      {
+        "feature": "support_total_contact_force_sum_n",
+        "group": "support_margin",
+        "importance_proxy_abs_cliffs_delta": 0.9215686274509803,
+        "cliffs_delta": -0.9215686274509803,
+        "positive_median": 4.033802032470703,
+        "failure_median": 5.285850524902344,
+        "positive_median_percentile_in_all_P3": 0.06818181818181818,
+        "all_P3_inside_positive_min_max_fraction": 0.0707070707070707
+      },
+      {
+        "feature": "geometry_ring_axial_mm",
+        "group": "geometry",
+        "importance_proxy_abs_cliffs_delta": 0.9019607843137255,
+        "cliffs_delta": 0.9019607843137255,
+        "positive_median": -27.415569305419922,
+        "failure_median": -30.09813404083252,
+        "positive_median_percentile_in_all_P3": 0.8838383838383839,
+        "all_P3_inside_positive_min_max_fraction": 0.1994949494949495
+      },
+      {
+        "feature": "wrench_index_force_on_pen_n_x",
+        "group": "wrench",
+        "importance_proxy_abs_cliffs_delta": 0.9019607843137255,
+        "cliffs_delta": 0.9019607843137255,
+        "positive_median": -1.757662296295166,
+        "failure_median": -2.097175717353821,
+        "positive_median_percentile_in_all_P3": 0.9141414141414141,
+        "all_P3_inside_positive_min_max_fraction": 0.18686868686868688
+      },
+      {
+        "feature": "geometry_index_middle_distance_mm",
+        "group": "geometry",
+        "importance_proxy_abs_cliffs_delta": 0.9019607843137255,
+        "cliffs_delta": 0.9019607843137255,
+        "positive_median": 26.418380737304688,
+        "failure_median": 25.737488746643066,
+        "positive_median_percentile_in_all_P3": 0.9823232323232324,
+        "all_P3_inside_positive_min_max_fraction": 0.13636363636363635
+      },
+      {
+        "feature": "pen_axis_x",
+        "group": "pen_pose",
+        "importance_proxy_abs_cliffs_delta": 0.8823529411764706,
+        "cliffs_delta": -0.8823529411764706,
+        "positive_median": 0.01688283681869507,
+        "failure_median": 0.09520381689071655,
+        "positive_median_percentile_in_all_P3": 0.025252525252525252,
+        "all_P3_inside_positive_min_max_fraction": 0.32323232323232326
+      },
+      {
+        "feature": "pen_position_mm_y",
+        "group": "pen_pose",
+        "importance_proxy_abs_cliffs_delta": 0.8627450980392157,
+        "cliffs_delta": -0.8627450980392157,
+        "positive_median": 81.54812622070312,
+        "failure_median": 82.27467346191406,
+        "positive_median_percentile_in_all_P3": 0.15404040404040403,
+        "all_P3_inside_positive_min_max_fraction": 0.2398989898989899
+      },
+      {
+        "feature": "geometry_ring_gap_mm",
+        "group": "geometry",
+        "importance_proxy_abs_cliffs_delta": 0.8627450980392157,
+        "cliffs_delta": 0.8627450980392157,
+        "positive_median": 15.115215301513672,
+        "failure_median": 12.862439155578613,
+        "positive_median_percentile_in_all_P3": 0.9545454545454546,
+        "all_P3_inside_positive_min_max_fraction": 0.3939393939393939
+      }
+    ]
+  },
+  "coverage_gap": {
+    "strict_positive_labels_are_sparse": true,
+    "strict_positive_parent_count": 3,
+    "strict_positive_source_count": 3,
+    "positive_pairwise_group_distance": [
+      0.6934289114036155,
+      0.7704335193752557,
+      0.6419858547062065
+    ],
+    "dominant_feature_groups": [
+      "pen_pose",
+      "geometry",
+      "wrench",
+      "support_margin",
+      "joint_configuration"
+    ],
+    "interpretation": "The entry-like region occupies a small but provenance-diverse part of frozen P3; static pose/geometry/wrench differences dominate short-probe responses."
+  },
+  "candidate_density": {
+    "zero_known_failure_core": {
+      "name": "zero_known_failure_core",
+      "threshold": 0.3764224108413151,
+      "states": 9,
+      "density_of_all_P3": 0.022727272727272728,
+      "independent_parent_count": 9,
+      "independent_source_count": 9,
+      "known_positive_recall": 0.6666666666666666,
+      "known_failure_selection_rate": 0.0,
+      "unmeasured_candidate_count": 7,
+      "bank_ids": [
+        852,
+        894,
+        1034,
+        1045,
+        1146,
+        1149,
+        1155,
+        1176,
+        1227
+      ],
+      "role": "analysis_only_not_feasibility_labels_or_reset_filter"
+    },
+    "all_positive_sensitivity_envelope": {
+      "name": "all_positive_sensitivity_envelope",
+      "threshold": 0.33508895491141233,
+      "states": 11,
+      "density_of_all_P3": 0.027777777777777776,
+      "independent_parent_count": 11,
+      "independent_source_count": 11,
+      "known_positive_recall": 1.0,
+      "known_failure_selection_rate": 0.029411764705882353,
+      "unmeasured_candidate_count": 7,
+      "bank_ids": [
+        831,
+        852,
+        894,
+        1025,
+        1034,
+        1045,
+        1146,
+        1149,
+        1155,
+        1176,
+        1227
+      ],
+      "role": "analysis_only_not_feasibility_labels_or_reset_filter"
+    },
+    "known_failure_5pct_candidate_band": {
+      "name": "known_failure_5pct_candidate_band",
+      "threshold": 0.09714108035081603,
+      "states": 46,
+      "density_of_all_P3": 0.11616161616161616,
+      "independent_parent_count": 40,
+      "independent_source_count": 38,
+      "known_positive_recall": 1.0,
+      "known_failure_selection_rate": 0.058823529411764705,
+      "unmeasured_candidate_count": 41,
+      "bank_ids": [
+        773,
+        781,
+        828,
+        831,
+        847,
+        852,
+        867,
+        893,
+        894,
+        912,
+        923,
+        935,
+        950,
+        956,
+        965,
+        986,
+        989,
+        992,
+        1009,
+        1023,
+        1025,
+        1033,
+        1034,
+        1036,
+        1045,
+        1048,
+        1062,
+        1068,
+        1091,
+        1114,
+        1140,
+        1144,
+        1146,
+        1149,
+        1152,
+        1155,
+        1156,
+        1172,
+        1176,
+        1183,
+        1196,
+        1206,
+        1217,
+        1227,
+        1230,
+        1243
+      ],
+      "role": "analysis_only_not_feasibility_labels_or_reset_filter"
+    }
+  },
+  "decision": {
+    "A_existing_P3_coverage_insufficient": {
+      "supported": true,
+      "reason": "The all-positive static envelope covers 2.78% of P3, below the pre-registered 5% sparse-coverage boundary."
+    },
+    "B_resample_canonical_now": {
+      "supported": false,
+      "reason": "Not yet: the frozen bank still contains provenance-diverse unmeasured high-score candidates. Confirm them before any separately approved resampling phase."
+    },
+    "C_policy_exploration_remains_primary": {
+      "supported": true,
+      "reason": "Strict handoff existence is already demonstrated inside P3, while prior PPO produced no qualified handoff; sparse reset probability amplifies, but does not replace, the exploration bottleneck."
+    },
+    "overall": "A_AND_C_SUPPORTED_B_DEFERRED"
+  },
+  "next_gate": {
+    "action": "independent long-horizon confirmation of quarantined candidates under the frozen O1.15 contract",
+    "candidate_source": "O1.20 provenance-disjoint ranking intersected with O1.21 sensitivity envelope",
+    "candidate_bank_ids": [
+      1034,
+      1176,
+      1146,
+      1045,
+      1227,
+      852,
+      1149
+    ],
+    "prohibition": "Do not create P3-H or resample O0 until independent strict and clone-robust evidence is obtained."
+  },
+  "constraints": {
+    "O0_modified": false,
+    "P3H_created": false,
+    "PPO_trained": false,
+    "teacher_generated": false,
+    "reset_bank_modified": false,
+    "new_reset_dataset_created": false
+  }
+}

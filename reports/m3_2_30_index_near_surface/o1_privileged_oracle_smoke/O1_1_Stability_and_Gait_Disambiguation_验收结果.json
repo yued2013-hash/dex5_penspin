@@ -1,0 +1,47 @@
+{
+  "phase": "O1.1 Stability and Gait Disambiguation",
+  "implementation_status": "PASS",
+  "policy_status": "NOT_PASS",
+  "classification": "REACHABILITY_ONLY",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-07-30_17-42-49_ppo_torch/checkpoints/best_agent.pt",
+  "seed": 20260730,
+  "num_envs": 256,
+  "steps": 240,
+  "baseline": {
+    "completed_episodes": 559,
+    "raw_gait_rate": 0.29159212880143115,
+    "qualified_gait_rate": 0.0,
+    "raw_over_180deg_rate": 0.7298747763864043,
+    "qualified_over_180deg_rate": 0.0,
+    "failure_rate": 0.6064400715563506,
+    "contact_loss_rate": 0.36493738819320215,
+    "ballistic_rate": 0.46511627906976744,
+    "mean_ballistic_steps": 1.2361359570661896,
+    "target_angular_velocity_rad_s": 2.422327871620655,
+    "wrong_axis_angular_speed_rad_s": 5.550884664058685
+  },
+  "ballistic_guard": {
+    "completed_episodes": 569,
+    "raw_gait_rate": 0.28471001757469244,
+    "qualified_gait_rate": 0.0,
+    "raw_over_180deg_rate": 0.7311072056239016,
+    "qualified_over_180deg_rate": 0.0,
+    "failure_rate": 0.6151142355008787,
+    "contact_loss_rate": 0.01054481546572935,
+    "ballistic_rate": 0.45166959578207383,
+    "mean_ballistic_steps": 0.45166959578207383,
+    "target_angular_velocity_rad_s": 2.425801318883896,
+    "wrong_axis_angular_speed_rad_s": 5.546071113149325
+  },
+  "mitigation": {
+    "ballistic_exposure_reduction": 0.6346153846153846,
+    "contact_loss_rate_reduction": 0.9711055276381909,
+    "interpretation": "The guard rejects exploit trajectories earlier; it does not improve the frozen policy."
+  },
+  "constraints": {
+    "o0_modified": false,
+    "teacher_generated": false,
+    "ppo_training_run": false,
+    "o0_bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "dex5-s0.9-slow-diagnostic-v1",
+  "status": "OFFLINE_DIAGNOSTIC_NOT_EXECUTED",
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/powered_replay_s0_9/trajectory1_slow_diagnostic/trajectory1_slow_100hz.npz",
+  "output_sha256": "44e54a4915cc43faaace932c3c301e6e57e2c8028ec45885a8448e5a72305230",
+  "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/powered_replay_s0_9/mapped_replay_100hz.npz",
+  "source_sha256": "dfcc88f356fe63815b527bde4b38db0a948e3a7a8444fbcc2942989565725108",
+  "source_trajectory_id": 1,
+  "mapping_sha256": "273bafb3631a50907a7738d57212e1b83df1184c91953fac9056a1f2a43c415b",
+  "trajectory_count": 1,
+  "source_command_rows": 383,
+  "command_rows": 1007,
+  "command_hz": 100.0,
+  "maximum_delta_rad": 0.00029602646827697754,
+  "maximum_speed_rad_s": 0.029602646827697754,
+  "endpoint_preservation": true,
+  "required_replay_control_mode": "low_gain_hybrid",
+  "required_feedback_speed_abort_rad_s": 0.12,
+  "required_feedback_speed_abort_windows": 1,
+  "boundary": "This is a separately versioned low-speed hardware diagnostic for source trajectory 1. It does not replace the frozen replay package and completion does not establish rotation-task success or dynamic equivalence."
+}

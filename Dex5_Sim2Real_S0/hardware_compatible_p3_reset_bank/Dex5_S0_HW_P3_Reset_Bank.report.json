@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "artifact": "Dex5_S0_HW_P3_Reset_Bank",
+  "scope": "hardware-compatible P3 reset distribution, no policy training",
+  "validated_states": 582,
+  "unique_original_p3_states": 329,
+  "unique_source_trajectories": 209,
+  "split_counts": {
+    "train": 468,
+    "validation": 54,
+    "test": 60
+  },
+  "tim_final_contact_rate": 1.0,
+  "at_least_two_tim_final_contact_rate": 1.0,
+  "max_penetration_mm": 0.2537677064538002,
+  "max_target_coupling_error_rad": 0.0,
+  "projection_residual": {
+    "mean_rms_rad": 0.04477185383439064,
+    "max_rad": 0.30219897627830505
+  },
+  "r3_protocol": {
+    "unperturbed_trials": 3,
+    "required_unperturbed_success_ratio": 1.0,
+    "perturbed_trials": 5,
+    "required_perturbed_r1_ratio": 0.8,
+    "required_perturbed_r2_ratio": 0.8
+  },
+  "checks": {
+    "validated_states_at_least_500": true,
+    "all_r0_r3_labels": true,
+    "finite_required_arrays": true,
+    "target_coupling_exact": true,
+    "tim_three_finger_contact_at_least_90pct": true,
+    "at_least_two_tim_contact_at_least_99pct": true,
+    "penetration_below_0_5mm": true,
+    "canonical_is_p3": true,
+    "source_trajectory_split_isolation": true,
+    "original_state_split_isolation": true,
+    "o0_hash_unchanged": true
+  },
+  "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/validation/canonical_reset_bank/P3_validated.npz",
+  "source_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1",
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/hardware_compatible_p3_reset_bank/Dex5_S0_HW_P3_Reset_Bank.npz",
+  "output_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1",
+  "frozen_o0_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65"
+}

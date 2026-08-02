@@ -1,0 +1,31 @@
+{
+  "task": "Dex5-S0-ShortRotation-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_s0_short_rotation_oracle/2026-07-31_22-55-07_ppo_torch/checkpoints/agent_2880.pt",
+  "seed": 20260803,
+  "reset_split": "test",
+  "num_envs": 256,
+  "requested_episodes": 1024,
+  "completed_episodes": 1024,
+  "successes": 0,
+  "success_rate": 0.0,
+  "forbidden_transition_rate": 1.0,
+  "failure_rate": 0.0,
+  "timeout_rate": 1.0,
+  "mean_peak_target_angle_deg": 41.4600715637207,
+  "max_peak_target_angle_deg": 57.3631477355957,
+  "max_hold_steps": 0,
+  "gate_ever_rates": {
+    "target_band": 0.8701171875,
+    "target_speed": 0.869140625,
+    "wrong_axis": 0.83203125,
+    "height": 0.83203125,
+    "tim_all": 0.1455078125,
+    "ring_pinky_clear": 0.1455078125,
+    "no_forbidden_history": 0.0,
+    "all_instantaneous": 0.0
+  },
+  "max_penetration_mm": 0.0,
+  "max_target_coupling_error_rad": 0.0,
+  "finite": true,
+  "control_steps": 188
+}

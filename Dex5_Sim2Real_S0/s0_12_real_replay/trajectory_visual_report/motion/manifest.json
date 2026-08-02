@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "source_rollout": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/quaternion_validated_rollouts_1200_v2.npz",
+  "source_rollout_sha256": "50621081e145675912de565d2097bdc8b9a439cebb4e2868ee5fb84d5fdc61cd",
+  "selection_manifest": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/s0_12_real_replay/real_replay_selection_manifest.json",
+  "visualization_backend": "MuJoCo mesh state playback; source dynamics are PhysX",
+  "rotation_metric": "signed world-z component of quaternion delta",
+  "records": [
+    {
+      "rank": 1,
+      "episode": 898,
+      "video": "rank_01_episode_0898.mp4",
+      "poster": "rank_01_episode_0898.png",
+      "duration_s": 1.15,
+      "final_rotation_deg": 34.50579071044922,
+      "strict_hold_ms": 166.66666666666666,
+      "source_trajectory_id": 7821213779321911387
+    },
+    {
+      "rank": 2,
+      "episode": 485,
+      "video": "rank_02_episode_0485.mp4",
+      "poster": "rank_02_episode_0485.png",
+      "duration_s": 1.1833333333333333,
+      "final_rotation_deg": 35.281829833984375,
+      "strict_hold_ms": 166.66666666666666,
+      "source_trajectory_id": 4250108542531982190
+    },
+    {
+      "rank": 3,
+      "episode": 176,
+      "video": "rank_03_episode_0176.mp4",
+      "poster": "rank_03_episode_0176.png",
+      "duration_s": 1.1833333333333333,
+      "final_rotation_deg": 34.72298812866211,
+      "strict_hold_ms": 166.66666666666666,
+      "source_trajectory_id": 6489221358059552009
+    }
+  ]
+}

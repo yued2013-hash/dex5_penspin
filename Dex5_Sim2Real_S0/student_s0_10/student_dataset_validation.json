@@ -1,0 +1,53 @@
+{
+  "schema": "dex5-s0.10-student-dataset-validation-v1",
+  "status": "PASS",
+  "dataset": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/student_bc_dataset.npz",
+  "dataset_sha256": "04fdd611ba255715d5d4159a1e7d933ee1c77d58871d00bcdc9e26d61db7e746",
+  "manifest": "/home/linkerhand/\u684c\u9762/deep learning/dex5_penspin/Dex5_Sim2Real_S0/student_s0_10/student_dataset_manifest.json",
+  "checks": {
+    "exact_field_allowlist": true,
+    "no_privileged_field_name": true,
+    "observation_shape": true,
+    "action_shape": true,
+    "next_observation_shape": true,
+    "label_shapes": true,
+    "all_finite": true,
+    "action_bounded": true,
+    "normalization_shape": true,
+    "normalization_std_positive": true,
+    "offsets_cover_rows": true,
+    "terminal_count": true,
+    "success_count": true,
+    "success_only_at_terminal": true,
+    "all_splits_present": true,
+    "terminal_layout": true,
+    "episode_layout": true,
+    "nonterminal_next_obs_continuity_exact": true,
+    "next_obs_action_history_exact": true,
+    "source_split_leakage_zero": true,
+    "train_normalization_mean_exact": true,
+    "train_normalization_std_exact": true,
+    "dataset_hash_matches_manifest": true
+  },
+  "metrics": {
+    "rows": 69600,
+    "episodes": 1200,
+    "terminal_rows": 1200,
+    "success_rows": 1200,
+    "maximum_abs_action": 1.0,
+    "next_obs_continuity_max_error": 0.0,
+    "source_split_leakage": 0,
+    "row_split_counts": {
+      "train": 51621,
+      "validation": 6519,
+      "test": 11460
+    },
+    "unique_sources_by_split": {
+      "train": 125,
+      "validation": 16,
+      "test": 20
+    }
+  },
+  "hardware_commands_issued": false,
+  "optimizer_step_performed": false
+}

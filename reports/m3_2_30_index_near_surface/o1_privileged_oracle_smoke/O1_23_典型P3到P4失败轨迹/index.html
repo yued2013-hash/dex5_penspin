@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O1.23 P4 绕行→P5 捕获失败轨迹</title><style>
+body{margin:0;background:#eef1f4;color:#17202a;font:15px/1.6 system-ui,sans-serif}
+header,main{max-width:1080px;margin:auto;padding:24px}header{background:#fff;max-width:none;padding-left:max(24px,calc((100vw - 1032px)/2))}
+h1{margin:0 0 8px;font-size:28px;letter-spacing:0}p{margin:7px 0}video,img{display:block;width:100%;background:#111;margin:18px 0}
+.note{border-left:4px solid #c43c35;padding:10px 14px;background:#fff}code{font-family:ui-monospace,monospace}
+</style></head><body><header><h1>O1.23 P4 绕行→P5 捕获失败轨迹</h1>
+<p>固定 P3 bank <code>996</code>，使用 O1.22-A uniform checkpoint 确定性运行。</p></header><main>
+<div class="note"><strong>观察重点：</strong>食指/中指完成预期的 P4 绕行；笔端进入拇指与食指之间的 P5 捕获窗口后，策略没有切换为拇食指捏持，而是继续推进，并出现疑似穿透后掉笔。</div>
+<video controls muted loop playsinline preload="metadata" poster="failure_poster.png"><source src="failure_trajectory.mp4" type="video/mp4"></video>
+<p>最大高度下降：<strong>65.35 mm</strong>；累计目标轴转角：<strong>222.5°</strong>；
+最大连续无接触：<strong>22 steps</strong>。</p>
+<img src="failure_metrics.png" alt="接触力、高度和旋转曲线">
+<p>这是 simulation policy failure visualization，不是成功轨迹、teacher 或真实机器人动作。</p>
+</main></body></html>

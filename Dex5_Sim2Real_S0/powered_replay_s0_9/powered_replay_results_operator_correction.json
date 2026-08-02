@@ -1,0 +1,12 @@
+{
+  "schema": "dex5-s0.9-operator-outcome-correction-v1",
+  "original_result": "powered_replay_results.json",
+  "original_result_sha256": "6f568695d1cb8bde37ec6d819b99cc07cd51b2f2def4047135304470f6d9eccb",
+  "trajectory_id": 0,
+  "command_interface_completed": true,
+  "dropped_object": false,
+  "pen_visibly_rotated": false,
+  "corrected_status": "INTERFACE_PASS_TASK_FAIL",
+  "remaining_powered_replays_frozen": true,
+  "reason": "Operator observed no visible pen rotation; the original PASS criterion only checked command completion and drop annotation."
+}

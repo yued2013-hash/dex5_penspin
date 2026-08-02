@@ -1,0 +1,595 @@
+{
+  "status": "PASS_DIAGNOSTIC_P3H_CANDIDATE_SUPPORTED",
+  "phase": "O1.20 Canonical Entry Audit",
+  "artifact_role": "read_only_skill_entry_semantic_audit_not_classifier_reset_filter_or_teacher",
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "evidence_reconciliation": {
+    "O1_8_corrected_strict_feasible": 0,
+    "O1_15_conditional_population": 37,
+    "O1_15_strict_positive_count": 3,
+    "strict_positive_bank_ids": [
+      831,
+      894,
+      1155
+    ],
+    "positive_parent_count": 3,
+    "positive_source_count": 3,
+    "conditional_population_unique_parent_count": 35,
+    "conditional_population_unique_source_count": 33,
+    "validation_split": "leave the test row's complete parent and source groups out of both class prototypes",
+    "failure_taxonomy": {
+      "contact_force_overload": 10,
+      "axis_misaligned_after_transition": 7,
+      "no_TIM_transition": 17
+    },
+    "scope": "conditional on O1.14 short-admissible 37-state layer, not all P3"
+  },
+  "feature_families": {
+    "static_state": {
+      "name": "static_state",
+      "features": 76,
+      "groups": [
+        "geometry",
+        "joint_configuration",
+        "pen_pose",
+        "support_margin",
+        "velocity",
+        "wrench"
+      ],
+      "provenance_holdout_auc": 0.9803921568627451,
+      "permutation_p_value": 0.003996003996003996,
+      "permutation_samples": 1000,
+      "positive_score_percentiles_vs_failures": [
+        1.0,
+        1.0,
+        0.9411764705882353
+      ],
+      "all_positive_in_top_half": true,
+      "group_effect_RMS_cliffs_delta": {
+        "geometry": 0.7189999528413377,
+        "joint_configuration": 0.5258595424276034,
+        "pen_pose": 0.7762659002670849,
+        "support_margin": 0.5445546734603819,
+        "velocity": 0.4151741820433267,
+        "wrench": 0.6958515430912824
+      },
+      "top_feature_contrasts": [
+        {
+          "feature": "wrench_middle_tangential_force_n",
+          "group": "wrench",
+          "cliffs_delta": -1.0,
+          "positive_median": 1.260995864868164,
+          "failure_median": 1.8038926124572754
+        },
+        {
+          "feature": "geometry_index_axial_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 10.964912414550781,
+          "failure_median": 6.683655023574829
+        },
+        {
+          "feature": "wrench_total_torque_about_com_nmm_z",
+          "group": "wrench",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 4.346555709838867,
+          "failure_median": -4.0516037940979
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_x",
+          "group": "wrench",
+          "cliffs_delta": -0.9803921568627451,
+          "positive_median": 1.6410143375396729,
+          "failure_median": 2.348784565925598
+        },
+        {
+          "feature": "geometry_thumb_index_distance_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 26.296545028686523,
+          "failure_median": 23.737645149230957
+        },
+        {
+          "feature": "joint_q_Pitch_54R_rad",
+          "group": "joint_configuration",
+          "cliffs_delta": 0.9607843137254902,
+          "positive_median": 0.8686081171035767,
+          "failure_median": 0.8591342568397522
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_z",
+          "group": "wrench",
+          "cliffs_delta": -0.9607843137254902,
+          "positive_median": 0.028383774682879448,
+          "failure_median": 0.045831965282559395
+        },
+        {
+          "feature": "wrench_middle_force_norm_n",
+          "group": "wrench",
+          "cliffs_delta": -0.9607843137254902,
+          "positive_median": 1.6456048488616943,
+          "failure_median": 2.3835315704345703
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_y",
+          "group": "wrench",
+          "cliffs_delta": 0.9411764705882353,
+          "positive_median": -0.11950669437646866,
+          "failure_median": -0.3474682718515396
+        },
+        {
+          "feature": "support_TIM_contact_force_sum_n",
+          "group": "support_margin",
+          "cliffs_delta": -0.9215686274509803,
+          "positive_median": 4.033802032470703,
+          "failure_median": 5.285850763320923
+        },
+        {
+          "feature": "joint_q_Roll_21R_rad",
+          "group": "joint_configuration",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": -0.20392920076847076,
+          "failure_median": -0.24541641026735306
+        },
+        {
+          "feature": "pen_axis_y",
+          "group": "pen_pose",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": 0.9930266737937927,
+          "failure_median": 0.9857448041439056
+        },
+        {
+          "feature": "support_force_ceiling_margin_n",
+          "group": "support_margin",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": 1.9661979675292969,
+          "failure_median": 0.7141494750976562
+        },
+        {
+          "feature": "support_total_contact_force_sum_n",
+          "group": "support_margin",
+          "cliffs_delta": -0.9215686274509803,
+          "positive_median": 4.033802032470703,
+          "failure_median": 5.285850524902344
+        },
+        {
+          "feature": "geometry_ring_axial_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9019607843137255,
+          "positive_median": -27.415569305419922,
+          "failure_median": -30.09813404083252
+        }
+      ]
+    },
+    "short_action_response": {
+      "name": "short_action_response",
+      "features": 30,
+      "groups": [
+        "axis_response",
+        "contact_response",
+        "height_response",
+        "safety_response",
+        "support_response"
+      ],
+      "provenance_holdout_auc": 0.5392156862745098,
+      "permutation_p_value": 0.2937062937062937,
+      "permutation_samples": 1000,
+      "positive_score_percentiles_vs_failures": [
+        0.6764705882352942,
+        0.6470588235294118,
+        0.29411764705882354
+      ],
+      "all_positive_in_top_half": false,
+      "group_effect_RMS_cliffs_delta": {
+        "axis_response": 0.3313087303669765,
+        "contact_response": 0.36888214575677214,
+        "height_response": 0.39481939281293726,
+        "safety_response": 0.029411764705882353,
+        "support_response": 0.47242289424144146
+      },
+      "top_feature_contrasts": [
+        {
+          "feature": "h6_old_support_unload_best",
+          "group": "support_response",
+          "cliffs_delta": -0.8431372549019608,
+          "positive_median": 2.2047388553619385,
+          "failure_median": 2.8719180822372437
+        },
+        {
+          "feature": "h3_short_admissible_count",
+          "group": "contact_response",
+          "cliffs_delta": -0.8235294117647058,
+          "positive_median": 0.0,
+          "failure_median": 2.0
+        },
+        {
+          "feature": "h3_old_support_unload_best",
+          "group": "support_response",
+          "cliffs_delta": -0.803921568627451,
+          "positive_median": 2.2044622898101807,
+          "failure_median": 2.6256691217422485
+        },
+        {
+          "feature": "h3_axis_best",
+          "group": "axis_response",
+          "cliffs_delta": -0.5686274509803921,
+          "positive_median": 0.8595101833343506,
+          "failure_median": 0.9089723229408264
+        },
+        {
+          "feature": "h6_height_final_best_mm",
+          "group": "height_response",
+          "cliffs_delta": 0.5686274509803921,
+          "positive_median": 2.0666308403015137,
+          "failure_median": 1.7162561416625977
+        },
+        {
+          "feature": "h3_height_final_best_mm",
+          "group": "height_response",
+          "cliffs_delta": 0.5490196078431373,
+          "positive_median": 1.538995623588562,
+          "failure_median": 1.2532547116279602
+        },
+        {
+          "feature": "h3_min_force_best",
+          "group": "support_response",
+          "cliffs_delta": 0.5098039215686274,
+          "positive_median": 7.396501064300537,
+          "failure_median": 6.983658790588379
+        },
+        {
+          "feature": "h6_tim_response_count",
+          "group": "contact_response",
+          "cliffs_delta": -0.4803921568627451,
+          "positive_median": 16.0,
+          "failure_median": 17.0
+        },
+        {
+          "feature": "h3_max_force_min",
+          "group": "support_response",
+          "cliffs_delta": -0.43137254901960786,
+          "positive_median": 2.0657200813293457,
+          "failure_median": 3.4132566452026367
+        },
+        {
+          "feature": "h3_axis_final_best",
+          "group": "axis_response",
+          "cliffs_delta": -0.4117647058823529,
+          "positive_median": 0.9483667612075806,
+          "failure_median": 0.9706996977329254
+        },
+        {
+          "feature": "h6_min_force_best",
+          "group": "support_response",
+          "cliffs_delta": 0.4117647058823529,
+          "positive_median": 5.933128356933594,
+          "failure_median": 5.6197350025177
+        },
+        {
+          "feature": "h3_height_accel_best",
+          "group": "height_response",
+          "cliffs_delta": 0.3137254901960784,
+          "positive_median": 1.7402992248535156,
+          "failure_median": 1.2845020294189453
+        },
+        {
+          "feature": "h6_transfer_margin_best",
+          "group": "support_response",
+          "cliffs_delta": -0.29411764705882354,
+          "positive_median": 17.844518661499023,
+          "failure_median": 28.48640727996826
+        },
+        {
+          "feature": "h6_new_support_gain_best",
+          "group": "support_response",
+          "cliffs_delta": 0.29411764705882354,
+          "positive_median": 1.97567617893219,
+          "failure_median": 1.8094716668128967
+        },
+        {
+          "feature": "h6_axis_best",
+          "group": "axis_response",
+          "cliffs_delta": 0.29411764705882354,
+          "positive_median": 0.6475005745887756,
+          "failure_median": 0.6070053577423096
+        }
+      ]
+    },
+    "combined": {
+      "name": "combined",
+      "features": 106,
+      "groups": [
+        "axis_response",
+        "contact_response",
+        "geometry",
+        "height_response",
+        "joint_configuration",
+        "pen_pose",
+        "safety_response",
+        "support_margin",
+        "support_response",
+        "velocity",
+        "wrench"
+      ],
+      "provenance_holdout_auc": 0.8921568627450981,
+      "permutation_p_value": 0.02097902097902098,
+      "permutation_samples": 1000,
+      "positive_score_percentiles_vs_failures": [
+        0.9705882352941176,
+        0.9705882352941176,
+        0.7352941176470589
+      ],
+      "all_positive_in_top_half": true,
+      "group_effect_RMS_cliffs_delta": {
+        "axis_response": 0.3313087303669765,
+        "contact_response": 0.36888214575677214,
+        "geometry": 0.7189999528413377,
+        "height_response": 0.39481939281293726,
+        "joint_configuration": 0.5258595424276034,
+        "pen_pose": 0.7762659002670849,
+        "safety_response": 0.029411764705882353,
+        "support_margin": 0.5445546734603819,
+        "support_response": 0.47242289424144146,
+        "velocity": 0.4151741820433267,
+        "wrench": 0.6958515430912824
+      },
+      "top_feature_contrasts": [
+        {
+          "feature": "wrench_middle_tangential_force_n",
+          "group": "wrench",
+          "cliffs_delta": -1.0,
+          "positive_median": 1.260995864868164,
+          "failure_median": 1.8038926124572754
+        },
+        {
+          "feature": "wrench_total_torque_about_com_nmm_z",
+          "group": "wrench",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 4.346555709838867,
+          "failure_median": -4.0516037940979
+        },
+        {
+          "feature": "geometry_index_axial_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 10.964912414550781,
+          "failure_median": 6.683655023574829
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_x",
+          "group": "wrench",
+          "cliffs_delta": -0.9803921568627451,
+          "positive_median": 1.6410143375396729,
+          "failure_median": 2.348784565925598
+        },
+        {
+          "feature": "geometry_thumb_index_distance_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9803921568627451,
+          "positive_median": 26.296545028686523,
+          "failure_median": 23.737645149230957
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_z",
+          "group": "wrench",
+          "cliffs_delta": -0.9607843137254902,
+          "positive_median": 0.028383774682879448,
+          "failure_median": 0.045831965282559395
+        },
+        {
+          "feature": "joint_q_Pitch_54R_rad",
+          "group": "joint_configuration",
+          "cliffs_delta": 0.9607843137254902,
+          "positive_median": 0.8686081171035767,
+          "failure_median": 0.8591342568397522
+        },
+        {
+          "feature": "wrench_middle_force_norm_n",
+          "group": "wrench",
+          "cliffs_delta": -0.9607843137254902,
+          "positive_median": 1.6456048488616943,
+          "failure_median": 2.3835315704345703
+        },
+        {
+          "feature": "wrench_middle_force_on_pen_n_y",
+          "group": "wrench",
+          "cliffs_delta": 0.9411764705882353,
+          "positive_median": -0.11950669437646866,
+          "failure_median": -0.3474682718515396
+        },
+        {
+          "feature": "pen_axis_y",
+          "group": "pen_pose",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": 0.9930266737937927,
+          "failure_median": 0.9857448041439056
+        },
+        {
+          "feature": "support_total_contact_force_sum_n",
+          "group": "support_margin",
+          "cliffs_delta": -0.9215686274509803,
+          "positive_median": 4.033802032470703,
+          "failure_median": 5.285850524902344
+        },
+        {
+          "feature": "support_TIM_contact_force_sum_n",
+          "group": "support_margin",
+          "cliffs_delta": -0.9215686274509803,
+          "positive_median": 4.033802032470703,
+          "failure_median": 5.285850763320923
+        },
+        {
+          "feature": "joint_q_Roll_21R_rad",
+          "group": "joint_configuration",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": -0.20392920076847076,
+          "failure_median": -0.24541641026735306
+        },
+        {
+          "feature": "support_force_ceiling_margin_n",
+          "group": "support_margin",
+          "cliffs_delta": 0.9215686274509803,
+          "positive_median": 1.9661979675292969,
+          "failure_median": 0.7141494750976562
+        },
+        {
+          "feature": "geometry_index_middle_distance_mm",
+          "group": "geometry",
+          "cliffs_delta": 0.9019607843137255,
+          "positive_median": 26.418380737304688,
+          "failure_median": 25.737488746643066
+        }
+      ]
+    }
+  },
+  "skill_entry_classifier": {
+    "status": "SUPPORTED_FOR_FUTURE_CONFIRMATION",
+    "promotion_gate": {
+      "combined_auc_at_least_0P80": true,
+      "combined_permutation_p_below_0P05": true,
+      "every_positive_above_failure_median": true,
+      "all_pass": true
+    },
+    "small_sample_warning": "Only three independent strict positives exist; no deployable classifier or P3-H distribution is claimed."
+  },
+  "quarantined_candidate_ranking": {
+    "status": "analysis_only_do_not_use_as_reset_filter",
+    "definition": "full-P3 combined prototype margin trained on all 3 positives and 34 failures",
+    "rows": [
+      {
+        "bank_id": 1034,
+        "score": 0.4082089492063431,
+        "parent_state_id": 3020260781001412,
+        "source_trajectory_id": 5618017242001338623
+      },
+      {
+        "bank_id": 1176,
+        "score": 0.39306006266353255,
+        "parent_state_id": 3020260781002769,
+        "source_trajectory_id": 7821213779321911387
+      },
+      {
+        "bank_id": 1146,
+        "score": 0.38552394361148934,
+        "parent_state_id": 3020260781003785,
+        "source_trajectory_id": 8410787590200248689
+      },
+      {
+        "bank_id": 1045,
+        "score": 0.353033205501593,
+        "parent_state_id": 3020260781003538,
+        "source_trajectory_id": 7362406210413532194
+      },
+      {
+        "bank_id": 1227,
+        "score": 0.34879441918815557,
+        "parent_state_id": 3020260781002008,
+        "source_trajectory_id": 7594629652231803532
+      },
+      {
+        "bank_id": 852,
+        "score": 0.32577874296250775,
+        "parent_state_id": 3020260781001289,
+        "source_trajectory_id": 4917104745173168583
+      },
+      {
+        "bank_id": 1140,
+        "score": 0.2813573599654131,
+        "parent_state_id": 3020260781003425,
+        "source_trajectory_id": 5990605529954673516
+      },
+      {
+        "bank_id": 1149,
+        "score": 0.2809037493746058,
+        "parent_state_id": 3020260781000048,
+        "source_trajectory_id": 3284126822189226838
+      },
+      {
+        "bank_id": 950,
+        "score": 0.2664787073404683,
+        "parent_state_id": 3020260781002388,
+        "source_trajectory_id": 4040866298648973372
+      },
+      {
+        "bank_id": 1062,
+        "score": 0.24636131192550526,
+        "parent_state_id": 3020260781003012,
+        "source_trajectory_id": 110719134938419254
+      },
+      {
+        "bank_id": 923,
+        "score": 0.2121077708301159,
+        "parent_state_id": 3020260781002903,
+        "source_trajectory_id": 4292131781892671324
+      },
+      {
+        "bank_id": 1091,
+        "score": 0.20468000553295407,
+        "parent_state_id": 3020260781003565,
+        "source_trajectory_id": 1146676186953116903
+      },
+      {
+        "bank_id": 828,
+        "score": 0.20217564610647132,
+        "parent_state_id": 3020260781001523,
+        "source_trajectory_id": 2610881495435021940
+      },
+      {
+        "bank_id": 912,
+        "score": 0.18128459303266398,
+        "parent_state_id": 3020260781000094,
+        "source_trajectory_id": 1653950890677426406
+      },
+      {
+        "bank_id": 956,
+        "score": 0.17103790110929218,
+        "parent_state_id": 3020260781001275,
+        "source_trajectory_id": 6469206706229691726
+      },
+      {
+        "bank_id": 1068,
+        "score": 0.1618369100456205,
+        "parent_state_id": 3020260781002946,
+        "source_trajectory_id": 8591286282804671875
+      },
+      {
+        "bank_id": 1144,
+        "score": 0.1563946900112052,
+        "parent_state_id": 3020260781001552,
+        "source_trajectory_id": 6137929093490151102
+      },
+      {
+        "bank_id": 992,
+        "score": 0.1421622410059047,
+        "parent_state_id": 3020260781002027,
+        "source_trajectory_id": 984938772580056884
+      },
+      {
+        "bank_id": 1152,
+        "score": 0.12252515262787145,
+        "parent_state_id": 3020260781002123,
+        "source_trajectory_id": 6489221358059552009
+      },
+      {
+        "bank_id": 930,
+        "score": 0.11876358982356239,
+        "parent_state_id": 3020260781001978,
+        "source_trajectory_id": 2392511550249766329
+      }
+    ],
+    "parent_source_overlap_with_O1_15": false
+  },
+  "canonical_refinement_proposal": {
+    "decision": "RUN_INDEPENDENT_CONFIRMATORY_AUDIT_BEFORE_P3H",
+    "reason": "Static recoverability remains valid, but three sparse trajectory-level positives are insufficient to define a robust skill-entry manifold.",
+    "next_gate": "Evaluate the quarantined, provenance-disjoint ranking with the frozen O1.15 search contract; require independent strict positives and clone robustness before defining P3-H."
+  },
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "reset_bank_modified": false,
+    "CEM_action_serialized": false
+  }
+}

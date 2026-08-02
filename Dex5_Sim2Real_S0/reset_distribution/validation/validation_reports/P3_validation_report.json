@@ -1,0 +1,62 @@
+{
+  "canonical_id": "P3",
+  "state_type": "static",
+  "status": "validated",
+  "input": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/settled_candidate/Dex5_S0_HW_P3_settled_candidates.npz",
+  "input_sha256": "7f00736da2cbd7ed9e7f3d223ae92b632c09e597be97dd43360117c35582a706",
+  "candidate_total": 964,
+  "candidate_audited": 964,
+  "duration_ms": 100.0,
+  "physics_steps": 12,
+  "counts": {
+    "r0": 964,
+    "r1": 866,
+    "r2": 765,
+    "r3a": 667,
+    "r3b": 582
+  },
+  "rates": {
+    "r0": 1.0,
+    "r1": 0.8983402489626556,
+    "r2": 0.7935684647302904,
+    "r3a": 0.7240663900414938,
+    "r3b": 0.6846473029045643,
+    "final": 0.6037344398340249
+  },
+  "r0_check_failures": {
+    "finite": 0,
+    "shape_valid": 0,
+    "quaternion_valid": 0,
+    "target_available": 0,
+    "previous_action_available": 0,
+    "metadata_valid": 0,
+    "control_context_valid": 0,
+    "physics_valid": 0,
+    "joint_valid": 0,
+    "penetration_valid": 0
+  },
+  "r0_asset_failures": 0,
+  "r0_physics_failures": 0,
+  "metrics": {
+    "max_penetration_mm": 0.0,
+    "max_linear_speed_m_s": 0.14998137950897217,
+    "max_angular_speed_rad_s": 21.43417739868164,
+    "max_drop_mm": 0.8182376623153687,
+    "max_drift_mm": 1.851060427725315,
+    "mean_contact_ratio": 1.0
+  },
+  "thresholds": {
+    "max_penetration_mm": 0.5,
+    "r3a_min_ratio": 1.0,
+    "r3b_r1_min_ratio": 0.8,
+    "r3b_r2_min_ratio": 0.8
+  },
+  "outputs": {
+    "audited": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/validation/validation_reports/P3_audited.npz",
+    "audited_sha256": "ee79fcfc08d6296ed7350d40c358dffc7dc60d891e4d155a5b15c3dc6f94f139",
+    "r1": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/validation/canonical_reset_bank/P3_r1.npz",
+    "r1_sha256": "89add323ae9e2b113f23184e470f83ff60aed0bdd6b88bfb8c10a8916c1b9fb2",
+    "validated": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/validation/canonical_reset_bank/P3_validated.npz",
+    "validated_sha256": "d8e7d42129291a867dfe1ec8bd31250fc4c206154d9236bdd47c012faf7ae9d1"
+  }
+}

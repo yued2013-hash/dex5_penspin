@@ -1,0 +1,393 @@
+{
+  "task": "Dex5-S0-ShortRotation-16-MediumDR-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_s0_short_rotation_oracle/2026-07-31_23-37-54_ppo_torch/checkpoints/agent_4032.pt",
+  "seed": 20260801,
+  "reset_split": "test",
+  "num_envs": 256,
+  "requested_episodes": 2048,
+  "completed_episodes": 2051,
+  "successes": 1741,
+  "success_rate": 0.8488542174549001,
+  "forbidden_transition_rate": 0.09068746952705997,
+  "failure_rate": 0.0,
+  "timeout_rate": 0.15797172111165286,
+  "mean_peak_target_angle_deg": 40.7637939453125,
+  "max_peak_target_angle_deg": 67.85176849365234,
+  "max_hold_steps": 9,
+  "gate_ever_rates": {
+    "target_band": 0.9639200390053633,
+    "target_speed": 0.9634324719648951,
+    "wrong_axis": 0.961482203803023,
+    "height": 0.961482203803023,
+    "tim_all": 0.9590443686006825,
+    "ring_pinky_clear": 0.9590443686006825,
+    "no_forbidden_history": 0.8902974158946855,
+    "all_instantaneous": 0.8902974158946855
+  },
+  "max_penetration_mm": 0.5430364981293678,
+  "max_target_coupling_error_rad": 0.0,
+  "finite": true,
+  "control_steps": 626,
+  "per_bank": [
+    {
+      "bank_id": 8,
+      "episodes": 27,
+      "successes": 27,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 9,
+      "episodes": 35,
+      "successes": 35,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 12,
+      "episodes": 40,
+      "successes": 30,
+      "success_rate": 0.75
+    },
+    {
+      "bank_id": 13,
+      "episodes": 37,
+      "successes": 23,
+      "success_rate": 0.6216216087341309
+    },
+    {
+      "bank_id": 18,
+      "episodes": 30,
+      "successes": 30,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 19,
+      "episodes": 42,
+      "successes": 38,
+      "success_rate": 0.9047619104385376
+    },
+    {
+      "bank_id": 26,
+      "episodes": 47,
+      "successes": 46,
+      "success_rate": 0.978723406791687
+    },
+    {
+      "bank_id": 27,
+      "episodes": 23,
+      "successes": 23,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 32,
+      "episodes": 30,
+      "successes": 4,
+      "success_rate": 0.13333334028720856
+    },
+    {
+      "bank_id": 33,
+      "episodes": 33,
+      "successes": 2,
+      "success_rate": 0.06060606241226196
+    },
+    {
+      "bank_id": 46,
+      "episodes": 31,
+      "successes": 29,
+      "success_rate": 0.9354838728904724
+    },
+    {
+      "bank_id": 47,
+      "episodes": 26,
+      "successes": 26,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 50,
+      "episodes": 24,
+      "successes": 22,
+      "success_rate": 0.9166666865348816
+    },
+    {
+      "bank_id": 51,
+      "episodes": 36,
+      "successes": 36,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 74,
+      "episodes": 37,
+      "successes": 28,
+      "success_rate": 0.7567567825317383
+    },
+    {
+      "bank_id": 75,
+      "episodes": 43,
+      "successes": 41,
+      "success_rate": 0.9534883499145508
+    },
+    {
+      "bank_id": 95,
+      "episodes": 32,
+      "successes": 18,
+      "success_rate": 0.5625
+    },
+    {
+      "bank_id": 96,
+      "episodes": 46,
+      "successes": 30,
+      "success_rate": 0.6521739363670349
+    },
+    {
+      "bank_id": 142,
+      "episodes": 31,
+      "successes": 27,
+      "success_rate": 0.8709677457809448
+    },
+    {
+      "bank_id": 143,
+      "episodes": 28,
+      "successes": 27,
+      "success_rate": 0.9642857313156128
+    },
+    {
+      "bank_id": 157,
+      "episodes": 33,
+      "successes": 31,
+      "success_rate": 0.939393937587738
+    },
+    {
+      "bank_id": 158,
+      "episodes": 41,
+      "successes": 38,
+      "success_rate": 0.9268292784690857
+    },
+    {
+      "bank_id": 179,
+      "episodes": 33,
+      "successes": 23,
+      "success_rate": 0.6969696879386902
+    },
+    {
+      "bank_id": 207,
+      "episodes": 26,
+      "successes": 23,
+      "success_rate": 0.8846153616905212
+    },
+    {
+      "bank_id": 208,
+      "episodes": 38,
+      "successes": 38,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 209,
+      "episodes": 31,
+      "successes": 24,
+      "success_rate": 0.774193525314331
+    },
+    {
+      "bank_id": 210,
+      "episodes": 33,
+      "successes": 25,
+      "success_rate": 0.7575757503509521
+    },
+    {
+      "bank_id": 211,
+      "episodes": 43,
+      "successes": 24,
+      "success_rate": 0.5581395626068115
+    },
+    {
+      "bank_id": 212,
+      "episodes": 35,
+      "successes": 21,
+      "success_rate": 0.6000000238418579
+    },
+    {
+      "bank_id": 213,
+      "episodes": 35,
+      "successes": 29,
+      "success_rate": 0.8285714387893677
+    },
+    {
+      "bank_id": 214,
+      "episodes": 28,
+      "successes": 25,
+      "success_rate": 0.8928571343421936
+    },
+    {
+      "bank_id": 225,
+      "episodes": 27,
+      "successes": 27,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 226,
+      "episodes": 29,
+      "successes": 27,
+      "success_rate": 0.931034505367279
+    },
+    {
+      "bank_id": 236,
+      "episodes": 39,
+      "successes": 29,
+      "success_rate": 0.7435897588729858
+    },
+    {
+      "bank_id": 249,
+      "episodes": 32,
+      "successes": 32,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 250,
+      "episodes": 37,
+      "successes": 35,
+      "success_rate": 0.9459459185600281
+    },
+    {
+      "bank_id": 256,
+      "episodes": 35,
+      "successes": 27,
+      "success_rate": 0.7714285850524902
+    },
+    {
+      "bank_id": 257,
+      "episodes": 40,
+      "successes": 38,
+      "success_rate": 0.949999988079071
+    },
+    {
+      "bank_id": 265,
+      "episodes": 32,
+      "successes": 24,
+      "success_rate": 0.75
+    },
+    {
+      "bank_id": 291,
+      "episodes": 41,
+      "successes": 41,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 292,
+      "episodes": 33,
+      "successes": 33,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 295,
+      "episodes": 41,
+      "successes": 37,
+      "success_rate": 0.9024389982223511
+    },
+    {
+      "bank_id": 296,
+      "episodes": 33,
+      "successes": 29,
+      "success_rate": 0.8787878751754761
+    },
+    {
+      "bank_id": 298,
+      "episodes": 41,
+      "successes": 41,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 299,
+      "episodes": 37,
+      "successes": 37,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 323,
+      "episodes": 30,
+      "successes": 28,
+      "success_rate": 0.9333333373069763
+    },
+    {
+      "bank_id": 326,
+      "episodes": 43,
+      "successes": 42,
+      "success_rate": 0.9767441749572754
+    },
+    {
+      "bank_id": 327,
+      "episodes": 31,
+      "successes": 30,
+      "success_rate": 0.9677419066429138
+    },
+    {
+      "bank_id": 333,
+      "episodes": 42,
+      "successes": 36,
+      "success_rate": 0.8571428656578064
+    },
+    {
+      "bank_id": 334,
+      "episodes": 38,
+      "successes": 31,
+      "success_rate": 0.8157894611358643
+    },
+    {
+      "bank_id": 371,
+      "episodes": 32,
+      "successes": 28,
+      "success_rate": 0.875
+    },
+    {
+      "bank_id": 372,
+      "episodes": 28,
+      "successes": 25,
+      "success_rate": 0.8928571343421936
+    },
+    {
+      "bank_id": 390,
+      "episodes": 28,
+      "successes": 19,
+      "success_rate": 0.6785714030265808
+    },
+    {
+      "bank_id": 391,
+      "episodes": 40,
+      "successes": 26,
+      "success_rate": 0.6499999761581421
+    },
+    {
+      "bank_id": 398,
+      "episodes": 33,
+      "successes": 33,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 399,
+      "episodes": 19,
+      "successes": 19,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 404,
+      "episodes": 32,
+      "successes": 26,
+      "success_rate": 0.8125
+    },
+    {
+      "bank_id": 405,
+      "episodes": 32,
+      "successes": 28,
+      "success_rate": 0.875
+    },
+    {
+      "bank_id": 489,
+      "episodes": 37,
+      "successes": 37,
+      "success_rate": 1.0
+    },
+    {
+      "bank_id": 490,
+      "episodes": 35,
+      "successes": 33,
+      "success_rate": 0.9428571462631226
+    }
+  ]
+}

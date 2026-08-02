@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "classification": "REACHABILITY_ONLY",
+  "task": "Dex5-PenSpin-PrivilegedOracle-Direct-v0",
+  "checkpoint": "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/2026-07-30_17-42-49_ppo_torch/checkpoints/best_agent.pt",
+  "num_envs": 256,
+  "steps": 240,
+  "finite": true,
+  "completed_episodes": 559,
+  "gait_event_episodes": 163,
+  "gait_event_rate": 0.29159212880143115,
+  "over_180deg_episodes": 408,
+  "over_180deg_rate": 0.7298747763864043,
+  "failure_episodes": 339,
+  "throw_episodes": 12,
+  "contact_loss_episodes": 204,
+  "penetration_failure_episodes": 33,
+  "mean_metrics": {
+    "target_angular_velocity_rad_s": 2.422327871620655,
+    "wrong_axis_angular_speed_rad_s": 5.550884664058685,
+    "linear_speed_m_s": 0.0650307049198697,
+    "contact_count": 1.9181640625,
+    "mean_abs_action": 0.09517410810415944
+  },
+  "max_penetration_mm": 0.9986711665987968,
+  "sampled_reset_counts": {
+    "P1": 318,
+    "P2": 180,
+    "P3": 147,
+    "P4": 128,
+    "P5": 42
+  },
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "gait_rule": "per-finger release and later re-contact, each stable for >=3 control steps"
+}

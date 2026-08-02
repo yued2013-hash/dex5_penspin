@@ -1,0 +1,14 @@
+{
+  "status": "candidate_only_not_physx_settled",
+  "source": "/home/linkerhand/桌面/deep learning/dex5_penspin/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/P3_v9_physx_projected_R3_validated.npz",
+  "source_sha256": "8c87d6adf69e355ad60280bc568149af0d79d670364a9b548214d38f8bd60e3b",
+  "o0_modified": false,
+  "source_rows": 482,
+  "variants": 2,
+  "candidate_rows": 964,
+  "unique_source_trajectories": 268,
+  "projection_residual_rms_mean_rad": 0.04586949571967125,
+  "projection_residual_max_rad": 0.30219897627830505,
+  "output": "/home/linkerhand/桌面/deep learning/dex5_penspin/Dex5_Sim2Real_S0/reset_distribution/candidate/Dex5_S0_HW_P3_projected_candidates.npz",
+  "output_sha256": "3d14fbfffd557f860174159b162ce073f6900c581d467c8cad3b35284995bb95"
+}

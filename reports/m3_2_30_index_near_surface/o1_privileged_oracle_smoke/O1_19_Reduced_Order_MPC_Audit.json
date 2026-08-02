@@ -1,0 +1,508 @@
+{
+  "status": "PASS_DIAGNOSTIC_MPC_FAILED_CALIBRATION_SAFETY",
+  "phase": "O1.19 Reduced-order Handoff MPC Feasibility Audit",
+  "artifact_role": "matched_receding_horizon_ablation_not_policy_teacher_or_reset_dataset",
+  "bank_id": 1155,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "mpc_contract": {
+    "method": "receding_horizon_random_shooting_on_local_task_error_model",
+    "active_joint_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      16,
+      17,
+      18,
+      19
+    ],
+    "active_joint_roles": [
+      "index",
+      "middle",
+      "thumb"
+    ],
+    "task_dimension": 11,
+    "constraints": [
+      "support_force",
+      "height",
+      "axis_alignment",
+      "aggregate_contact",
+      "residual_bound"
+    ],
+    "optimized_sequence_serialized": false
+  },
+  "jacobian_identification": {
+    "method": "three_stage_antithetic_one_step_joint_target_probes",
+    "serialized": false,
+    "diagnostics": [
+      {
+        "waypoint": 0,
+        "start_step": 0,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 356.2805480957031,
+        "smallest_nonzero_singular_value": 0.025168482214212418,
+        "effective_condition_number": 14155.821756089634
+      },
+      {
+        "waypoint": 1,
+        "start_step": 6,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 351.4427795410156,
+        "smallest_nonzero_singular_value": 0.10067670047283173,
+        "effective_condition_number": 3490.805498098885
+      },
+      {
+        "waypoint": 2,
+        "start_step": 12,
+        "probe_rad": 0.01,
+        "rank_at_1e_4": 10,
+        "largest_singular_value": 1527.997802734375,
+        "smallest_nonzero_singular_value": 2.4705801010131836,
+        "effective_condition_number": 618.4773374106526
+      }
+    ]
+  },
+  "selected_mpc_controller": "C_mpc_50ms",
+  "selected_mpc_passed_calibration_safety": false,
+  "selection_fallback_used_for_diagnostic_comparison": true,
+  "selected_mpc_config": {
+    "type": "mpc",
+    "mpc_horizon_steps": 3,
+    "candidate_count": 64,
+    "max_correction_rad": 0.025
+  },
+  "perturbation_protocol": {
+    "calibration_seed_base": 20860731,
+    "held_out_seed_base": 20960731,
+    "same_perturbations_matched_across_modes": true,
+    "calibration_and_held_out_seeds_disjoint": true,
+    "controller_selection_nominal_unsafe_tolerance_pp": 2.0
+  },
+  "calibration": [
+    {
+      "mode": "A_open_loop",
+      "controller": null,
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.078125,
+          "strict_rate": 0.0703125,
+          "recovered_strict_rate": 0.0703125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0,
+          "axis_alignment_median": 0.568662703037262,
+          "min_height_delta_mm_p10": -0.07316209375858307,
+          "final_height_delta_mm_p10": 7.155455589294434,
+          "handoff_margin_p90": -1.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 118,
+            "recovered_strict": 9,
+            "axis_misaligned": 1
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3359375,
+          "strict_rate": 0.1640625,
+          "recovered_strict_rate": 0.1640625,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.015625,
+          "axis_alignment_median": 0.5095244646072388,
+          "min_height_delta_mm_p10": -0.11940039694309235,
+          "final_height_delta_mm_p10": 6.747305870056152,
+          "handoff_margin_p90": 0.05604152753949165,
+          "failure_taxonomy": {
+            "no_TIM_transition": 85,
+            "axis_misaligned": 20,
+            "recovered_strict": 21,
+            "throw": 2
+          }
+        }
+      ],
+      "selection_score": 0.16328125
+    },
+    {
+      "mode": "B_o1_18_task_dls_soft",
+      "controller": {
+        "type": "task_space",
+        "task_gain": 0.25,
+        "damping": 0.2,
+        "max_correction_rad": 0.02
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.453125,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1015625,
+          "axis_alignment_median": 0.3358380198478699,
+          "min_height_delta_mm_p10": -0.10560527443885803,
+          "final_height_delta_mm_p10": 6.464779376983643,
+          "handoff_margin_p90": -0.15773989260196686,
+          "failure_taxonomy": {
+            "axis_misaligned": 42,
+            "no_TIM_transition": 68,
+            "contact_force_overload": 1,
+            "recovered_strict": 4,
+            "throw": 13
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.453125,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.0703125,
+          "axis_alignment_median": 0.33996012806892395,
+          "min_height_delta_mm_p10": -0.09944289922714233,
+          "final_height_delta_mm_p10": 6.162400722503662,
+          "handoff_margin_p90": -0.18530404567718506,
+          "failure_taxonomy": {
+            "no_TIM_transition": 68,
+            "axis_misaligned": 34,
+            "throw": 9,
+            "contact_force_overload": 14,
+            "recovered_strict": 3
+          }
+        }
+      ],
+      "selection_score": -0.00859375
+    },
+    {
+      "mode": "C_mpc_50ms",
+      "controller": {
+        "type": "mpc",
+        "mpc_horizon_steps": 3,
+        "candidate_count": 64,
+        "max_correction_rad": 0.025
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.3046875,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1484375,
+          "axis_alignment_median": 0.3745478391647339,
+          "min_height_delta_mm_p10": -0.1700267195701599,
+          "final_height_delta_mm_p10": 6.1415276527404785,
+          "handoff_margin_p90": -0.15869353711605072,
+          "failure_taxonomy": {
+            "no_TIM_transition": 78,
+            "axis_misaligned": 19,
+            "recovered_strict": 4,
+            "joint_gate_miss": 1,
+            "throw": 19,
+            "contact_force_overload": 7
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.296875,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1171875,
+          "axis_alignment_median": 0.3598327338695526,
+          "min_height_delta_mm_p10": -0.19745193421840668,
+          "final_height_delta_mm_p10": 5.862646579742432,
+          "handoff_margin_p90": -0.1350298970937729,
+          "failure_taxonomy": {
+            "throw": 15,
+            "no_TIM_transition": 80,
+            "contact_force_overload": 6,
+            "axis_misaligned": 24,
+            "recovered_strict": 3
+          }
+        }
+      ],
+      "selection_score": -0.03203125
+    },
+    {
+      "mode": "C_mpc_100ms",
+      "controller": {
+        "type": "mpc",
+        "mpc_horizon_steps": 6,
+        "candidate_count": 64,
+        "max_correction_rad": 0.025
+      },
+      "scenarios": [
+        {
+          "name": "nominal",
+          "episodes": 128,
+          "TIM_transition_rate": 0.421875,
+          "strict_rate": 0.03125,
+          "recovered_strict_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.1015625,
+          "axis_alignment_median": 0.38372713327407837,
+          "min_height_delta_mm_p10": -0.18009096384048462,
+          "final_height_delta_mm_p10": 6.291476726531982,
+          "handoff_margin_p90": -0.09863729774951935,
+          "failure_taxonomy": {
+            "axis_misaligned": 34,
+            "no_TIM_transition": 69,
+            "throw": 13,
+            "contact_force_overload": 8,
+            "recovered_strict": 4
+          }
+        },
+        {
+          "name": "joint_L1",
+          "episodes": 128,
+          "TIM_transition_rate": 0.2890625,
+          "strict_rate": 0.0234375,
+          "recovered_strict_rate": 0.0234375,
+          "height_recovery_rate": 1.0,
+          "unsafe_rate": 0.125,
+          "axis_alignment_median": 0.37957507371902466,
+          "min_height_delta_mm_p10": -0.17620697617530823,
+          "final_height_delta_mm_p10": 6.085313320159912,
+          "handoff_margin_p90": -0.09211289882659912,
+          "failure_taxonomy": {
+            "no_TIM_transition": 80,
+            "axis_misaligned": 26,
+            "throw": 16,
+            "recovered_strict": 3,
+            "contact_force_overload": 3
+          }
+        }
+      ],
+      "selection_score": -0.0359375
+    }
+  ],
+  "held_out_comparison": [
+    {
+      "mode": "A_open_loop",
+      "label": "A open",
+      "scenarios": [
+        {
+          "scenario": "nominal",
+          "basin_rate": 0.53125,
+          "handoff_rate": 0.53125,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.08670985698699951,
+          "unsafe_rate": 0.0,
+          "failure_taxonomy": {
+            "no_TIM_transition": 58,
+            "recovered_strict": 68,
+            "axis_misaligned": 2
+          }
+        },
+        {
+          "scenario": "joint_L1",
+          "basin_rate": 0.109375,
+          "handoff_rate": 0.109375,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.11051632463932037,
+          "unsafe_rate": 0.0390625,
+          "failure_taxonomy": {
+            "no_TIM_transition": 88,
+            "throw": 5,
+            "recovered_strict": 14,
+            "contact_force_overload": 2,
+            "axis_misaligned": 19
+          }
+        },
+        {
+          "scenario": "joint_L2",
+          "basin_rate": 0.0546875,
+          "handoff_rate": 0.0546875,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.16594044864177704,
+          "unsafe_rate": 0.1015625,
+          "failure_taxonomy": {
+            "no_TIM_transition": 87,
+            "axis_misaligned": 18,
+            "throw": 13,
+            "recovered_strict": 7,
+            "contact_force_overload": 3
+          }
+        },
+        {
+          "scenario": "joint_L3",
+          "basin_rate": 0.0078125,
+          "handoff_rate": 0.0078125,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.219426691532135,
+          "unsafe_rate": 0.2109375,
+          "failure_taxonomy": {
+            "no_TIM_transition": 75,
+            "penetration": 16,
+            "axis_misaligned": 19,
+            "contact_force_overload": 6,
+            "throw": 11,
+            "recovered_strict": 1
+          }
+        }
+      ]
+    },
+    {
+      "mode": "B_o1_18_task_dls_soft",
+      "label": "B task-space",
+      "scenarios": [
+        {
+          "scenario": "nominal",
+          "basin_rate": 0.0546875,
+          "handoff_rate": 0.0546875,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.10476037859916687,
+          "unsafe_rate": 0.0625,
+          "failure_taxonomy": {
+            "axis_misaligned": 33,
+            "no_TIM_transition": 75,
+            "recovered_strict": 7,
+            "throw": 8,
+            "contact_force_overload": 5
+          }
+        },
+        {
+          "scenario": "joint_L1",
+          "basin_rate": 0.03125,
+          "handoff_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.09251013398170471,
+          "unsafe_rate": 0.0703125,
+          "failure_taxonomy": {
+            "axis_misaligned": 43,
+            "no_TIM_transition": 62,
+            "contact_force_overload": 10,
+            "recovered_strict": 4,
+            "throw": 9
+          }
+        },
+        {
+          "scenario": "joint_L2",
+          "basin_rate": 0.0234375,
+          "handoff_rate": 0.0234375,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.13996213674545288,
+          "unsafe_rate": 0.0546875,
+          "failure_taxonomy": {
+            "no_TIM_transition": 78,
+            "axis_misaligned": 35,
+            "throw": 7,
+            "contact_force_overload": 5,
+            "recovered_strict": 3
+          }
+        },
+        {
+          "scenario": "joint_L3",
+          "basin_rate": 0.0,
+          "handoff_rate": 0.0,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.24658776819705963,
+          "unsafe_rate": 0.2109375,
+          "failure_taxonomy": {
+            "no_TIM_transition": 76,
+            "penetration": 16,
+            "contact_force_overload": 6,
+            "throw": 11,
+            "axis_misaligned": 19
+          }
+        }
+      ]
+    },
+    {
+      "mode": "C_mpc_50ms",
+      "label": "C MPC",
+      "scenarios": [
+        {
+          "scenario": "nominal",
+          "basin_rate": 0.03125,
+          "handoff_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.1852434128522873,
+          "unsafe_rate": 0.109375,
+          "failure_taxonomy": {
+            "no_TIM_transition": 87,
+            "throw": 14,
+            "axis_misaligned": 19,
+            "contact_force_overload": 4,
+            "recovered_strict": 4
+          }
+        },
+        {
+          "scenario": "joint_L1",
+          "basin_rate": 0.015625,
+          "handoff_rate": 0.015625,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.17920434474945068,
+          "unsafe_rate": 0.140625,
+          "failure_taxonomy": {
+            "no_TIM_transition": 69,
+            "axis_misaligned": 31,
+            "contact_force_overload": 8,
+            "throw": 18,
+            "recovered_strict": 2
+          }
+        },
+        {
+          "scenario": "joint_L2",
+          "basin_rate": 0.03125,
+          "handoff_rate": 0.03125,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.233585387468338,
+          "unsafe_rate": 0.0859375,
+          "failure_taxonomy": {
+            "no_TIM_transition": 80,
+            "throw": 11,
+            "axis_misaligned": 29,
+            "contact_force_overload": 4,
+            "recovered_strict": 4
+          }
+        },
+        {
+          "scenario": "joint_L3",
+          "basin_rate": 0.0,
+          "handoff_rate": 0.0,
+          "height_recovery_rate": 1.0,
+          "min_height_delta_mm_p10": -0.4016403257846832,
+          "unsafe_rate": 0.21875,
+          "failure_taxonomy": {
+            "no_TIM_transition": 82,
+            "penetration": 16,
+            "axis_misaligned": 17,
+            "throw": 12,
+            "joint_gate_miss": 1
+          }
+        }
+      ]
+    }
+  ],
+  "widening_gate": {
+    "mpc_joint_L1_at_least_30pct": false,
+    "mpc_joint_L1_at_least_2x_open_loop": false,
+    "mpc_joint_L1_better_than_o1_18_task_feedback": false,
+    "mpc_joint_L2_at_least_10pct": false,
+    "mpc_joint_L1_unsafe_not_worse_than_open_by_more_than_2pp": false
+  },
+  "widening_gate_pass": false,
+  "interpretation": "A/B/C use matched held-out perturbations. C performs 50 or 100 ms receding-horizon random shooting over bounded index/middle/thumb joint residuals using the in-memory reduced-order task model. The result is local to bank 1155 and is not a policy, teacher, global attractor, or sim-to-real claim.",
+  "constraints": {
+    "PPO_trained": false,
+    "reward_modified": false,
+    "O0_modified": false,
+    "teacher_generated": false,
+    "CEM_trajectory_serialized": false,
+    "MPC_sequence_serialized": false,
+    "reference_trajectory_serialized": false,
+    "reset_dataset_generated": false
+  }
+}

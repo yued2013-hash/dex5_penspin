@@ -1,0 +1,128 @@
+{
+  "status": "PASS_DIAGNOSTIC_POST_HANDOFF_NOT_FOUND",
+  "phase": "O1.12 Post-Handoff Axis Stabilization Audit",
+  "artifact_role": "summary_only_no_state_or_action_plan_serialization",
+  "task": "Dex5-PenSpin-Oracle-P3FixedHorizon-Direct-v0",
+  "seed": 20260731,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "bank_ids": [
+    996
+  ],
+  "bank_selection": {
+    "anchor": 996,
+    "nearby": [
+      1245,
+      1203,
+      1171
+    ],
+    "method": "nearest independent-parent/source P3 states to bank 996 by RMS standardized O1.9 variable initial features",
+    "RMS_z_distance": {
+      "1245": 0.2768,
+      "1203": 0.2845,
+      "1171": 0.3031
+    }
+  },
+  "control_dt_s": 0.016666666666666666,
+  "handoff_search": {
+    "horizon_steps": 24,
+    "horizon_ms": 400.0,
+    "population": 16,
+    "iterations": 2,
+    "waypoints": 3,
+    "max_offset_rad": 0.18,
+    "transition_success_count": 0,
+    "states": [
+      {
+        "bank_id": 996,
+        "transition_success": false,
+        "TIM_transition": false,
+        "transition_step": -1,
+        "axis_alignment": 0.08747497946023941,
+        "axis_steps": 24,
+        "min_height_delta_mm": 0.0,
+        "min_total_force_n": 2.233879566192627,
+        "max_total_force_n": 6.186009407043457,
+        "TIM_overlap": 1.0,
+        "unsafe": false
+      }
+    ],
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": 13.074033737182617,
+        "wall_time_s": 0.832478540000011
+      },
+      {
+        "iteration": 2,
+        "best_score": 13.074033737182617,
+        "wall_time_s": 0.5289479879993451
+      }
+    ]
+  },
+  "post_handoff_search": {
+    "continuation": "same PhysX episode; post action starts one control step after dominant TIM release/recontact detection",
+    "horizon_steps": 12,
+    "horizon_ms": 200.0,
+    "population": 16,
+    "iterations": 2,
+    "waypoints": 3,
+    "max_offset_rad": 0.12,
+    "transition_success_count": 0,
+    "post_handoff_success_count": 0,
+    "conditional_success_rate": 0.0,
+    "states": [
+      {
+        "bank_id": 996,
+        "transition_success": false,
+        "transition_step": -1,
+        "transition_height_delta_mm": 0.0,
+        "transition_axis_alignment": 0.0,
+        "post_handoff_success": false,
+        "post_axis_alignment": 0.0,
+        "post_axis_steps": 0,
+        "post_min_height_delta_mm": 0.0,
+        "post_min_total_force_n": Infinity,
+        "post_max_total_force_n": 0.0,
+        "post_TIM_overlap": 0.0,
+        "unsafe": false,
+        "ballistic": false,
+        "contact_loss": false,
+        "penetration": false,
+        "throw": false,
+        "drop": false,
+        "primary_failure": "handoff_transition_not_reproduced"
+      }
+    ],
+    "history": [
+      {
+        "iteration": 1,
+        "best_score": -1.0,
+        "wall_time_s": 0.7445946679999906
+      },
+      {
+        "iteration": 2,
+        "best_score": -1.0,
+        "wall_time_s": 0.7575736019989563
+      }
+    ]
+  },
+  "strict_post_gate": {
+    "minimum_axis_alignment": 0.5,
+    "minimum_axis_moving_steps": 2,
+    "maximum_height_loss_mm_from_P3": 5.0,
+    "minimum_total_contact_force_n": 0.06,
+    "maximum_total_contact_force_n": 6.0,
+    "minimum_TIM_overlap": 0.8,
+    "no_ballistic_contact_loss_penetration_drop_throw_drift_or_invalid": true
+  },
+  "failure_taxonomy": {
+    "handoff_transition_not_reproduced": 1
+  },
+  "wall_time_s": 5.388878933999877,
+  "PPO_trained": false,
+  "reward_modified": false,
+  "teacher_generated": false,
+  "O0_modified": false,
+  "state_or_action_plan_exported": false,
+  "limitations": "A zero success count is bounded by four P3 entries, the stated CEM budgets, residual target limits, and 200 ms post window; it is not an absolute impossibility proof. Post states and plans exist only in memory."
+}

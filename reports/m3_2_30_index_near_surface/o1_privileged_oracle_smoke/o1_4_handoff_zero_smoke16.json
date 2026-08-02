@@ -1,0 +1,839 @@
+{
+  "status": "PASS",
+  "artifact_role": "diagnostic_only_not_for_training_or_reset",
+  "task": "Dex5-PenSpin-OracleAligned-P3Only-Direct-v0",
+  "controller": "zero",
+  "checkpoint": null,
+  "seed": 20260730,
+  "num_envs": 16,
+  "steps": 20,
+  "control_dt_s": 0.016666666666666666,
+  "contact_debounce_steps": 3,
+  "height_drop_threshold_m": 0.005,
+  "height_recovery_threshold_m": 0.002,
+  "bank_sha256": "73ab3cc0ffada7759da428767956b353b39b556d77c60accbd95c4891073ac65",
+  "summary": {
+    "episodes": 16,
+    "unique_bank_rows": 16,
+    "primary_failure_counts": {
+      "ballistic": 0,
+      "late_recontact_no_height_recovery": 0,
+      "simultaneous_TIM_release": 0,
+      "force_collapse_during_overlap": 0,
+      "wrench_destabilization": 0,
+      "height_loss_without_recovery": 0,
+      "stable_support": 16,
+      "unclassified": 0
+    },
+    "label_counts": {
+      "ballistic": 0,
+      "late_recontact_no_height_recovery": 0,
+      "simultaneous_TIM_release": 0,
+      "force_collapse_during_overlap": 0,
+      "wrench_destabilization": 0,
+      "height_loss_without_recovery": 0,
+      "stable_support": 16
+    },
+    "rates": {
+      "ballistic": 0.0,
+      "late_recontact_no_height_recovery": 0.0,
+      "simultaneous_TIM_release": 0.0,
+      "force_collapse_during_overlap": 0.0,
+      "wrench_destabilization": 0.0,
+      "height_loss_without_recovery": 0.0,
+      "stable_support": 1.0
+    },
+    "minimum_height_delta_mm": {
+      "mean": -0.3264290280640125,
+      "p10": -0.6704051047563553,
+      "median": -0.33464841544628143,
+      "p90": -0.00011920928955078125
+    },
+    "max_zero_TIM_run_steps": {
+      "mean": 0.0,
+      "p10": 0.0,
+      "median": 0.0,
+      "p90": 0.0
+    },
+    "TIM_overlap_ratio": {
+      "mean": 1.0,
+      "p10": 1.0,
+      "median": 1.0,
+      "p90": 1.0
+    },
+    "wrench_around_first_5mm_drop": {
+      "pre_drop_TIM_force_n": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "post_drop_TIM_force_n": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "pre_drop_force_magnitude_n": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "post_drop_force_magnitude_n": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "pre_drop_torque_magnitude_nm": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "post_drop_torque_magnitude_nm": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "pre_drop_target_speed_rad_s": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "post_drop_target_speed_rad_s": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "pre_drop_wrong_axis_speed_rad_s": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      },
+      "post_drop_wrong_axis_speed_rad_s": {
+        "mean": null,
+        "p10": null,
+        "median": null,
+        "p90": null
+      }
+    },
+    "finger_transition_rates": {
+      "thumb": {
+        "break": 0.0,
+        "recontact": 0.0
+      },
+      "index": {
+        "break": 0.0,
+        "recontact": 0.0
+      },
+      "middle": {
+        "break": 0.0,
+        "recontact": 0.0
+      },
+      "ring": {
+        "break": 0.0,
+        "recontact": 0.0
+      },
+      "pinky": {
+        "break": 0.0,
+        "recontact": 0.0
+      }
+    }
+  },
+  "episodes": [
+    {
+      "env_id": 0,
+      "bank_id": 1017,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.3056824207305908,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 1,
+      "bank_id": 1082,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.7254108786582947,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 2,
+      "bank_id": 1232,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.008098781108856201,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 3,
+      "bank_id": 1048,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.7226169109344482,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 4,
+      "bank_id": 998,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.37368014454841614,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 5,
+      "bank_id": 936,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.09855255484580994,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 6,
+      "bank_id": 927,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.24214386940002441,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 7,
+      "bank_id": 1098,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.36361441016197205,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 8,
+      "bank_id": 1045,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.25564059615135193,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 9,
+      "bank_id": 850,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.5268268287181854,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 10,
+      "bank_id": 1020,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.36898255348205566,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 11,
+      "bank_id": 996,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": 0.007860362529754639,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 12,
+      "bank_id": 987,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": 0.11249631643295288,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 13,
+      "bank_id": 968,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.3033168613910675,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 14,
+      "bank_id": 1221,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.43046101927757263,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    },
+    {
+      "env_id": 15,
+      "bank_id": 1190,
+      "first_height_drop_step": -1,
+      "height_recovered": false,
+      "minimum_height_delta_mm": -0.6181932985782623,
+      "max_zero_TIM_run_steps": 0,
+      "TIM_overlap_ratio": 1.0,
+      "first_break_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "first_recontact_step": {
+        "thumb": -1,
+        "index": -1,
+        "middle": -1,
+        "ring": -1,
+        "pinky": -1
+      },
+      "pre_drop_TIM_force_n": NaN,
+      "post_drop_TIM_force_n": NaN,
+      "pre_drop_force_magnitude_n": NaN,
+      "post_drop_force_magnitude_n": NaN,
+      "pre_drop_torque_magnitude_nm": NaN,
+      "post_drop_torque_magnitude_nm": NaN,
+      "pre_drop_target_speed_rad_s": NaN,
+      "post_drop_target_speed_rad_s": NaN,
+      "pre_drop_wrong_axis_speed_rad_s": NaN,
+      "post_drop_wrong_axis_speed_rad_s": NaN,
+      "labels": {
+        "ballistic": false,
+        "late_recontact_no_height_recovery": false,
+        "simultaneous_TIM_release": false,
+        "force_collapse_during_overlap": false,
+        "wrench_destabilization": false,
+        "height_loss_without_recovery": false,
+        "stable_support": true
+      },
+      "primary_failure": "stable_support"
+    }
+  ]
+}

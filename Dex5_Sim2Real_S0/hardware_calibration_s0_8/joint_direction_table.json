@@ -1,0 +1,225 @@
+{
+  "schema": "dex5-s0.8-joint-direction-v1",
+  "status": "PASS",
+  "confirmed": 16,
+  "total": 16,
+  "sdk_command_semantics": "20D absolute URDF-joint targets through vendor anemone conversion",
+  "actuators": [
+    {
+      "actuator_index": 0,
+      "joint_indices": [
+        0
+      ],
+      "joint_names": [
+        "Roll_21R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 1,
+      "joint_indices": [
+        1
+      ],
+      "joint_names": [
+        "Pitch_22R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 2,
+      "joint_indices": [
+        2,
+        3
+      ],
+      "joint_names": [
+        "Pitch_23R",
+        "Pitch_24R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 3,
+      "joint_indices": [
+        4
+      ],
+      "joint_names": [
+        "Roll_31R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 4,
+      "joint_indices": [
+        5
+      ],
+      "joint_names": [
+        "Pitch_32R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 5,
+      "joint_indices": [
+        6,
+        7
+      ],
+      "joint_names": [
+        "Pitch_33R",
+        "Pitch_34R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 6,
+      "joint_indices": [
+        8
+      ],
+      "joint_names": [
+        "Roll_41R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 7,
+      "joint_indices": [
+        9
+      ],
+      "joint_names": [
+        "Pitch_42R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 8,
+      "joint_indices": [
+        10,
+        11
+      ],
+      "joint_names": [
+        "Pitch_43R",
+        "Pitch_44R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 9,
+      "joint_indices": [
+        12
+      ],
+      "joint_names": [
+        "Roll_51R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 10,
+      "joint_indices": [
+        13
+      ],
+      "joint_names": [
+        "Pitch_52R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 11,
+      "joint_indices": [
+        14,
+        15
+      ],
+      "joint_names": [
+        "Pitch_53R",
+        "Pitch_54R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.02
+    },
+    {
+      "actuator_index": 12,
+      "joint_indices": [
+        16
+      ],
+      "joint_names": [
+        "Yaw_11R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.05
+    },
+    {
+      "actuator_index": 13,
+      "joint_indices": [
+        17
+      ],
+      "joint_names": [
+        "Roll_12R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.05
+    },
+    {
+      "actuator_index": 14,
+      "joint_indices": [
+        18
+      ],
+      "joint_names": [
+        "Pitch_13R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.05
+    },
+    {
+      "actuator_index": 15,
+      "joint_indices": [
+        19
+      ],
+      "joint_names": [
+        "Pitch_14R"
+      ],
+      "direction_sign": 1,
+      "direction_confirmed": true,
+      "mapping_confirmed": true,
+      "calibration_delta_rad": 0.05
+    }
+  ]
+}
