@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/reports/sim2real_s0_2"
 COMMON=(--headless --device cuda:0 --num-envs "${NUM_ENVS:-64}" --steps "${STEPS:-60}")
@@ -8,8 +12,6 @@ export TERM="${TERM:-xterm}"
 if [[ "$TERM" == "dumb" ]]; then
   export TERM=xterm
 fi
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
 export ACCEPT_EULA=Y
 export OMNI_KIT_ACCEPT_EULA=YES
 export PYTHONPATH="${ROOT}/..:${ROOT}/isaac:${PYTHONPATH:-}"

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -11,10 +12,9 @@ from isaaclab.app import AppLauncher
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CHECKPOINT = Path(
-    "/home/linkerhand/IsaacLab/logs/skrl/dex5_penspin_privileged_oracle/"
-    "2026-08-01_21-23-42_ppo_torch_o1_22_A_uniform_P3_budget60/"
-    "checkpoints/agent_1440.pt"
+ARTIFACT_ROOT = Path(os.environ.get("DEX5_ARTIFACT_ROOT", ROOT / "artifacts"))
+DEFAULT_CHECKPOINT = (
+    ARTIFACT_ROOT / "o1_23/checkpoints/o1_22_A_uniform_agent_1440.pt"
 )
 DEFAULT_OUTPUT = ROOT / (
     "reports/m3_2_30_index_near_surface/o1_privileged_oracle_smoke/"

@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning"
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
+ROOT="${DEX5_PROJECT_PARENT}"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
 if [[ -z "${TERM:-}" || "${TERM}" == "dumb" ]]; then export TERM=xterm; fi
 
-cd /home/linkerhand/IsaacLab
-./isaaclab.sh -p "${ROOT}/dex5_penspin/isaac/collect_successful_p4_trajectories.py" --headless "$@"
+cd "${ISAACLAB_ROOT}"
+./isaaclab.sh -p "${DEX5_PROJECT_ROOT}/isaac/collect_successful_p4_trajectories.py" --headless "$@"

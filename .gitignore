@@ -37,6 +37,12 @@ events.out.tfevents.*
 *.pkl
 *.pickle
 
+# Minimal cross-machine reproduction assets are intentionally stored in LFS.
+!/artifacts/o1_23/checkpoints/
+!/artifacts/o1_23/trajectories/
+!/artifacts/o1_23/checkpoints/*.pt
+!/artifacts/o1_23/trajectories/*.npz
+
 # Reproducible tabular exports derived from ignored rollout datasets
 /Dex5_Sim2Real_S0/oracle_validity_audit_s0_9_2/trajectory_validity_metrics_1200.csv
 /Dex5_Sim2Real_S0/quaternion_replay_audit/all_1200_quaternion_metrics.csv

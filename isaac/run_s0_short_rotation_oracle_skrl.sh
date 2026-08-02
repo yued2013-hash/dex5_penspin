@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning"
-PROJECT="$ROOT/dex5_penspin"
-ISAACLAB_ROOT="/home/linkerhand/IsaacLab"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
+ROOT="${DEX5_PROJECT_PARENT}"
+PROJECT="${DEX5_PROJECT_ROOT}"
 TASK="Dex5-S0-ShortRotation-Direct-v0"
 
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
 export ACCEPT_EULA=Y
 export OMNI_KIT_ACCEPT_EULA=YES
 export PYTHONPATH="${ROOT}:${PROJECT}/isaac:${PYTHONPATH:-}"
@@ -32,7 +33,7 @@ if "--max_iterations" not in forwarded:
     defaults += ["--max_iterations", "30"]
 sys.argv = ["train.py", *defaults, *forwarded]
 runpy.run_path(
-    "/home/linkerhand/IsaacLab/scripts/reinforcement_learning/skrl/train.py",
+    "${ISAACLAB_ROOT}/scripts/reinforcement_learning/skrl/train.py",
     run_name="__main__",
 )
 PY

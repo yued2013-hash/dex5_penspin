@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROJECT_ROOT="/home/linkerhand/桌面/deep learning/dex5_penspin"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
+PROJECT_ROOT="${DEX5_PROJECT_ROOT}"
 O0_ROOT="reports/m3_2_30_index_near_surface/canonical_reset_distribution_o0"
 VALIDATOR="${PROJECT_ROOT}/isaac/run_validate_canonical_reset_o0.sh"
 

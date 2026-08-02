@@ -6,6 +6,7 @@ from __future__ import annotations
 import ast
 import hashlib
 import json
+import os
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -13,7 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SDK_ROOT = Path("/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control")
+SDK_ROOT = Path(os.environ.get("DEX5_SDK_ROOT", ROOT / "external/dex5_sdk"))
 SDK_PACKAGE = SDK_ROOT / "unitree_dex5_1_control"
 ENV_SOURCE = ROOT / "isaac/dex5_penspin_isaaclab/tasks/index_near_surface/index_near_surface_physics_env.py"
 ORACLE_SOURCE = ROOT / "isaac/dex5_penspin_isaaclab/tasks/index_near_surface/privileged_oracle_physics_env.py"

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning/dex5_penspin"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
+ROOT="${DEX5_PROJECT_ROOT}"
 REPORT_DIR="${ROOT}/reports/m3_2_30_index_near_surface/p1_p2_reset_bank/reverse_curriculum"
 TASK="Dex5-P1P2-ReverseR0ValidatedHoldSlow-Direct-v0"
 SPLIT="train"

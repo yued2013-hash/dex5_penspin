@@ -1,0 +1,15 @@
+name: env_isaaclab
+channels:
+  - defaults
+dependencies:
+  - python=3.11.15
+  - pip=26.1.2
+  - setuptools
+  - wheel=0.45.1
+  - pip:
+      - PySocks==1.7.1
+      - packaging==23.0
+      - numpy==1.26.0
+      - skrl==2.1.0
+      - matplotlib==3.10.3
+      - pytest==8.4.2

@@ -1,7 +1,7 @@
 # Dex5-PenSpin task configuration draft.
 # Status after M0/M1 interface audit on 2026-07-08.
-# Hardware facts come from:
-# - /home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control
+# External hardware paths use ${DEX5_SDK_ROOT}; expand the variable in the
+# consumer or preprocess this YAML with envsubst.
 # - unitree_dex5_1_control HEAD 831f0a262a68b12bac47d8d410b018e8a95c4ae3
 
 task:
@@ -18,8 +18,8 @@ task:
     - "Episode length is an initial replay/data-collection setting; extend after stable safety checks."
 
 ros2_interface:
-  workspace: "/home/linkerhand/ofdemo_ros2_ws"
-  package_repo: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control"
+  workspace: "${DEX5_SDK_ROOT}/../.."
+  package_repo: "${DEX5_SDK_ROOT}"
   package_remote: "https://github.com/lvlvturancao/unitree_dex5_1_control.git"
   package_commit: "831f0a262a68b12bac47d8d410b018e8a95c4ae3"
   node: "/dex5_1_controller"
@@ -112,7 +112,7 @@ ros2_interface:
     - 13
     - 14
     - 15
-  joint_limits_source: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/config/manus_to_dex5.yaml"
+  joint_limits_source: "${DEX5_SDK_ROOT}/unitree_dex5_1_control/config/manus_to_dex5.yaml"
 
 observation:
   proprioception:
@@ -191,13 +191,13 @@ action:
   command_units: "rad"
   delta_limit_rad_initial: 0.03
   delta_limit_status: "conservative initial value; must be validated on hardware before autonomous rollout"
-  absolute_target_limits_source: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/config/manus_to_dex5.yaml"
+  absolute_target_limits_source: "${DEX5_SDK_ROOT}/unitree_dex5_1_control/config/manus_to_dex5.yaml"
   smoothing: true
   safety_filter: true
   replay_reference:
-    recorder: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/scripts/dex5_episode_recorder.py"
+    recorder: "${DEX5_SDK_ROOT}/unitree_dex5_1_control/scripts/dex5_episode_recorder.py"
     recorder_keys: ["obs_joint_pos", "obs_joint_vel", "action_position", "timestamp"]
-    player: "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/unitree_dex5_1_control/scripts/npz_dex5_player.py"
+    player: "${DEX5_SDK_ROOT}/unitree_dex5_1_control/scripts/npz_dex5_player.py"
 
 reward:
   status: "initial draft; object tracking must be available before this reward can run on real hardware"

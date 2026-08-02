@@ -1,0 +1,2 @@
+artifacts/o1_23/checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+artifacts/o1_23/trajectories/*.npz filter=lfs diff=lfs merge=lfs -text

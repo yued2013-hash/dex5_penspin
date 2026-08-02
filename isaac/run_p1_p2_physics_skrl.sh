@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning"
-ISAACLAB_ROOT="/home/linkerhand/IsaacLab"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
+
+ROOT="${DEX5_PROJECT_PARENT}"
 TASK="${DEX5_TASK:-Dex5-P1P2-C1-Direct-v0}"
 
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
 if [[ -z "${TERM:-}" || "${TERM}" == "dumb" ]]; then
     export TERM="xterm"
@@ -27,7 +28,7 @@ if "--max_iterations" not in forwarded:
     defaults += ["--max_iterations", "250"]
 sys.argv = ["train.py", *defaults, *forwarded]
 runpy.run_path(
-    "/home/linkerhand/IsaacLab/scripts/reinforcement_learning/skrl/train.py",
+    "${ISAACLAB_ROOT}/scripts/reinforcement_learning/skrl/train.py",
     run_name="__main__",
 )
 PY

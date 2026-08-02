@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -13,6 +14,11 @@ from isaaclab.app import AppLauncher
 parser = argparse.ArgumentParser(
     description="Evaluate a phase-conditioned P4-to-P1 exemplar teacher."
 )
+ROOT = Path(__file__).resolve().parents[1]
+ISAACLAB_ROOT = Path(os.environ.get("ISAACLAB_ROOT", ROOT / ".deps/IsaacLab"))
+ISAACLAB_LOG_ROOT = Path(
+    os.environ.get("ISAACLAB_LOG_ROOT", ISAACLAB_ROOT / "logs/skrl")
+)
 parser.add_argument(
     "--task",
     default=(
@@ -23,8 +29,8 @@ parser.add_argument(
 parser.add_argument(
     "--early-checkpoint",
     default=(
-        "/home/linkerhand/IsaacLab/logs/skrl/"
-        "dex5_recapture_p3_physics_direct/"
+        ISAACLAB_LOG_ROOT
+        / "dex5_recapture_p3_physics_direct/"
         "2026-07-20_04-22-19_ppo_torch/checkpoints/agent_2560.pt"
     ),
 )
@@ -60,7 +66,6 @@ from isaaclab_tasks.utils.parse_cfg import parse_env_cfg
 from isaaclab.utils.math import quat_apply  # noqa: E402
 
 
-ROOT = Path(__file__).resolve().parents[1]
 REPORT_ROOT = (
     ROOT
     / "reports/m3_2_30_index_near_surface/no_reset_chain"

@@ -29,7 +29,7 @@ def import_ros() -> tuple[Any, Any, Any]:
     except Exception as exc:  # pragma: no cover - depends on sourced ROS env
         raise RuntimeError(
             "ROS2 Python packages are not available in this shell. Run:\n"
-            '  source "/home/linkerhand/ofdemo_ros2_ws/install/setup.bash"\n'
+            '  source "${DEX5_ROS_WS}/install/setup.bash"\n'
             "then start this script again."
         ) from exc
     return rclpy, Node, (Dex51Command, Float64MultiArray)

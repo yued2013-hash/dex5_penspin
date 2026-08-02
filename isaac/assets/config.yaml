@@ -1,5 +1,5 @@
-asset_path: "/home/linkerhand/\u684C\u9762/deep learning/dex5_penspin/sim/assets/dex5_urdf_import/Dex5-URDF-R.urdf"
-usd_dir: "/home/linkerhand/\u684C\u9762/deep learning/dex5_penspin/isaac/assets"
+asset_path: "../../sim/assets/dex5_urdf_import/Dex5-URDF-R.urdf"
+usd_dir: "."
 usd_file_name: dex5_hand.usd
 force_usd_conversion: true
 make_instanceable: true

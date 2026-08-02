@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
 import sys
 from dataclasses import dataclass, replace
 from pathlib import Path
@@ -86,7 +87,12 @@ from isaaclab_tasks.utils.hydra import hydra_task_config
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_DIR = ROOT / "reports/m3_2_30_index_near_surface"
-LOG_DIR = Path("/home/linkerhand/IsaacLab/logs/skrl/dex5_recapture_p3_physics_direct")
+ISAACLAB_ROOT = Path(os.environ.get("ISAACLAB_ROOT", ROOT / ".deps/IsaacLab"))
+LOG_DIR = Path(
+    os.environ.get(
+        "ISAACLAB_LOG_ROOT", ISAACLAB_ROOT / "logs/skrl"
+    )
+) / "dex5_recapture_p3_physics_direct"
 
 
 @dataclass(frozen=True)
@@ -275,8 +281,7 @@ LATEST_COMPACT_STAGES = (
 UPSTREAM_APPROACH49_STAGE = Stage(
     "upstream_to_approach49",
     "v9_current_upstream45_to_approach49_bundle.npz",
-    "/home/linkerhand/IsaacLab/logs/skrl/dex5_recapture_p3_physics_direct/"
-    "2026-07-17_07-45-27_ppo_torch/checkpoints/agent_5376.pt",
+    str(LOG_DIR / "2026-07-17_07-45-27_ppo_torch/checkpoints/agent_5376.pt"),
     49.0,
     48.0,
     52.0,

@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning"
-PROJECT_ROOT="${ROOT}/dex5_penspin"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
 
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
+ROOT="${DEX5_PROJECT_PARENT}"
+PROJECT_ROOT="${DEX5_PROJECT_ROOT}"
+
 export ACCEPT_EULA=Y
 export OMNI_KIT_ACCEPT_EULA=YES
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"

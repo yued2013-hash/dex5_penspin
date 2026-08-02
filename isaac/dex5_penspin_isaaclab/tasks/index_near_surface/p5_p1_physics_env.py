@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -22,6 +23,12 @@ from .p4_p5_physics_env import (
 
 
 ROOT = Path(__file__).resolve().parents[5]
+PROJECT_ROOT = ROOT / "dex5_penspin"
+ISAACLAB_ROOT = Path(os.environ.get("ISAACLAB_ROOT", PROJECT_ROOT / ".deps/IsaacLab"))
+ISAACLAB_LOG_ROOT = Path(
+    os.environ.get("ISAACLAB_LOG_ROOT", ISAACLAB_ROOT / "logs/skrl")
+)
+RECAPTURE_LOG_ROOT = ISAACLAB_LOG_ROOT / "dex5_recapture_p3_physics_direct"
 P5_P1_BUNDLE = str(
     ROOT
     / "dex5_penspin/reports/m3_2_30_index_near_surface/"
@@ -59,25 +66,17 @@ P5_P1_CONTINUOUS_TRIAD_BUNDLE = str(
 P5_P1_CONTINUOUS_STRICT_BUNDLE = str(
     CONTINUOUS_P5_P1_ROOT / "P1严格保持_连续入口训练包.npz"
 )
-P5_P1_MIDDLE_CHECKPOINT = (
-    "/home/linkerhand/IsaacLab/logs/skrl/"
-    "dex5_recapture_p3_physics_direct/"
-    "2026-07-18_19-31-45_ppo_torch/checkpoints/best_agent.pt"
+P5_P1_MIDDLE_CHECKPOINT = str(
+    RECAPTURE_LOG_ROOT / "2026-07-18_19-31-45_ppo_torch/checkpoints/best_agent.pt"
 )
-P5_P1_CAPTURE_CHECKPOINT = (
-    "/home/linkerhand/IsaacLab/logs/skrl/"
-    "dex5_recapture_p3_physics_direct/"
-    "2026-07-18_19-44-48_ppo_torch/checkpoints/best_agent.pt"
+P5_P1_CAPTURE_CHECKPOINT = str(
+    RECAPTURE_LOG_ROOT / "2026-07-18_19-44-48_ppo_torch/checkpoints/best_agent.pt"
 )
-P5_P1_APPROACH_CHECKPOINT = (
-    "/home/linkerhand/IsaacLab/logs/skrl/"
-    "dex5_recapture_p3_physics_direct/"
-    "2026-07-17_21-20-25_ppo_torch/checkpoints/best_agent.pt"
+P5_P1_APPROACH_CHECKPOINT = str(
+    RECAPTURE_LOG_ROOT / "2026-07-17_21-20-25_ppo_torch/checkpoints/best_agent.pt"
 )
-P5_P1_CONTACT_CHECKPOINT = (
-    "/home/linkerhand/IsaacLab/logs/skrl/"
-    "dex5_recapture_p3_physics_direct/"
-    "2026-07-17_21-29-11_ppo_torch/checkpoints/best_agent.pt"
+P5_P1_CONTACT_CHECKPOINT = str(
+    RECAPTURE_LOG_ROOT / "2026-07-17_21-29-11_ppo_torch/checkpoints/best_agent.pt"
 )
 CYCLE_ALIGNED_PHASE9_CACHE = str(
     ROOT
@@ -997,10 +996,8 @@ class Dex5V9P4P5P1ContinuousClosureThumbWrapNoResetTeacherPhysicsEnvCfg(
     # Phases 4-5 acquire and stabilize the clamp from exemplars. From
     # phase 6 onward, preserve index/ring while thumb is introduced.
     phase_conditioned_brace_start_level = 2
-    brace_teacher_checkpoint = (
-        "/home/linkerhand/IsaacLab/logs/skrl/"
-        "dex5_recapture_p3_physics_direct/"
-        "2026-07-20_04-22-19_ppo_torch/checkpoints/agent_2560.pt"
+    brace_teacher_checkpoint = str(
+        RECAPTURE_LOG_ROOT / "2026-07-20_04-22-19_ppo_torch/checkpoints/agent_2560.pt"
     )
     trainee_policy_scale = 0.35
     chain_blend_steps = 6
@@ -1045,10 +1042,8 @@ class Dex5V9P4P5P1ContinuousClosureThumbUnderPhase7LateTrainPhysicsEnvCfg(
 
     bundle_path = THUMB_UNDER_PHASE7_CACHE
     thumb_only_residual = True
-    brace_teacher_checkpoint = (
-        "/home/linkerhand/IsaacLab/logs/skrl/"
-        "dex5_recapture_p3_physics_direct/"
-        "2026-07-20_04-22-19_ppo_torch/checkpoints/agent_2560.pt"
+    brace_teacher_checkpoint = str(
+        RECAPTURE_LOG_ROOT / "2026-07-20_04-22-19_ppo_torch/checkpoints/agent_2560.pt"
     )
 
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -8,10 +9,10 @@ from pathlib import Path
 import mujoco
 
 
-DEFAULT_SOURCE_URDF = Path(
-    "/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control/Dex5-URDF-R/Dex5-URDF-R.urdf"
-)
-DEFAULT_OUTPUT_DIR = Path("dex5_penspin/sim/assets/dex5_urdf_import")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SDK_ROOT = Path(os.environ.get("DEX5_SDK_ROOT", PROJECT_ROOT / "external/dex5_sdk"))
+DEFAULT_SOURCE_URDF = SDK_ROOT / "Dex5-URDF-R/Dex5-URDF-R.urdf"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "sim/assets/dex5_urdf_import"
 
 DEX5_JOINT_ORDER = [
     "Roll_21R",

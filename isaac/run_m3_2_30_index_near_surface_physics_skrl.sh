@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/linkerhand/桌面/deep learning"
-ISAACLAB_ROOT="/home/linkerhand/IsaacLab"
+PROJECT_DISCOVERY_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck disable=SC1091
+source "${PROJECT_DISCOVERY_ROOT}/scripts/isaaclab_env.sh"
 
-source /home/linkerhand/anaconda3/etc/profile.d/conda.sh
-conda activate env_isaaclab
+ROOT="${DEX5_PROJECT_PARENT}"
+
 
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
 if [[ -z "${TERM:-}" || "${TERM}" == "dumb" ]]; then
@@ -13,7 +14,7 @@ if [[ -z "${TERM:-}" || "${TERM}" == "dumb" ]]; then
 fi
 
 cd "${ISAACLAB_ROOT}"
-./isaaclab.sh -p - "$@" <<'PY'
+./isaaclab.sh -p - "$@" <<PY
 import runpy
 import sys
 
@@ -31,5 +32,5 @@ sys.argv = [
     "--headless",
     *extra_args,
 ]
-runpy.run_path("/home/linkerhand/IsaacLab/scripts/reinforcement_learning/skrl/train.py", run_name="__main__")
+runpy.run_path("${ISAACLAB_ROOT}/scripts/reinforcement_learning/skrl/train.py", run_name="__main__")
 PY

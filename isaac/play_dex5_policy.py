@@ -24,7 +24,9 @@ def main() -> None:
 
     import dex5_penspin.isaac.dex5_penspin_isaaclab  # noqa: F401
 
-    isaaclab_root = Path(os.environ.get("ISAACLAB_ROOT", "/home/linkerhand/IsaacLab"))
+    isaaclab_root = Path(
+        os.environ.get("ISAACLAB_ROOT", ROOT / ".deps/IsaacLab")
+    ).resolve()
     play_script = isaaclab_root / "scripts/reinforcement_learning/skrl/play.py"
     sys.argv = [
         str(play_script),

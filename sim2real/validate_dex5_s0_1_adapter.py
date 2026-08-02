@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,7 +27,7 @@ O0_BANK = ROOT / (
     "reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/"
     "canonical_reset_bank/P1_P5_v9_physx_projected_R3_validated.npz"
 )
-SDK_ROOT = Path("/home/linkerhand/ofdemo_ros2_ws/src/unitree_dex5_1_control")
+SDK_ROOT = Path(os.environ.get("DEX5_SDK_ROOT", ROOT / "external/dex5_sdk"))
 SDK_MAPPING = SDK_ROOT / "unitree_dex5_1_control/config/manus_to_dex5.yaml"
 ANEMONE_LUT_DIR = SDK_ROOT / "dex5_anemone_package_x86_64/casadi_functions"
 
