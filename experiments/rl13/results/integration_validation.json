@@ -1,0 +1,24 @@
+{
+  "unit_tests_passed": 25,
+  "legacy_hardware_adapter_and_schema_regression": true,
+  "showcase_local_links_checked": 29,
+  "desktop_viewport": [
+    1440,
+    1000
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "horizontal_overflow": false,
+  "video_ready_state": 4,
+  "training_chart_series": 2,
+  "video_stage_seek_verified": true,
+  "original_files_count": 1005,
+  "modified_original_files": [
+    ".gitignore",
+    "README.md"
+  ],
+  "original_model_training_and_hardware_files_unchanged": true,
+  "hardware_commands_issued": false
+}

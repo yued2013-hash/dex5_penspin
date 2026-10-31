@@ -1,0 +1,15 @@
+{
+  "position": [
+    -0.03320806305241196,
+    0.024977601740284208,
+    0.48758286414325985
+  ],
+  "quaternion": [
+    0.686410187666481,
+    -0.07080613463444775,
+    -0.024055005591901598,
+    0.7233594557837537
+  ],
+  "rigid_fit_rmse_mm": 11.159946559858687,
+  "method": "rigid least-squares alignment of index through pinky MCP and tip at zero joint angles"
+}

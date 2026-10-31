@@ -1,0 +1,30 @@
+{
+  "simulator": "MuJoCo",
+  "independent_real_network_replay": true,
+  "checks": [
+    {
+      "tag": "baseline",
+      "exact_controls": true,
+      "exact_qpos_qvel": true,
+      "complete": true,
+      "behavior_success": true,
+      "strict_success": false
+    },
+    {
+      "tag": "trained_best",
+      "exact_controls": true,
+      "exact_qpos_qvel": true,
+      "complete": false,
+      "behavior_success": false,
+      "strict_success": false
+    },
+    {
+      "tag": "micro_best",
+      "exact_controls": true,
+      "exact_qpos_qvel": true,
+      "complete": false,
+      "behavior_success": false,
+      "strict_success": false
+    }
+  ]
+}

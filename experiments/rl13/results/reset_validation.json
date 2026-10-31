@@ -1,0 +1,135 @@
+{
+  "schema": "rl13-mujoco-reset-validation-v2",
+  "ready_for_bounded_training": true,
+  "approved_frames": [
+    0,
+    250,
+    500,
+    700,
+    850,
+    964,
+    1200,
+    1500,
+    1650,
+    1850
+  ],
+  "reset_penetration_limit_mm": 1.0,
+  "reset_soft_joint_limit_tolerance_rad": 0.01,
+  "post_training_geometry_supplement": true,
+  "source_sha256": "a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560",
+  "simulator": "MuJoCo",
+  "perturbed_reset_states_authorized": false,
+  "hardware_ready": false,
+  "rows": [
+    {
+      "frame": 0,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.2980401971398459,
+      "soft_joint_limit_excess_rad": 0.004700579262044375,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 250,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.7925227865762652,
+      "soft_joint_limit_excess_rad": 0.0004545869864847063,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 500,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.10783924087267723,
+      "soft_joint_limit_excess_rad": 0.0,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 700,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.2339609628535745,
+      "soft_joint_limit_excess_rad": 0.0004358258112976568,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 850,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.19863094852297628,
+      "soft_joint_limit_excess_rad": 0.0005346032947293189,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 964,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.25381233897087013,
+      "soft_joint_limit_excess_rad": 0.0005586050108181695,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1200,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.33149951795949895,
+      "soft_joint_limit_excess_rad": 0.0005012106636106141,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1500,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.16350823652805063,
+      "soft_joint_limit_excess_rad": 0.0,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1650,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.5852615978299022,
+      "soft_joint_limit_excess_rad": 0.0,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1850,
+      "R0_finite": true,
+      "R0_bounded_geometry": true,
+      "pen_penetration_mm": 0.5067251162471232,
+      "soft_joint_limit_excess_rad": 0.0,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    }
+  ]
+}

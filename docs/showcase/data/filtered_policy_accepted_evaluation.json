@@ -1,0 +1,35 @@
+{
+  "tag": "filtered_policy",
+  "accepted_terminal_grasp_passed": true,
+  "goal_source": "V11 selected_policy_attempt final actual state, accepted by user",
+  "duration_s": 42.28,
+  "max_turn_deg": 365.69162555765257,
+  "terminal_last5": {
+    "position_max_mm": 3.5040562188300792,
+    "full_angle_max_deg": 10.649380300547199,
+    "joint_rms_max_rad": 0.10006487240532543,
+    "joint_max_rad": 0.2422811617142544,
+    "pinch_fraction": 1.0,
+    "linear_speed_p95": 0.0023381834518195156,
+    "angular_speed_p95": 0.15269453742634978
+  },
+  "process": {
+    "arc_window_seconds": [
+      10,
+      19.28
+    ],
+    "arc_duration_seconds": 9.280000000000001,
+    "arc_whole_thumb_middle_min_mm": 7.2657746176916955,
+    "arc_thumb_acceleration_mean": 1.9276258126609114,
+    "arc_thumb_acceleration_p95": 12.92427681597742,
+    "arc_joint_acceleration_mean": 10.78123926379813
+  },
+  "physical": {
+    "palm": false,
+    "warning_count": 0,
+    "external_force_max": 0.0,
+    "longest_unloaded_s": 0.04
+  },
+  "old_original_grasp_diagnostic": false,
+  "note": "User accepts V11 final grasp. Original-grasp restoration is no longer the target."
+}

@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "behavior_success": true,
+    "penetration_mm": 2.6763697441545165,
+    "maximum_allowed_penetration_mm": 0.5,
+    "strict_success": false
+  },
+  "trained_best": {
+    "behavior_success": false,
+    "penetration_mm": 2.2515423252059,
+    "maximum_allowed_penetration_mm": 0.5,
+    "strict_success": false
+  },
+  "micro_best": {
+    "behavior_success": false,
+    "penetration_mm": 3.3136847858337517,
+    "maximum_allowed_penetration_mm": 0.5,
+    "strict_success": false
+  }
+}

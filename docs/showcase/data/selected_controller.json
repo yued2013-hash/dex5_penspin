@@ -1,0 +1,13 @@
+{
+  "selected": "filtered_policy",
+  "alpha": 0.07,
+  "action_filter": "f[0]=a[0]; f[t]=0.93*f[t-1]+0.07*a[t]",
+  "model": "policies/return_ppo_best.zip",
+  "model_training_steps": 61440,
+  "new_training_steps": 0,
+  "prefix_steps": 1614,
+  "no_physical_reset_at_switch": true,
+  "prefix_boundary_qpos_error": 0.0,
+  "accepted_terminal_grasp_passed": true,
+  "end_to_end_rl": false
+}

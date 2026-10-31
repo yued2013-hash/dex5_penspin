@@ -67,3 +67,19 @@ events.out.tfevents.*
 
 # The frozen O0 bank is small and required by the privileged-oracle environment.
 !/reports/m3_2_30_index_near_surface/canonical_grasp_v9_o0/canonical_reset_bank/P1_P5_v9_physx_projected_R3_validated.npz
+
+# Reviewed RL13 reproduction assets and interview media (small regular Git files).
+!/experiments/rl13/checkpoints/
+/experiments/rl13/checkpoints/*
+!/experiments/rl13/checkpoints/ppo_best.zip
+!/experiments/rl13/checkpoints/ppo_last.zip
+!/experiments/rl13/checkpoints/micro_best.zip
+!/experiments/rl13/checkpoints/micro_last.zip
+!/experiments/rl13/data/reference.npz
+!/experiments/rl13/data/baseline_rollout.npz
+!/experiments/rl13/data/trained_best_rollout.npz
+!/experiments/rl13/data/micro_best_rollout.npz
+!/docs/showcase/media/*.mp4
+!/docs/showcase/media/*.gif
+/.playwright-cli/
+/output/

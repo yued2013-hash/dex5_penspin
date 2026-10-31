@@ -1,0 +1,102 @@
+{
+  "schema": "rl13-mujoco-reset-validation-v1",
+  "ready_for_bounded_training": true,
+  "approved_frames": [
+    0,
+    250,
+    500,
+    700,
+    850,
+    964,
+    1200,
+    1500,
+    1650,
+    1850
+  ],
+  "source_sha256": "a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560",
+  "simulator": "MuJoCo",
+  "perturbed_reset_states_authorized": false,
+  "hardware_ready": false,
+  "rows": [
+    {
+      "frame": 0,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 250,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 500,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 700,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 850,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 964,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1200,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1500,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1650,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    },
+    {
+      "frame": 1850,
+      "R0_finite": true,
+      "R1_stable": true,
+      "R2_continuation": true,
+      "R3_bounded_action_ready": true,
+      "maximum_qpos_continuation_error": 0.0
+    }
+  ]
+}

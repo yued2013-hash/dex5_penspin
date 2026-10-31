@@ -1,0 +1,24 @@
+{
+  "selected_policy_attempt": {
+    "action_delta_mean": 0.0027704189997166395,
+    "joint_acceleration_mean": 0.4435723146134928,
+    "joint_acceleration_p95": 2.4655981518563155,
+    "last5_pinch_fraction": 0.976,
+    "last5_omega_p95": 0.1808243166129233,
+    "last5_speed_p95": 0.003348627030000064
+  },
+  "filtered_policy": {
+    "action_delta_mean": 0.0002685485524125397,
+    "joint_acceleration_mean": 0.4339163157310504,
+    "joint_acceleration_p95": 2.4373049746012825,
+    "last5_pinch_fraction": 1.0,
+    "last5_omega_p95": 0.15269453742634978,
+    "last5_speed_p95": 0.0023381834518195156
+  },
+  "improvement": {
+    "action_delta_reduction_fraction": 0.9030657267222009,
+    "joint_acceleration_mean_reduction_fraction": 0.02176871406155312,
+    "last5_pen_omega_p95_reduction_fraction": 0.15556413934520086,
+    "last5_pen_speed_p95_reduction_fraction": 0.30174861790461305
+  }
+}

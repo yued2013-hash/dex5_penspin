@@ -1,0 +1,13 @@
+{
+  "schema": "rl13-mujoco-reference-v1",
+  "source_id": "mujoco_v12_deterministic_trajectory_0",
+  "source_type": "physics-planned prefix plus filtered terminal PPO, not expert hardware data",
+  "controls": 2114,
+  "physics_hz": 1000,
+  "control_hz": 50,
+  "source_sha256": "46771af894d100dbd7bff5f8c66ab736d52b1aff0cf17eb8bb7e7f6111aeac9c",
+  "coupling_ratio": 0.8290155443921565,
+  "hardware_equivalence": false,
+  "independent_source_trajectories": 1,
+  "train_test_source_generalization_measured": false
+}
