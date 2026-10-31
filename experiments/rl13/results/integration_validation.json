@@ -1,5 +1,5 @@
 {
-  "unit_tests_passed": 25,
+  "unit_tests_passed": 26,
   "legacy_hardware_adapter_and_schema_regression": true,
   "showcase_local_links_checked": 29,
   "desktop_viewport": [
@@ -20,5 +20,6 @@
     "README.md"
   ],
   "original_model_training_and_hardware_files_unchanged": true,
-  "hardware_commands_issued": false
+  "hardware_commands_issued": false,
+  "cross_os_golden_replay_certified": false
 }

@@ -8,6 +8,8 @@
 
 建议独立虚拟环境，已在 Windows / Python3.14 / CPU 验证：
 
+**完整参考轨迹只在Windows认证。** Linux CI已观测到跨OS接触延续差异，因此不能预期在Linux逐点重现同一轨迹或任务结果。同平台恢复测试与Windows黄金轨迹测试在CI中分开，后者在Linux明确跳过，不能视为跨平台认证。
+
 ```bash
 pip install -r experiments/rl13/requirements.txt
 python -m experiments.rl13.validate_reference

@@ -1,0 +1,9 @@
+{
+  "reference_platform": "Windows",
+  "tested_other_platform": "GitHub Ubuntu Linux",
+  "cross_os_golden_continuation_passed": false,
+  "observed_qpos_component_error": 0.00504818,
+  "required_golden_tolerance": 1e-06,
+  "failing_ci_run": 41226950969,
+  "policy": "Full trajectory metrics certified on Windows only; Linux checks same-platform repeatability, not Windows golden equivalence."
+}

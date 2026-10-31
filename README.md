@@ -63,6 +63,8 @@ flowchart LR
 
 在独立Python环境中运行，已验证Windows / Python3.14 / CPU：
 
+完整参考回放当前仅在Windows认证。Linux CI已发现接触延续差异，不能把同平台接口测试通过当作跨OS复现成功，详见[平台审计](experiments/rl13/results/platform_portability.json)。
+
 ```bash
 pip install -r experiments/rl13/requirements.txt
 python -m experiments.rl13.validate_reference
