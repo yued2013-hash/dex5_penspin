@@ -7,6 +7,9 @@ on:
     paths: ['experiments/rl13/**', 'docs/showcase/**']
 permissions:
   contents: read
+concurrency:
+  group: rl13-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   contracts:
     runs-on: ubuntu-latest
@@ -16,6 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
+      - run: pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -r experiments/rl13/requirements.txt pytest
       - run: python -m pytest experiments/rl13/tests tests/test_dex5_hardware_adapter.py tests/test_canonical_reset_schema.py
       - run: python scripts/audit_showcase.py

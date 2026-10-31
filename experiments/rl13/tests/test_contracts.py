@@ -18,7 +18,9 @@ def test_zero_residual_reproduces_dynamic_continuations():
         for _ in range(50):
             obs,_,done,_,_=e.step(np.zeros(16))
             assert not done
-            np.testing.assert_allclose(e.d.qpos,e.reference_q[e.k],atol=1e-12,rtol=0)
+            # Cross-platform continuation tolerance matches the R2 validation contract.
+            # Exact same-host replay is checked separately by verify_replay.py.
+            np.testing.assert_allclose(e.d.qpos,e.reference_q[e.k],atol=1e-6,rtol=0)
 
 def test_residual_authority_limits_and_no_external_forces():
     e=ResidualPenEnv(training=False);e.reset(options={'frame':1850,'full':True})
