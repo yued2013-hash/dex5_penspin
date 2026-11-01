@@ -22,7 +22,7 @@
   "sim_video": "docs/showcase/media/baseline-v12.mp4",
   "video_method": "physics-planned reference plus PPO terminal control",
   "presentation": "Isaac Lab训练、Student蒸馏、MuJoCo轨迹回放可视化与Dex5受控迁移",
-  "resume_description": "docs/resume_project.md",
   "data_scaling_plan": "docs/data_scaling_plan.md",
-  "new_isaac_data_collected_this_revision": false
+  "new_isaac_data_collected_this_revision": false,
+  "data_statistics": "docs/data_statistics.md"
 }

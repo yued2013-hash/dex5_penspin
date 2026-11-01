@@ -6,7 +6,7 @@
 
 Isaac Lab训练 · Oracle PPO → Student BC · MuJoCo回放可视化 · Sim-to-Real
 
-[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [面试讲解](docs/interview_guide.md) · [统一项目说明](docs/project_overview.md) · [简历项目描述](docs/resume_project.md)
+[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [统一项目说明](docs/project_overview.md) · [数据统计](docs/data_statistics.md)
 
 ![Dex5真实MuJoCo仿真演示：规划辅助片段](docs/showcase/media/penspin-preview.gif)
 
@@ -26,7 +26,8 @@ Isaac Lab训练 · Oracle PPO → Student BC · MuJoCo回放可视化 · Sim-to-
 |---|---|---|
 |Student仿真闭环|152/197次严格短角度成功，约77.2%|Isaac历史评估，197个episode来自20个测试来源|
 |旋转能力|184/197次达到至少30°实际姿态转动|不是整圈或实机成功率|
-|学生训练数据|1200条验证轨迹，69,600个transition|按source分组，891/112/197个训练/验证/测试episode|
+|Student数据集|1,200条验证轨迹，69,600个状态转移样本|训练51,621 / 验证6,519 / 测试11,460；按source分组|
+|残差PPO控制实验|两次独立运行，共65,536个训练交互步|各32,768步；未超过参考基准，与Student数据分别统计|
 |硬件适配|20维绝对URDF关节目标，16独立控制通道|保留厂商SDK的URDF到电机转换|
 |实机迁移|完成标定、受控回放及局部转动验证|依据原阶段记录；连续转笔稳定性仍不足|
 
@@ -74,8 +75,7 @@ python scripts/project.py showcase
 
 - 训练模块（Isaac Lab）：[跨机器复现](docs/reproducibility.md)、[任务设计](docs/dex5_penspin_reproduction_plan.md)。
 - 动作诊断模块：[实验说明](experiments/rl13/README.md)。完整参考回放目前仅Windows认证。
-- 简历材料：[可直接使用的项目描述](docs/resume_project.md)。
-- 面试材料：[90秒开场、工程贡献与常见追问](docs/interview_guide.md)。
+- 数据统计：[样本划分、训练步数与统计口径](docs/data_statistics.md)。
 - 数据扩展：[200个候选增量起步、逐步扩展覆盖的计划](docs/data_scaling_plan.md)，尚未执行，现有结果不变。
 
 历史训练、标定和实机数据独立保留。当前下载副本中部分历史大文件是Git LFS指针，复现原Isaac实验需按原文档获取资产。
