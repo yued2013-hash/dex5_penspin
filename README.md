@@ -4,9 +4,9 @@
 
 **面向耦合关节灵巧手的强化学习训练、策略蒸馏与真机迁移**
 
-Isaac Lab · PPO · Behavior Cloning · Sim-to-Real
+Isaac Lab训练 · Oracle PPO → Student BC · MuJoCo回放可视化 · Sim-to-Real
 
-[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [面试讲解](docs/interview_guide.md) · [统一项目说明](docs/project_overview.md)
+[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [面试讲解](docs/interview_guide.md) · [统一项目说明](docs/project_overview.md) · [简历项目描述](docs/resume_project.md)
 
 ![Dex5真实MuJoCo仿真演示：规划辅助片段](docs/showcase/media/penspin-preview.gif)
 
@@ -16,11 +16,11 @@ Isaac Lab · PPO · Behavior Cloning · Sim-to-Real
 
 ## 一个项目，四个工程模块
 
-将笔状物体的灵巧操作从仿真训练推进到Dex5实机。核心路线是：**仿真特权Oracle强化学习 → 非特权Student策略蒸馏 → 硬件标定与受控回放 → 迁移误差诊断**。
+将笔状物体的灵巧操作从仿真训练推进到Dex5实机。核心路线是：**Isaac Lab特权Oracle强化学习 → 验证轨迹与Student蒸馏 → MuJoCo轨迹回放可视化 → Dex5受控真机迁移与诊断**。
 
 项目统一以Isaac Lab作为训练主平台，动作可视化与接触诊断作为配套工具模块。项目重点包括关节耦合建模、接触与奖励设计、数据来源隔离、20维SDK目标到16独立控制通道的适配，以及仿真与实机控制时序对齐。目前已完成短角度仿真学习与学生策略验证，并进行了真机受控回放和局部动作验证；实机连续转笔仍未稳定实现。
 
-## 已取得的成果
+## 结果概览
 
 |模块|结果|适用范围|
 |---|---|---|
@@ -38,6 +38,8 @@ Isaac Lab · PPO · Behavior Cloning · Sim-to-Real
 flowchart LR
   A[Dex5与笔的仿真建模] --> B[特权Oracle强化学习]
   B --> C[姿态与接触校验的轨迹数据]
+  C --> V[MuJoCo状态回放与可视化]
+  V --> G[关节映射 / 耦合 / 时延诊断]
   C --> D[非特权Student行为克隆]
   D --> E[仿真闭环评估]
   C --> F[受控实机轨迹回放]
@@ -50,9 +52,9 @@ flowchart LR
 - **硬件接口**：处理耦合关节、方向与偏置、迟滞、动作插值及反馈监控；逻辑控制量不是电机轴角度，继续通过厂商SDK执行。
 - **迁移策略**：先做静态保持和受控回放，再讨论自主闭环与真实数据适配。当前未完成Student实机自主闭环验证。
 
-## 为什么实机效果仍不理想？
+## 实机迁移与工程优化
 
-实际迁移中存在关节耦合、控制映射、负载下反馈瞬态以及策略频率与SDK指令频率不一致等工程问题。它们是需要联合排查的迁移瓶颈，不能仅凭效果不好就断定“完全由Dex5设置造成”。
+实际迁移中存在关节耦合、控制映射、负载下反馈瞬态以及策略频率与SDK指令频率不一致等工程问题。这些现象支持耦合建模、增益及执行时序的联合排查，具体因果贡献仍需受控实验验证。
 
 已有记录包含局部PIP/DIP响应比约0.29、14–31ms可检测起动延迟、60Hz策略到100Hz指令链，以及负载回放中的独立关节反馈瞬态。这些结果对应特定标定条件，不是硬件的通用极限。详见[实机迁移案例分析](docs/sim2real_case_study.md)。
 
@@ -72,7 +74,9 @@ python scripts/project.py showcase
 
 - 训练模块（Isaac Lab）：[跨机器复现](docs/reproducibility.md)、[任务设计](docs/dex5_penspin_reproduction_plan.md)。
 - 动作诊断模块：[实验说明](experiments/rl13/README.md)。完整参考回放目前仅Windows认证。
+- 简历材料：[可直接使用的项目描述](docs/resume_project.md)。
 - 面试材料：[90秒开场、工程贡献与常见追问](docs/interview_guide.md)。
+- 数据扩展：[200个候选增量起步、逐步扩展覆盖的计划](docs/data_scaling_plan.md)，尚未执行，现有结果不变。
 
 历史训练、标定和实机数据独立保留。当前下载副本中部分历史大文件是Git LFS指针，复现原Isaac实验需按原文档获取资产。
 

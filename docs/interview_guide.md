@@ -1,5 +1,7 @@
 # 面试展示：Dex5灵巧操作与Sim-to-Real
 
+简历用语见[可直接使用的项目描述](resume_project.md)，数据扩展目标见[扩展计划](data_scaling_plan.md)。
+
 ## 90秒开场
 
 “我做的是一个以Isaac Lab为训练主平台的Dex5灵巧操作与Sim-to-Real项目，包含Oracle强化学习、Student策略蒸馏、硬件适配以及动作诊断与可视化四个模块，重点处理耦合关节下的控制约束与仿真实机响应差异。
