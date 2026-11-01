@@ -1,24 +1,24 @@
 <div align="center">
 
-# Dex5 PenSpin · Sim-to-Real
+# Dex5 PenSpin｜灵巧操作与Sim-to-Real
 
 **面向耦合关节灵巧手的强化学习训练、策略蒸馏与真机迁移**
 
-Isaac Lab · Oracle PPO · Student BC · Hardware Calibration
+Isaac Lab · PPO · Behavior Cloning · Sim-to-Real
 
-[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [面试讲解](docs/interview_guide.md) · [原工程复现](docs/reproducibility.md)
+[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [面试讲解](docs/interview_guide.md) · [统一项目说明](docs/project_overview.md)
 
 ![Dex5真实MuJoCo仿真演示：规划辅助片段](docs/showcase/media/penspin-preview.gif)
 
-*补充MuJoCo物理演示，包含规划辅助与PPO收尾；不是下表Isaac学生策略的整圈输出，也不是真机视频。*
+*项目动作诊断与可视化模块的真实物理回放；采用规划辅助和PPO收尾。具体运行引擎及结果来源见[项目说明](docs/project_overview.md)。*
 
 </div>
 
-## 项目目标与路线
+## 一个项目，四个工程模块
 
 将笔状物体的灵巧操作从仿真训练推进到Dex5实机。核心路线是：**仿真特权Oracle强化学习 → 非特权Student策略蒸馏 → 硬件标定与受控回放 → 迁移误差诊断**。
 
-项目重点包括关节耦合建模、接触与奖励设计、数据来源隔离、20维SDK目标到16独立控制通道的适配，以及仿真与实机控制时序对齐。目前已完成短角度仿真学习与学生策略验证，并进行了真机受控回放和局部动作验证；实机连续转笔仍未稳定实现。
+项目统一以Isaac Lab作为训练主平台，动作可视化与接触诊断作为配套工具模块。项目重点包括关节耦合建模、接触与奖励设计、数据来源隔离、20维SDK目标到16独立控制通道的适配，以及仿真与实机控制时序对齐。目前已完成短角度仿真学习与学生策略验证，并进行了真机受控回放和局部动作验证；实机连续转笔仍未稳定实现。
 
 ## 已取得的成果
 
@@ -56,22 +56,22 @@ flowchart LR
 
 已有记录包含局部PIP/DIP响应比约0.29、14–31ms可检测起动延迟、60Hz策略到100Hz指令链，以及负载回放中的独立关节反馈瞬态。这些结果对应特定标定条件，不是硬件的通用极限。详见[实机迁移案例分析](docs/sim2real_case_study.md)。
 
-## 仿真视频与补充研究
+## 动作诊断与可视化模块
 
-[完整仿真视频](docs/showcase/media/baseline-v12.mp4)展示真实MuJoCo接触动力学中的转动、拇指换位和接回。该演示采用规划参考及PPO收尾，与原Isaac Oracle→Student支线分别标记；其几何穿透和单来源限制见[实验边界](docs/results_and_limits.md)。
+[完整仿真视频](docs/showcase/media/baseline-v12.mp4)用于解释转动、拇指换位、接回和稳定夹持，是同一项目的动作诊断素材。该模块使用MuJoCo执行规划参考与PPO收尾，训练主线使用Isaac Lab；保留引擎来源与模型假设，避免混合不同任务的成功率。质量审计见[实验边界](docs/results_and_limits.md)。
 
-新增全流程残差PPO作为[补充实验](experiments/rl13/README.md)保留，其两次训练尚未超过基准，不作为原项目迁移成功的证据。
+[残差PPO控制探索](experiments/rl13/README.md)归入控制优化模块，保留完整日志。它是本项目中的探索实验，当前尚未超过基准。
 
 ## 展示与复现
 
 ```bash
-python scripts/serve_showcase.py
+python scripts/project.py showcase
 ```
 
-打开 `http://127.0.0.1:8831/docs/showcase/`，可查看视频、Student结果、实机迁移分析和补充实验。
+打开 `http://127.0.0.1:8831/docs/showcase/`，可查看同一项目的仿真学习、策略蒸馏、真机迁移和动作诊断四个模块。
 
-- 原Isaac环境与复现入口：[跨机器复现](docs/reproducibility.md)、[任务设计](docs/dex5_penspin_reproduction_plan.md)。
-- 补充MuJoCo支线：[实验说明](experiments/rl13/README.md)。完整参考回放目前仅Windows认证。
+- 训练模块（Isaac Lab）：[跨机器复现](docs/reproducibility.md)、[任务设计](docs/dex5_penspin_reproduction_plan.md)。
+- 动作诊断模块：[实验说明](experiments/rl13/README.md)。完整参考回放目前仅Windows认证。
 - 面试材料：[90秒开场、工程贡献与常见追问](docs/interview_guide.md)。
 
 历史训练、标定和实机数据独立保留。当前下载副本中部分历史大文件是Git LFS指针，复现原Isaac实验需按原文档获取资产。
@@ -79,3 +79,5 @@ python scripts/serve_showcase.py
 ## 参考
 
 [Lessons from Learning to Spin “Pens”](https://arxiv.org/abs/2407.18902)及[原代码](https://github.com/HaozhiQi/penspin)提供Oracle→Student与仿真到实机的研究背景。本项目展示Dex5适配和工程验证，不宣称算法首创或已实现论文中的实机多物体多圈效果。
+
+统一命令入口：`python scripts/project.py evidence`查看成果来源，`python scripts/project.py audit`检查展示链接。模块职责与数据合同见[统一项目说明](docs/project_overview.md)。
