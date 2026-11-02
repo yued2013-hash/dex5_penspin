@@ -2,7 +2,7 @@
 
 |证据|结果|范围与出处|
 |---|---|---|
-|历史S0.11学生策略|152/197次严格短角度成功；184/197达到30°|Isaac Lab历史报告，本轮未重新运行；`Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json`|
+|历史S0.11学生策略|152/197次严格短角度成功|Isaac Lab历史报告，本轮未重新运行；`Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json`|
 |混合参考零残差基准|实际最大365.69°，末5秒对向夹持100%|1条参考、固定初态、MuJoCo确定性回放；`experiments/rl13/results/baseline.json`|
 |基准几何质量|全程接触穿透峰值2.676mm|不满足≤0.5mm严格质量门槛，不能称为严格物理质量通过|
 |RL13大残差|32,768步训练；所选模型32,768步，实际运行3.96秒、最大106.13°|未完成全程，未晋级；`training_report.json`|

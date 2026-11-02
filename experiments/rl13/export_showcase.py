@@ -16,7 +16,7 @@ def main():
         value=read(ROOT/f'results/{name}.json')['summary'];quality[name]=dict(behavior_success=value['success'],penetration_mm=value['maximum_penetration_mm'],maximum_allowed_penetration_mm=.5,strict_success=value['success'] and value['maximum_penetration_mm']<=.5)
     (ROOT/'results/quality_audit.json').write_text(json.dumps(quality,indent=2))
     data=dict(baseline=b,latest=micro['result'],total_training_steps=first['actual_training_steps']+micro['actual_training_steps'],promoted=False,
-              student=dict(successes=student['successes'],episodes=student['episodes'],rotation30=184,unique_sources=student['unique_source_trajectories']),
+              student=dict(successes=student['successes'],episodes=student['episodes'],unique_sources=student['unique_source_trajectories']),
               trace=[dict(x=r['time'],turn=r['turn_deg'],pinch=int(r['pinch'])) for r in baseline['trace'][::5]],training_series=training,
               reference_sha256=hashlib.sha256((ROOT/'data/reference.npz').read_bytes()).hexdigest(),quality_audit=quality)
     text=json.dumps(data,ensure_ascii=False,indent=2);(show/'data/overview.json').write_text(text,encoding='utf-8');(show/'data/overview.js').write_text('window.DEX5_DATA = '+text+';\n',encoding='utf-8')

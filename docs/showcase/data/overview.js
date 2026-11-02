@@ -81,7 +81,6 @@ window.DEX5_DATA = {
   "student": {
     "successes": 152,
     "episodes": 197,
-    "rotation30": 184,
     "unique_sources": 20
   },
   "trace": [
