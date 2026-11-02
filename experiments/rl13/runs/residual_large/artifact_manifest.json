@@ -12,8 +12,8 @@
     },
     {
       "repository_path": "docs/showcase/media/full-turn-demo.mp4",
-      "sha256": "3c31dc6afc1d82298f2dcf4ea8907394a20a4b05484c0e9c168cd74fb2700209",
-      "bytes": 622608
+      "sha256": "4080ed82d574516d9c1588b57f6779971bea01a5d28ca18f2ddc88ce7070d9ca",
+      "bytes": 652296
     },
     {
       "repository_path": "experiments/rl13/data/trained_best_rollout.npz",

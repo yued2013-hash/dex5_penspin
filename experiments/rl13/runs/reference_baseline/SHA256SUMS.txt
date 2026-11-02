@@ -1,4 +1,4 @@
 83a90f8779f2a07e722344c640c92ca49056b92dd1761d9757a35940fa04b893  experiments/rl13/results/baseline.json
 a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560  experiments/rl13/data/reference.npz
-3c31dc6afc1d82298f2dcf4ea8907394a20a4b05484c0e9c168cd74fb2700209  docs/showcase/media/full-turn-demo.mp4
+4080ed82d574516d9c1588b57f6779971bea01a5d28ca18f2ddc88ce7070d9ca  docs/showcase/media/full-turn-demo.mp4
 ac7ca75d5f0d1a5ad55043e59f02adacd04407559a8d93bf73b8ce4249e4ee07  experiments/rl13/data/baseline_rollout.npz
