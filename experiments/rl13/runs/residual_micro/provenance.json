@@ -1,0 +1,42 @@
+{
+  "display_name": "PPO引导的混合专家参考轨迹",
+  "source_type": "physics-planned prefix plus filtered terminal PPO",
+  "isaac_oracle_checkpoint_used_for_this_reference": false,
+  "reference_sha256": "a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560",
+  "immutable_source_provenance": "../../data/provenance.json",
+  "control_hz": 50,
+  "controls": 2114,
+  "segments": [
+    {
+      "frames_half_open": [
+        0,
+        1614
+      ],
+      "time_s_half_open": [
+        0,
+        32.28
+      ],
+      "method": "physics-planned prefix"
+    },
+    {
+      "frames_half_open": [
+        1614,
+        2114
+      ],
+      "time_s_half_open": [
+        32.28,
+        42.28
+      ],
+      "method": "terminal PPO with action EMA",
+      "filter_alpha": 0.07
+    }
+  ],
+  "terminal_checkpoint_sha256": "d8346be9da26eae5e0567fc0365e1151b1f56c86dc6ef5dd1c4d3ebabfa9d81e",
+  "terminal_checkpoint_training_steps": 61440,
+  "generator_sha256": "b394c3b93b14752aec8aa0d9df9a5ccb03546cc786f35ead2fdf976228191c26",
+  "generator_source_included": false,
+  "generator_and_terminal_checkpoint_availability": "Local source verified by hash; not packaged in this research snapshot. Saved reference is provided for replay.",
+  "no_state_reset_at_switch": true,
+  "reference_sources": 1,
+  "hardware_equivalence": false
+}

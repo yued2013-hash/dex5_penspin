@@ -2,9 +2,9 @@
 
 # Dex5 PenSpin｜灵巧操作与Sim-to-Real
 
-**面向耦合关节灵巧手的强化学习训练、策略蒸馏与真机迁移**
+**面向耦合关节灵巧手的强化学习、残差策略优化与Sim-to-Real**
 
-Isaac Lab训练 · Oracle PPO → Student BC · MuJoCo回放可视化 · Sim-to-Real
+Isaac Lab Oracle PPO · Student BC · Residual PPO · MuJoCo · Sim-to-Real
 
 [项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [统一项目说明](docs/project_overview.md) · [数据统计](docs/data_statistics.md)
 
@@ -60,11 +60,15 @@ flowchart LR
 
 已有记录包含局部PIP/DIP响应比约0.29、14–31ms可检测起动延迟、60Hz策略到100Hz指令链，以及负载回放中的独立关节反馈瞬态。这些结果对应特定标定条件，不是硬件的通用极限。详见[实机迁移案例分析](docs/sim2real_case_study.md)。
 
-## 动作诊断与可视化模块
+## 残差强化学习与整圈操作研究
 
-[完整仿真视频](docs/showcase/media/baseline-v12.mp4)用于解释转动、拇指换位、接回和稳定夹持，是同一项目的动作诊断素材。该模块使用MuJoCo执行规划参考与PPO收尾，训练主线使用Isaac Lab；保留引擎来源与模型假设，避免混合不同任务的成功率。质量审计见[实验边界](docs/results_and_limits.md)。
+[完整仿真视频](docs/showcase/media/full-turn-demo.mp4)用于解释转动、拇指换位、接回和稳定夹持，是同一项目的动作诊断素材。该模块使用MuJoCo执行规划参考与PPO收尾，训练主线使用Isaac Lab；保留引擎来源与模型假设，避免混合不同任务的成功率。质量审计见[实验边界](docs/results_and_limits.md)。
 
-[残差PPO控制探索](experiments/rl13/README.md)归入控制优化模块，保留完整日志。它是本项目中的探索实验，当前尚未超过基准。
+[残差PPO研究模块](experiments/rl13/README.md)采用“混合专家参考→有界残差策略→连续评估→物理质量审计”的闭环。整圈参考已展示365.69°转动；两次残差消融尚未超过基准。
+
+[研究专题页](docs/showcase/residual.html) · [方法](docs/residual_ppo_method.md) · [实验报告](docs/residual_ppo_experiment.md) · [消融](docs/residual_ppo_ablation.md) · [实验档案](experiments/rl13/runs/README.md)
+
+![残差策略与参考控制比较](docs/showcase/residual_ppo_comparison.svg)
 
 ## 展示与复现
 

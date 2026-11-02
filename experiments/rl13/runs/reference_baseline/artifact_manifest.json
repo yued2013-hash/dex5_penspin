@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "repository_path": "experiments/rl13/results/baseline.json",
+      "sha256": "83a90f8779f2a07e722344c640c92ca49056b92dd1761d9757a35940fa04b893",
+      "bytes": 1304218
+    },
+    {
+      "repository_path": "experiments/rl13/data/reference.npz",
+      "sha256": "a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560",
+      "bytes": 1679066
+    },
+    {
+      "repository_path": "docs/showcase/media/full-turn-demo.mp4",
+      "sha256": "3c31dc6afc1d82298f2dcf4ea8907394a20a4b05484c0e9c168cd74fb2700209",
+      "bytes": 622608
+    },
+    {
+      "repository_path": "experiments/rl13/data/baseline_rollout.npz",
+      "sha256": "ac7ca75d5f0d1a5ad55043e59f02adacd04407559a8d93bf73b8ce4249e4ee07",
+      "bytes": 2021040
+    }
+  ],
+  "video_scope": "reference baseline only; no trained residual success video",
+  "archive_type": "report snapshots plus content-hashed references; binary files are not duplicated"
+}

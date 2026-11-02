@@ -1,0 +1,31 @@
+{
+  "artifacts": [
+    {
+      "repository_path": "experiments/rl13/results/micro_best.json",
+      "sha256": "26b38d196624f9d6e69f781c248341c8e5b7220ed87e866516bbb7c2a6d0eb0d",
+      "bytes": 128059
+    },
+    {
+      "repository_path": "experiments/rl13/data/reference.npz",
+      "sha256": "a9281e3e03c6123e9c351014d5f8bdfda29d0d23af157dfe2a76dc025c009560",
+      "bytes": 1679066
+    },
+    {
+      "repository_path": "docs/showcase/media/full-turn-demo.mp4",
+      "sha256": "3c31dc6afc1d82298f2dcf4ea8907394a20a4b05484c0e9c168cd74fb2700209",
+      "bytes": 622608
+    },
+    {
+      "repository_path": "experiments/rl13/data/micro_best_rollout.npz",
+      "sha256": "d24329f934437395c7ce262d96e97723623efeaec64acb16c8e4ebd0c5bda3dc",
+      "bytes": 260851
+    },
+    {
+      "repository_path": "experiments/rl13/checkpoints/micro_best.zip",
+      "sha256": "99c081995c42b25cd8b1d7cfedb2f82bff86ff94a824901ec6be9a67c30a182e",
+      "bytes": 771396
+    }
+  ],
+  "video_scope": "reference baseline only; no trained residual success video",
+  "archive_type": "report snapshots plus content-hashed references; binary files are not duplicated"
+}

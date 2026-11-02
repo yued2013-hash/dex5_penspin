@@ -19,7 +19,7 @@
   "diagnostic_runtime": "MuJoCo",
   "cross_engine_policy_equivalence_verified": false,
   "student_report": "Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json",
-  "sim_video": "docs/showcase/media/baseline-v12.mp4",
+  "sim_video": "docs/showcase/media/full-turn-demo.mp4",
   "video_method": "physics-planned reference plus PPO terminal control",
   "presentation": "Isaac Lab训练、Student蒸馏、MuJoCo轨迹回放可视化与Dex5受控迁移",
   "data_scaling_plan": "docs/data_scaling_plan.md",

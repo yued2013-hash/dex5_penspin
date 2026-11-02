@@ -39,7 +39,7 @@ report = evaluate(model, 'rerun_micro', residual_limit=0.00006)
 
 ## 设计
 
-- 参考：V12连续物理回放，共2,114步、42.28秒，仅1个轨迹来源。
+- 参考：PPO引导的混合专家参考轨迹连续物理回放，共2,114步、42.28秒，仅1个轨迹来源。
 - 动作：16维，参考目标加有界PPO残差，低通alpha=0.15；残差上限消融为0.006与0.00006 rad。
 - 观测：101维，包含关节状态、模拟笔状态、相位、参考控制、残差历史及接触力；这是特权仿真策略，不能直接部署到无笔状态感知的实机。
 - 训练：4个环境，256步rollout，128×128网络，同种子20261101，同32,768步预算；一半窗口从真实初态开始，另一半从通过验证的阶段起点开始。
@@ -56,4 +56,8 @@ report = evaluate(model, 'rerun_micro', residual_limit=0.00006)
 
 训练前v1检查报告原样保存在 `reset_validation_pretraining_v1.json`。训练后补充的v2几何审计明确使用初态穿透≤1mm、软关节限位偏差≤0.01rad的仿真诊断范围，10个起点仍全部通过。这些起点门槛不同于全程≤0.5mm严格质量门槛，也不构成硬件许可。
 
-方法、奖励与研究边界见 [方法文档](../../docs/rl13_method.md)，面试叙事见 [讲解提纲](../../docs/interview_guide.md)。
+方法、奖励与研究边界见 [方法文档](../../docs/rl13_method.md)；分段来源见[混合参考方法](../../docs/residual_ppo_method.md)，完整记录见[实验档案](runs/README.md)。
+
+## 研究导航
+
+[实验报告](../../docs/residual_ppo_experiment.md) · [消融对照](../../docs/residual_ppo_ablation.md) · [可视化专题](../../docs/showcase/residual.html)
