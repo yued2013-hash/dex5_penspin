@@ -14,6 +14,18 @@ Isaac Lab Oracle PPO · Student BC · Residual PPO · MuJoCo · Sim-to-Real
 
 </div>
 
+## 快速浏览
+
+| 阅读目标 | 入口 |
+| --- | --- |
+| 理解Oracle → Student及硬件适配主线 | [统一项目说明](docs/project_overview.md) |
+| 查看仿真演示与实际物理质量限制 | [完整仿真视频](docs/showcase/media/full-turn-demo.mp4) · [结果与限制](docs/results_and_limits.md) |
+| 了解实机中遇到的问题与诊断 | [Sim-to-Real案例](docs/sim2real_case_study.md) |
+| 核对数据规模和实验统计 | [数据统计](docs/data_statistics.md) · [学生闭环评估](Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json) |
+
+**阅读提示：** 短角度Student评估、规划辅助整圈回放、残差PPO和实机受控回放属于不同实验。整圈视频不等同于自主策略批量成功率，实机连续转笔仍未稳定实现。
+
+
 ## 一个项目，四个工程模块
 
 将笔状物体的灵巧操作从仿真训练推进到Dex5实机。核心路线是：**Isaac Lab特权Oracle强化学习 → 验证轨迹与Student蒸馏 → MuJoCo轨迹回放可视化 → Dex5受控真机迁移与诊断**。
@@ -89,3 +101,4 @@ python scripts/project.py showcase
 [Lessons from Learning to Spin “Pens”](https://arxiv.org/abs/2407.18902)及[原代码](https://github.com/HaozhiQi/penspin)提供Oracle→Student与仿真到实机的研究背景。本项目展示Dex5适配和工程验证，不宣称算法首创或已实现论文中的实机多物体多圈效果。
 
 统一命令入口：`python scripts/project.py evidence`查看成果来源，`python scripts/project.py audit`检查展示链接。模块职责与数据合同见[统一项目说明](docs/project_overview.md)。
+
