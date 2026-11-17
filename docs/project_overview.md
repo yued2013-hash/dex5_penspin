@@ -1,39 +1,36 @@
-# Dex5 PenSpin：统一项目说明
+# Dex5 PenSpin：方法与工程实现
 
-## 项目定义
+围绕Dex5灵巧手的笔操作，组织仿真强化学习、数据与蒸馏、硬件适配和动作诊断四个模块。
 
-**Dex5灵巧操作与Sim-to-Real：Isaac Lab训练、策略蒸馏、MuJoCo轨迹回放可视化与受控真机迁移。**
+| 模块 | 代码入口 | 实现内容 |
+| --- | --- | --- |
+| 仿真学习 | `isaac/` | Oracle PPO、奖励、耦合约束及姿态评估 |
+| 数据与蒸馏 | `sim2real/`、`Dex5_Sim2Real_S0/` | 四元数轨迹校验、来源隔离、340维Student观测、行为克隆 |
+| 硬件迁移 | `sim2real/dex5_hardware_adapter.py` | 20维SDK目标、16独立通道、方向、偏置、迟滞与时序 |
+| 动作诊断 | `sim/`、`experiments/rl13/`、`docs/showcase/` | MuJoCo回放、接触分析、残差控制与实验可视化 |
 
-项目按四个模块组织：仿真学习、数据与蒸馏、硬件迁移、动作诊断与可视化。工程主线围绕“从仿真策略走向真实执行”，仿真软件是各模块的实现工具，不拆成两个研究项目。
+## 训练与数据流程
 
-|模块|代码入口|工程职责|
-|---|---|---|
-|仿真学习|`isaac/`|Isaac Lab Oracle任务、奖励、控制约束及仿真评估|
-|数据与策略蒸馏|`sim2real/`、`Dex5_Sim2Real_S0/`|来源隔离、340维Student观测、行为克隆与闭环报告|
-|硬件迁移|`sim2real/dex5_hardware_adapter.py`、原标定与回放记录|20维SDK目标、16独立通道、方向偏置、耦合与控制时序|
-|动作诊断与可视化|`sim/`、`experiments/rl13/`、`docs/showcase/`|MuJoCo物理回放、接触分析、控制优化探索及可视化展示|
+Isaac Lab中的特权Oracle使用笔位姿和接触信息学习短角度控制；保存的轨迹经过实际四元数转角、轴对齐、接触与保持联合校验。Student从验证轨迹学习340维观测历史到20维有界动作的映射。
 
-## 系统流程
+数据按 `source_trajectory_id` 分组划分，包含1,200个episode和69,600个状态转移，训练/验证/测试分别为891/112/197个episode。闭环测试取得152/197次严格短角度成功；训练与评估记录见[数据统计](data_statistics.md)。
 
-任务与硬件约束 → Oracle强化学习 → 验证数据与Student蒸馏 → 仿真闭环成果 → 真机适配与问题分析。视频嵌在动作与接触解释环节，作为同一项目的诊断素材。
+## 硬件适配
 
-首页采用Isaac Lab主训练平台口径。MuJoCo保留为诊断运行器的实现说明，不把它的回放视频改称Isaac输出。整合的是工程组织与展示入口，没有声称两个引擎已完成状态、策略或动力学的等价移植。
+20维绝对URDF关节目标经厂商SDK转换，关联16个独立控制通道。适配层保存关节方向、偏置、分方向分段逆映射及动作历史，处理60Hz策略与100Hz指令链。实机工作覆盖空手标定、静态负载保持、受控轨迹前缀执行及反馈瞬态分析，详见[实机迁移](sim2real_case_study.md)。
 
-## 结果与模型合同
+## MuJoCo回放与控制实验
 
-- 两个运行环境的观测维度、关节顺序、控制频率与耦合参数并不相同，不能直接互换网络或混合数据。
-- 诊断模型约0.829的远端耦合假设与实机局部约0.29的测量分开保存，尚未做等价校准。
-- 真机连续转笔仍不稳定，已有局部标定和受控回放证据；没有新增实机自主闭环成功结论。
+`sim/render_s0_oracle_trajectory_gallery_mujoco.py`实现保存的Isaac关节状态和笔位姿到MuJoCo模型的状态回放渲染，按数据版本与SHA-256选择轨迹。
 
-统一入口：`python scripts/project.py showcase`。原始训练和硬件文件保持原位，避免重命名破坏历史路径与来源hash。
+`experiments/rl13/`使用MuJoCo物理规划前缀与PPO收尾生成的参考进行连续动力学回放，并开展有界残差PPO对照。模块保存独立的关节顺序、观测、控制频率、增益与耦合参数；MuJoCo耦合设置约0.829，实机局部辨识值约0.29。
 
+## 统一入口
 
-## Isaac训练与MuJoCo可视化的衔接
+```bash
+python scripts/project.py showcase
+python scripts/project.py evidence
+python scripts/project.py audit
+```
 
-`sim/render_s0_oracle_trajectory_gallery_mujoco.py`包含将保存的Isaac关节状态与笔位姿映射到MuJoCo模型做回放渲染的实现。这是状态回放，不等于将策略迁移到MuJoCo并通过独立动力学闭环验收。
-
-该旧脚本默认指向历史Oracle文件，不能忽略后续四元数校验与数据版本修订；接入有效轨迹前须使用正确版本并核验hash。当前下载副本缺少完整原始Isaac数据，因此本轮没有重新生成或认证“Isaac有效轨迹→MuJoCo视频”的完整成果链。现有整圈演示仍按其真实来源单独标注。
-
-如需策略在MuJoCo闭环执行，另行对齐关节顺序、观测归一化、动作缩放、控制频率、增益、耦合与接触参数，并记录Sim-to-Sim评估结果。
-
-数据规模与划分见[数据统计](data_statistics.md)，后续采集见[扩展计划](data_scaling_plan.md)。
+展示页集中查看仿真视频、Student结果、标定记录、残差幅度对照与训练曲线。数据、模型、配置和原始报告沿实验路径归档。

@@ -1,83 +1,67 @@
 <div align="center">
 
-# Dex5 PenSpin｜灵巧操作与Sim-to-Real
+# Dex5 PenSpin｜灵巧操作与 Sim-to-Real
 
-**面向耦合关节灵巧手的强化学习、残差策略优化与Sim-to-Real**
+**面向耦合关节灵巧手的强化学习、策略蒸馏与硬件适配**
 
 Isaac Lab Oracle PPO · Student BC · Residual PPO · MuJoCo · Sim-to-Real
 
-[项目展示](docs/showcase/index.html) · [迁移分析](docs/sim2real_case_study.md) · [统一项目说明](docs/project_overview.md) · [数据统计](docs/data_statistics.md)
+[项目展示](docs/showcase/index.html) · [方法与工程实现](docs/project_overview.md) · [实机迁移](docs/sim2real_case_study.md) · [实验结果](docs/results_and_limits.md)
 
-![Dex5真实MuJoCo仿真演示：规划辅助片段](docs/showcase/media/penspin-preview.gif)
+![Dex5 MuJoCo物理仿真：规划辅助与PPO收尾](docs/showcase/media/penspin-preview.gif)
 
-*项目动作诊断与可视化模块的真实物理回放；采用规划辅助和PPO收尾。具体运行引擎及结果来源见[项目说明](docs/project_overview.md)。*
+*MuJoCo动作诊断：物理规划与PPO收尾串联，展示转动、拇指换位、接回与稳定夹持。*
 
 </div>
 
-## 快速浏览
+## 项目工作
 
-| 阅读目标 | 入口 |
-| --- | --- |
-| 理解Oracle → Student及硬件适配主线 | [统一项目说明](docs/project_overview.md) |
-| 查看仿真演示与实际物理质量限制 | [完整仿真视频](docs/showcase/media/full-turn-demo.mp4) · [结果与限制](docs/results_and_limits.md) |
-| 了解实机中遇到的问题与诊断 | [Sim-to-Real案例](docs/sim2real_case_study.md) |
-| 核对数据规模和实验统计 | [数据统计](docs/data_statistics.md) · [学生闭环评估](Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json) |
+围绕笔状物体的多指操作，搭建 **Oracle强化学习 → 四元数轨迹校验 → Student行为克隆 → 仿真闭环评估 → 硬件映射与受控回放** 的实验流程，并实现MuJoCo物理回放与残差PPO控制实验。
 
-**阅读提示：** 短角度Student评估、规划辅助整圈回放、残差PPO和实机受控回放属于不同实验。整圈视频不等同于自主策略批量成功率，实机连续转笔仍未稳定实现。
+- **仿真任务与Oracle：** 在Isaac Lab中建模Dex5耦合关节与笔接触，设计目标轴转动、姿态对齐和稳定保持联合评估。
+- **数据与策略蒸馏：** 整理1,200条四元数验证轨迹、69,600个状态转移；Student以340维观测历史预测20维有界虚拟动作，按轨迹来源划分训练、验证和测试集。
+- **旋转与接触评估：** 使用相邻四元数推导实际转角及有限步角速度，同步记录接触、穿透、终态预重置快照与150ms保持状态。
+- **硬件适配：** 对接20维绝对URDF关节目标与16个独立控制通道，完成方向、偏置、迟滞辨识及60Hz策略到100Hz指令链的时序适配。
+- **控制与可视化：** 实现MuJoCo参考回放、有界残差PPO、幅度消融、接触状态图和训练检查点曲线，形成可追溯的实验档案。
 
+## 实验结果
 
-## 一个项目，四个工程模块
+| 模块 | 记录结果 | 实验设置 |
+| --- | --- | --- |
+| Student仿真闭环 | **152/197次严格短角度成功，77.2%** | Isaac Lab；197个测试episode来自20个来源；150ms保持 |
+| Student转角 | 184/197次达到30°四元数转角 | 硬件兼容Medium DR控制接口 |
+| Student训练 | 验证MSE 0.000780，测试MSE 0.000654 | 891/112/197个训练、验证、测试episode |
+| 参考辅助仿真回放 | **最大实际转角365.69°，末5秒对向夹持100%** | MuJoCo；单参考轨迹；规划辅助与PPO收尾 |
+| 残差PPO消融 | 两次各32,768步，共65,536个交互步 | 对比0.006与0.00006 rad残差上限 |
+| 硬件标定与回放 | 16/16控制通道映射验证；静态持笔与受控局部转动 | 分方向分段逆映射、负载反馈与启动流程诊断 |
 
-将笔状物体的灵巧操作从仿真训练推进到Dex5实机。核心路线是：**Isaac Lab特权Oracle强化学习 → 验证轨迹与Student蒸馏 → MuJoCo轨迹回放可视化 → Dex5受控真机迁移与诊断**。
-
-项目统一以Isaac Lab作为训练主平台，动作可视化与接触诊断作为配套工具模块。项目重点包括关节耦合建模、接触与奖励设计、数据来源隔离、20维SDK目标到16独立控制通道的适配，以及仿真与实机控制时序对齐。目前已完成短角度仿真学习与学生策略验证，并进行了真机受控回放和局部动作验证；实机连续转笔仍未稳定实现。
-
-## 结果概览
-
-|模块|结果|适用范围|
-|---|---|---|
-|Student仿真闭环|152/197次严格短角度成功，约77.2%|Isaac历史评估，197个episode来自20个测试来源|
-|整圈仿真演示|实际最大转角365.69°，末5秒对向夹持100%|MuJoCo单参考轨迹，规划辅助与PPO收尾；非批量成功率，几何质量限制见下文|
-|Student数据集|1,200条验证轨迹，69,600个状态转移样本|训练51,621 / 验证6,519 / 测试11,460；按source分组|
-|残差PPO控制实验|两次独立运行，共65,536个训练交互步|各32,768步；未超过参考基准，与Student数据分别统计|
-|硬件适配|20维绝对URDF关节目标，16独立控制通道|保留厂商SDK的URDF到电机转换|
-|实机迁移|完成标定、受控回放及局部转动验证|依据原阶段记录；连续转笔稳定性仍不足|
-
-数据来源：[学生闭环评估](Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json)、[训练报告](Dex5_Sim2Real_S0/student_s0_11/student_training_report.json)、[阶段合同与记录](AGENTS.md)。这些是项目已有实验记录，本轮文档整理未重跑Isaac或真机。
+来源：[Student评估](Dex5_Sim2Real_S0/student_s0_11/student_closed_loop_eval.json)、[训练报告](Dex5_Sim2Real_S0/student_s0_11/student_training_report.json)、[数据统计](docs/data_statistics.md)、[实验记录](docs/results_and_limits.md)。
 
 ## 方法与工程实现
 
 ```mermaid
 flowchart LR
-  A[Dex5与笔的仿真建模] --> B[特权Oracle强化学习]
-  B --> C[姿态与接触校验的轨迹数据]
-  C --> V[MuJoCo状态回放与可视化]
-  V --> G[关节映射 / 耦合 / 时延诊断]
-  C --> D[非特权Student行为克隆]
-  D --> E[仿真闭环评估]
-  C --> F[受控实机轨迹回放]
-  F --> G[关节映射 / 耦合 / 时延诊断]
-  G --> H[后续迁移优化]
+  A[Dex5耦合关节与接触建模] --> B[特权Oracle PPO]
+  B --> C[四元数转角与接触校验]
+  C --> D[来源隔离的轨迹数据]
+  D --> E[Student行为克隆]
+  E --> F[仿真闭环评估]
+  D --> G[关节映射与受控实机回放]
+  C --> H[MuJoCo状态回放与接触可视化]
+  H --> I[参考控制与残差PPO对照]
 ```
 
-- **学习与数据**：Oracle利用仿真状态学习；Student读取340维可部署观测历史，预测有界20维虚拟动作。按轨迹来源划分数据，避免相邻状态泄漏。
-- **评估可信度**：依据相邻四元数的实际姿态变化验证转动；结合目标轴、接触、穿透和150ms稳定保持，避免只积分角速度造成“假转动”。
-- **硬件接口**：处理耦合关节、方向与偏置、迟滞、动作插值及反馈监控；逻辑控制量不是电机轴角度，继续通过厂商SDK执行。
-- **迁移策略**：先做静态保持和受控回放，再讨论自主闭环与真实数据适配。当前未完成Student实机自主闭环验证。
+**策略与数据。** Oracle读取仿真笔状态和接触信息，Student读取观测历史。通过 `source_trajectory_id` 隔离数据来源，保存动作历史、归一化参数和终态快照，形成可复核的数据与模型接口。
 
-## 实机迁移与工程优化
+**姿态评估。** 用相对四元数衡量目标轴实际转动，结合轴对齐、接触、穿透和保持时长评估动作。有限步角速度由相邻姿态计算，瞬时物理引擎速度用于接触冲击诊断。
 
-实际迁移中存在关节耦合、控制映射、负载下反馈瞬态以及策略频率与SDK指令频率不一致等工程问题。这些现象支持耦合建模、增益及执行时序的联合排查，具体因果贡献仍需受控实验验证。
+**硬件接口。** 保留厂商SDK的URDF到电机转换，适配关节方向、偏置、耦合、迟滞与时序。实机记录包含约0.29的局部PIP/DIP响应比、14–31ms可检测起动延迟，以及9.8mm笔条件下的静态保持与局部转动回放。详见[Sim-to-Real工程分析](docs/sim2real_case_study.md)。
 
-已有记录包含局部PIP/DIP响应比约0.29、14–31ms可检测起动延迟、60Hz策略到100Hz指令链，以及负载回放中的独立关节反馈瞬态。这些结果对应特定标定条件，不是硬件的通用极限。详见[实机迁移案例分析](docs/sim2real_case_study.md)。
+## 参考控制与残差PPO
 
-## 残差强化学习与整圈操作研究
+在MuJoCo中组合物理规划前缀与PPO收尾，形成42.28秒连续参考回放；在参考关节目标上叠加有界、低通滤波的16维策略残差。采用同参考、同起点、同种子和同预算对比两种残差幅度，并记录检查点回报、转角、执行时长、接触与穿透。
 
-[完整仿真视频](docs/showcase/media/full-turn-demo.mp4)用于解释转动、拇指换位、接回和稳定夹持，是同一项目的动作诊断素材。该模块使用MuJoCo执行规划参考与PPO收尾，训练主线使用Isaac Lab；保留引擎来源与模型假设，避免混合不同任务的成功率。质量审计见[实验边界](docs/results_and_limits.md)。
-
-[残差PPO研究模块](experiments/rl13/README.md)采用“混合专家参考→有界残差策略→连续评估→物理质量审计”的闭环。整圈参考已展示365.69°转动；两次残差消融尚未超过基准。
-
-[研究专题页](docs/showcase/residual.html) · [方法](docs/residual_ppo_method.md) · [实验报告](docs/residual_ppo_experiment.md) · [消融](docs/residual_ppo_ablation.md) · [实验档案](experiments/rl13/runs/README.md)
+[仿真视频](docs/showcase/media/full-turn-demo.mp4) · [残差PPO方法](docs/residual_ppo_method.md) · [实验报告](docs/residual_ppo_experiment.md) · [幅度消融](docs/residual_ppo_ablation.md) · [实验档案](experiments/rl13/runs/README.md)
 
 ![残差策略与参考控制比较](docs/showcase/residual_ppo_comparison.svg)
 
@@ -87,18 +71,15 @@ flowchart LR
 python scripts/project.py showcase
 ```
 
-打开 `http://127.0.0.1:8831/docs/showcase/`，可查看同一项目的仿真学习、策略蒸馏、真机迁移和动作诊断四个模块。
+打开 `http://127.0.0.1:8831/docs/showcase/`，查看策略蒸馏、实机适配、仿真回放与训练曲线。
 
-- 训练模块（Isaac Lab）：[跨机器复现](docs/reproducibility.md)、[任务设计](docs/dex5_penspin_reproduction_plan.md)。
-- 动作诊断模块：[实验说明](experiments/rl13/README.md)。完整参考回放目前仅Windows认证。
-- 数据统计：[样本划分、训练步数与统计口径](docs/data_statistics.md)。
-- 数据扩展：[200个候选增量起步、逐步扩展覆盖的计划](docs/data_scaling_plan.md)，尚未执行，现有结果不变。
+- [项目结构与模块入口](docs/project_overview.md)
+- [Isaac Lab训练复现](docs/reproducibility.md) · [任务设计](docs/dex5_penspin_reproduction_plan.md)
+- [MuJoCo残差实验](experiments/rl13/README.md) · [方法说明](docs/rl13_method.md)
+- [数据规模与划分](docs/data_statistics.md) · [数据扩展方案](docs/data_scaling_plan.md)
 
-历史训练、标定和实机数据独立保留。当前下载副本中部分历史大文件是Git LFS指针，复现原Isaac实验需按原文档获取资产。
+`python scripts/project.py evidence` 输出实验来源，`python scripts/project.py audit` 检查展示链接。数据与模型通过Git LFS及对应实验目录管理，运行环境按各模块复现文档配置。
 
 ## 参考
 
-[Lessons from Learning to Spin “Pens”](https://arxiv.org/abs/2407.18902)及[原代码](https://github.com/HaozhiQi/penspin)提供Oracle→Student与仿真到实机的研究背景。本项目展示Dex5适配和工程验证，不宣称算法首创或已实现论文中的实机多物体多圈效果。
-
-统一命令入口：`python scripts/project.py evidence`查看成果来源，`python scripts/project.py audit`检查展示链接。模块职责与数据合同见[统一项目说明](docs/project_overview.md)。
-
+[Lessons from Learning to Spin “Pens”](https://arxiv.org/abs/2407.18902)及[原代码](https://github.com/HaozhiQi/penspin)提供Oracle→Student与仿真到实机的研究背景。本项目围绕Dex5完成任务适配、数据校验、控制接口、策略蒸馏与工程实验。
